@@ -16,20 +16,21 @@ class _ComingSoonAppState extends State<ComingSoonApp> {
   late VideoPlayerController _controller;
   bool _videoLoaded = false;
 
-  @override
-  void initState() {
-    super.initState();
-    _controller = VideoPlayerController.asset("assets/images/snail_2.mp4")
-      ..initialize().then((_) {
-        setState(() {
-          _videoLoaded = true;
-        });
-        _controller.setLooping(true);
-        _controller.play();
-      }).catchError((error) {
-        debugPrint("Error loading video: $error");
+@override
+void initState() {
+  super.initState();
+  _controller = VideoPlayerController.asset("assets/images/snail_2.mp4")
+    ..initialize().then((_) {
+      setState(() {
+        _videoLoaded = true;
       });
-  }
+      _controller.setLooping(true);
+      _controller.setVolume(0.0); // Mute the video for autoplay
+      _controller.play();
+    }).catchError((error) {
+      debugPrint("Error loading video: $error");
+    });
+}
 
   @override
   void dispose() {
