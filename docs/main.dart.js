@@ -47001,7 +47001,7 @@ A.nk.prototype={
 ag(){return new A.Al()}}
 A.Al.prototype={
 aB(){this.b5()
-var s=new A.zA("assets/assets/images/snail_2.mp4",B.I6,$.aJ())
+var s=new A.zA("assets/images/snail_2.mp4",B.I6,$.aJ())
 s.dl().aX(new A.Ug(this),t.P).nx(new A.Uh())
 this.d=s},
 l(){var s=this.d
