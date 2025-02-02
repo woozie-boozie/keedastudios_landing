@@ -14,15 +14,20 @@ class ComingSoonApp extends StatefulWidget {
 
 class _ComingSoonAppState extends State<ComingSoonApp> {
   late VideoPlayerController _controller;
+  bool _videoLoaded = false;
 
   @override
   void initState() {
     super.initState();
     _controller = VideoPlayerController.asset("assets/images/snail_2.mp4")
       ..initialize().then((_) {
-        setState(() {});
+        setState(() {
+          _videoLoaded = true;
+        });
         _controller.setLooping(true);
         _controller.play();
+      }).catchError((error) {
+        debugPrint("Error loading video: $error");
       });
   }
 
@@ -42,7 +47,7 @@ class _ComingSoonAppState extends State<ComingSoonApp> {
           children: [
             // Fullscreen Video
             Positioned.fill(
-              child: _controller.value.isInitialized
+              child: _videoLoaded
                   ? FittedBox(
                       fit: BoxFit.cover,
                       child: SizedBox(
@@ -51,10 +56,10 @@ class _ComingSoonAppState extends State<ComingSoonApp> {
                         child: VideoPlayer(_controller),
                       ),
                     )
-                  : const Center(child: CircularProgressIndicator()),
+                  : const Center(child: Text("Loading video...", style: TextStyle(color: Colors.white))),
             ),
 
-            // Thought Bubble - Responsive Positioning
+            // Thought Bubble
             Positioned(
               top: MediaQuery.of(context).size.height * 0.1,
               left: MediaQuery.of(context).size.width * 0.2,
