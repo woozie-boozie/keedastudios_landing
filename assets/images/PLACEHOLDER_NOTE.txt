@@ -1,0 +1,16 @@
+PLACEHOLDER FOR CROSSWORD CHAOS ICON
+=====================================
+
+Please replace the following files with actual assets:
+
+1. crossword_chaos_icon.png
+   - Recommended size: 512x512px or higher
+   - Format: PNG with transparency
+   - This will be displayed in the games section
+
+2. keeda_logo.png (optional)
+   - Your company logo
+   - Recommended size: 256x256px or higher
+   - Format: PNG with transparency
+
+Until you provide these assets, the app will show fallback placeholder icons.
