@@ -75021,10 +75021,10 @@ n=j?20:30
 m=t.E
 return A.da(A.di(A.c([r,B.bC,q,p,new A.e2(B.z4,A.anc(B.ky,A.c([new A.Nz("Crossword Chaos","A modern twist on classic crossword puzzles. Challenge yourself with daily puzzles, themed collections, and competitive leaderboards.","assets/images/crossword_chaos_icon.png",B.Fq,new A.ZF(this),new A.ZG(this),j,l)],m),n,o),l)],m),B.V,B.Q,B.W),B.r,l,l,l,l,l,l,new A.aK(k,s,k,s),1/0)}}
 A.ZF.prototype={
-$0(){return this.a.nv("https://apps.apple.com/app/crossword-chaos")},
+$0(){return this.a.nv("https://apps.apple.com/gb/app/crossword-chaos/id6752734096")},
 $S:0}
 A.ZG.prototype={
-$0(){return this.a.nv("https://play.google.com/store/apps/details?id=com.keedastudios.crosswordchaos")},
+$0(){return this.a.nv("https://play.google.com/store/apps/details?id=com.crosswordchaos.game")},
 $S:0}
 A.Nz.prototype={
 M(a){var s,r,q,p,o,n,m=this,l=null,k=m.x,j=k?1/0:380,i=k?100:120
