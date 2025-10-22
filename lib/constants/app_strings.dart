@@ -30,8 +30,8 @@ class AppStrings {
   static const String crosswordChaosDescription =
       'A modern twist on classic crossword puzzles. Challenge yourself with daily puzzles, '
       'themed collections, and competitive leaderboards.';
-  static const String crosswordChaosIOSUrl = 'https://apps.apple.com/app/crossword-chaos';
-  static const String crosswordChaosAndroidUrl = 'https://play.google.com/store/apps/details?id=com.keedastudios.crosswordchaos';
+  static const String crosswordChaosIOSUrl = 'https://apps.apple.com/gb/app/crossword-chaos/id6752734096';
+  static const String crosswordChaosAndroidUrl = 'https://play.google.com/store/apps/details?id=com.crosswordchaos.game';
 
   // Contact section
   static const String contactTitle = 'Get in Touch';
