@@ -782,6 +782,430 @@
     .app-card.purple:hover { box-shadow: 0 20px 60px rgba(168, 85, 247, 0.2); }
     .app-card.blue:hover { box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2); }
     .app-card.orange:hover { box-shadow: 0 20px 60px rgba(249, 115, 22, 0.2); }
+
+    /* ============ BGMF DEMO STYLES ============ */
+    .bgmf-demo {
+      margin-top: 16px;
+      min-height: 200px;
+      position: relative;
+    }
+
+    /* Denim butt view (default) */
+    .butt-view {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: opacity 0.4s, transform 0.4s;
+    }
+
+    .butt-view.hidden {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .denim-butt {
+      width: 140px;
+      height: 110px;
+      background: linear-gradient(180deg, #5B8BD9 0%, #4A7ACF 40%, #3D6BC4 100%);
+      border-radius: 28px 28px 70px 70px / 28px 28px 80px 80px;
+      box-shadow: 0 15px 35px rgba(74, 122, 207, 0.5);
+      position: relative;
+      cursor: pointer;
+      animation: buttSway 2.5s ease-in-out infinite;
+      transition: transform 0.2s;
+    }
+
+    .denim-butt:hover {
+      transform: scale(1.05);
+    }
+
+    .denim-butt:active {
+      transform: scale(0.95);
+    }
+
+    @keyframes buttSway {
+      0%, 100% { transform: rotate(-3deg) translateX(-3px); }
+      50% { transform: rotate(3deg) translateX(3px); }
+    }
+
+    /* Center seam */
+    .denim-butt::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 18px;
+      bottom: 18px;
+      width: 3px;
+      background: #3D5A99;
+      transform: translateX(-50%);
+    }
+
+    /* Pockets */
+    .denim-pocket {
+      position: absolute;
+      width: 38px;
+      height: 34px;
+      background: rgba(61, 90, 153, 0.3);
+      border: 2px solid #3D5A99;
+      border-radius: 6px 6px 10px 10px;
+      top: 20px;
+    }
+
+    .denim-pocket.left { left: 16px; }
+    .denim-pocket.right { right: 16px; }
+
+    /* Fart clouds */
+    .fart-clouds {
+      position: absolute;
+      right: -40px;
+      top: 30%;
+      width: 60px;
+      height: 80px;
+    }
+
+    .fart-puff {
+      position: absolute;
+      font-size: 24px;
+      opacity: 0;
+      animation: puffFloat 2.5s ease-out infinite;
+    }
+
+    .fart-puff:nth-child(1) { animation-delay: 0s; top: 10px; }
+    .fart-puff:nth-child(2) { animation-delay: 0.8s; top: 30px; font-size: 20px; }
+    .fart-puff:nth-child(3) { animation-delay: 1.6s; top: 0px; font-size: 28px; }
+
+    @keyframes puffFloat {
+      0% { opacity: 0; transform: translateX(0) scale(0.6); }
+      15% { opacity: 0.8; transform: translateX(8px) scale(1); }
+      60% { opacity: 0.4; transform: translateX(30px) scale(1.1); }
+      100% { opacity: 0; transform: translateX(50px) scale(0.8); }
+    }
+
+    .butt-tap-hint {
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent-pink);
+    }
+
+    /* Chat demo - replicating onboarding style */
+    .chat-view {
+      opacity: 0;
+      transform: scale(0.9);
+      pointer-events: none;
+      transition: opacity 0.4s, transform 0.4s;
+    }
+
+    .chat-view.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    .chat-demo {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      padding: 8px 10px;
+      background: linear-gradient(135deg, #EC4899, #A855F7);
+      border-radius: 10px;
+    }
+
+    .chat-avatar {
+      width: 28px;
+      height: 28px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .chat-info .chat-name {
+      font-size: 12px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .chat-info .chat-status {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .chat-messages {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 160px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+
+    .chat-messages::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    .chat-messages::-webkit-scrollbar-track {
+      background: rgba(236, 72, 153, 0.1);
+      border-radius: 3px;
+    }
+
+    .chat-messages::-webkit-scrollbar-thumb {
+      background: rgba(236, 72, 153, 0.3);
+      border-radius: 3px;
+    }
+
+    .chat-msg {
+      padding: 8px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease-out;
+      max-width: 85%;
+    }
+
+    .chat-msg.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .chat-msg.sent {
+      align-self: flex-end;
+      background: linear-gradient(135deg, #EC4899, #A855F7);
+      color: white;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-msg.received {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.9);
+      color: #374151;
+      border-bottom-left-radius: 4px;
+    }
+
+    .chat-msg.system {
+      align-self: center;
+      background: #FEF3C7;
+      color: #92400E;
+      font-weight: 600;
+      font-size: 10px;
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+
+    .chat-msg.result {
+      align-self: center;
+      background: linear-gradient(135deg, #10B981, #059669);
+      color: white;
+      font-weight: 700;
+      text-align: center;
+      padding: 10px 16px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .result-circle {
+      width: 36px;
+      height: 36px;
+      border: 3px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .result-text {
+      text-align: left;
+    }
+
+    .result-text .title {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .result-text .subtitle {
+      font-size: 9px;
+      opacity: 0.9;
+    }
+
+    .chat-msg.stickers {
+      align-self: center;
+      background: transparent;
+      display: flex;
+      gap: 4px;
+    }
+
+    .sticker {
+      font-size: 20px;
+      display: inline-block;
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .sticker.pop {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .msg-tags {
+      display: flex;
+      gap: 4px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+
+    .msg-tag {
+      padding: 2px 6px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 6px;
+      font-size: 9px;
+      font-weight: 600;
+    }
+
+    .guess-tag {
+      background: #F3E8FF;
+      color: #7C3AED;
+    }
+
+    .replay-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin: 8px auto 0;
+      padding: 6px 14px;
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 16px;
+      color: #A855F7;
+      font-size: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .replay-btn.visible {
+      opacity: 1;
+    }
+
+    .replay-btn:hover {
+      background: rgba(168, 85, 247, 0.25);
+    }
+
+    /* ============ THULAA DEMO STYLES ============ */
+    .thulaa-demo {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+      justify-content: center;
+    }
+
+    .thulaa-phone {
+      width: 90px;
+      background: var(--dark);
+      border-radius: 12px;
+      padding: 4px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
+    }
+
+    .thulaa-phone:first-child {
+      transform: rotate(-5deg);
+    }
+
+    .thulaa-phone:last-child {
+      transform: rotate(5deg);
+    }
+
+    .app-card:hover .thulaa-phone:first-child {
+      transform: rotate(-8deg) translateY(-5px);
+    }
+
+    .app-card:hover .thulaa-phone:last-child {
+      transform: rotate(8deg) translateY(-5px);
+    }
+
+    .thulaa-phone img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    /* ============ WORD KO GAME SCREENS ============ */
+    .wordko-screens {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .wordko-screen {
+      text-align: center;
+    }
+
+    .wordko-screen-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .wordko-phone {
+      width: 140px;
+      background: var(--dark);
+      border-radius: 16px;
+      padding: 4px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s;
+    }
+
+    .wordko-phone:first-of-type {
+      transform: rotate(-3deg);
+    }
+
+    .wordko-phone:last-of-type {
+      transform: rotate(3deg);
+    }
+
+    .app-card.featured:hover .wordko-screen:first-child .wordko-phone {
+      transform: rotate(-6deg) translateY(-8px);
+    }
+
+    .app-card.featured:hover .wordko-screen:last-child .wordko-phone {
+      transform: rotate(6deg) translateY(-8px);
+    }
+
+    .wordko-phone img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    /* Remove plant emojis styles - no longer needed */
+    .plant-emojis { display: none; }
   </style>
 </head>
 <body>
@@ -845,6 +1269,71 @@
           <img src="assets/images/bgmf-icon.png" alt="Babe, Guess My Fart" class="app-icon">
           <h3 class="app-name">Babe, Guess My Fart</h3>
           <p class="app-tagline">The ultimate couples game that really stinks. Record, send, and guess - it's weirdly romantic.</p>
+
+          <!-- Interactive Demo -->
+          <div class="bgmf-demo">
+            <!-- View 1: Denim Butt (default) -->
+            <div class="butt-view" id="buttView">
+              <div class="denim-butt" onclick="tapButt()">
+                <div class="denim-pocket left"></div>
+                <div class="denim-pocket right"></div>
+                <div class="fart-clouds">
+                  <span class="fart-puff">💨</span>
+                  <span class="fart-puff">💨</span>
+                  <span class="fart-puff">💨</span>
+                </div>
+              </div>
+              <p class="butt-tap-hint">👆 Tap the booty!</p>
+            </div>
+
+            <!-- View 2: Chat with Bae (after tap) -->
+            <div class="chat-view" id="chatView">
+              <div class="chat-demo">
+                <div class="chat-header">
+                  <div class="chat-avatar">🍑</div>
+                  <div class="chat-info">
+                    <div class="chat-name">SweetCheeks</div>
+                    <div class="chat-status">your bae 💕</div>
+                  </div>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                  <div class="chat-msg sent" id="msg1">
+                    You sent a fart! 💨
+                    <div class="msg-tags">
+                      <span class="msg-tag">🌶️ spicy</span>
+                      <span class="msg-tag">📢 loud</span>
+                    </div>
+                  </div>
+                  <div class="chat-msg system" id="msg2">💨 SweetCheeks received your fart!</div>
+                  <div class="chat-msg received" id="msg3">Omg babe 😂 let me think...</div>
+                  <div class="chat-msg received" id="msg4">
+                    Post-taco rumbler? 🌮
+                    <div class="msg-tags"><span class="msg-tag guess-tag">🤔 their guess</span></div>
+                  </div>
+                  <div class="chat-msg result" id="msg5">
+                    <div class="result-circle">83%</div>
+                    <div class="result-text">
+                      <div class="title">Fart Match!</div>
+                      <div class="subtitle">Pretty impressive! 🎯</div>
+                    </div>
+                  </div>
+                  <div class="chat-msg system" id="msg6">🎧 Listened to the original!</div>
+                  <div class="chat-msg stickers" id="msg7">
+                    <span class="sticker" id="s1">😂</span>
+                    <span class="sticker" id="s2">💨</span>
+                    <span class="sticker" id="s3">🔥</span>
+                    <span class="sticker" id="s4">🍑</span>
+                    <span class="sticker" id="s5">😭</span>
+                  </div>
+                  <div class="chat-msg received" id="msg8">LMAOOO I was so close!! 😂🔥</div>
+                  <div class="chat-msg sent" id="msg9">You know me too well 💕</div>
+                  <div class="chat-msg received" id="msg10">That's 83% synergy babe 😏💨</div>
+                </div>
+                <button class="replay-btn" id="replayBtn" onclick="resetToButt()">↺ Try again</button>
+              </div>
+            </div>
+          </div>
+
           <div class="app-tags">
             <span class="app-tag">Couples</span>
             <span class="app-tag">Party Game</span>
@@ -867,6 +1356,17 @@
           <img src="assets/images/thulaa-icon.png" alt="Thulaa" class="app-icon">
           <h3 class="app-name">Thulaa</h3>
           <p class="app-tagline">The classic South Asian card game, now on your phone. Don't be the Pabho!</p>
+
+          <!-- Phone mockups -->
+          <div class="thulaa-demo">
+            <div class="thulaa-phone">
+              <img src="assets/images/thulaa-home.png" alt="Thulaa Home">
+            </div>
+            <div class="thulaa-phone">
+              <img src="assets/images/thulaa-gameplay.png" alt="Thulaa Gameplay">
+            </div>
+          </div>
+
           <div class="app-tags">
             <span class="app-tag">Card Game</span>
             <span class="app-tag">Multiplayer</span>
@@ -908,12 +1408,18 @@
             </div>
           </div>
           <div class="app-showcase">
-            <div class="app-phones">
-              <div class="mini-phone">
-                <img src="assets/images/crossword-chaos.png" alt="Crossword Chaos">
+            <div class="wordko-screens">
+              <div class="wordko-screen">
+                <div class="wordko-screen-label">Crossword Chaos</div>
+                <div class="wordko-phone">
+                  <img src="assets/images/cc-game-screen.png" alt="Crossword Chaos Game">
+                </div>
               </div>
-              <div class="mini-phone">
-                <img src="assets/images/word-chaser.png" alt="Word Chaser">
+              <div class="wordko-screen">
+                <div class="wordko-screen-label">Word Chaser</div>
+                <div class="wordko-phone">
+                  <img src="assets/images/wc-game-screen.png" alt="Word Chaser Game">
+                </div>
               </div>
             </div>
           </div>
@@ -927,17 +1433,11 @@
     <div class="container">
       <div class="section-header">
         <div class="section-tag" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #10B981;">What's Next</div>
-        <h2 class="section-title">Something's Growing...</h2>
+        <h2 class="section-title">Something's Coming...</h2>
       </div>
 
       <div class="coming-soon-card">
         <div class="sidney-container">
-          <div class="plant-emojis">
-            <span class="plant-emoji">🌱</span>
-            <span class="plant-emoji">🌿</span>
-            <span class="plant-emoji">🪴</span>
-            <span class="plant-emoji">🌻</span>
-          </div>
           <div class="sidney-img">
             <img src="assets/images/sidney.png" alt="Sidney the Snail">
           </div>
@@ -948,14 +1448,8 @@
         </h3>
 
         <p class="coming-soon-subtitle">
-          A cozy gardening companion app where Sidney helps you grow and nurture your virtual garden.
-          Plant seeds, watch them bloom, and build your own peaceful green space.
+          Your new companion. Coming soon.
         </p>
-
-        <form class="notify-form" onsubmit="event.preventDefault(); alert('Thanks! We\'ll let you know when Budin launches!');">
-          <input type="email" class="notify-input" placeholder="Enter your email" required>
-          <button type="submit" class="notify-btn">Notify Me</button>
-        </form>
       </div>
     </div>
   </section>
@@ -1033,6 +1527,111 @@
       card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(card);
     });
+
+    // BGMF Interactive Demo - Butt to Chat transition
+    let chatTimers = [];
+
+    function tapButt() {
+      const buttView = document.getElementById('buttView');
+      const chatView = document.getElementById('chatView');
+
+      // Hide butt, show chat
+      buttView.classList.add('hidden');
+      chatView.classList.add('visible');
+
+      // Start chat animation after transition
+      setTimeout(() => startChatAnimation(), 400);
+    }
+
+    function resetToButt() {
+      const buttView = document.getElementById('buttView');
+      const chatView = document.getElementById('chatView');
+
+      // Cancel any running timers
+      chatTimers.forEach(t => clearTimeout(t));
+      chatTimers = [];
+
+      // Reset chat messages
+      resetChatMessages();
+
+      // Scroll to top
+      const chatContainer = document.getElementById('chatMessages');
+      if (chatContainer) chatContainer.scrollTop = 0;
+
+      // Hide chat, show butt
+      chatView.classList.remove('visible');
+      buttView.classList.remove('hidden');
+    }
+
+    function resetChatMessages() {
+      // Reset all messages
+      for (let i = 1; i <= 10; i++) {
+        const msg = document.getElementById('msg' + i);
+        if (msg) msg.classList.remove('visible');
+      }
+
+      // Reset stickers
+      for (let i = 1; i <= 5; i++) {
+        const sticker = document.getElementById('s' + i);
+        if (sticker) sticker.classList.remove('pop');
+      }
+
+      // Hide replay button
+      const replayBtn = document.getElementById('replayBtn');
+      if (replayBtn) replayBtn.classList.remove('visible');
+    }
+
+    function startChatAnimation() {
+      resetChatMessages();
+
+      const chatContainer = document.getElementById('chatMessages');
+
+      // Message timings matching the onboarding flow
+      const messages = [
+        { id: 'msg1', delay: 300 },    // You sent a fart with tags
+        { id: 'msg2', delay: 1200 },   // System: received
+        { id: 'msg3', delay: 2200 },   // Bae thinking
+        { id: 'msg4', delay: 3500 },   // Bae guesses
+        { id: 'msg5', delay: 5000 },   // Result card 83%
+        { id: 'msg6', delay: 6200 },   // System: listened
+        { id: 'msg7', delay: 7000 },   // Stickers container
+        { id: 'msg8', delay: 8200 },   // LMAOOO
+        { id: 'msg9', delay: 9200 },   // You reply
+        { id: 'msg10', delay: 10200 }, // Final message
+      ];
+
+      messages.forEach(({ id, delay }) => {
+        const timer = setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.classList.add('visible');
+
+            // Auto-scroll for later messages
+            if (chatContainer) {
+              chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+          }
+        }, delay);
+        chatTimers.push(timer);
+      });
+
+      // Animate stickers one by one after msg7 appears
+      const stickerDelay = 7200;
+      for (let i = 1; i <= 5; i++) {
+        const timer = setTimeout(() => {
+          const sticker = document.getElementById('s' + i);
+          if (sticker) sticker.classList.add('pop');
+        }, stickerDelay + (i * 100));
+        chatTimers.push(timer);
+      }
+
+      // Show replay button at the end
+      const replayTimer = setTimeout(() => {
+        const replayBtn = document.getElementById('replayBtn');
+        if (replayBtn) replayBtn.classList.add('visible');
+      }, 11500);
+      chatTimers.push(replayTimer);
+    }
   </script>
 </body>
 </html>
