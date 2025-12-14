@@ -1,0 +1,33 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "pubspec.yaml",
+      "pubspec.lock",
+      "analysis_options.yaml",
+      "README.md",
+      "**/lib/**",
+      "**/test/**",
+      "**/android/**",
+      "**/ios/**",
+      "**/macos/**",
+      "**/linux/**",
+      "**/windows/**",
+      "**/web/**"
+    ],
+    "headers": [
+      {
+        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|ico)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=31536000"
+          }
+        ]
+      }
+    ]
+  }
+}
