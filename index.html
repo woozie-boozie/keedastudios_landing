@@ -786,7 +786,7 @@
     /* ============ BGMF DEMO STYLES ============ */
     .bgmf-demo {
       margin-top: 16px;
-      min-height: 200px;
+      min-height: 360px;
       position: relative;
     }
 
@@ -796,7 +796,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 40px 20px;
+      min-height: 360px;
       transition: opacity 0.4s, transform 0.4s;
     }
 
@@ -898,15 +899,21 @@
     /* Chat demo - replicating onboarding style */
     .chat-view {
       opacity: 0;
-      transform: scale(0.9);
+      transform: scale(0.95);
       pointer-events: none;
       transition: opacity 0.4s, transform 0.4s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      min-height: 360px;
     }
 
     .chat-view.visible {
       opacity: 1;
       transform: scale(1);
       pointer-events: auto;
+      position: relative;
     }
 
     .chat-demo {
@@ -914,6 +921,7 @@
       border-radius: 16px;
       padding: 12px;
       border: 1px solid rgba(255, 255, 255, 0.08);
+      min-height: 340px;
     }
 
     .chat-header {
@@ -952,8 +960,9 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
-      max-height: 160px;
+      height: 250px;
       overflow-y: auto;
+      overflow-x: hidden;
       padding-right: 4px;
     }
 
@@ -1600,15 +1609,17 @@
         { id: 'msg10', delay: 10200 }, // Final message
       ];
 
-      messages.forEach(({ id, delay }) => {
+      messages.forEach(({ id, delay }, index) => {
         const timer = setTimeout(() => {
           const el = document.getElementById(id);
           if (el) {
             el.classList.add('visible');
 
-            // Auto-scroll for later messages
-            if (chatContainer) {
-              chatContainer.scrollTop = chatContainer.scrollHeight;
+            // Only auto-scroll after message 5 (when content overflows)
+            if (chatContainer && index >= 5) {
+              setTimeout(() => {
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+              }, 100);
             }
           }
         }, delay);
