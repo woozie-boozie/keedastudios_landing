@@ -1127,40 +1127,322 @@
 
     /* ============ THULAA DEMO STYLES ============ */
     .thulaa-demo {
-      display: flex;
-      gap: 12px;
       margin-top: 16px;
+      min-height: 360px;
+      position: relative;
+    }
+
+    /* Thulaa Home View (default) */
+    .thulaa-home-view {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
+      padding: 20px;
+      min-height: 360px;
+      transition: opacity 0.4s, transform 0.4s;
+      position: relative;
     }
 
-    .thulaa-phone {
-      width: 90px;
-      background: var(--dark);
-      border-radius: 12px;
-      padding: 4px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s;
+    .thulaa-home-view.hidden {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
     }
 
-    .thulaa-phone:first-child {
-      transform: rotate(-5deg);
+    .thulaa-phone-display {
+      position: relative;
+      width: 140px;
     }
 
-    .thulaa-phone:last-child {
-      transform: rotate(5deg);
+    .thulaa-phone-frame {
+      width: 140px;
+      background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+      border-radius: 24px;
+      padding: 6px;
+      box-shadow: 0 0 40px rgba(168, 85, 247, 0.4), 0 15px 30px rgba(0,0,0,0.4);
+      animation: thulaaFloat 4s ease-in-out infinite;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
-    .app-card:hover .thulaa-phone:first-child {
-      transform: rotate(-8deg) translateY(-5px);
+    .thulaa-phone-frame:hover {
+      transform: scale(1.03);
     }
 
-    .app-card:hover .thulaa-phone:last-child {
-      transform: rotate(8deg) translateY(-5px);
+    @keyframes thulaaFloat {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
     }
 
-    .thulaa-phone img {
+    .thulaa-phone-frame img {
       width: 100%;
-      border-radius: 8px;
+      border-radius: 18px;
+    }
+
+    /* Floating cards around phone */
+    .thulaa-floating-cards {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .thulaa-float-card {
+      position: absolute;
+      font-size: 28px;
+      animation: cardFloat 5s ease-in-out infinite;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .thulaa-float-card:nth-child(1) { top: -10px; left: -30px; animation-delay: 0s; }
+    .thulaa-float-card:nth-child(2) { top: 30%; right: -35px; animation-delay: 1s; }
+    .thulaa-float-card:nth-child(3) { bottom: 20px; left: -25px; animation-delay: 2s; }
+
+    @keyframes cardFloat {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-10px) rotate(5deg); }
+    }
+
+    .thulaa-tap-hint {
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #A855F7;
+    }
+
+    /* Thulaa Game View (after tap) */
+    .thulaa-game-view {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+      transition: opacity 0.4s, transform 0.4s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      min-height: 360px;
+    }
+
+    .thulaa-game-view.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+      position: relative;
+    }
+
+    .thulaa-game-content {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.05));
+      border-radius: 16px;
+      padding: 16px;
+      border: 1px solid rgba(168, 85, 247, 0.2);
+      min-height: 340px;
+    }
+
+    .thulaa-game-header {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .thulaa-game-title {
+      font-size: 18px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #A855F7, #06B6D4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 4px;
+    }
+
+    .thulaa-game-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Quick Rules */
+    .thulaa-rules {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .thulaa-rule {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      font-size: 11px;
+      opacity: 0;
+      transform: translateX(-20px);
+      transition: all 0.3s ease-out;
+    }
+
+    .thulaa-rule.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .thulaa-rule-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .thulaa-rule-text {
+      flex: 1;
+    }
+
+    .thulaa-rule-text strong {
+      color: #A855F7;
+    }
+
+    /* Mini game preview */
+    .thulaa-mini-game {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .thulaa-players {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 14px;
+      padding: 0 8px;
+    }
+
+    .thulaa-player {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      flex: 0 0 auto;
+      width: 55px;
+    }
+
+    .thulaa-player-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      background: linear-gradient(135deg, #334155, #1E293B);
+      border: 2px solid rgba(255,255,255,0.15);
+      transition: all 0.3s;
+    }
+
+    .thulaa-player-avatar.active {
+      background: linear-gradient(135deg, #06B6D4, #2563EB);
+      border-color: #22D3EE;
+      box-shadow: 0 0 12px rgba(34, 211, 238, 0.4);
+    }
+
+    .thulaa-player-avatar.pabho {
+      background: linear-gradient(135deg, #EF4444, #DC2626);
+      border-color: #F87171;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+      animation: pabhoPulse 1s ease-in-out infinite;
+    }
+
+    @keyframes pabhoPulse {
+      0%, 100% { box-shadow: 0 0 12px rgba(239, 68, 68, 0.4); }
+      50% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.7); }
+    }
+
+    .thulaa-player-name {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .thulaa-player-name.pabho {
+      color: #F87171;
+      font-weight: 700;
+    }
+
+    .thulaa-mini-card {
+      width: 32px;
+      height: 44px;
+      background: white;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      font-size: 10px;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(-10px) scale(0.8);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      margin-top: 4px;
+    }
+
+    .thulaa-mini-card.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .thulaa-mini-card.thulaa-thrown {
+      border: 2px solid #EF4444;
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.4);
+    }
+
+    .thulaa-mini-card .suit { font-size: 16px; color: #1a1a2e; }
+    .thulaa-mini-card .rank { font-size: 11px; font-weight: 800; color: #1a1a2e; }
+    .thulaa-mini-card.red .suit { color: #EF4444; }
+    .thulaa-mini-card.red .rank { color: #EF4444; }
+
+    .thulaa-result-text {
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .thulaa-result-text.visible {
+      opacity: 1;
+    }
+
+    .thulaa-result-text strong {
+      color: #EF4444;
+    }
+
+    .thulaa-back-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      margin: 0 auto;
+      padding: 6px 14px;
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 16px;
+      color: #A855F7;
+      font-size: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .thulaa-back-btn.visible {
+      opacity: 1;
+    }
+
+    .thulaa-back-btn:hover {
+      background: rgba(168, 85, 247, 0.25);
     }
 
     /* ============ WORD KO GAME SCREENS ============ */
@@ -1215,6 +1497,46 @@
 
     /* Remove plant emojis styles - no longer needed */
     .plant-emojis { display: none; }
+
+    /* Mobile responsive for Thulaa game */
+    @media (max-width: 400px) {
+      .thulaa-players {
+        gap: 12px;
+        padding: 0 4px;
+      }
+
+      .thulaa-player {
+        width: 48px;
+      }
+
+      .thulaa-player-avatar {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+        border-radius: 10px;
+      }
+
+      .thulaa-player-name {
+        font-size: 9px;
+      }
+
+      .thulaa-mini-card {
+        width: 28px;
+        height: 38px;
+      }
+
+      .thulaa-mini-card .suit { font-size: 12px; }
+      .thulaa-mini-card .rank { font-size: 9px; }
+
+      .thulaa-rule {
+        padding: 8px 10px;
+        font-size: 10px;
+      }
+
+      .thulaa-rule-icon {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1364,15 +1686,74 @@
         <div class="app-card purple">
           <img src="assets/images/thulaa-icon.png" alt="Thulaa" class="app-icon">
           <h3 class="app-name">Thulaa</h3>
-          <p class="app-tagline">The classic South Asian card game, now on your phone. Don't be the Pabho!</p>
+          <p class="app-tagline">The classic South Asian card game. Don't be the last person standing (aka Pabho)!</p>
 
-          <!-- Phone mockups -->
+          <!-- Interactive Demo -->
           <div class="thulaa-demo">
-            <div class="thulaa-phone">
-              <img src="assets/images/thulaa-home.png" alt="Thulaa Home">
+            <!-- View 1: Home Screen (default) -->
+            <div class="thulaa-home-view" id="thulaaHomeView">
+              <div class="thulaa-phone-display">
+                <div class="thulaa-phone-frame" onclick="showThulaaGame()">
+                  <img src="assets/images/thulaa-home.png" alt="Thulaa Home">
+                </div>
+              </div>
+              <p class="thulaa-tap-hint">👆 Tap to see how it works!</p>
             </div>
-            <div class="thulaa-phone">
-              <img src="assets/images/thulaa-gameplay.png" alt="Thulaa Gameplay">
+
+            <!-- View 2: Game Teaser (after tap) -->
+            <div class="thulaa-game-view" id="thulaaGameView">
+              <div class="thulaa-game-content">
+                <div class="thulaa-game-header">
+                  <div class="thulaa-game-title">How to Play</div>
+                  <div class="thulaa-game-subtitle">Also known as Pabho, Bhabho or Laad</div>
+                </div>
+
+                <!-- Quick Rules -->
+                <div class="thulaa-rules">
+                  <div class="thulaa-rule" id="tr1">
+                    <span class="thulaa-rule-icon">♠️</span>
+                    <span class="thulaa-rule-text"><strong>Ace of Spades</strong> leads first</span>
+                  </div>
+                  <div class="thulaa-rule" id="tr2">
+                    <span class="thulaa-rule-icon">🃏</span>
+                    <span class="thulaa-rule-text"><strong>Follow suit</strong> - if all follow, cards get discarded</span>
+                  </div>
+                  <div class="thulaa-rule" id="tr3">
+                    <span class="thulaa-rule-icon">💀</span>
+                    <span class="thulaa-rule-text">Can't follow? Throw any card (<strong>Thulaa!</strong>) - highest suit picks up all</span>
+                  </div>
+                </div>
+
+                <!-- Mini Game Animation -->
+                <div class="thulaa-mini-game">
+                  <div class="thulaa-players">
+                    <div class="thulaa-player">
+                      <div class="thulaa-player-avatar" id="tp1">🦊</div>
+                      <span class="thulaa-player-name">Ali</span>
+                      <div class="thulaa-mini-card red" id="tc1"><span class="suit">♦</span><span class="rank">A</span></div>
+                    </div>
+                    <div class="thulaa-player">
+                      <div class="thulaa-player-avatar" id="tp2">🐼</div>
+                      <span class="thulaa-player-name">Sara</span>
+                      <div class="thulaa-mini-card red" id="tc2"><span class="suit">♦</span><span class="rank">7</span></div>
+                    </div>
+                    <div class="thulaa-player">
+                      <div class="thulaa-player-avatar" id="tp3">🐱</div>
+                      <span class="thulaa-player-name">Priya</span>
+                      <div class="thulaa-mini-card red" id="tc3"><span class="suit">♦</span><span class="rank">9</span></div>
+                    </div>
+                    <div class="thulaa-player">
+                      <div class="thulaa-player-avatar" id="tp4">🐶</div>
+                      <span class="thulaa-player-name" id="tpYouName">You</span>
+                      <div class="thulaa-mini-card thulaa-thrown" id="tc4"><span class="suit">♠</span><span class="rank">3</span></div>
+                    </div>
+                  </div>
+                </div>
+
+                <p class="thulaa-result-text" id="thulaaResult">You threw a <strong>Thulaa!</strong> Ali picks up all cards 😱</p>
+
+                <button class="thulaa-back-btn" id="thulaaBackBtn" onclick="resetThulaa()">↺ Try again</button>
+              </div>
             </div>
           </div>
 
@@ -1642,6 +2023,136 @@
         if (replayBtn) replayBtn.classList.add('visible');
       }, 11500);
       chatTimers.push(replayTimer);
+    }
+
+    // ============ THULAA INTERACTIVE DEMO ============
+    let thulaaTimers = [];
+
+    function showThulaaGame() {
+      const homeView = document.getElementById('thulaaHomeView');
+      const gameView = document.getElementById('thulaaGameView');
+
+      // Hide home, show game view
+      homeView.classList.add('hidden');
+      gameView.classList.add('visible');
+
+      // Start animation after transition
+      setTimeout(() => startThulaaAnimation(), 400);
+    }
+
+    function resetThulaa() {
+      const homeView = document.getElementById('thulaaHomeView');
+      const gameView = document.getElementById('thulaaGameView');
+
+      // Cancel any running timers
+      thulaaTimers.forEach(t => clearTimeout(t));
+      thulaaTimers = [];
+
+      // Reset animation elements
+      resetThulaaAnimation();
+
+      // Hide game view, show home
+      gameView.classList.remove('visible');
+      homeView.classList.remove('hidden');
+    }
+
+    function resetThulaaAnimation() {
+      // Reset rules
+      ['tr1', 'tr2', 'tr3'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('visible');
+      });
+
+      // Reset cards
+      ['tc1', 'tc2', 'tc3', 'tc4'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('visible');
+      });
+
+      // Reset players
+      ['tp1', 'tp2', 'tp3', 'tp4'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active', 'pabho');
+      });
+
+      // Reset result text and button
+      const result = document.getElementById('thulaaResult');
+      const backBtn = document.getElementById('thulaaBackBtn');
+      const youName = document.getElementById('tpYouName');
+      if (result) result.classList.remove('visible');
+      if (backBtn) backBtn.classList.remove('visible');
+      if (youName) youName.classList.remove('pabho');
+    }
+
+    function startThulaaAnimation() {
+      resetThulaaAnimation();
+
+      // Animate rules appearing
+      const ruleDelays = [
+        { id: 'tr1', delay: 200 },
+        { id: 'tr2', delay: 500 },
+        { id: 'tr3', delay: 800 },
+      ];
+
+      ruleDelays.forEach(({ id, delay }) => {
+        const timer = setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) el.classList.add('visible');
+        }, delay);
+        thulaaTimers.push(timer);
+      });
+
+      // Animate cards being played with active player indicators
+      const cardPlays = [
+        { cardId: 'tc1', playerId: 'tp1', delay: 1500 },  // Ali plays Ace of Diamonds
+        { cardId: 'tc2', playerId: 'tp2', delay: 2100 },  // Sara plays 7 of Diamonds
+        { cardId: 'tc3', playerId: 'tp3', delay: 2700 },  // Priya plays 9 of Diamonds
+        { cardId: 'tc4', playerId: 'tp4', delay: 3300 },  // You throw Thulaa (3 of Spades)
+      ];
+
+      cardPlays.forEach(({ cardId, playerId, delay }, index) => {
+        const timer = setTimeout(() => {
+          // Deactivate all players
+          ['tp1', 'tp2', 'tp3', 'tp4'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.classList.remove('active');
+          });
+
+          // Activate current player
+          const player = document.getElementById(playerId);
+          if (player) player.classList.add('active');
+
+          // Show card
+          const card = document.getElementById(cardId);
+          if (card) card.classList.add('visible');
+        }, delay);
+        thulaaTimers.push(timer);
+      });
+
+      // Show result: Ali picks up (he has highest diamond, but you threw thulaa)
+      const resultTimer = setTimeout(() => {
+        // Deactivate all
+        ['tp1', 'tp2', 'tp3', 'tp4'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.classList.remove('active');
+        });
+
+        // Ali becomes "pabho" (he picks up)
+        const ali = document.getElementById('tp1');
+        if (ali) ali.classList.add('pabho');
+
+        // Show result text
+        const result = document.getElementById('thulaaResult');
+        if (result) result.classList.add('visible');
+      }, 4200);
+      thulaaTimers.push(resultTimer);
+
+      // Show back button
+      const backTimer = setTimeout(() => {
+        const backBtn = document.getElementById('thulaaBackBtn');
+        if (backBtn) backBtn.classList.add('visible');
+      }, 4800);
+      thulaaTimers.push(backTimer);
     }
   </script>
 </body>
