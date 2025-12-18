@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="spaceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1f"/>
+      <stop offset="30%" style="stop-color:#1a1a4e"/>
+      <stop offset="70%" style="stop-color:#2a1a5e"/>
+      <stop offset="100%" style="stop-color:#0a0a2f"/>
+    </linearGradient>
+    <filter id="starGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="nebulaGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="30" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Space background -->
+  <rect width="800" height="600" fill="url(#spaceGradient)"/>
+
+  <!-- Nebula clouds -->
+  <ellipse cx="200" cy="200" rx="150" ry="100" fill="#5B7FFF" opacity="0.1" filter="url(#nebulaGlow)"/>
+  <ellipse cx="600" cy="400" rx="180" ry="120" fill="#8B5FFF" opacity="0.1" filter="url(#nebulaGlow)"/>
+  <ellipse cx="400" cy="100" rx="120" ry="80" fill="#AB8FFF" opacity="0.08" filter="url(#nebulaGlow)"/>
+
+  <!-- Many stars -->
+  <circle cx="50" cy="50" r="2" fill="white" opacity="0.9"/>
+  <circle cx="120" cy="80" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="200" cy="40" r="2" fill="white" opacity="0.8"/>
+  <circle cx="280" cy="100" r="1" fill="white" opacity="0.6"/>
+  <circle cx="350" cy="30" r="2.5" fill="white" opacity="0.9"/>
+  <circle cx="420" cy="70" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="500" cy="50" r="2" fill="white" opacity="0.8"/>
+  <circle cx="580" cy="90" r="1" fill="white" opacity="0.6"/>
+  <circle cx="650" cy="40" r="2" fill="white" opacity="0.9"/>
+  <circle cx="720" cy="80" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="780" cy="30" r="1" fill="white" opacity="0.5"/>
+
+  <circle cx="80" cy="150" r="1" fill="white" opacity="0.5"/>
+  <circle cx="160" cy="180" r="2" fill="white" opacity="0.8"/>
+  <circle cx="240" cy="160" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="320" cy="200" r="1" fill="white" opacity="0.5"/>
+  <circle cx="400" cy="170" r="2" fill="white" opacity="0.7"/>
+  <circle cx="480" cy="150" r="1.5" fill="white" opacity="0.6"/>
+  <circle cx="560" cy="190" r="2" fill="white" opacity="0.8"/>
+  <circle cx="640" cy="160" r="1" fill="white" opacity="0.5"/>
+  <circle cx="720" cy="180" r="1.5" fill="white" opacity="0.6"/>
+
+  <!-- Glowing special stars (ideas) -->
+  <circle cx="150" cy="250" r="6" fill="#FFD700" opacity="0.8" filter="url(#starGlow)"/>
+  <circle cx="350" cy="300" r="8" fill="#5B7FFF" opacity="0.9" filter="url(#starGlow)"/>
+  <circle cx="550" cy="250" r="7" fill="#8B5FFF" opacity="0.8" filter="url(#starGlow)"/>
+  <circle cx="700" cy="300" r="6" fill="#FFD700" opacity="0.7" filter="url(#starGlow)"/>
+
+  <!-- Floating puzzle pieces (stylized) -->
+  <rect x="100" cy="350" width="25" height="25" rx="3" fill="#5B7FFF" opacity="0.4" transform="rotate(15 112 362)"/>
+  <rect x="300" cy="380" width="20" height="20" rx="2" fill="#8B5FFF" opacity="0.3" transform="rotate(-10 310 390)"/>
+  <rect x="500" cy="340" width="22" height="22" rx="3" fill="#AB8FFF" opacity="0.4" transform="rotate(25 511 351)"/>
+  <rect x="680" cy="380" width="18" height="18" rx="2" fill="#5B7FFF" opacity="0.3" transform="rotate(-20 689 389)"/>
+
+  <!-- Floating letters -->
+  <text x="200" y="420" font-family="Arial" font-size="24" fill="#5B7FFF" opacity="0.3">A</text>
+  <text x="380" y="450" font-family="Arial" font-size="20" fill="#8B5FFF" opacity="0.25">B</text>
+  <text x="580" y="430" font-family="Arial" font-size="22" fill="#AB8FFF" opacity="0.3">C</text>
+
+  <!-- Shooting star trail -->
+  <line x1="100" y1="120" x2="200" y2="180" stroke="white" stroke-width="2" opacity="0.3"/>
+  <circle cx="100" cy="120" r="3" fill="white" opacity="0.8" filter="url(#starGlow)"/>
+
+  <!-- More scattered stars -->
+  <circle cx="60" cy="400" r="1" fill="white" opacity="0.4"/>
+  <circle cx="140" cy="450" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="220" cy="500" r="1" fill="white" opacity="0.4"/>
+  <circle cx="340" cy="520" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="460" cy="480" r="1" fill="white" opacity="0.4"/>
+  <circle cx="540" cy="520" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="620" cy="500" r="1" fill="white" opacity="0.4"/>
+  <circle cx="740" cy="450" r="1.5" fill="white" opacity="0.5"/>
+</svg>

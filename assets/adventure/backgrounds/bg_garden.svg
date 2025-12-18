@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a3e"/>
+      <stop offset="50%" style="stop-color:#2a2a5e"/>
+      <stop offset="100%" style="stop-color:#0a0a1f"/>
+    </linearGradient>
+    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a3a2a"/>
+      <stop offset="100%" style="stop-color:#0a1a0f"/>
+    </linearGradient>
+    <filter id="gardenGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="800" height="600" fill="url(#skyGradient)"/>
+
+  <!-- Stars -->
+  <circle cx="100" cy="80" r="2" fill="white" opacity="0.6"/>
+  <circle cx="200" cy="120" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="350" cy="60" r="2" fill="white" opacity="0.7"/>
+  <circle cx="500" cy="100" r="1" fill="white" opacity="0.4"/>
+  <circle cx="650" cy="70" r="2" fill="white" opacity="0.6"/>
+  <circle cx="720" cy="140" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="50" cy="180" r="1" fill="white" opacity="0.3"/>
+  <circle cx="750" cy="50" r="1" fill="white" opacity="0.5"/>
+
+  <!-- Moon -->
+  <circle cx="680" cy="100" r="40" fill="#fffde8" opacity="0.15" filter="url(#gardenGlow)"/>
+  <circle cx="690" cy="95" r="35" fill="#fffde8" opacity="0.1"/>
+
+  <!-- Distant hills -->
+  <path d="M 0 400 Q 200 320 400 380 Q 600 320 800 400 L 800 600 L 0 600 Z" fill="#151530" opacity="0.6"/>
+  <path d="M 0 450 Q 150 380 350 430 Q 550 380 800 450 L 800 600 L 0 600 Z" fill="#101028" opacity="0.7"/>
+
+  <!-- Ground/grass -->
+  <path d="M 0 500 Q 200 470 400 490 Q 600 470 800 500 L 800 600 L 0 600 Z" fill="url(#grassGradient)"/>
+
+  <!-- Magical flowers/plants -->
+  <circle cx="100" cy="520" r="8" fill="#8B5FFF" opacity="0.6" filter="url(#gardenGlow)"/>
+  <circle cx="150" cy="540" r="6" fill="#5B7FFF" opacity="0.5" filter="url(#gardenGlow)"/>
+  <circle cx="250" cy="510" r="7" fill="#AB8FFF" opacity="0.7" filter="url(#gardenGlow)"/>
+  <circle cx="350" cy="530" r="5" fill="#5B7FFF" opacity="0.5" filter="url(#gardenGlow)"/>
+  <circle cx="450" cy="515" r="8" fill="#8B5FFF" opacity="0.6" filter="url(#gardenGlow)"/>
+  <circle cx="550" cy="535" r="6" fill="#AB8FFF" opacity="0.5" filter="url(#gardenGlow)"/>
+  <circle cx="650" cy="520" r="7" fill="#5B7FFF" opacity="0.6" filter="url(#gardenGlow)"/>
+  <circle cx="720" cy="540" r="5" fill="#8B5FFF" opacity="0.5" filter="url(#gardenGlow)"/>
+
+  <!-- Fireflies -->
+  <circle cx="180" cy="400" r="4" fill="#FFE066" opacity="0.8" filter="url(#gardenGlow)"/>
+  <circle cx="420" cy="380" r="3" fill="#FFE066" opacity="0.6" filter="url(#gardenGlow)"/>
+  <circle cx="600" cy="420" r="4" fill="#FFE066" opacity="0.7" filter="url(#gardenGlow)"/>
+  <circle cx="300" cy="350" r="3" fill="#FFE066" opacity="0.5" filter="url(#gardenGlow)"/>
+  <circle cx="700" cy="370" r="3" fill="#FFE066" opacity="0.6" filter="url(#gardenGlow)"/>
+
+  <!-- Leaf silhouettes -->
+  <ellipse cx="50" cy="450" rx="30" ry="50" fill="#0a1a10" opacity="0.5" transform="rotate(-20 50 450)"/>
+  <ellipse cx="750" cy="430" rx="35" ry="55" fill="#0a1a10" opacity="0.5" transform="rotate(25 750 430)"/>
+</svg>

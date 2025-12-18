@@ -3,7 +3,8 @@
     "allow": [
       "Bash(tree:*)",
       "Bash(firebase:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(flutter pub get:*)"
     ],
     "deny": [],
     "ask": []

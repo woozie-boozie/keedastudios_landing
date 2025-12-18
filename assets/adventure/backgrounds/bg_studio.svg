@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="studioGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1f"/>
+      <stop offset="50%" style="stop-color:#1a1a3e"/>
+      <stop offset="100%" style="stop-color:#0a0a1a"/>
+    </linearGradient>
+    <linearGradient id="archGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5B7FFF"/>
+      <stop offset="100%" style="stop-color:#8B5FFF"/>
+    </linearGradient>
+    <filter id="studioGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="bigGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="25" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#studioGradient)"/>
+
+  <!-- Central glow -->
+  <ellipse cx="400" cy="300" rx="300" ry="200" fill="#5B7FFF" opacity="0.05" filter="url(#bigGlow)"/>
+  <ellipse cx="400" cy="320" rx="200" ry="150" fill="#8B5FFF" opacity="0.08" filter="url(#bigGlow)"/>
+
+  <!-- Grand arch/doorway -->
+  <path d="M 200 550 L 200 200 Q 200 100 400 100 Q 600 100 600 200 L 600 550"
+        fill="none" stroke="url(#archGradient)" stroke-width="8" opacity="0.6"/>
+  <path d="M 220 550 L 220 210 Q 220 120 400 120 Q 580 120 580 210 L 580 550"
+        fill="none" stroke="url(#archGradient)" stroke-width="4" opacity="0.4"/>
+
+  <!-- Light rays from center -->
+  <line x1="400" y1="250" x2="100" y2="100" stroke="#5B7FFF" stroke-width="2" opacity="0.1"/>
+  <line x1="400" y1="250" x2="200" y2="50" stroke="#8B5FFF" stroke-width="2" opacity="0.1"/>
+  <line x1="400" y1="250" x2="300" y2="30" stroke="#AB8FFF" stroke-width="2" opacity="0.1"/>
+  <line x1="400" y1="250" x2="500" y2="30" stroke="#AB8FFF" stroke-width="2" opacity="0.1"/>
+  <line x1="400" y1="250" x2="600" y2="50" stroke="#8B5FFF" stroke-width="2" opacity="0.1"/>
+  <line x1="400" y1="250" x2="700" y2="100" stroke="#5B7FFF" stroke-width="2" opacity="0.1"/>
+
+  <!-- Floating sparkles/particles -->
+  <circle cx="150" cy="150" r="4" fill="#FFD700" opacity="0.7" filter="url(#studioGlow)"/>
+  <circle cx="250" cy="200" r="3" fill="#5B7FFF" opacity="0.6" filter="url(#studioGlow)"/>
+  <circle cx="350" cy="180" r="5" fill="#8B5FFF" opacity="0.7" filter="url(#studioGlow)"/>
+  <circle cx="450" cy="170" r="4" fill="#AB8FFF" opacity="0.6" filter="url(#studioGlow)"/>
+  <circle cx="550" cy="190" r="3" fill="#5B7FFF" opacity="0.7" filter="url(#studioGlow)"/>
+  <circle cx="650" cy="160" r="4" fill="#FFD700" opacity="0.6" filter="url(#studioGlow)"/>
+
+  <circle cx="180" cy="350" r="3" fill="#8B5FFF" opacity="0.5" filter="url(#studioGlow)"/>
+  <circle cx="280" cy="380" r="4" fill="#5B7FFF" opacity="0.6" filter="url(#studioGlow)"/>
+  <circle cx="520" cy="370" r="4" fill="#AB8FFF" opacity="0.6" filter="url(#studioGlow)"/>
+  <circle cx="620" cy="340" r="3" fill="#8B5FFF" opacity="0.5" filter="url(#studioGlow)"/>
+
+  <!-- Stars in background -->
+  <circle cx="80" cy="80" r="2" fill="white" opacity="0.6"/>
+  <circle cx="150" cy="60" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="700" cy="70" r="2" fill="white" opacity="0.6"/>
+  <circle cx="750" cy="120" r="1.5" fill="white" opacity="0.5"/>
+  <circle cx="50" cy="200" r="1" fill="white" opacity="0.4"/>
+  <circle cx="760" cy="250" r="1" fill="white" opacity="0.4"/>
+
+  <!-- Central emblem glow (where logo would appear) -->
+  <circle cx="400" cy="280" r="60" fill="#5B7FFF" opacity="0.15" filter="url(#bigGlow)"/>
+  <circle cx="400" cy="280" r="40" fill="#8B5FFF" opacity="0.2" filter="url(#studioGlow)"/>
+
+  <!-- Welcome mat/floor glow -->
+  <ellipse cx="400" cy="530" rx="180" ry="40" fill="#5B7FFF" opacity="0.1" filter="url(#bigGlow)"/>
+
+  <!-- Decorative pillars -->
+  <rect x="160" y="200" width="20" height="350" fill="#2a2a4e" opacity="0.5"/>
+  <rect x="620" y="200" width="20" height="350" fill="#2a2a4e" opacity="0.5"/>
+
+  <!-- Floor -->
+  <rect x="0" y="550" width="800" height="50" fill="#0a0a15"/>
+</svg>

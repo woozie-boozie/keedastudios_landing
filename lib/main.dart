@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'pages/home_page.dart';
 import 'pages/privacy_policy_page.dart';
 import 'pages/terms_of_service_page.dart';
+import 'widgets/adventure/adventure_intro.dart';
 
 void main() {
   runApp(const KeedaStudiosApp());
@@ -21,6 +22,11 @@ class KeedaStudiosApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routerConfig: _router,
+      builder: (context, child) {
+        return AdventureIntroWrapper(
+          child: child ?? const SizedBox(),
+        );
+      },
     );
   }
 }

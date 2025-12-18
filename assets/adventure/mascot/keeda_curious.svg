@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B9FFF"/>
+      <stop offset="100%" style="stop-color:#5B7FFF"/>
+    </linearGradient>
+    <linearGradient id="wingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#AB8FFF"/>
+      <stop offset="100%" style="stop-color:#8B5FFF"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Wings -->
+  <ellipse cx="60" cy="85" rx="35" ry="25" fill="url(#wingGradient)" opacity="0.7" transform="rotate(-20 60 85)"/>
+  <ellipse cx="140" cy="85" rx="35" ry="25" fill="url(#wingGradient)" opacity="0.7" transform="rotate(20 140 85)"/>
+
+  <!-- Body -->
+  <ellipse cx="100" cy="110" rx="45" ry="50" fill="url(#bodyGradient)"/>
+
+  <!-- Head -->
+  <circle cx="100" cy="70" r="40" fill="url(#bodyGradient)"/>
+
+  <!-- Antennae -->
+  <path d="M 80 40 Q 70 20 60 15" stroke="#8B5FFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="58" cy="13" r="6" fill="#AB8FFF" filter="url(#glow)"/>
+  <path d="M 120 40 Q 130 20 140 15" stroke="#8B5FFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="142" cy="13" r="6" fill="#AB8FFF" filter="url(#glow)"/>
+
+  <!-- Eyes -->
+  <ellipse cx="82" cy="65" rx="14" ry="16" fill="white"/>
+  <ellipse cx="118" cy="65" rx="14" ry="16" fill="white"/>
+  <circle cx="85" cy="67" r="8" fill="#2a2a4a"/>
+  <circle cx="121" cy="67" r="8" fill="#2a2a4a"/>
+  <circle cx="87" cy="64" r="3" fill="white"/>
+  <circle cx="123" cy="64" r="3" fill="white"/>
+
+  <!-- Curious raised eyebrow -->
+  <path d="M 73 50 Q 82 45 94 52" stroke="#4a4a8a" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Smile -->
+  <path d="M 85 90 Q 100 100 115 90" stroke="#4a4a8a" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Blush -->
+  <ellipse cx="68" cy="80" rx="8" ry="5" fill="#FF9FCF" opacity="0.4"/>
+  <ellipse cx="132" cy="80" rx="8" ry="5" fill="#FF9FCF" opacity="0.4"/>
+
+  <!-- Legs -->
+  <ellipse cx="75" cy="155" rx="12" ry="8" fill="url(#bodyGradient)"/>
+  <ellipse cx="100" cy="158" rx="12" ry="8" fill="url(#bodyGradient)"/>
+  <ellipse cx="125" cy="155" rx="12" ry="8" fill="url(#bodyGradient)"/>
+</svg>

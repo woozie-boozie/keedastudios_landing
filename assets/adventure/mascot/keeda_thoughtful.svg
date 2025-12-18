@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="bodyGradientT" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B9FFF"/>
+      <stop offset="100%" style="stop-color:#5B7FFF"/>
+    </linearGradient>
+    <linearGradient id="wingGradientT" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#AB8FFF"/>
+      <stop offset="100%" style="stop-color:#8B5FFF"/>
+    </linearGradient>
+    <filter id="glowT" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Wings (relaxed) -->
+  <ellipse cx="58" cy="88" rx="32" ry="22" fill="url(#wingGradientT)" opacity="0.6" transform="rotate(-15 58 88)"/>
+  <ellipse cx="142" cy="88" rx="32" ry="22" fill="url(#wingGradientT)" opacity="0.6" transform="rotate(15 142 88)"/>
+
+  <!-- Body -->
+  <ellipse cx="100" cy="110" rx="45" ry="50" fill="url(#bodyGradientT)"/>
+
+  <!-- Head (slight tilt) -->
+  <circle cx="100" cy="70" r="40" fill="url(#bodyGradientT)"/>
+
+  <!-- Antennae (one curled thinking pose) -->
+  <path d="M 80 40 Q 70 25 75 15" stroke="#8B5FFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="76" cy="13" r="6" fill="#AB8FFF" filter="url(#glowT)"/>
+  <path d="M 120 40 Q 130 20 140 18" stroke="#8B5FFF" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="142" cy="16" r="6" fill="#AB8FFF" filter="url(#glowT)"/>
+
+  <!-- Thinking eyes (looking up) -->
+  <ellipse cx="82" cy="65" rx="14" ry="16" fill="white"/>
+  <ellipse cx="118" cy="65" rx="14" ry="16" fill="white"/>
+  <circle cx="84" cy="60" r="8" fill="#2a2a4a"/>
+  <circle cx="120" cy="60" r="8" fill="#2a2a4a"/>
+  <circle cx="86" cy="57" r="3" fill="white"/>
+  <circle cx="122" cy="57" r="3" fill="white"/>
+
+  <!-- Gentle thoughtful smile -->
+  <path d="M 88 90 Q 100 96 112 90" stroke="#4a4a8a" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Blush -->
+  <ellipse cx="68" cy="80" rx="8" ry="5" fill="#FF9FCF" opacity="0.4"/>
+  <ellipse cx="132" cy="80" rx="8" ry="5" fill="#FF9FCF" opacity="0.4"/>
+
+  <!-- Thinking hand/leg gesture -->
+  <ellipse cx="65" cy="100" rx="14" ry="10" fill="url(#bodyGradientT)" transform="rotate(-20 65 100)"/>
+
+  <!-- Thought bubble -->
+  <circle cx="155" cy="35" r="8" fill="white" opacity="0.6"/>
+  <circle cx="165" cy="25" r="5" fill="white" opacity="0.5"/>
+  <circle cx="172" cy="18" r="3" fill="white" opacity="0.4"/>
+
+  <!-- Legs -->
+  <ellipse cx="80" cy="155" rx="12" ry="8" fill="url(#bodyGradientT)"/>
+  <ellipse cx="105" cy="158" rx="12" ry="8" fill="url(#bodyGradientT)"/>
+  <ellipse cx="130" cy="155" rx="12" ry="8" fill="url(#bodyGradientT)"/>
+</svg>
