@@ -1060,13 +1060,13 @@ function renderFromData(d) {
   const total = d.total_commits || 0;
   const totalStr = total >= 1000 ? `${(total / 1000).toFixed(1)}k` : total.toString();
 
-  setText('stat-commits', totalStr + '+', false);
+  setText('stat-commits', totalStr + '+', true);
   setText('stat-commits-sub', `across ${d.repos.total} repos (${d.repos.original} original)`);
   setText('hero-commits', totalStr + '+');
   setText('hero-repos', d.repos.total);
 
   // Streak
-  setText('stat-streak', d.streak || '?', false);
+  setText('stat-streak', d.streak || '?', true);
   const streakSub = d.streak > 3 ? `${d.streak} days consecutive shipping` : 'based on recent events';
   setText('stat-streak-sub', streakSub);
 
@@ -1074,7 +1074,7 @@ function renderFromData(d) {
   const dayCount = (d.commits_by_day || []).length || 1;
   const totalFromEvents = (d.commits_by_day || []).reduce((a, b) => a + (b.count || 0), 0);
   const avg = (totalFromEvents / dayCount).toFixed(1);
-  setText('stat-avg', avg, false);
+  setText('stat-avg', avg, true);
   setText('stat-avg-sub', `over last ${dayCount} active days`);
 
   // Contribution grid
@@ -1114,12 +1114,11 @@ function renderFromData(d) {
   }
 }
 
-function setText(id, val, removeLoading = true) {
+function setText(id, val, hasLoadingClass = false) {
   const el = document.getElementById(id);
   if (!el) return;
   el.textContent = val;
-  if (removeLoading) return;
-  el.classList.remove('loading');
+  if (hasLoadingClass) el.classList.remove('loading');
 }
 
 // ── CONTRIB GRID ──
