@@ -1045,7 +1045,7 @@ function observeSections() {
 // ── LOAD DATA FROM STATIC JSON ──
 async function loadData() {
   try {
-    const res = await fetch('data.json?t=' + Date.now());
+    const res = await fetch('/my-analytics/data.json?t=' + Date.now());
     if (!res.ok) throw new Error('data.json not found — run the GitHub Action first');
     const data = await res.json();
     renderFromData(data);
