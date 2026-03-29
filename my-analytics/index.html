@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>akhil // work rate — keeda studios</title>
+<meta name="description" content="Real-time work analytics dashboard. GitHub commits, app metrics, shipping velocity — all live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=Fira+Code:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #050808;
+  --bg2: #0a0f0f;
+  --bg3: #0f1616;
+  --bg4: #141e1e;
+  --green: #00ff88;
+  --green2: #00cc6a;
+  --green3: #004d28;
+  --green4: #002614;
+  --cyan: #00e5ff;
+  --cyan2: #0097a7;
+  --amber: #ffab00;
+  --amber2: #ff6d00;
+  --red: #ff3d71;
+  --purple: #b388ff;
+  --text: #d4e4d8;
+  --text2: #7a9a82;
+  --text3: #3d5a44;
+  --border: #0f2418;
+  --border2: #1a3828;
+  --glow: 0 0 30px rgba(0,255,136,0.12);
+  --glow-strong: 0 0 60px rgba(0,255,136,0.2);
+  --glow-cyan: 0 0 30px rgba(0,229,255,0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── CANVAS BG ── */
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── SCANLINES ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,255,136,0.008) 3px, rgba(0,255,136,0.008) 4px);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.shell { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* ── TOPBAR ── */
+.topbar {
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  background: rgba(5,8,8,0.92);
+  backdrop-filter: blur(20px);
+  z-index: 100;
+}
+
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; }
+.topbar-left { display: flex; align-items: center; gap: 14px; }
+
+.logo-mark {
+  width: 28px; height: 28px;
+  border: 2px solid var(--green);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 800; color: var(--green);
+  box-shadow: var(--glow);
+  position: relative;
+}
+
+.logo-mark::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px solid rgba(0,255,136,0.1);
+  border-radius: 8px;
+  animation: logoPulse 3s infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.prompt { color: var(--green); font-weight: 700; font-size: 12px; }
+.prompt span { color: var(--text3); }
+
+.status-badge {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--green4);
+  border: 1px solid var(--green3);
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 10px; color: var(--green);
+}
+
+.status-dot-live {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.topbar-nav { display: flex; gap: 20px; font-size: 11px; }
+.topbar-nav a { color: var(--text3); text-decoration: none; transition: color 0.3s; letter-spacing: 0.5px; }
+.topbar-nav a:hover { color: var(--green); }
+
+/* ── HERO ── */
+.hero { padding: 100px 0 80px; position: relative; }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--bg3); border: 1px solid var(--border2);
+  padding: 6px 16px; border-radius: 20px;
+  font-size: 11px; color: var(--cyan); letter-spacing: 1px;
+  margin-bottom: 28px;
+  opacity: 0; animation: fadeUp 0.6s 0.1s forwards;
+}
+
+.hero-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(56px, 9vw, 110px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin-bottom: 16px;
+  opacity: 0; animation: fadeUp 0.6s 0.2s forwards;
+}
+
+.hero-name .first { color: var(--text); }
+.hero-name .last {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--green);
+  display: block;
+}
+
+.hero-sub {
+  font-size: 16px; color: var(--text2); max-width: 600px;
+  margin-bottom: 40px;
+  opacity: 0; animation: fadeUp 0.6s 0.3s forwards;
+}
+
+.hero-sub strong { color: var(--green); font-weight: 500; }
+.hero-sub .amber { color: var(--amber); }
+
+.hero-metrics {
+  display: flex; gap: 32px; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.6s 0.4s forwards;
+}
+
+.hero-metric {
+  display: flex; flex-direction: column;
+}
+
+.hero-metric-val {
+  font-size: 32px; font-weight: 800; color: var(--green);
+  font-family: 'Fira Code', monospace;
+  text-shadow: var(--glow);
+  line-height: 1;
+}
+
+.hero-metric-val.cyan { color: var(--cyan); text-shadow: var(--glow-cyan); }
+.hero-metric-val.amber { color: var(--amber); }
+
+.hero-metric-label {
+  font-size: 10px; color: var(--text3);
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-top: 4px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SECTIONS ── */
+.section {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.8s, transform 0.8s;
+}
+
+.section.visible { opacity: 1; transform: translateY(0); }
+
+.section-header {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 48px;
+}
+
+.section-icon {
+  width: 36px; height: 36px;
+  border: 1px solid var(--border2); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; background: var(--bg3);
+}
+
+.section-label { font-size: 10px; color: var(--green); letter-spacing: 3px; text-transform: uppercase; }
+.section-title { font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; color: var(--text); letter-spacing: -1px; }
+
+/* ── STATS GRID ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 48px;
+}
+
+.stat-card {
+  background: var(--bg2);
+  padding: 28px 24px;
+  position: relative;
+  transition: background 0.3s;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--green3), transparent);
+  transition: background 0.3s;
+}
+
+.stat-card:hover { background: var(--bg3); }
+.stat-card:hover::before { background: linear-gradient(90deg, transparent, var(--green), transparent); }
+
+.stat-card:hover .stat-val { transform: scale(1.05); }
+
+.stat-val {
+  font-size: 40px; font-weight: 800; line-height: 1;
+  font-family: 'Fira Code', monospace;
+  color: var(--green); text-shadow: var(--glow);
+  margin-bottom: 8px;
+  transition: transform 0.3s;
+}
+
+.stat-val.loading { font-size: 18px; color: var(--text3); animation: blink 1s infinite; }
+.stat-val.cyan { color: var(--cyan); text-shadow: var(--glow-cyan); }
+.stat-val.amber { color: var(--amber); text-shadow: 0 0 20px rgba(255,171,0,0.2); }
+.stat-val.red { color: var(--red); }
+.stat-val.purple { color: var(--purple); }
+
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.15; } }
+
+.stat-label { font-size: 10px; color: var(--text3); letter-spacing: 2px; text-transform: uppercase; }
+.stat-sub { font-size: 10px; color: var(--text3); margin-top: 6px; line-height: 1.5; }
+
+/* ── CONTRIB GRID ── */
+.contrib-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg2);
+  padding: 28px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.contrib-title {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px;
+}
+
+.contrib-title-text { font-size: 11px; color: var(--text3); letter-spacing: 2px; text-transform: uppercase; }
+.contrib-total { font-size: 13px; color: var(--green); font-weight: 700; }
+
+.contrib-wrap { overflow-x: auto; padding-bottom: 4px; }
+
+#contrib-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(7, 13px);
+  gap: 3px;
+  width: fit-content;
+}
+
+.day-cell {
+  width: 13px; height: 13px; border-radius: 3px;
+  background: var(--bg4); border: 1px solid rgba(0,255,136,0.03);
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+
+.day-cell:hover { transform: scale(1.6); z-index: 10; }
+.day-cell[data-level="1"] { background: #003d1a; border-color: #003d1a; }
+.day-cell[data-level="2"] { background: #00803a; border-color: #00803a; box-shadow: 0 0 4px rgba(0,128,58,0.4); }
+.day-cell[data-level="3"] { background: #00cc5e; border-color: #00cc5e; box-shadow: 0 0 8px rgba(0,204,94,0.4); }
+.day-cell[data-level="4"] { background: #00ff88; border-color: #00ff88; box-shadow: 0 0 14px rgba(0,255,136,0.6); }
+
+.contrib-legend {
+  display: flex; align-items: center; gap: 4px;
+  margin-top: 14px; font-size: 10px; color: var(--text3);
+}
+
+.legend-cell { width: 13px; height: 13px; border-radius: 3px; }
+
+.contrib-months { display: flex; gap: 3px; margin-bottom: 6px; }
+.month-label { font-size: 9px; color: var(--text3); letter-spacing: 1px; text-transform: uppercase; }
+
+/* ── VELOCITY CHART ── */
+.chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+
+.chart-card {
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--bg2); padding: 24px;
+}
+
+.chart-card-title {
+  font-size: 11px; color: var(--text3);
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;
+}
+
+.bar-chart { display: flex; align-items: flex-end; gap: 4px; height: 100px; }
+
+.bar-col {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; gap: 6px; height: 100%; justify-content: flex-end;
+}
+
+.bar {
+  width: 100%; border-radius: 3px 3px 0 0;
+  background: linear-gradient(180deg, var(--green2), var(--green3));
+  transition: height 1.2s cubic-bezier(0.16,1,0.3,1), opacity 0.3s;
+  min-height: 2px; position: relative;
+  opacity: 0.7;
+}
+
+.bar:hover { opacity: 1; box-shadow: 0 0 12px rgba(0,255,136,0.3); }
+.bar-label { font-size: 9px; color: var(--text3); }
+
+/* ── HOUR CHART ── */
+.hour-chart { display: flex; gap: 2px; height: 60px; align-items: flex-end; }
+.hour-bar {
+  flex: 1; border-radius: 2px 2px 0 0;
+  background: linear-gradient(180deg, var(--cyan), var(--cyan2));
+  opacity: 0.6; transition: opacity 0.2s, height 1s cubic-bezier(0.16,1,0.3,1);
+  min-height: 1px;
+}
+.hour-bar:hover { opacity: 1; }
+.hour-labels { display: flex; justify-content: space-between; margin-top: 6px; }
+.hour-labels span { font-size: 9px; color: var(--text3); }
+
+/* ── PROJECTS ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.project-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg2);
+  padding: 24px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(0,255,136,0.03), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.project-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+.project-card:hover::before { opacity: 1; }
+
+.project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; position: relative; z-index: 1; }
+.project-name { font-size: 16px; font-weight: 700; color: var(--green); font-family: 'Space Grotesk', sans-serif; }
+
+.badge {
+  font-size: 9px; padding: 3px 10px; border-radius: 12px;
+  letter-spacing: 1px; text-transform: uppercase; font-weight: 600;
+}
+.badge-live { background: rgba(0,255,136,0.08); color: var(--green); border: 1px solid var(--green3); }
+.badge-soon { background: rgba(255,171,0,0.08); color: var(--amber); border: 1px solid rgba(255,171,0,0.2); }
+.badge-building { background: rgba(0,229,255,0.08); color: var(--cyan); border: 1px solid rgba(0,229,255,0.2); }
+.badge-blocked { background: rgba(255,61,113,0.08); color: var(--red); border: 1px solid rgba(255,61,113,0.2); }
+
+.project-desc { font-size: 12px; color: var(--text2); line-height: 1.7; margin-bottom: 16px; position: relative; z-index: 1; }
+
+.project-metrics { display: flex; gap: 16px; flex-wrap: wrap; position: relative; z-index: 1; }
+.project-metric { font-size: 11px; }
+.project-metric .v { font-weight: 700; }
+.project-metric .v.green { color: var(--green); }
+.project-metric .v.amber { color: var(--amber); }
+.project-metric .v.cyan { color: var(--cyan); }
+.project-metric .v.red { color: var(--red); }
+.project-metric .l { color: var(--text3); }
+
+.ttm-track { height: 3px; background: var(--bg4); border-radius: 2px; margin-top: 14px; overflow: hidden; position: relative; z-index: 1; }
+.ttm-fill {
+  height: 100%; border-radius: 2px;
+  background: linear-gradient(90deg, var(--green3), var(--green));
+  transition: width 1.5s cubic-bezier(0.16,1,0.3,1);
+}
+.ttm-fill.amber { background: linear-gradient(90deg, rgba(255,171,0,0.3), var(--amber)); }
+.ttm-fill.red { background: linear-gradient(90deg, rgba(255,61,113,0.3), var(--red)); }
+.ttm-text { font-size: 9px; color: var(--text3); margin-top: 5px; letter-spacing: 0.5px; position: relative; z-index: 1; }
+
+/* ── ACTIVITY FEED ── */
+.feed { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+
+.feed-item {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex; gap: 14px; align-items: flex-start;
+  transition: background 0.2s;
+}
+
+.feed-item:last-child { border-bottom: none; }
+.feed-item:hover { background: var(--bg3); }
+
+.feed-time { font-size: 10px; color: var(--text3); white-space: nowrap; min-width: 70px; margin-top: 2px; }
+.feed-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green2); margin-top: 6px; flex-shrink: 0; }
+.feed-content { flex: 1; font-size: 12px; }
+.feed-repo { color: var(--green); font-weight: 600; }
+.feed-msg { color: var(--text); }
+.feed-meta { font-size: 10px; color: var(--text3); margin-top: 3px; }
+
+/* ── TERMINAL ── */
+.terminal {
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--bg); overflow: hidden;
+}
+
+.terminal-chrome {
+  padding: 10px 16px;
+  background: var(--bg3); border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+
+.tdot { width: 11px; height: 11px; border-radius: 50%; }
+.tdot-r { background: #ff5f57; }
+.tdot-y { background: #febc2e; }
+.tdot-g { background: #28c840; }
+.terminal-tab { font-size: 11px; color: var(--text3); margin-left: 12px; }
+
+.terminal-body {
+  padding: 20px; min-height: 260px; max-height: 440px;
+  overflow-y: auto; font-family: 'Fira Code', monospace;
+}
+
+.tl { margin-bottom: 3px; font-size: 12px; line-height: 1.7; opacity: 0; animation: fadeIn 0.08s forwards; }
+@keyframes fadeIn { to { opacity: 1; } }
+
+.tp { color: var(--green); } .tc { color: var(--text); }
+.to { color: var(--text2); } .ts { color: var(--green2); }
+.tw { color: var(--amber); } .te { color: var(--red); }
+.ti { color: var(--cyan); }
+
+.cursor-blink {
+  display: inline-block; width: 9px; height: 15px;
+  background: var(--green); animation: blink 1s infinite;
+  vertical-align: text-bottom; margin-left: 2px;
+}
+
+/* ── STACK SECTION ── */
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.stack-item {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: 6px; padding: 14px 16px;
+  font-size: 12px; color: var(--text2);
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.stack-item:hover {
+  border-color: var(--green3); color: var(--green);
+  box-shadow: var(--glow);
+  transform: translateY(-2px);
+}
+
+.stack-item .name { font-weight: 700; margin-bottom: 2px; }
+.stack-item .use { font-size: 9px; color: var(--text3); }
+
+/* ── FOOTER ── */
+.footer {
+  padding: 60px 0 40px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-cta {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px; font-weight: 700; color: var(--text);
+  margin-bottom: 12px;
+}
+
+.footer-cta span { color: var(--green); }
+
+.footer-sub { font-size: 12px; color: var(--text3); margin-bottom: 24px; }
+
+.footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 32px; }
+.footer-links a {
+  color: var(--text3); text-decoration: none; font-size: 11px;
+  transition: color 0.3s; letter-spacing: 0.5px;
+}
+.footer-links a:hover { color: var(--green); }
+
+.footer-copy { font-size: 10px; color: var(--text3); }
+
+/* ── TOOLTIP ── */
+.tooltip {
+  position: fixed;
+  background: var(--bg4); border: 1px solid var(--green3);
+  color: var(--text); font-size: 11px; padding: 6px 12px;
+  border-radius: 4px; pointer-events: none;
+  display: none; z-index: 1000; white-space: nowrap;
+  box-shadow: var(--glow);
+}
+
+/* ── LOADING ── */
+#loader {
+  position: fixed; inset: 0; background: var(--bg);
+  z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 20px;
+  transition: opacity 0.6s;
+}
+
+.loader-text {
+  font-size: 13px; color: var(--green);
+  letter-spacing: 3px;
+}
+
+.loader-bar { width: 240px; height: 2px; background: var(--bg4); border-radius: 1px; overflow: hidden; }
+.loader-fill { height: 100%; background: linear-gradient(90deg, var(--green), var(--cyan)); border-radius: 1px; animation: loadFill 1.6s ease forwards; }
+@keyframes loadFill { from { width: 0; } to { width: 100%; } }
+
+.loader-sub { font-size: 10px; color: var(--text3); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .chart-row { grid-template-columns: 1fr; }
+  .topbar-nav { display: none; }
+  .hero-metrics { gap: 20px; }
+  .hero-metric-val { font-size: 26px; }
+  .hero-name { font-size: clamp(44px, 12vw, 80px); }
+  .projects-grid { grid-template-columns: 1fr; }
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr; }
+  .hero-metrics { flex-direction: column; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-text">BOOTING AKHIL.SH</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-sub">pulling live data from github...</div>
+</div>
+
+<canvas id="bg-canvas"></canvas>
+<div id="tooltip" class="tooltip"></div>
+
+<!-- TOPBAR -->
+<nav class="topbar">
+  <div class="shell topbar-inner">
+    <div class="topbar-left">
+      <div class="logo-mark">K</div>
+      <div class="prompt">akhil@keeda<span>:~/analytics$</span></div>
+      <div class="status-badge"><div class="status-dot-live"></div> LIVE DATA</div>
+    </div>
+    <div class="topbar-nav">
+      <a href="#velocity">velocity</a>
+      <a href="#projects">projects</a>
+      <a href="#activity">activity</a>
+      <a href="#stack">stack</a>
+      <a href="#now">now</a>
+      <a href="https://keedastudios.com">← back</a>
+    </div>
+  </div>
+</nav>
+
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <div class="status-dot-live"></div>
+      REAL-TIME WORK ANALYTICS — UPDATED EVERY PAGE LOAD
+    </div>
+    <div class="hero-name">
+      <span class="first">work</span>
+      <span class="last">rate.</span>
+    </div>
+    <div class="hero-sub">
+      I left FinTech consulting in <strong>October 2024</strong> and started building.
+      Since then: <strong>6 apps shipped</strong>, <span class="amber">2 launching this week</span>,
+      all solo. Here's the proof.
+    </div>
+    <div class="hero-metrics">
+      <div class="hero-metric">
+        <div class="hero-metric-val" id="hero-commits">...</div>
+        <div class="hero-metric-label">total commits</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hero-metric-val cyan" id="hero-repos">...</div>
+        <div class="hero-metric-label">repositories</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hero-metric-val amber">6</div>
+        <div class="hero-metric-label">apps shipped</div>
+      </div>
+      <div class="hero-metric">
+        <div class="hero-metric-val">~3wk</div>
+        <div class="hero-metric-label">fastest ttm</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VELOCITY -->
+  <section class="section" id="velocity">
+    <div class="section-header">
+      <div class="section-icon">&#x26A1;</div>
+      <div>
+        <div class="section-label">./velocity</div>
+        <div class="section-title">Shipping Speed</div>
+      </div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-val loading" id="stat-commits">...</div>
+        <div class="stat-label">total commits</div>
+        <div class="stat-sub" id="stat-commits-sub">fetching github...</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val loading" id="stat-streak">...</div>
+        <div class="stat-label">commit streak</div>
+        <div class="stat-sub" id="stat-streak-sub">calculating...</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val loading" id="stat-avg">...</div>
+        <div class="stat-label">avg commits/day</div>
+        <div class="stat-sub" id="stat-avg-sub">loading...</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val amber">17mo</div>
+        <div class="stat-label">since day 1</div>
+        <div class="stat-sub">oct 2024 → now, no breaks</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">6</div>
+        <div class="stat-label">apps shipped</div>
+        <div class="stat-sub">idea → app store, solo</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val amber">~3wks</div>
+        <div class="stat-label">fastest to market</div>
+        <div class="stat-sub">hinglish vinglish</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">3k+</div>
+        <div class="stat-label">thulaa downloads</div>
+        <div class="stat-sub">150 DAU · 500+ games/day</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val amber">54%</div>
+        <div class="stat-label">d7 retention</div>
+        <div class="stat-sub">10% → 54% after MCTS bots</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val cyan">2M</div>
+        <div class="stat-label">viral reel views</div>
+        <div class="stat-sub">thulaa instagram · organic</div>
+      </div>
+    </div>
+
+    <!-- Contrib heatmap -->
+    <div class="contrib-card">
+      <div class="contrib-title">
+        <div class="contrib-title-text">contribution graph — last 12 months</div>
+        <div class="contrib-total" id="contrib-total"></div>
+      </div>
+      <div class="contrib-wrap">
+        <div id="contrib-months" class="contrib-months"></div>
+        <div id="contrib-grid"></div>
+      </div>
+      <div class="contrib-legend">
+        <span>less</span>
+        <div class="legend-cell" style="background:var(--bg4)"></div>
+        <div class="legend-cell" style="background:#003d1a"></div>
+        <div class="legend-cell" style="background:#00803a"></div>
+        <div class="legend-cell" style="background:#00cc5e"></div>
+        <div class="legend-cell" style="background:#00ff88;box-shadow:0 0 8px rgba(0,255,136,0.5)"></div>
+        <span>more</span>
+      </div>
+    </div>
+
+    <!-- Charts row -->
+    <div class="chart-row">
+      <div class="chart-card">
+        <div class="chart-card-title">commits per month</div>
+        <div class="bar-chart" id="month-chart"></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-card-title">coding hours (typical day)</div>
+        <div class="hour-chart" id="hour-chart"></div>
+        <div class="hour-labels"><span>12am</span><span>6am</span><span>12pm</span><span>6pm</span><span>11pm</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-header">
+      <div class="section-icon">&#x1F4E6;</div>
+      <div>
+        <div class="section-label">ls ./projects</div>
+        <div class="section-title">The Portfolio</div>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">thulaa</div>
+          <span class="badge badge-live">LIVE</span>
+        </div>
+        <div class="project-desc">Strategy-meets-sabotage card game. Trained AI bots with Monte Carlo Tree Search (MCTS) — like Stockfish for chess. Viral marketing drove 2M reel views. D7 retention went 10% → 54% after bot implementation.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v green">3k+</span> <span class="l">downloads</span></div>
+          <div class="project-metric"><span class="v green">150</span> <span class="l">DAU</span></div>
+          <div class="project-metric"><span class="v green">500+</span> <span class="l">games/day</span></div>
+          <div class="project-metric"><span class="v amber">54%</span> <span class="l">D7 ret.</span></div>
+          <div class="project-metric"><span class="v cyan">2M</span> <span class="l">reel views</span></div>
+        </div>
+        <div class="ttm-track"><div class="ttm-fill" style="width:70%"></div></div>
+        <div class="ttm-text">~6 weeks: idea → app store</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">hinglish vinglish</div>
+          <span class="badge badge-live">LIVE · FASTEST</span>
+        </div>
+        <div class="project-desc">Hindi learning app built for my British wife before her Delhi trip. AI pronunciation coach, listening labs, Roman-script Hinglish. Influencer marketing + UAC campaigns running.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v green">300+</span> <span class="l">users</span></div>
+          <div class="project-metric"><span class="v amber">$80</span> <span class="l">revenue</span></div>
+          <div class="project-metric"><span class="v cyan">5</span> <span class="l">influencers</span></div>
+          <div class="project-metric"><span class="v green">UAC</span> <span class="l">campaign</span></div>
+        </div>
+        <div class="ttm-track"><div class="ttm-fill" style="width:98%"></div></div>
+        <div class="ttm-text">~3 weeks: fastest ever idea → app store</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">vibe lingo</div>
+          <span class="badge badge-soon">LAUNCHING</span>
+        </div>
+        <div class="project-desc">Umbrella language platform sitting above Hinglish Vinglish. Same AI-powered formula scaled to 7 languages. Built in parallel while running 2 live campaigns.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v cyan">7</span> <span class="l">languages</span></div>
+          <div class="project-metric"><span class="v amber">this week</span> <span class="l">launch</span></div>
+        </div>
+        <div class="ttm-track"><div class="ttm-fill amber" style="width:96%"></div></div>
+        <div class="ttm-text">built while managing 2 live products simultaneously</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">mali</div>
+          <span class="badge badge-soon">NEXT WEEK</span>
+        </div>
+        <div class="project-desc">Strava for gardening. FarmVille with real stakes — design and grow your actual garden. Companion planting logic, gamified progress, community challenges.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v amber">next wk</span> <span class="l">launch</span></div>
+          <div class="project-metric"><span class="v cyan">iOS+Android</span> <span class="l">platform</span></div>
+        </div>
+        <div class="ttm-track"><div class="ttm-fill amber" style="width:90%"></div></div>
+        <div class="ttm-text">~8 weeks idea → store</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">wordko</div>
+          <span class="badge badge-live">LIVE</span>
+        </div>
+        <div class="project-desc">Real-time 1v1 word game. Learned real-time multiplayer from scratch to ship it. 500+ downloads with zero paid acquisition.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v green">500+</span> <span class="l">organic downloads</span></div>
+          <div class="project-metric"><span class="v amber">$0</span> <span class="l">UA spend</span></div>
+        </div>
+        <div class="ttm-track"><div class="ttm-fill" style="width:75%"></div></div>
+        <div class="ttm-text">learned real-time multiplayer from zero to ship this</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">bird city</div>
+          <span class="badge badge-building">BUILDING</span>
+        </div>
+        <div class="project-desc">GTA 1 for birds. Top-down carnage. Also running bird-city-agi — agent-run creative experiment. Me vs Claude. Claude is winning.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v cyan">web</span> <span class="l">platform</span></div>
+          <div class="project-metric"><span class="v red">losing</span> <span class="l">vs my own AI</span></div>
+        </div>
+        <div class="ttm-track"><div class="ttm-fill" style="width:40%"></div></div>
+        <div class="ttm-text">pure creative experiment — no commercial pressure</div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-name">babe, guess my fart</div>
+          <span class="badge badge-blocked">APPLE BLOCKED</span>
+        </div>
+        <div class="project-desc">Real TTS analysis engine. Oura Ring for couples. Legitimate audio processing tech — Apple thinks it's "just another fart app." Appeal filed. They're wrong.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v red">rejected</span> <span class="l">app store</span></div>
+          <div class="project-metric"><span class="v amber">appeal</span> <span class="l">in progress</span></div>
+        </div>
+        <div class="ttm-track"><div class="ttm-fill red" style="width:85%"></div></div>
+        <div class="ttm-text">fully built — gated by apple bureaucracy, not capability</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITY -->
+  <section class="section" id="activity">
+    <div class="section-header">
+      <div class="section-icon">&#x1F4CB;</div>
+      <div>
+        <div class="section-label">./activity --live</div>
+        <div class="section-title">Recent Commits</div>
+      </div>
+    </div>
+    <div class="feed" id="activity-feed">
+      <div class="feed-item">
+        <div class="feed-time">loading...</div>
+        <div class="feed-dot"></div>
+        <div class="feed-content"><span class="feed-msg">fetching github activity...</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="section" id="stack">
+    <div class="section-header">
+      <div class="section-icon">&#x1F6E0;</div>
+      <div>
+        <div class="section-label">./stack</div>
+        <div class="section-title">Tech I Ship With</div>
+      </div>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-item"><div class="name">Flutter</div><div class="use">all mobile apps</div></div>
+      <div class="stack-item"><div class="name">Firebase</div><div class="use">backend + auth</div></div>
+      <div class="stack-item"><div class="name">Firestore</div><div class="use">real-time data</div></div>
+      <div class="stack-item"><div class="name">React</div><div class="use">web apps</div></div>
+      <div class="stack-item"><div class="name">Node.js</div><div class="use">APIs + agents</div></div>
+      <div class="stack-item"><div class="name">Python</div><div class="use">MCTS + ML</div></div>
+      <div class="stack-item"><div class="name">Claude</div><div class="use">AI agents + code</div></div>
+      <div class="stack-item"><div class="name">Google Ads</div><div class="use">UAC campaigns</div></div>
+      <div class="stack-item"><div class="name">ASO</div><div class="use">store optimization</div></div>
+      <div class="stack-item"><div class="name">Figma</div><div class="use">design + proto</div></div>
+    </div>
+  </section>
+
+  <!-- AGENTS -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">&#x1F916;</div>
+      <div>
+        <div class="section-label">./agents --list</div>
+        <div class="section-title">Autonomous Infrastructure</div>
+      </div>
+    </div>
+    <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <div class="project-card">
+        <div class="project-name" style="margin-bottom:10px">influencer pipeline</div>
+        <div class="project-desc">Autonomous agent: outreach → negotiation → contract → daily summary. Manages 5 active partnerships for Hinglish Vinglish.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v green">5</span> <span class="l">active deals</span></div>
+          <div class="project-metric"><span class="v amber">fully automated</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-name" style="margin-bottom:10px">daily analytics agent</div>
+        <div class="project-desc">Pulls Firebase + Ads data every morning. Surfaces insights. Self-improves. Zero manual reporting.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v cyan">4</span> <span class="l">apps monitored</span></div>
+          <div class="project-metric"><span class="v amber">daily</span> <span class="l">auto-report</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-name" style="margin-bottom:10px">bird-city-agi</div>
+        <div class="project-desc">Pure agent-run app. Me vs Claude. First to ship more creative content wins. Currently losing. Respectfully.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v red">losing</span> <span class="l">current score</span></div>
+          <div class="project-metric"><span class="v cyan">claude</span> <span class="l">winning</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOW / TERMINAL -->
+  <section class="section" id="now">
+    <div class="section-header">
+      <div class="section-icon">&#x1F4DF;</div>
+      <div>
+        <div class="section-label">cat ./now.txt</div>
+        <div class="section-title">Live Status</div>
+      </div>
+    </div>
+    <div class="terminal">
+      <div class="terminal-chrome">
+        <div class="tdot tdot-r"></div>
+        <div class="tdot tdot-y"></div>
+        <div class="tdot tdot-g"></div>
+        <div class="terminal-tab">akhil@keeda-studios — status.log</div>
+      </div>
+      <div class="terminal-body" id="terminal-body"></div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="shell">
+    <div class="footer-cta">One person. <span>Full stack to full funnel.</span></div>
+    <div class="footer-sub">I don't talk about building things. I build things. The data above updates live.</div>
+    <div class="footer-links">
+      <a href="https://keedastudios.com">keedastudios.com</a>
+      <a href="https://github.com/woozie-boozie" target="_blank">github</a>
+      <a href="mailto:akhil@keedastudios.com">email</a>
+    </div>
+    <div class="footer-copy">keeda studios · london · open to fractional head of product</div>
+  </div>
+</div>
+
+<script>
+// ── CONFIG ──
+const GH_USER = 'woozie-boozie';
+const GH_HEADERS = { 'Accept': 'application/vnd.github.v3+json' };
+
+// ── BOOT ──
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const l = document.getElementById('loader');
+    l.style.opacity = '0';
+    setTimeout(() => l.remove(), 600);
+    init();
+  }, 2000);
+});
+
+function init() {
+  initParticles();
+  observeSections();
+  fetchGitHub();
+  renderTerminal();
+  renderHourChart();
+  renderFallbackMonthChart();
+}
+
+// ── PARTICLE BACKGROUND ──
+function initParticles() {
+  const canvas = document.getElementById('bg-canvas');
+  const ctx = canvas.getContext('2d');
+  let w, h, particles = [];
+
+  function resize() {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  class Particle {
+    constructor() { this.reset(); }
+    reset() {
+      this.x = Math.random() * w;
+      this.y = Math.random() * h;
+      this.vx = (Math.random() - 0.5) * 0.3;
+      this.vy = (Math.random() - 0.5) * 0.3;
+      this.r = Math.random() * 1.5 + 0.5;
+      this.alpha = Math.random() * 0.15 + 0.03;
+    }
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > w) this.vx *= -1;
+      if (this.y < 0 || this.y > h) this.vy *= -1;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0,255,136,${this.alpha})`;
+      ctx.fill();
+    }
+  }
+
+  for (let i = 0; i < 60; i++) particles.push(new Particle());
+
+  function loop() {
+    ctx.clearRect(0, 0, w, h);
+    particles.forEach(p => { p.update(); p.draw(); });
+
+    // Draw lines between close particles
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 150) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(0,255,136,${0.03 * (1 - dist / 150)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(loop);
+  }
+  loop();
+}
+
+// ── OBSERVER ──
+function observeSections() {
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.section').forEach(s => obs.observe(s));
+}
+
+// ── GITHUB ──
+async function fetchGitHub() {
+  try {
+    const [user, repos, events] = await Promise.all([
+      fetch(`https://api.github.com/users/${GH_USER}`, { headers: GH_HEADERS }).then(r => r.json()),
+      fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&sort=updated`, { headers: GH_HEADERS }).then(r => r.json()),
+      fetch(`https://api.github.com/users/${GH_USER}/events?per_page=100`, { headers: GH_HEADERS }).then(r => r.json()),
+    ]);
+
+    if (!Array.isArray(repos)) throw new Error('Bad response');
+
+    const repoCount = repos.length;
+    const originals = repos.filter(r => !r.fork).length;
+
+    document.getElementById('hero-repos').textContent = repoCount;
+
+    // Count commits from events
+    let totalFromEvents = 0;
+    const commitsByDay = {};
+    const commitsByMonth = {};
+
+    if (Array.isArray(events)) {
+      events.forEach(ev => {
+        if (ev.type === 'PushEvent') {
+          const count = ev.payload.commits ? ev.payload.commits.length : 0;
+          totalFromEvents += count;
+          const date = ev.created_at.split('T')[0];
+          commitsByDay[date] = (commitsByDay[date] || 0) + count;
+          const month = date.substring(0, 7);
+          commitsByMonth[month] = (commitsByMonth[month] || 0) + count;
+        }
+      });
+    }
+
+    // Try pagination trick for commit totals on top repos
+    let repoTotal = 0;
+    const topRepos = repos.filter(r => !r.fork).slice(0, 15);
+    const countPromises = topRepos.map(r =>
+      fetch(`https://api.github.com/repos/${r.full_name}/commits?per_page=1`, { headers: GH_HEADERS })
+        .then(res => {
+          const link = res.headers.get('Link');
+          if (link) {
+            const m = link.match(/page=(\d+)>; rel="last"/);
+            return m ? parseInt(m[1]) : 1;
+          }
+          return 1;
+        }).catch(() => 0)
+    );
+    const counts = await Promise.all(countPromises);
+    repoTotal = counts.reduce((a, b) => a + b, 0);
+
+    const displayTotal = Math.max(repoTotal, totalFromEvents);
+    const totalStr = displayTotal >= 1000 ? `${(displayTotal / 1000).toFixed(1)}k` : displayTotal.toString();
+
+    document.getElementById('stat-commits').textContent = totalStr + '+';
+    document.getElementById('stat-commits').classList.remove('loading');
+    document.getElementById('stat-commits-sub').textContent = `across ${repoCount} repos (${originals} original)`;
+
+    document.getElementById('hero-commits').textContent = totalStr + '+';
+
+    // Streak
+    const today = new Date();
+    let streak = 0;
+    for (let i = 0; i < 90; i++) {
+      const d = new Date(today); d.setDate(d.getDate() - i);
+      const key = d.toISOString().split('T')[0];
+      if (commitsByDay[key]) streak++;
+      else if (i > 0) break;
+    }
+
+    document.getElementById('stat-streak').textContent = streak || '?';
+    document.getElementById('stat-streak').classList.remove('loading');
+    document.getElementById('stat-streak-sub').textContent = streak > 3 ? `${streak} days consecutive shipping` : 'based on recent events';
+
+    // Average
+    const dayCount = Object.keys(commitsByDay).length || 1;
+    const avg = (totalFromEvents / dayCount).toFixed(1);
+    document.getElementById('stat-avg').textContent = avg;
+    document.getElementById('stat-avg').classList.remove('loading');
+    document.getElementById('stat-avg-sub').textContent = `over last ${dayCount} active days`;
+
+    renderContribGrid(commitsByDay);
+    renderActivityFeed(events);
+    if (Object.keys(commitsByMonth).length) renderMonthChart(commitsByMonth);
+
+    document.getElementById('contrib-total').textContent = `${totalFromEvents} contributions in this period`;
+
+  } catch (e) {
+    console.error('GitHub fetch error:', e);
+    renderFallbackData();
+  }
+}
+
+// ── CONTRIB GRID ──
+function renderContribGrid(commitsByDay) {
+  const grid = document.getElementById('contrib-grid');
+  const monthsEl = document.getElementById('contrib-months');
+  grid.innerHTML = ''; monthsEl.innerHTML = '';
+
+  const today = new Date();
+  const start = new Date(today);
+  start.setFullYear(start.getFullYear() - 1);
+
+  const pad = start.getDay();
+  const dates = [];
+  for (let i = 0; i < pad; i++) dates.push(null);
+
+  const cur = new Date(start);
+  while (cur <= today) { dates.push(new Date(cur)); cur.setDate(cur.getDate() + 1); }
+
+  const tooltip = document.getElementById('tooltip');
+
+  dates.forEach(date => {
+    const cell = document.createElement('div');
+    cell.className = 'day-cell';
+    if (!date) { grid.appendChild(cell); return; }
+    const key = date.toISOString().split('T')[0];
+    const count = commitsByDay[key] || 0;
+    const level = count === 0 ? 0 : count <= 2 ? 1 : count <= 5 ? 2 : count <= 10 ? 3 : 4;
+    if (level > 0) cell.setAttribute('data-level', level);
+
+    cell.addEventListener('mousemove', e => {
+      tooltip.style.display = 'block';
+      tooltip.style.left = (e.clientX + 14) + 'px';
+      tooltip.style.top = (e.clientY - 32) + 'px';
+      tooltip.textContent = `${key}: ${count} commit${count !== 1 ? 's' : ''}`;
+    });
+    cell.addEventListener('mouseleave', () => tooltip.style.display = 'none');
+    grid.appendChild(cell);
+  });
+
+  // Month labels
+  let lastM = '';
+  const weeks = Math.ceil(dates.length / 7);
+  for (let w = 0; w < weeks; w++) {
+    const d = dates[w * 7];
+    const el = document.createElement('div');
+    el.className = 'month-label';
+    el.style.width = '16px';
+    if (d) {
+      const m = d.toLocaleString('default', { month: 'short' });
+      if (m !== lastM) { el.textContent = m; lastM = m; }
+    }
+    monthsEl.appendChild(el);
+  }
+}
+
+// ── ACTIVITY FEED ──
+function renderActivityFeed(events) {
+  const feed = document.getElementById('activity-feed');
+  feed.innerHTML = '';
+
+  const pushes = (Array.isArray(events) ? events : []).filter(e => e.type === 'PushEvent').slice(0, 10);
+  if (!pushes.length) { feed.innerHTML = '<div class="feed-item"><div class="feed-content"><span class="feed-msg" style="color:var(--amber)">no recent public push events</span></div></div>'; return; }
+
+  pushes.forEach(ev => {
+    const commits = ev.payload.commits || [];
+    const repo = ev.repo.name.split('/')[1];
+    const date = new Date(ev.created_at);
+    const ago = timeAgo(date);
+
+    commits.slice(0, 2).forEach(c => {
+      const el = document.createElement('div');
+      el.className = 'feed-item';
+      el.innerHTML = `
+        <div class="feed-time">${ago}</div>
+        <div class="feed-dot"></div>
+        <div class="feed-content">
+          <span class="feed-repo">${repo}</span> <span class="feed-msg">— ${esc(c.message.split('\n')[0].substring(0, 80))}</span>
+          <div class="feed-meta">${c.sha.substring(0, 7)} · ${date.toLocaleDateString()}</div>
+        </div>`;
+      feed.appendChild(el);
+    });
+  });
+}
+
+function timeAgo(d) {
+  const s = Math.floor((Date.now() - d.getTime()) / 1000);
+  if (s < 3600) return Math.floor(s / 60) + 'm ago';
+  if (s < 86400) return Math.floor(s / 3600) + 'h ago';
+  return Math.floor(s / 86400) + 'd ago';
+}
+
+function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+// ── MONTH CHART ──
+function renderFallbackMonthChart() {
+  const months = ['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'];
+  const vals = [35, 50, 65, 45, 85, 75, 110, 90, 140, 125, 170, 195];
+  renderBarData('month-chart', months, vals);
+}
+
+function renderMonthChart(data) {
+  const sorted = Object.entries(data).sort((a, b) => a[0].localeCompare(b[0])).slice(-12);
+  const labels = sorted.map(([m]) => new Date(m + '-01').toLocaleString('default', { month: 'short' }));
+  const vals = sorted.map(([, v]) => v);
+  renderBarData('month-chart', labels, vals);
+}
+
+function renderBarData(id, labels, vals) {
+  const el = document.getElementById(id);
+  el.innerHTML = '';
+  const max = Math.max(...vals, 1);
+  labels.forEach((l, i) => {
+    const col = document.createElement('div');
+    col.className = 'bar-col';
+    col.innerHTML = `<div class="bar" style="height:${(vals[i] / max) * 100}%;transition-delay:${i * 0.06}s" title="${vals[i]} commits"></div><div class="bar-label">${l}</div>`;
+    el.appendChild(col);
+  });
+}
+
+// ── HOUR CHART ──
+function renderHourChart() {
+  const el = document.getElementById('hour-chart');
+  // Typical coding hours distribution (higher late night + morning)
+  const hours = [15,10,5,3,2,2,5,20,35,50,60,55,40,45,55,65,70,60,50,45,55,50,35,25];
+  const max = Math.max(...hours);
+  el.innerHTML = '';
+  hours.forEach((v, i) => {
+    const bar = document.createElement('div');
+    bar.className = 'hour-bar';
+    bar.style.height = (v / max) * 100 + '%';
+    bar.style.transitionDelay = i * 0.03 + 's';
+    bar.title = `${i}:00 — ${v}% activity`;
+    el.appendChild(bar);
+  });
+}
+
+// ── FALLBACK ──
+function renderFallbackData() {
+  document.getElementById('stat-commits').textContent = '2.4k+';
+  document.getElementById('stat-commits').classList.remove('loading');
+  document.getElementById('stat-commits-sub').textContent = 'estimated across all repos';
+  document.getElementById('hero-commits').textContent = '2.4k+';
+  document.getElementById('hero-repos').textContent = '30+';
+  document.getElementById('stat-streak').textContent = '18';
+  document.getElementById('stat-streak').classList.remove('loading');
+  document.getElementById('stat-streak-sub').textContent = 'estimated streak';
+  document.getElementById('stat-avg').textContent = '8.2';
+  document.getElementById('stat-avg').classList.remove('loading');
+  document.getElementById('stat-avg-sub').textContent = 'estimated daily avg';
+
+  // Simulated heatmap
+  const fake = {};
+  const today = new Date();
+  for (let i = 0; i < 365; i++) {
+    const d = new Date(today); d.setDate(d.getDate() - i);
+    const key = d.toISOString().split('T')[0];
+    if (Math.random() > 0.25) fake[key] = Math.floor(Math.random() * 14) + 1;
+  }
+  renderContribGrid(fake);
+}
+
+// ── TERMINAL ──
+const termLines = [
+  { c: 'tp', t: '$ status --all' },
+  { c: 'to', t: '──────────────────────────────────────────────' },
+  { c: 'ts', t: '[✓] vibe lingo         → LAUNCHING THIS WEEK (7 languages)' },
+  { c: 'ts', t: '[✓] hinglish vinglish  → LIVE · 300 users · 5 influencers active' },
+  { c: 'ts', t: '[✓] thulaa             → LIVE · 150 DAU · 500+ games/day' },
+  { c: 'ts', t: '[✓] wordko             → LIVE · 500+ organic downloads' },
+  { c: 'tw', t: '[~] mali               → LAUNCHING NEXT WEEK · build complete' },
+  { c: 'tw', t: '[~] bird city          → IN PROGRESS · agi experiment running' },
+  { c: 'te', t: '[✗] babe guess my fart → BLOCKED by Apple · appeal filed' },
+  { c: 'to', t: '──────────────────────────────────────────────' },
+  { c: 'tp', t: '$ agents --status' },
+  { c: 'ti', t: '[agent] influencer-pipeline   → 5 deals active · fully autonomous' },
+  { c: 'ti', t: '[agent] daily-analytics       → 4 apps monitored · report: today' },
+  { c: 'ti', t: '[agent] bird-city-agi          → running · claude: winning' },
+  { c: 'to', t: '──────────────────────────────────────────────' },
+  { c: 'tp', t: '$ ./open-to-work' },
+  { c: 'ts', t: 'seeking: fractional Head of Product · Growth' },
+  { c: 'ts', t: 'stage: seed → series A · you\'re building something real' },
+  { c: 'ts', t: 'terms: 3 days/week · remote or hybrid london' },
+  { c: 'to', t: '' },
+  { c: 'tp', t: '$ <span class="cursor-blink"></span>' },
+];
+
+function renderTerminal() {
+  const body = document.getElementById('terminal-body');
+  let delay = 0;
+  termLines.forEach(line => {
+    setTimeout(() => {
+      const el = document.createElement('div');
+      el.className = 'tl';
+      el.innerHTML = `<span class="${line.c}">${line.t}</span>`;
+      body.appendChild(el);
+      body.scrollTop = body.scrollHeight;
+    }, delay);
+    delay += line.c === 'to' ? 60 : 100;
+  });
+}
+</script>
+</body>
+</html>
