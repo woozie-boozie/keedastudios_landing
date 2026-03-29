@@ -2218,463 +2218,65 @@
       color: #5eeaff;
     }
 
-    /* ============ HINGLISH LESSON DEMO ============ */
+    /* ============ SCREENSHOT GALLERY ============ */
+    .app-gallery {
+      margin: 16px 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      display: flex;
+      gap: 12px;
+      padding: 4px 0 12px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .app-gallery::-webkit-scrollbar { display: none; }
+
+    .app-gallery-item {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      border: 1px solid var(--border);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .app-gallery-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    .app-gallery-item img {
+      height: 340px;
+      width: auto;
+      display: block;
+    }
+
+    .app-gallery-item video {
+      height: 340px;
+      width: auto;
+      display: block;
+    }
+
+    .gallery-hint {
+      font-size: 9px;
+      color: #6b8c74;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 600px) {
+      .app-gallery-item img,
+      .app-gallery-item video { height: 280px; }
+    }
+
+    /* legacy — keep for unused refs */
     .hv-demo {
       margin: 16px 0;
       border-radius: 12px;
       overflow: hidden;
-      background: linear-gradient(135deg, #FF6B35 0%, #FF3D00 100%);
-      border: 1px solid rgba(255,107,53,0.3);
-      padding: 0;
-      min-height: 380px;
-      position: relative;
-    }
-
-    .hv-stage {
-      padding: 24px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 380px;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hv-step {
-      opacity: 0;
-      transform: translateY(16px) scale(0.96);
-      transition: opacity 0.5s, transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
-      position: absolute;
-      width: calc(100% - 40px);
-      text-align: center;
-    }
-    .hv-step.active { opacity: 1; transform: translateY(0) scale(1); position: relative; }
-
-    .hv-phrase-hindi {
-      font-size: 36px;
-      font-weight: 800;
-      color: white;
-      text-shadow: 0 2px 20px rgba(255,255,255,0.3);
-      margin-bottom: 8px;
-      line-height: 1.2;
-    }
-
-    .hv-phrase-roman {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 14px;
-      color: rgba(255,255,255,0.7);
-      background: rgba(255,255,255,0.15);
-      padding: 4px 14px;
-      border-radius: 20px;
-      display: inline-block;
-      margin-bottom: 6px;
-    }
-
-    .hv-phrase-meaning {
-      font-size: 16px;
-      color: rgba(255,255,255,0.9);
-      font-weight: 500;
-    }
-
-    /* Mic + wave */
-    .hv-mic-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .hv-mic-btn {
-      width: 72px; height: 72px;
-      border-radius: 50%;
-      background: white;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 32px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-      position: relative;
-    }
-
-    .hv-mic-btn::after {
-      content: '';
-      position: absolute; inset: -8px;
-      border: 2px solid rgba(255,255,255,0.4);
-      border-radius: 50%;
-      animation: micPulse 1.5s ease-out infinite;
-    }
-
-    @keyframes micPulse {
-      0% { transform: scale(1); opacity: 0.6; }
-      100% { transform: scale(1.4); opacity: 0; }
-    }
-
-    .hv-waves {
-      display: flex; align-items: center; gap: 3px; height: 40px;
-    }
-
-    .hv-wave-bar {
-      width: 4px;
-      background: white;
-      border-radius: 2px;
-      animation: waveAnim 0.6s ease-in-out infinite alternate;
-    }
-
-    @keyframes waveAnim {
-      0% { height: 8px; opacity: 0.4; }
-      100% { height: 32px; opacity: 1; }
-    }
-
-    .hv-mic-label { font-size: 12px; color: rgba(255,255,255,0.7); }
-
-    /* Score */
-    .hv-score-wrap {
-      display: flex; flex-direction: column; align-items: center; gap: 12px;
-    }
-
-    .hv-score-ring {
-      width: 100px; height: 100px;
-      position: relative;
-    }
-
-    .hv-score-ring svg {
-      width: 100%; height: 100%;
-      transform: rotate(-90deg);
-    }
-
-    .hv-score-ring .bg { fill: none; stroke: rgba(255,255,255,0.15); stroke-width: 6; }
-    .hv-score-ring .fg {
-      fill: none; stroke: white; stroke-width: 6;
-      stroke-linecap: round;
-      stroke-dasharray: 283;
-      stroke-dashoffset: 283;
-      transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .hv-score-ring .pct {
-      position: absolute; inset: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px; font-weight: 800; color: white;
-      font-family: 'Fira Code', monospace;
-    }
-
-    .hv-score-text { font-size: 16px; font-weight: 700; color: white; }
-    .hv-score-tip {
-      background: rgba(255,255,255,0.15);
-      border-radius: 10px;
-      padding: 10px 16px;
-      font-size: 11px;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.5;
-      text-align: left;
-      max-width: 280px;
-    }
-
-    /* Collectible */
-    .hv-collect-wrap {
-      display: flex; flex-direction: column; align-items: center; gap: 12px;
-    }
-
-    .hv-collect-badge {
-      width: 80px; height: 80px;
-      background: rgba(255,255,255,0.2);
-      border: 2px solid rgba(255,255,255,0.4);
-      border-radius: 20px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 40px;
-      transform: scale(0);
-      animation: collectPop 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards;
-    }
-
-    @keyframes collectPop {
-      0% { transform: scale(0) rotate(-20deg); }
-      100% { transform: scale(1) rotate(0deg); }
-    }
-
-    .hv-collect-label {
-      font-size: 11px;
-      color: rgba(255,255,255,0.6);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .hv-collect-name {
-      font-size: 18px;
-      font-weight: 700;
-      color: white;
-    }
-
-    /* Step indicators */
-    .hv-steps-dots {
-      position: absolute;
-      bottom: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex; gap: 6px;
-    }
-
-    .hv-steps-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.25);
-      transition: all 0.3s;
-    }
-    .hv-steps-dot.on {
-      background: white;
-      width: 20px;
-      border-radius: 3px;
-    }
-
-    /* ============ VIBE LINGO MORPH DEMO ============ */
-    .vl-demo {
-      margin: 16px 0;
-      border-radius: 12px;
-      overflow: hidden;
-      min-height: 380px;
-      position: relative;
-      border: 1px solid var(--border);
-      transition: background 1s;
-    }
-
-    .vl-stage {
-      padding: 32px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 380px;
-      text-align: center;
-      position: relative;
-    }
-
-    .vl-flag {
-      font-size: 48px;
-      margin-bottom: 8px;
-      transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
-    }
-
-    .vl-flag.morph {
-      transform: scale(0.5) rotate(10deg);
-      opacity: 0;
-    }
-
-    .vl-lang-label {
-      font-size: 11px;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      transition: opacity 0.3s;
-    }
-
-    .vl-big-phrase {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 38px;
-      font-weight: 800;
-      color: white;
-      text-shadow: 0 2px 30px rgba(255,255,255,0.2);
-      margin-bottom: 8px;
-      min-height: 50px;
-      transition: all 0.4s;
-      line-height: 1.2;
-    }
-
-    .vl-big-phrase.morph { opacity: 0; transform: translateY(-10px) scale(0.9); }
-
-    .vl-meaning {
-      font-size: 15px;
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 6px;
-      transition: opacity 0.3s;
-    }
-
-    .vl-pronun {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 12px;
-      color: rgba(255,255,255,0.4);
-      background: rgba(255,255,255,0.1);
-      padding: 4px 14px;
-      border-radius: 20px;
-      display: inline-block;
-      margin-bottom: 24px;
-      transition: opacity 0.3s;
-    }
-
-    .vl-lang-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .vl-lang-pill {
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      border: 1px solid rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.05);
-      color: rgba(255,255,255,0.5);
-      cursor: pointer;
-      transition: all 0.3s;
-      display: flex; align-items: center; gap: 6px;
-    }
-
-    .vl-lang-pill:hover { border-color: rgba(255,255,255,0.4); color: white; }
-    .vl-lang-pill.active {
-      border-color: white;
-      background: rgba(255,255,255,0.15);
-      color: white;
-      box-shadow: 0 0 20px rgba(255,255,255,0.1);
-    }
-
-    .vl-auto-label {
-      position: absolute;
-      top: 14px;
-      right: 16px;
-      font-size: 9px;
-      color: rgba(255,255,255,0.3);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* ============ MALI GARDEN DEMO ============ */
-    .mali-demo {
-      margin: 16px 0;
-      border-radius: 12px;
-      overflow: hidden;
-      background: linear-gradient(180deg, #0a1a1a 0%, #0f2b1f 100%);
-      border: 1px solid rgba(77,255,159,0.15);
-      min-height: 380px;
-      position: relative;
-    }
-
-    .mali-weather-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 16px;
-      background: rgba(0,0,0,0.4);
-      border-bottom: 1px solid rgba(77,255,159,0.1);
-      font-size: 11px;
-      color: #a3bfaa;
-    }
-
-    .mali-weather-temp {
-      font-family: 'Fira Code', monospace;
-      font-weight: 700;
-      color: white;
-      font-size: 14px;
-    }
-
-    .mali-frost-warn {
-      font-size: 9px;
-      color: #ffc244;
-      display: flex; align-items: center; gap: 4px;
-    }
-
-    .mali-garden-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      padding: 16px;
-    }
-
-    .mali-plot {
-      aspect-ratio: 1;
-      background: rgba(77,255,159,0.04);
-      border: 1px solid rgba(77,255,159,0.1);
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.3s;
-      position: relative;
-    }
-
-    .mali-plot:hover {
-      border-color: rgba(77,255,159,0.3);
-      background: rgba(77,255,159,0.08);
-    }
-
-    .mali-plot.active {
-      border-color: #4dff9f;
-      background: rgba(77,255,159,0.12);
-      box-shadow: 0 0 20px rgba(77,255,159,0.15);
-    }
-
-    .mali-plot-plant {
-      font-size: 28px;
-      animation: plantSway 3s ease-in-out infinite;
-    }
-
-    @keyframes plantSway {
-      0%, 100% { transform: rotate(-2deg); }
-      50% { transform: rotate(2deg); }
-    }
-
-    .mali-plot-name { font-size: 8px; color: #6b8c74; margin-top: 2px; }
-
-    .mali-plot-health {
-      position: absolute;
-      top: 4px;
-      right: 4px;
-      width: 8px; height: 8px;
-      border-radius: 50%;
-    }
-
-    .mali-plot-health.good { background: #4dff9f; box-shadow: 0 0 6px #4dff9f; }
-    .mali-plot-health.warn { background: #ffc244; box-shadow: 0 0 6px #ffc244; animation: pulse 1.5s infinite; }
-    .mali-plot-health.danger { background: #ff6b8a; box-shadow: 0 0 6px #ff6b8a; animation: pulse 1s infinite; }
-
-    .mali-sidney-bar {
-      margin: 0 16px 12px;
-      background: rgba(77,255,159,0.06);
-      border: 1px solid rgba(77,255,159,0.15);
-      border-radius: 12px;
-      padding: 12px 14px;
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      min-height: 64px;
-      transition: all 0.4s;
-    }
-
-    .mali-sidney-bar .sid-icon { font-size: 24px; flex-shrink: 0; }
-
-    .mali-sidney-bar .sid-msg {
-      font-size: 11px;
-      color: #a3bfaa;
-      line-height: 1.6;
-      transition: all 0.3s;
-    }
-
-    .mali-sidney-bar .sid-msg .plant-name { color: #4dff9f; font-weight: 600; }
-    .mali-sidney-bar .sid-msg .warn-text { color: #ffc244; }
-    .mali-sidney-bar .sid-msg .danger-text { color: #ff6b8a; }
-
-    .mali-health-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 16px 14px;
-      font-size: 10px;
-      color: #6b8c74;
-    }
-
-    .mali-health-num {
-      font-family: 'Fira Code', monospace;
-      font-size: 20px;
-      font-weight: 800;
-      color: #4dff9f;
-      text-shadow: 0 0 20px rgba(77,255,159,0.3);
-    }
-
-    .mali-tap-hint {
-      font-size: 9px;
-      color: #6b8c74;
-      text-align: center;
-      padding-bottom: 10px;
     }
 
     /* ============ PIPELINE SECTION ============ */
@@ -3164,49 +2766,20 @@
         <div class="app-card blue">
           <div class="app-status live"><span class="status-dot"></span> Live</div>
           <h3 class="app-name">Hinglish Vinglish</h3>
-          <p class="app-tagline">AI pronunciation coach for Hindi. Real scenarios, instant feedback, cultural collectibles. Watch a live lesson play out:</p>
+          <p class="app-tagline">AI pronunciation coach for Hindi. Real-life scenarios, instant speaking feedback, cultural collectible badges.</p>
 
-          <div class="hv-demo" id="hvDemo">
-            <div class="hv-stage">
-              <!-- Step 1: Phrase -->
-              <div class="hv-step active" id="hvStep1">
-                <div class="hv-phrase-hindi">क्या बात है!</div>
-                <div class="hv-phrase-roman">kya baat hai!</div>
-                <div class="hv-phrase-meaning">"Wonderful!"</div>
-              </div>
-              <!-- Step 2: Record -->
-              <div class="hv-step" id="hvStep2">
-                <div class="hv-mic-wrap">
-                  <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:4px;">Say it out loud</div>
-                  <div class="hv-phrase-hindi" style="font-size:28px;">क्या बात है!</div>
-                  <div class="hv-mic-btn">🎙️</div>
-                  <div class="hv-waves" id="hvWaves"></div>
-                  <div class="hv-mic-label">Recording...</div>
-                </div>
-              </div>
-              <!-- Step 3: Score -->
-              <div class="hv-step" id="hvStep3">
-                <div class="hv-score-wrap">
-                  <div class="hv-score-ring">
-                    <svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="45"/><circle class="fg" id="hvScoreCircle" cx="50" cy="50" r="45"/></svg>
-                    <div class="pct" id="hvScorePct">0%</div>
-                  </div>
-                  <div class="hv-score-text">Good effort! 👍</div>
-                  <div class="hv-score-tip">💡 Pronounce <strong>'hai'</strong> with a soft 'h' &mdash; more like <strong>'hai'</strong> than <strong>'hey'</strong>. The 'aa' in 'baat' should be long.</div>
-                </div>
-              </div>
-              <!-- Step 4: Collectible -->
-              <div class="hv-step" id="hvStep4">
-                <div class="hv-collect-wrap">
-                  <div class="hv-collect-label">New item collected!</div>
-                  <div class="hv-collect-badge" id="hvBadge">🍚</div>
-                  <div class="hv-collect-name">Steamed Rice</div>
-                  <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px;">Added to your Dinner Time collection</div>
-                </div>
-              </div>
-              <div class="hv-steps-dots"><span class="hv-steps-dot on" id="hvd0"></span><span class="hv-steps-dot" id="hvd1"></span><span class="hv-steps-dot" id="hvd2"></span><span class="hv-steps-dot" id="hvd3"></span></div>
-            </div>
+          <div class="app-gallery">
+            <div class="app-gallery-item"><img src="assets/images/hinglish/01-welcome.png" alt="Welcome" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/hinglish/02-not-textbook-hindi.png" alt="Not Textbook Hindi" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/hinglish/03-home.png" alt="Home" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/hinglish/04-real-situations.png" alt="Real Situations" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/hinglish/05-phrases.png" alt="Phrases" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/hinglish/06-practice-speaking.png" alt="Practice Speaking" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/hinglish/07-ai-feedback.png" alt="AI Feedback" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/hinglish/08-listening-quiz.png" alt="Listening Quiz" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/hinglish/10-collectibles.png" alt="Collectibles" loading="lazy"></div>
           </div>
+          <div class="gallery-hint">Swipe to explore &rarr;</div>
 
           <div class="app-tags">
             <span class="app-tag">Language</span>
@@ -3219,19 +2792,7 @@
         <div class="app-card purple">
           <div class="app-status launching"><span class="status-dot"></span> Launching</div>
           <h3 class="app-name">Vibe Lingo</h3>
-          <p class="app-tagline">Same AI formula as Hinglish Vinglish, scaled to 7 languages. One platform, every vibe.</p>
-
-          <div class="vl-demo" id="vlDemo">
-            <div class="vl-stage">
-              <div class="vl-auto-label">Auto-cycling</div>
-              <div class="vl-flag" id="vlFlag">🇪🇸</div>
-              <div class="vl-lang-label" id="vlLabel">Spanish</div>
-              <div class="vl-big-phrase" id="vlBigPhrase">¡Hola!</div>
-              <div class="vl-meaning" id="vlMeaning">Hello!</div>
-              <div class="vl-pronun" id="vlPronun">OH-la</div>
-              <div class="vl-lang-row" id="vlPills"></div>
-            </div>
-          </div>
+          <p class="app-tagline">Same AI-powered formula as Hinglish Vinglish, scaled to 7 languages. Persian, Spanish, German, Cantonese, Mandarin, Japanese, Punjabi. One platform, every vibe.</p>
 
           <div class="app-tags">
             <span class="app-tag">Language</span>
@@ -3244,33 +2805,17 @@
         <div class="app-card" style="--card-accent: #4dff9f;">
           <div class="app-status soon"><span class="status-dot"></span> Next week</div>
           <h3 class="app-name">Mali</h3>
-          <p class="app-tagline">Strava for gardening. Your real garden, digitally twinned. Tap a plant &mdash; Sidney the Snail tells you exactly what it needs.</p>
+          <p class="app-tagline">Strava for gardening. Design a digital twin of your real garden, get AI care from Sidney the Snail, track weather, celebrate harvests.</p>
 
-          <div class="mali-demo" id="maliDemo">
-            <div class="mali-weather-bar">
-              <div><span>⛅</span> <span class="mali-weather-temp">18°C</span> Partly Cloudy</div>
-              <div class="mali-frost-warn">⚠️ Frost 11pm</div>
-            </div>
-            <div class="mali-garden-grid">
-              <div class="mali-plot" onclick="maliTap(this,0)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🍅</div><div class="mali-plot-name">Tomato</div></div>
-              <div class="mali-plot" onclick="maliTap(this,1)"><div class="mali-plot-health warn"></div><div class="mali-plot-plant">🌿</div><div class="mali-plot-name">Basil</div></div>
-              <div class="mali-plot" onclick="maliTap(this,2)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🌹</div><div class="mali-plot-name">Rose</div></div>
-              <div class="mali-plot" onclick="maliTap(this,3)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🌶️</div><div class="mali-plot-name">Pepper</div></div>
-              <div class="mali-plot" onclick="maliTap(this,4)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🥕</div><div class="mali-plot-name">Carrot</div></div>
-              <div class="mali-plot" onclick="maliTap(this,5)"><div class="mali-plot-health danger"></div><div class="mali-plot-plant">🫑</div><div class="mali-plot-name">Pepper</div></div>
-              <div class="mali-plot" onclick="maliTap(this,6)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🌻</div><div class="mali-plot-name">Sunflower</div></div>
-              <div class="mali-plot" onclick="maliTap(this,7)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🌱</div><div class="mali-plot-name">Seedling</div></div>
-            </div>
-            <div class="mali-sidney-bar" id="maliSidney">
-              <span class="sid-icon">🐌</span>
-              <div class="sid-msg" id="maliMsg">Tap any plant and I'll tell you what it needs. I know your soil, your weather, everything.</div>
-            </div>
-            <div class="mali-health-footer">
-              <div>Garden Health</div>
-              <div class="mali-health-num">87</div>
-            </div>
-            <div class="mali-tap-hint">👆 Tap a plant</div>
+          <div class="app-gallery">
+            <div class="app-gallery-item"><video src="assets/images/snail.mp4" autoplay muted loop playsinline></video></div>
+            <div class="app-gallery-item"><img src="assets/images/mali/1_welcome_iphone65.png" alt="Welcome" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/mali/2_garden_iphone65.png" alt="Garden Designer" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/mali/3_sidney_iphone65.png" alt="Meet Sidney" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/mali/4_dashboard_iphone65.png" alt="Dashboard" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/mali/5_weather_iphone65.png" alt="Weather" loading="lazy"></div>
           </div>
+          <div class="gallery-hint">Swipe to explore &rarr;</div>
 
           <div class="app-tags">
             <span class="app-tag">Gardening</span>
@@ -3858,216 +3403,6 @@
       wordkoTimers.push(resultTimer);
     }
 
-    // ============ HINGLISH VINGLISH LESSON DEMO ============
-    let hvTimer = null;
-    let hvStep = 0;
-
-    function hvShowStep(n) {
-      hvStep = n;
-      for (let i = 0; i < 4; i++) {
-        const el = document.getElementById('hvStep' + (i + 1));
-        const dot = document.getElementById('hvd' + i);
-        if (el) el.classList.toggle('active', i === n);
-        if (dot) dot.classList.toggle('on', i === n);
-      }
-
-      // Step-specific animations
-      if (n === 1) {
-        // Generate wave bars
-        const w = document.getElementById('hvWaves');
-        if (w && !w.children.length) {
-          for (let i = 0; i < 20; i++) {
-            const bar = document.createElement('div');
-            bar.className = 'hv-wave-bar';
-            bar.style.animationDelay = (i * 0.05) + 's';
-            w.appendChild(bar);
-          }
-        }
-      }
-      if (n === 2) {
-        // Animate score ring
-        setTimeout(() => {
-          const circle = document.getElementById('hvScoreCircle');
-          const pct = document.getElementById('hvScorePct');
-          if (circle) circle.style.strokeDashoffset = 283 - (283 * 0.7); // 70%
-          // Count up
-          let c = 0;
-          const counter = setInterval(() => {
-            c += 2;
-            if (c > 70) { c = 70; clearInterval(counter); }
-            if (pct) pct.textContent = c + '%';
-          }, 30);
-        }, 200);
-      }
-      if (n === 3) {
-        // Reset badge animation
-        const badge = document.getElementById('hvBadge');
-        if (badge) { badge.style.animation = 'none'; badge.offsetHeight; badge.style.animation = ''; }
-      }
-    }
-
-    function hvLoop() {
-      // Reset score circle
-      const circle = document.getElementById('hvScoreCircle');
-      if (circle) circle.style.strokeDashoffset = 283;
-      const pct = document.getElementById('hvScorePct');
-      if (pct) pct.textContent = '0%';
-
-      hvShowStep(0);
-      hvTimer = setTimeout(() => {
-        hvShowStep(1);
-        hvTimer = setTimeout(() => {
-          hvShowStep(2);
-          hvTimer = setTimeout(() => {
-            hvShowStep(3);
-            hvTimer = setTimeout(() => hvLoop(), 3000);
-          }, 3500);
-        }, 2500);
-      }, 2500);
-    }
-
-    // Start when visible
-    const hvObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { hvLoop(); hvObs.unobserve(e.target); } });
-    }, { threshold: 0.3 });
-    const hvEl = document.getElementById('hvDemo');
-    if (hvEl) hvObs.observe(hvEl);
-
-    // ============ VIBE LINGO MORPH DEMO ============
-    const vlLangs = [
-      { key: 'spanish',   flag: '🇪🇸', name: 'Spanish',   phrase: '¡Hola!',      meaning: 'Hello!',         pronun: 'OH-la',          bg: 'linear-gradient(135deg, #c0392b 0%, #e74c3c 100%)' },
-      { key: 'japanese',  flag: '🇯🇵', name: 'Japanese',  phrase: 'こんにちは!',   meaning: 'Hello!',         pronun: 'kon-NEE-chi-wa', bg: 'linear-gradient(135deg, #BC002D 0%, #e84393 100%)' },
-      { key: 'german',    flag: '🇩🇪', name: 'German',    phrase: 'Wie geht\'s?', meaning: 'How are you?',   pronun: 'vee GATES',      bg: 'linear-gradient(135deg, #2d3436 0%, #636e72 100%)' },
-      { key: 'mandarin',  flag: '🇨🇳', name: 'Mandarin',  phrase: '你好吗？',      meaning: 'How are you?',   pronun: 'nee how MA',     bg: 'linear-gradient(135deg, #c0392b 0%, #d4a017 100%)' },
-      { key: 'persian',   flag: '🇮🇷', name: 'Persian',   phrase: '!سلام',        meaning: 'Hello!',         pronun: 'sa-LAAM',        bg: 'linear-gradient(135deg, #1a5276 0%, #2ecc71 100%)' },
-      { key: 'cantonese', flag: '🇭🇰', name: 'Cantonese', phrase: '你好!',         meaning: 'Hello!',         pronun: 'nei HOU',        bg: 'linear-gradient(135deg, #ba2025 0%, #ff6348 100%)' },
-      { key: 'punjabi',   flag: '🇮🇳', name: 'Punjabi',   phrase: 'ਸਤ ਸ੍ਰੀ ਅਕਾਲ!', meaning: 'Hello!',         pronun: 'sat-sree-a-KAAL', bg: 'linear-gradient(135deg, #FF9933 0%, #138808 100%)' },
-    ];
-
-    let vlIdx = 0;
-    let vlAutoTimer = null;
-
-    function vlInit() {
-      const row = document.getElementById('vlPills');
-      if (!row) return;
-      row.innerHTML = '';
-      vlLangs.forEach((l, i) => {
-        const pill = document.createElement('div');
-        pill.className = 'vl-lang-pill' + (i === 0 ? ' active' : '');
-        pill.innerHTML = l.flag + ' ' + l.name;
-        pill.onclick = () => { vlGoTo(i); clearInterval(vlAutoTimer); vlAutoTimer = setInterval(vlNext, 3500); };
-        pill.id = 'vlPill' + i;
-        row.appendChild(pill);
-      });
-      vlApply(0, false);
-    }
-
-    function vlApply(i, animate) {
-      const l = vlLangs[i];
-      const demo = document.getElementById('vlDemo');
-      const flag = document.getElementById('vlFlag');
-      const label = document.getElementById('vlLabel');
-      const phrase = document.getElementById('vlBigPhrase');
-      const meaning = document.getElementById('vlMeaning');
-      const pronun = document.getElementById('vlPronun');
-
-      if (animate) {
-        flag.classList.add('morph');
-        phrase.classList.add('morph');
-        meaning.style.opacity = '0';
-        pronun.style.opacity = '0';
-
-        setTimeout(() => {
-          flag.textContent = l.flag;
-          label.textContent = l.name;
-          phrase.textContent = l.phrase;
-          meaning.textContent = l.meaning;
-          pronun.textContent = l.pronun;
-          demo.style.background = l.bg;
-
-          flag.classList.remove('morph');
-          phrase.classList.remove('morph');
-          meaning.style.opacity = '1';
-          pronun.style.opacity = '1';
-        }, 350);
-      } else {
-        flag.textContent = l.flag;
-        label.textContent = l.name;
-        phrase.textContent = l.phrase;
-        meaning.textContent = l.meaning;
-        pronun.textContent = l.pronun;
-        demo.style.background = l.bg;
-      }
-
-      // Update pills
-      vlLangs.forEach((_, j) => {
-        const p = document.getElementById('vlPill' + j);
-        if (p) p.classList.toggle('active', j === i);
-      });
-    }
-
-    function vlGoTo(i) { vlIdx = i; vlApply(i, true); }
-    function vlNext() { vlIdx = (vlIdx + 1) % vlLangs.length; vlGoTo(vlIdx); }
-
-    const vlObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          vlInit();
-          vlAutoTimer = setInterval(vlNext, 3500);
-          vlObs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    const vlEl = document.getElementById('vlDemo');
-    if (vlEl) vlObs.observe(vlEl);
-
-    // ============ MALI GARDEN DEMO ============
-    const maliAdvice = [
-      { msg: 'Your <span class="plant-name">Roma Tomato</span> is thriving! Week 6 — fruit is setting. Water deeply every 2 days. 🍅' },
-      { msg: 'Your <span class="plant-name">Basil</span> is <span class="warn-text">getting leggy</span>. Pinch the top leaves to encourage bushy growth. Harvest before it flowers! 🌿' },
-      { msg: 'Your <span class="plant-name">Rose</span> is loving this weather! Deadhead spent blooms to keep new ones coming. 🌹' },
-      { msg: '<span class="danger-text">Frost warning tonight!</span> Your <span class="plant-name">Pepper</span> can\'t handle below 5°C. Cover it or bring it inside by 11pm. 🌶️' },
-      { msg: 'Your <span class="plant-name">Carrots</span> are 3 weeks from harvest! The tops look great — don\'t pull yet, let them sweeten. 🥕' },
-      { msg: 'Your <span class="plant-name">Bell Pepper</span> leaves are <span class="danger-text">curling</span>. That\'s cold stress from last night\'s -1°C. Move to a warmer spot ASAP. 🫑' },
-      { msg: 'Your <span class="plant-name">Sunflower</span> is tracking the sun perfectly! It\'ll bloom in about 10 days. Don\'t move it now. 🌻' },
-      { msg: 'This <span class="plant-name">Seedling</span> just sprouted! Keep soil moist but not soggy. First true leaves in 5-7 days. 🌱' },
-    ];
-
-    function maliTap(el, idx) {
-      // Remove active from all
-      document.querySelectorAll('.mali-plot').forEach(p => p.classList.remove('active'));
-      el.classList.add('active');
-
-      const msg = document.getElementById('maliMsg');
-      msg.style.opacity = '0';
-      setTimeout(() => {
-        msg.innerHTML = maliAdvice[idx].msg;
-        msg.style.opacity = '1';
-      }, 200);
-    }
-
-    // Auto-play mali demo
-    let maliAutoIdx = 0;
-    const maliObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const plots = document.querySelectorAll('.mali-plot');
-          const seq = [1, 3, 5, 0]; // Basil (warn), Pepper (frost), Bell pepper (danger), Tomato (good)
-          let i = 0;
-          const run = () => {
-            if (i < seq.length) {
-              maliTap(plots[seq[i]], seq[i]);
-              i++;
-              setTimeout(run, 2800);
-            }
-          };
-          setTimeout(run, 1500);
-          maliObs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    const maliEl = document.getElementById('maliDemo');
-    if (maliEl) maliObs.observe(maliEl);
   </script>
 </body>
 </html>
