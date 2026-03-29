@@ -1,4 +1,4 @@
-name: Daily Standup + TTS Narration
+name: Generate Standup and TTS
 
 on:
   workflow_dispatch:
