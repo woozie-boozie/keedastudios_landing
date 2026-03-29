@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-29T21:32:41Z",
+  "updated": "2026-03-29T22:03:17Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2861,
+  "total_commits": 2864,
   "streak": 29,
   "commits_by_day": [
     {
@@ -679,7 +679,7 @@
     },
     {
       "date": "2026-03-29",
-      "count": 40
+      "count": 43
     }
   ],
   "commits_by_month": [
@@ -721,7 +721,7 @@
     },
     {
       "month": "2026-03",
-      "count": 361
+      "count": 364
     }
   ],
   "commits_by_hour": [
@@ -811,11 +811,11 @@
     },
     {
       "hour": 21,
-      "count": 64
+      "count": 65
     },
     {
       "hour": 22,
-      "count": 70
+      "count": 72
     },
     {
       "hour": 23,
@@ -823,6 +823,24 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:02:53Z",
+      "sha": "d6ec97f",
+      "message": "redesign landing page: terminal theme, studio-focused hero, add all 6 apps"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:02:51Z",
+      "sha": "f2a812f",
+      "message": "wire up ElevenLabs voice agent with live agent ID"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T21:32:41Z",
+      "sha": "4ebe682",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-29T21:32:06Z",
@@ -954,30 +972,12 @@
       "date": "2026-03-29T15:25:38Z",
       "sha": "47216ac",
       "message": "Add Radio Tower Control — capture the airwaves, broadcast to the whole city"
-    },
-    {
-      "repo": "bird-city",
-      "date": "2026-03-29T12:50:00Z",
-      "sha": "cb8324e",
-      "message": "Fix mobile touch scrolling in skill shop and all modals"
-    },
-    {
-      "repo": "bird-city",
-      "date": "2026-03-29T12:38:06Z",
-      "sha": "4d94773",
-      "message": "Fix skill shop UI: scrolling, readability, close button, contrast"
-    },
-    {
-      "repo": "bird-city",
-      "date": "2026-03-29T12:20:43Z",
-      "sha": "00dee04",
-      "message": "Add stampede chaos: tourists + dancers panic, trip, collide, scream"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 54
+      "commits": 57
     },
     {
       "name": "hinglish-vinglish",
