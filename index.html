@@ -327,6 +327,16 @@
       margin: 0 auto;
     }
 
+    @media (max-width: 768px) {
+      .apps-grid,
+      .pipeline-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .app-card.full-width {
+        grid-column: span 1 !important;
+      }
+    }
+
     .app-card {
       background: var(--dark-card);
       border-radius: 12px;
