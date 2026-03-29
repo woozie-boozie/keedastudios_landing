@@ -86,9 +86,9 @@ jobs:
               continue
             fi
 
-            # Fetch recent commits (last 12 months, paginated up to 3 pages)
+            # Fetch recent commits (last 12 months, paginated up to 15 pages = 1500 commits per repo)
             REPO_COMMITS="[]"
-            for CP in 1 2 3; do
+            for CP in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
               PAGE_COMMITS=$(curl -s -H "$AUTH" -H "$ACCEPT" \
                 "https://api.github.com/repos/$FULL_NAME/commits?per_page=100&page=$CP&since=$SINCE_DATE" 2>/dev/null)
 
