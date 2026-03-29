@@ -1,9 +1,9 @@
 name: Daily Standup + TTS Narration
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: '0 8 * * *' # 8am UTC daily
-  workflow_dispatch: # manual trigger
+    - cron: '0 8 * * *'
 
 permissions:
   contents: write
