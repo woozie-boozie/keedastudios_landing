@@ -2502,15 +2502,24 @@
           <h3 class="app-name">Thulaa</h3>
           <p class="app-tagline">The South Asian card game your parents never let you play growing up. 3k+ downloads, 500+ games daily, 2M+ reel views. Don't be the Pabho.</p>
 
-          <div class="app-gallery">
-            <div class="app-gallery-item"><img src="assets/images/thulaa-screens/thulaa-screenshot-ios-1-intro.png" alt="Welcome to Thulaa" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/thulaa-screens/thulaa-screenshot-ios-2-home.png" alt="Home" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/thulaa-screens/thulaa-screenshot-ios-3-lobby.png" alt="Game Lobby" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/thulaa-screens/thulaa-screenshot-ios-4-gameplay.png" alt="Gameplay" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/thulaa-screens/thulaa-screenshot-ios-5-emotes.png" alt="Emotes" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/thulaa-screens/thulaa-screenshot-ios-6-stats.png" alt="Stats" loading="lazy"></div>
+          <div class="thulaa-demo">
+            <!-- Default: animated phone frame -->
+            <div class="thulaa-home-view" id="thulaaHomeView">
+              <div class="thulaa-phone-display">
+                <div class="thulaa-phone-frame" onclick="showThulaaVideo()">
+                  <img src="assets/images/thulaa-home.png" alt="Thulaa Home">
+                </div>
+              </div>
+              <p class="thulaa-tap-hint">👆 Tap to watch gameplay</p>
+            </div>
+            <!-- Video view (after tap) -->
+            <div class="thulaa-game-view" id="thulaaVideoView">
+              <video id="thulaaVideo" controls playsinline style="width:100%;border-radius:12px;">
+                <source src="assets/images/thulaa-gameplay.mp4" type="video/mp4">
+              </video>
+              <button class="thulaa-back-btn visible" onclick="resetThulaaVideo()" style="margin-top:10px;">↺ Back</button>
+            </div>
           </div>
-          <div class="gallery-hint">Swipe to explore &rarr;</div>
 
           <div class="app-tags">
             <span class="app-tag">Card Game</span>
@@ -2948,134 +2957,23 @@
       chatTimers.push(replayTimer);
     }
 
-    // ============ THULAA INTERACTIVE DEMO ============
-    let thulaaTimers = [];
-
-    function showThulaaGame() {
+    // ============ THULAA VIDEO DEMO ============
+    function showThulaaVideo() {
       const homeView = document.getElementById('thulaaHomeView');
-      const gameView = document.getElementById('thulaaGameView');
-
-      // Hide home, show game view
+      const videoView = document.getElementById('thulaaVideoView');
       homeView.classList.add('hidden');
-      gameView.classList.add('visible');
-
-      // Start animation after transition
-      setTimeout(() => startThulaaAnimation(), 400);
+      videoView.classList.add('visible');
+      const vid = document.getElementById('thulaaVideo');
+      if (vid) vid.play();
     }
 
-    function resetThulaa() {
+    function resetThulaaVideo() {
       const homeView = document.getElementById('thulaaHomeView');
-      const gameView = document.getElementById('thulaaGameView');
-
-      // Cancel any running timers
-      thulaaTimers.forEach(t => clearTimeout(t));
-      thulaaTimers = [];
-
-      // Reset animation elements
-      resetThulaaAnimation();
-
-      // Hide game view, show home
-      gameView.classList.remove('visible');
+      const videoView = document.getElementById('thulaaVideoView');
+      const vid = document.getElementById('thulaaVideo');
+      if (vid) { vid.pause(); vid.currentTime = 0; }
+      videoView.classList.remove('visible');
       homeView.classList.remove('hidden');
-    }
-
-    function resetThulaaAnimation() {
-      // Reset rules
-      ['tr1', 'tr2', 'tr3'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.classList.remove('visible');
-      });
-
-      // Reset cards
-      ['tc1', 'tc2', 'tc3', 'tc4'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.classList.remove('visible');
-      });
-
-      // Reset players
-      ['tp1', 'tp2', 'tp3', 'tp4'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.classList.remove('active', 'pabho');
-      });
-
-      // Reset result text and button
-      const result = document.getElementById('thulaaResult');
-      const backBtn = document.getElementById('thulaaBackBtn');
-      const youName = document.getElementById('tpYouName');
-      if (result) result.classList.remove('visible');
-      if (backBtn) backBtn.classList.remove('visible');
-      if (youName) youName.classList.remove('pabho');
-    }
-
-    function startThulaaAnimation() {
-      resetThulaaAnimation();
-
-      // Animate rules appearing
-      const ruleDelays = [
-        { id: 'tr1', delay: 200 },
-        { id: 'tr2', delay: 500 },
-        { id: 'tr3', delay: 800 },
-      ];
-
-      ruleDelays.forEach(({ id, delay }) => {
-        const timer = setTimeout(() => {
-          const el = document.getElementById(id);
-          if (el) el.classList.add('visible');
-        }, delay);
-        thulaaTimers.push(timer);
-      });
-
-      // Animate cards being played with active player indicators
-      const cardPlays = [
-        { cardId: 'tc1', playerId: 'tp1', delay: 1500 },  // Ali plays Ace of Diamonds
-        { cardId: 'tc2', playerId: 'tp2', delay: 2100 },  // Sara plays 7 of Diamonds
-        { cardId: 'tc3', playerId: 'tp3', delay: 2700 },  // Priya plays 9 of Diamonds
-        { cardId: 'tc4', playerId: 'tp4', delay: 3300 },  // You throw Thulaa (3 of Spades)
-      ];
-
-      cardPlays.forEach(({ cardId, playerId, delay }, index) => {
-        const timer = setTimeout(() => {
-          // Deactivate all players
-          ['tp1', 'tp2', 'tp3', 'tp4'].forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.classList.remove('active');
-          });
-
-          // Activate current player
-          const player = document.getElementById(playerId);
-          if (player) player.classList.add('active');
-
-          // Show card
-          const card = document.getElementById(cardId);
-          if (card) card.classList.add('visible');
-        }, delay);
-        thulaaTimers.push(timer);
-      });
-
-      // Show result: Ali picks up (he has highest diamond, but you threw thulaa)
-      const resultTimer = setTimeout(() => {
-        // Deactivate all
-        ['tp1', 'tp2', 'tp3', 'tp4'].forEach(id => {
-          const el = document.getElementById(id);
-          if (el) el.classList.remove('active');
-        });
-
-        // Ali becomes "pabho" (he picks up)
-        const ali = document.getElementById('tp1');
-        if (ali) ali.classList.add('pabho');
-
-        // Show result text
-        const result = document.getElementById('thulaaResult');
-        if (result) result.classList.add('visible');
-      }, 4200);
-      thulaaTimers.push(resultTimer);
-
-      // Show back button
-      const backTimer = setTimeout(() => {
-        const backBtn = document.getElementById('thulaaBackBtn');
-        if (backBtn) backBtn.classList.add('visible');
-      }, 4800);
-      thulaaTimers.push(backTimer);
     }
 
     // ============ WORD KO INTERACTIVE DEMO ============
