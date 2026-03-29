@@ -147,16 +147,15 @@ jobs:
           # ── Streak (consecutive days with commits, counting back from today) ──
           STREAK=$(echo "$COMMITS_BY_DAY" | jq --arg today "$(date -u +%Y-%m-%d)" '
             [.[] | .date] as $dates |
-            {streak: 0, check: $today} |
-            until(.done == true;
-              if ($dates | index(.check)) then
+            {streak: 0, check: $today, skip: 0, done: false} |
+            until(.done;
+              .check as $c |
+              if ($dates | index($c)) then
                 .streak += 1 |
-                .check = (.check | strptime("%Y-%m-%d") | mktime - 86400 | strftime("%Y-%m-%d"))
-              elif .streak == 0 then
-                # today might not have commits yet, try yesterday
-                .check = (.check | strptime("%Y-%m-%d") | mktime - 86400 | strftime("%Y-%m-%d")) |
-                .skip = ((.skip // 0) + 1) |
-                if .skip > 1 then .done = true else . end
+                .check = ($c | strptime("%Y-%m-%d") | mktime - 86400 | strftime("%Y-%m-%d"))
+              elif .streak == 0 and .skip < 1 then
+                .skip += 1 |
+                .check = ($c | strptime("%Y-%m-%d") | mktime - 86400 | strftime("%Y-%m-%d"))
               else
                 .done = true
               end
