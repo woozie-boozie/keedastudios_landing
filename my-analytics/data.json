@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-29T22:21:31Z",
+  "updated": "2026-03-29T22:25:53Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2875,
+  "total_commits": 2878,
   "streak": 29,
   "commits_by_day": [
     {
@@ -679,7 +679,7 @@
     },
     {
       "date": "2026-03-29",
-      "count": 54
+      "count": 57
     }
   ],
   "commits_by_month": [
@@ -721,7 +721,7 @@
     },
     {
       "month": "2026-03",
-      "count": 375
+      "count": 378
     }
   ],
   "commits_by_hour": [
@@ -815,7 +815,7 @@
     },
     {
       "hour": 22,
-      "count": 83
+      "count": 86
     },
     {
       "hour": 23,
@@ -823,6 +823,24 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:25:22Z",
+      "sha": "e351a80",
+      "message": "replace screenshot carousels with native HTML/CSS app mockups"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:21:59Z",
+      "sha": "cd1623a",
+      "message": "update standup + TTS [automated]"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:21:32Z",
+      "sha": "a7f5966",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-29T22:20:58Z",
@@ -954,30 +972,12 @@
       "date": "2026-03-29T21:06:49Z",
       "sha": "6410210",
       "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T21:06:16Z",
-      "sha": "55d6707",
-      "message": "remove recent commits section from analytics page"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T21:04:02Z",
-      "sha": "6fcd111",
-      "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T21:03:27Z",
-      "sha": "7ad3e3a",
-      "message": "fix: jq streak calculation — use variable capture for index lookup"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 68
+      "commits": 71
     },
     {
       "name": "hinglish-vinglish",
