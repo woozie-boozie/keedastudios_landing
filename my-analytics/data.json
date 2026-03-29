@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-29T22:16:09Z",
+  "updated": "2026-03-29T22:21:31Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2872,
+  "total_commits": 2875,
   "streak": 29,
   "commits_by_day": [
     {
@@ -679,7 +679,7 @@
     },
     {
       "date": "2026-03-29",
-      "count": 51
+      "count": 54
     }
   ],
   "commits_by_month": [
@@ -721,7 +721,7 @@
     },
     {
       "month": "2026-03",
-      "count": 372
+      "count": 375
     }
   ],
   "commits_by_hour": [
@@ -815,7 +815,7 @@
     },
     {
       "hour": 22,
-      "count": 80
+      "count": 83
     },
     {
       "hour": 23,
@@ -823,6 +823,24 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:20:58Z",
+      "sha": "39bd1f8",
+      "message": "rewrite standup workflow — move logic to script file"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:20:32Z",
+      "sha": "0d5788f",
+      "message": "add interactive carousels for Hinglish Vinglish, Vibe Lingo, Mali + reorder apps"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:16:09Z",
+      "sha": "4a10ec7",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-29T22:15:36Z",
@@ -954,30 +972,12 @@
       "date": "2026-03-29T21:03:27Z",
       "sha": "7ad3e3a",
       "message": "fix: jq streak calculation — use variable capture for index lookup"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T20:49:32Z",
-      "sha": "1f3e584",
-      "message": "fix: make workflow more defensive — handle empty repos, paginate commits"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T20:46:15Z",
-      "sha": "f17066b",
-      "message": "fix: fetch commits directly from repos API instead of events"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T20:44:39Z",
-      "sha": "047fe86",
-      "message": "update analytics data [automated]"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 65
+      "commits": 68
     },
     {
       "name": "hinglish-vinglish",
