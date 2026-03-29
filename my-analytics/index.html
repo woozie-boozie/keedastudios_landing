@@ -1328,18 +1328,27 @@ function renderContribGrid(commitsByDay) {
     grid.appendChild(cell);
   });
 
-  let lastM = '';
-  const weeks = Math.ceil(dates.length / 7);
-  for (let w = 0; w < weeks; w++) {
-    const d = dates[w * 7];
-    const el = document.createElement('div');
-    el.className = 'month-label';
-    el.style.width = '16px';
+  // Month labels — positioned to match grid columns
+  var colWidth = 16; // 13px cell + 3px gap
+  var lastM = '';
+  var weeks = Math.ceil(dates.length / 7);
+  monthsEl.style.position = 'relative';
+  monthsEl.style.height = '16px';
+  monthsEl.style.width = (weeks * colWidth) + 'px';
+  for (var w = 0; w < weeks; w++) {
+    var d = dates[w * 7];
     if (d) {
-      const m = d.toLocaleString('default', { month: 'short' });
-      if (m !== lastM) { el.textContent = m; lastM = m; }
+      var m = d.toLocaleString('default', { month: 'short' }).toUpperCase();
+      if (m !== lastM) {
+        var el = document.createElement('div');
+        el.className = 'month-label';
+        el.style.position = 'absolute';
+        el.style.left = (w * colWidth) + 'px';
+        el.textContent = m;
+        monthsEl.appendChild(el);
+        lastM = m;
+      }
     }
-    monthsEl.appendChild(el);
   }
 }
 
