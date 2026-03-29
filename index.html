@@ -2627,6 +2627,39 @@
       </div>
 
       <div class="apps-grid">
+        <!-- Hinglish Vinglish -->
+        <div class="app-card blue">
+          <div class="app-status live"><span class="status-dot"></span> Live</div>
+          <h3 class="app-name">Hinglish Vinglish</h3>
+          <p class="app-tagline">AI pronunciation coach for Hindi. Real-life scenarios, instant speaking feedback, cultural collectible badges.</p>
+
+          <div class="hv-demo">
+            <div class="hv-chai-view" id="hvChaiView" onclick="startHvBrew()">
+              <div class="hv-chai-img">
+                <img src="assets/images/hinglish/chai-time.png" alt="Chai Time">
+              </div>
+              <p class="hv-chai-hint">☕ Tap to brew a lesson</p>
+            </div>
+            <div class="hv-brew-view" id="hvBrewView">
+              <div class="hv-brew-emoji" id="hvBrewEmoji">☕</div>
+              <div class="hv-brew-text">Brewing...</div>
+              <div class="hv-brew-count" id="hvBrewCount">3</div>
+            </div>
+            <div class="hv-video-view" id="hvVideoView">
+              <video id="hvVideo" controls playsinline style="width:100%;border-radius:12px;">
+                <source src="assets/images/hinglish-vinglish-gameplay.mp4" type="video/mp4">
+              </video>
+              <button class="thulaa-back-btn visible" onclick="resetHvDemo()" style="margin-top:10px;">↺ Back</button>
+            </div>
+          </div>
+
+          <div class="app-tags">
+            <span class="app-tag">Language</span>
+            <span class="app-tag">AI-powered</span>
+            <span class="app-tag">Hindi</span>
+          </div>
+        </div>
+
         <!-- Thulaa -->
         <div class="app-card purple">
           <img src="assets/images/thulaa-icon.png" alt="Thulaa" class="app-icon">
@@ -2778,14 +2811,52 @@
           </div>
         </div>
 
+      </div>
+
+      <div class="pipeline-grid" style="margin-top: 16px;">
+        <!-- Vibe Lingo -->
+        <div class="app-card purple">
+          <div class="app-status launching"><span class="status-dot"></span> Launching</div>
+          <h3 class="app-name">Vibe Lingo</h3>
+          <p class="app-tagline">Same AI-powered formula as Hinglish Vinglish, scaled to 7 languages. Persian, Spanish, German, Cantonese, Mandarin, Japanese, Punjabi. One platform, every vibe.</p>
+
+          <div class="app-tags">
+            <span class="app-tag">Language</span>
+            <span class="app-tag">AI-powered</span>
+            <span class="app-tag">7 languages</span>
+          </div>
+        </div>
+
+        <!-- Mali -->
+        <div class="app-card" style="--card-accent: #4dff9f;">
+          <div class="app-status soon"><span class="status-dot"></span> Next week</div>
+          <h3 class="app-name">Mali</h3>
+          <p class="app-tagline">Strava for gardening. Design a digital twin of your real garden, get AI care from Sidney the Snail, track weather, celebrate harvests.</p>
+
+          <div class="app-gallery">
+            <div class="app-gallery-item"><video src="assets/images/snail.mp4" autoplay muted loop playsinline></video></div>
+            <div class="app-gallery-item"><img src="assets/images/mali/1_welcome_iphone65.png" alt="Welcome" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/mali/2_garden_iphone65.png" alt="Garden Designer" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/mali/3_sidney_iphone65.png" alt="Meet Sidney" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/mali/4_dashboard_iphone65.png" alt="Dashboard" loading="lazy"></div>
+            <div class="app-gallery-item"><img src="assets/images/mali/5_weather_iphone65.png" alt="Weather" loading="lazy"></div>
+          </div>
+          <div class="gallery-hint">Swipe to explore &rarr;</div>
+
+          <div class="app-tags">
+            <span class="app-tag">Gardening</span>
+            <span class="app-tag">AI companion</span>
+            <span class="app-tag">iOS + Android</span>
+          </div>
+        </div>
+
         <!-- Babe, Guess My Fart -->
-        <div class="app-card pink full-width">
+        <div class="app-card pink">
           <img src="assets/images/bgmf-icon.png" alt="Babe, Guess My Fart" class="app-icon">
           <div class="app-status live"><span class="status-dot"></span> Live</div>
           <h3 class="app-name">Babe, Guess My Fart</h3>
           <p class="app-tagline">Real-time fart analysis engine disguised as a couples game. Record it, send it, let your partner guess the vibe. AI-powered TTS matching gives you a compatibility score.</p>
 
-          <!-- Interactive Demo -->
           <div class="bgmf-demo">
             <div class="butt-view" id="buttView">
               <div class="denim-butt" onclick="tapButt()">
@@ -2839,80 +2910,6 @@
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
               Google Play
             </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pipeline-grid" style="margin-top: 16px;">
-        <!-- Hinglish Vinglish -->
-        <div class="app-card blue">
-          <div class="app-status live"><span class="status-dot"></span> Live</div>
-          <h3 class="app-name">Hinglish Vinglish</h3>
-          <p class="app-tagline">AI pronunciation coach for Hindi. Real-life scenarios, instant speaking feedback, cultural collectible badges.</p>
-
-          <div class="hv-demo">
-            <!-- Default: chai image -->
-            <div class="hv-chai-view" id="hvChaiView" onclick="startHvBrew()">
-              <div class="hv-chai-img">
-                <img src="assets/images/hinglish/chai-time.png" alt="Chai Time">
-              </div>
-              <p class="hv-chai-hint">☕ Tap to brew a lesson</p>
-            </div>
-            <!-- Brewing countdown -->
-            <div class="hv-brew-view" id="hvBrewView">
-              <div class="hv-brew-emoji" id="hvBrewEmoji">☕</div>
-              <div class="hv-brew-text">Brewing...</div>
-              <div class="hv-brew-count" id="hvBrewCount">3</div>
-            </div>
-            <!-- Video -->
-            <div class="hv-video-view" id="hvVideoView">
-              <video id="hvVideo" controls playsinline style="width:100%;border-radius:12px;">
-                <source src="assets/images/hinglish-vinglish-gameplay.mp4" type="video/mp4">
-              </video>
-              <button class="thulaa-back-btn visible" onclick="resetHvDemo()" style="margin-top:10px;">↺ Back</button>
-            </div>
-          </div>
-
-          <div class="app-tags">
-            <span class="app-tag">Language</span>
-            <span class="app-tag">AI-powered</span>
-            <span class="app-tag">Hindi</span>
-          </div>
-        </div>
-
-        <!-- Vibe Lingo -->
-        <div class="app-card purple">
-          <div class="app-status launching"><span class="status-dot"></span> Launching</div>
-          <h3 class="app-name">Vibe Lingo</h3>
-          <p class="app-tagline">Same AI-powered formula as Hinglish Vinglish, scaled to 7 languages. Persian, Spanish, German, Cantonese, Mandarin, Japanese, Punjabi. One platform, every vibe.</p>
-
-          <div class="app-tags">
-            <span class="app-tag">Language</span>
-            <span class="app-tag">AI-powered</span>
-            <span class="app-tag">7 languages</span>
-          </div>
-        </div>
-
-        <!-- Mali -->
-        <div class="app-card" style="--card-accent: #4dff9f;">
-          <div class="app-status soon"><span class="status-dot"></span> Next week</div>
-          <h3 class="app-name">Mali</h3>
-          <p class="app-tagline">Strava for gardening. Design a digital twin of your real garden, get AI care from Sidney the Snail, track weather, celebrate harvests.</p>
-
-          <div class="app-gallery">
-            <div class="app-gallery-item"><video src="assets/images/snail.mp4" autoplay muted loop playsinline></video></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/1_welcome_iphone65.png" alt="Welcome" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/2_garden_iphone65.png" alt="Garden Designer" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/3_sidney_iphone65.png" alt="Meet Sidney" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/4_dashboard_iphone65.png" alt="Dashboard" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/5_weather_iphone65.png" alt="Weather" loading="lazy"></div>
-          </div>
-          <div class="gallery-hint">Swipe to explore &rarr;</div>
-
-          <div class="app-tags">
-            <span class="app-tag">Gardening</span>
-            <span class="app-tag">AI companion</span>
-            <span class="app-tag">iOS + Android</span>
           </div>
         </div>
       </div>
