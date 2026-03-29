@@ -19,149 +19,11 @@ jobs:
       - name: Pull latest
         run: git pull origin main
 
-      - name: Generate standup with Claude
+      - name: Run generator script
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          # Read the current data.json
-          DATA=$(cat my-analytics/data.json)
-
-          TODAY=$(date -u +%Y-%m-%d)
-          YESTERDAY=$(date -u -d 'yesterday' +%Y-%m-%d)
-
-          # Extract yesterday's commits
-          YESTERDAY_COMMITS=$(echo "$DATA" | jq -r --arg d "$YESTERDAY" '
-            .recent_commits // [] | [.[] | select(.date[0:10] == $d)] |
-            if length == 0 then "No commits found for yesterday"
-            else [.[] | "\(.repo): \(.message)"] | join("\n")
-            end')
-
-          # Extract today's commits
-          TODAY_COMMITS=$(echo "$DATA" | jq -r --arg d "$TODAY" '
-            .recent_commits // [] | [.[] | select(.date[0:10] == $d)] |
-            if length == 0 then "No commits yet today"
-            else [.[] | "\(.repo): \(.message)"] | join("\n")
-            end')
-
-          TOTAL=$(echo "$DATA" | jq '.total_commits')
-          REPOS=$(echo "$DATA" | jq '.repos.total')
-          STREAK=$(echo "$DATA" | jq '.streak')
-
-          # Top repos by recent activity
-          TOP_REPOS=$(echo "$DATA" | jq -r '[.recent_commits // [] | .[].repo] | group_by(.) | [.[] | {repo: .[0], count: length}] | sort_by(-.count) | .[0:5] | [.[] | "\(.repo) (\(.count) commits)"] | join(", ")')
-
-          # Call Claude API to generate standup
-          PROMPT="You are generating a daily standup summary for Akhil, a solo founder at Keeda Studios who ships mobile apps. Write a concise, punchy standup in JSON format.
-
-Context:
-- Date: $TODAY
-- Total commits all-time: $TOTAL across $REPOS repos
-- Current streak: $STREAK days
-- Yesterday's commits:
-$YESTERDAY_COMMITS
-
-- Today's commits so far:
-$TODAY_COMMITS
-
-- Most active repos recently: $TOP_REPOS
-
-- Active projects: Thulaa (card game, 150 DAU), Hinglish Vinglish (language app, 300 users, influencer campaigns), Vibe Lingo (7-language platform, launching), Mali (gardening app, launching next week), WordKO (word game), Bird City (creative experiment), BGMF (blocked by Apple)
-
-Return ONLY valid JSON with this exact structure, no markdown:
-{
-  \"date\": \"$TODAY\",
-  \"yesterday\": [\"bullet 1\", \"bullet 2\", ...],
-  \"today\": [\"bullet 1\", \"bullet 2\", ...],
-  \"blockers\": [\"bullet if any\"],
-  \"metrics\": [\"key metric 1\", \"key metric 2\"]
-}
-
-Keep bullets short and specific. Reference actual repos and commit messages. Be direct, no fluff."
-
-          RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
-            -H "Content-Type: application/json" \
-            -H "x-api-key: $ANTHROPIC_API_KEY" \
-            -H "anthropic-version: 2023-06-01" \
-            -d "$(jq -n --arg prompt "$PROMPT" '{
-              model: "claude-sonnet-4-20250514",
-              max_tokens: 1024,
-              messages: [{role: "user", content: $prompt}]
-            }')")
-
-          # Extract the text content
-          STANDUP=$(echo "$RESPONSE" | jq -r '.content[0].text // empty')
-
-          if [ -z "$STANDUP" ]; then
-            echo "Claude API failed or returned empty"
-            echo "$RESPONSE" | jq .
-            # Write a fallback standup
-            STANDUP="{\"date\":\"$TODAY\",\"yesterday\":[\"Continued shipping across multiple repos\",\"$TOTAL total commits, $STREAK day streak\"],\"today\":[\"Continuing active development\",\"Managing live campaigns for Hinglish Vinglish\"],\"blockers\":[\"BGMF Apple appeal still pending\"],\"metrics\":[\"$TOTAL commits all-time\",\"$STREAK day commit streak\",\"$REPOS active repos\"]}"
-          fi
-
-          # Validate JSON and write
-          if echo "$STANDUP" | jq . > /dev/null 2>&1; then
-            echo "$STANDUP" | jq . > my-analytics/standup.json
-            echo "Standup written:"
-            cat my-analytics/standup.json
-          else
-            echo "Invalid JSON from Claude, using fallback"
-            echo "{\"date\":\"$TODAY\",\"yesterday\":[\"Active development across repos\"],\"today\":[\"Continuing builds\"],\"blockers\":[],\"metrics\":[\"$TOTAL commits\",\"$STREAK day streak\"]}" | jq . > my-analytics/standup.json
-          fi
-
-      - name: Generate TTS narration
-        env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-        run: |
-          DATA=$(cat my-analytics/data.json)
-
-          TOTAL=$(echo "$DATA" | jq '.total_commits')
-          REPOS=$(echo "$DATA" | jq '.repos.total')
-          ORIGINALS=$(echo "$DATA" | jq '.repos.original')
-          STREAK=$(echo "$DATA" | jq '.streak')
-          DAYS=$(echo "$DATA" | jq '.commits_by_day | length')
-
-          # Build narration text from live data
-          TEXT="Hey — I'm Akhil. Here's my work rate, live from GitHub.
-
-Since October 2024, I've made $TOTAL commits across $REPOS repositories. That's $ORIGINALS original projects, built solo, from idea to app store.
-
-My current shipping streak is $STREAK consecutive days. I've been active $DAYS out of the last 365 days.
-
-I shipped 6 apps in 17 months. My fastest time to market was 3 weeks — Hinglish Vinglish, a Hindi learning app I built for my wife before her trip to Delhi.
-
-Thulaa, my card game, hit 3,000 downloads with 54% day-7 retention after I trained AI bots using Monte Carlo Tree Search. A viral Instagram reel hit 2 million views.
-
-I don't just build apps — I build the infrastructure around them. Autonomous agents handle my influencer outreach, daily analytics, and even creative content generation.
-
-This entire page updates automatically. The data is real. The standup below was written by an AI agent this morning. And this voice? It's generated by ElevenLabs.
-
-If you're building something real and need someone who ships — let's talk."
-
-          # Call ElevenLabs TTS API (using Rachel voice - a default voice)
-          # Voice ID for "Rachel": 21m00Tcm4TlvDq8ikWAM
-          curl -s "https://api.elevenlabs.io/v1/text-to-speech/21m00Tcm4TlvDq8ikWAM" \
-            -H "Content-Type: application/json" \
-            -H "xi-api-key: $ELEVENLABS_API_KEY" \
-            -d "$(jq -n --arg text "$TEXT" '{
-              text: $text,
-              model_id: "eleven_multilingual_v2",
-              voice_settings: {
-                stability: 0.5,
-                similarity_boost: 0.75,
-                style: 0.3
-              }
-            }')" \
-            --output my-analytics/narration.mp3
-
-          # Check if we got a valid audio file
-          FILE_SIZE=$(stat -c%s my-analytics/narration.mp3 2>/dev/null || stat -f%z my-analytics/narration.mp3 2>/dev/null || echo "0")
-          if [ "$FILE_SIZE" -gt 1000 ]; then
-            echo "TTS narration generated: ${FILE_SIZE} bytes"
-          else
-            echo "TTS generation may have failed (file too small: ${FILE_SIZE} bytes)"
-            cat my-analytics/narration.mp3
-            rm -f my-analytics/narration.mp3
-          fi
+        run: bash .github/scripts/generate-standup.sh
 
       - name: Commit and push
         run: |
@@ -169,8 +31,8 @@ If you're building something real and need someone who ships — let's talk."
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add my-analytics/standup.json my-analytics/narration.mp3
           if git diff --cached --quiet; then
-            echo "No changes to commit"
+            echo "No changes"
           else
-            git commit -m "update daily standup + TTS narration [automated]"
+            git commit -m "update standup + TTS [automated]"
             git push
           fi
