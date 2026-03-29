@@ -685,6 +685,173 @@ body::before {
   line-height: 1.6;
 }
 
+/* ── VS SCOREBOARD ── */
+.vs-card {
+  border: 1px solid var(--border2); border-radius: 8px;
+  background: var(--bg2); overflow: hidden;
+}
+
+.vs-header {
+  padding: 32px 28px;
+  text-align: center;
+  background: linear-gradient(135deg, var(--bg3), var(--bg2));
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.vs-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 20px;
+}
+
+.vs-players {
+  display: flex; align-items: center; justify-content: center; gap: 32px;
+}
+
+.vs-player {
+  text-align: center; min-width: 120px;
+}
+
+.vs-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; margin: 0 auto 10px;
+  border: 2px solid var(--border2);
+}
+
+.vs-avatar.human { background: var(--bg4); border-color: var(--amber); }
+.vs-avatar.ai { background: var(--bg4); border-color: var(--cyan); }
+
+.vs-player-name {
+  font-size: 16px; font-weight: 700;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.vs-player-name.human { color: var(--amber); }
+.vs-player-name.ai { color: var(--cyan); }
+
+.vs-player-role { font-size: 10px; color: var(--text3); letter-spacing: 1px; margin-top: 2px; }
+
+.vs-score {
+  font-size: 36px; font-weight: 800;
+  font-family: 'Fira Code', monospace;
+  color: var(--text);
+  letter-spacing: 4px;
+  line-height: 1;
+}
+
+.vs-score .colon { color: var(--text3); margin: 0 4px; }
+
+.vs-bar-wrap {
+  margin: 24px 28px 0;
+  display: flex; align-items: center; gap: 10px;
+}
+
+.vs-bar-label { font-size: 11px; font-weight: 700; min-width: 50px; }
+.vs-bar-label.human { color: var(--amber); text-align: right; }
+.vs-bar-label.ai { color: var(--cyan); text-align: left; }
+
+.vs-bar {
+  flex: 1; height: 8px; background: var(--bg4);
+  border-radius: 4px; overflow: hidden;
+  display: flex;
+}
+
+.vs-bar-fill-human {
+  height: 100%; background: linear-gradient(90deg, var(--amber), var(--amber2));
+  border-radius: 4px 0 0 4px;
+  transition: width 1.5s cubic-bezier(0.16,1,0.3,1);
+}
+
+.vs-bar-fill-ai {
+  height: 100%; background: linear-gradient(90deg, var(--cyan2), var(--cyan));
+  border-radius: 0 4px 4px 0;
+  transition: width 1.5s cubic-bezier(0.16,1,0.3,1);
+}
+
+.vs-verdict {
+  text-align: center; padding: 16px 28px 0;
+  font-size: 12px; color: var(--text2);
+}
+
+.vs-verdict strong { color: var(--cyan); }
+.vs-verdict .amber { color: var(--amber); }
+
+.vs-stats-row {
+  display: flex; justify-content: center; gap: 40px;
+  padding: 20px 28px 24px;
+  flex-wrap: wrap;
+}
+
+.vs-stat { text-align: center; }
+.vs-stat-val { font-size: 20px; font-weight: 800; font-family: 'Fira Code', monospace; }
+.vs-stat-val.amber { color: var(--amber); }
+.vs-stat-val.cyan { color: var(--cyan); }
+.vs-stat-label { font-size: 9px; color: var(--text3); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 2px; }
+
+/* Battle log */
+.vs-log {
+  border-top: 1px solid var(--border);
+  max-height: 400px; overflow-y: auto;
+}
+
+.vs-log-title {
+  padding: 16px 24px 8px;
+  font-size: 10px; color: var(--text3);
+  letter-spacing: 2px; text-transform: uppercase;
+}
+
+.vs-log-item {
+  padding: 10px 24px;
+  display: flex; gap: 12px; align-items: flex-start;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+  font-size: 12px;
+}
+
+.vs-log-item:last-child { border-bottom: none; }
+.vs-log-item:hover { background: var(--bg3); }
+
+.vs-log-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  margin-top: 5px; flex-shrink: 0;
+}
+
+.vs-log-dot.human { background: var(--amber); box-shadow: 0 0 6px rgba(255,194,68,0.4); }
+.vs-log-dot.ai { background: var(--cyan); box-shadow: 0 0 6px rgba(94,234,255,0.4); }
+
+.vs-log-who { font-size: 10px; font-weight: 700; min-width: 50px; margin-top: 1px; }
+.vs-log-who.human { color: var(--amber); }
+.vs-log-who.ai { color: var(--cyan); }
+
+.vs-log-msg { color: var(--text); flex: 1; line-height: 1.5; }
+.vs-log-time { font-size: 10px; color: var(--text3); white-space: nowrap; margin-top: 1px; }
+
+.vs-log-tag {
+  font-size: 9px; padding: 1px 6px; border-radius: 3px;
+  letter-spacing: 0.5px; margin-left: 6px;
+}
+
+.vs-log-tag.feature { background: rgba(94,234,255,0.1); color: var(--cyan); }
+.vs-log-tag.fix { background: rgba(255,194,68,0.1); color: var(--amber); }
+.vs-log-tag.infra { background: rgba(179,136,255,0.1); color: var(--purple); }
+
+.vs-links {
+  display: flex; justify-content: center; gap: 16px;
+  padding: 20px 28px;
+  border-top: 1px solid var(--border);
+}
+
+.vs-link {
+  font-size: 12px; color: var(--text3);
+  text-decoration: none; padding: 6px 16px;
+  border: 1px solid var(--border2); border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.vs-link:hover { border-color: var(--green3); color: var(--green); }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   .chart-row { grid-template-columns: 1fr; }
@@ -1041,6 +1208,179 @@ body::before {
           <div class="project-metric"><span class="v red">losing</span> <span class="l">current score</span></div>
           <div class="project-metric"><span class="v cyan">claude</span> <span class="l">winning</span></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ME VS CLAUDE -->
+  <section class="section" id="vs-claude">
+    <div class="section-header">
+      <div class="section-icon">&#x2694;</div>
+      <div>
+        <div class="section-label">./bird-city-agi --scoreboard</div>
+        <div class="section-title">Me vs Claude</div>
+      </div>
+    </div>
+
+    <div class="vs-card">
+      <div class="vs-header">
+        <div class="vs-title">bird-city-agi &mdash; the experiment</div>
+        <div class="vs-players">
+          <div class="vs-player">
+            <div class="vs-avatar human">&#x1F468;&#x200D;&#x1F4BB;</div>
+            <div class="vs-player-name human">akhil</div>
+            <div class="vs-player-role">founder / janitor</div>
+          </div>
+          <div class="vs-score">6 <span class="colon">:</span> 11</div>
+          <div class="vs-player">
+            <div class="vs-avatar ai">&#x1F916;</div>
+            <div class="vs-player-name ai">claude</div>
+            <div class="vs-player-role">creative director</div>
+          </div>
+        </div>
+
+        <div class="vs-bar-wrap">
+          <div class="vs-bar-label human">35%</div>
+          <div class="vs-bar">
+            <div class="vs-bar-fill-human" style="width:35%"></div>
+            <div class="vs-bar-fill-ai" style="width:65%"></div>
+          </div>
+          <div class="vs-bar-label ai">65%</div>
+        </div>
+
+        <div class="vs-verdict">
+          <strong>Claude is winning.</strong> It ships features at 5am. I fix the bugs it creates. <span class="amber">Respectfully.</span>
+        </div>
+      </div>
+
+      <div class="vs-stats-row">
+        <div class="vs-stat">
+          <div class="vs-stat-val amber">6</div>
+          <div class="vs-stat-label">akhil commits</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-stat-val cyan">11</div>
+          <div class="vs-stat-label">claude commits</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-stat-val amber">3</div>
+          <div class="vs-stat-label">urgent fixes</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-stat-val cyan">10</div>
+          <div class="vs-stat-label">features shipped</div>
+        </div>
+        <div class="vs-stat">
+          <div class="vs-stat-val" style="color:var(--red)">4d</div>
+          <div class="vs-stat-label">experiment age</div>
+        </div>
+      </div>
+
+      <div class="vs-log">
+        <div class="vs-log-title">battle log &mdash; real commits, real timestamps</div>
+
+        <div class="vs-log-item">
+          <div class="vs-log-dot ai"></div>
+          <div class="vs-log-who ai">claude</div>
+          <div class="vs-log-msg">Add The Godfather Raccoon &mdash; night crime boss <span class="vs-log-tag feature">feature</span></div>
+          <div class="vs-log-time">Mar 28, 15:18</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot ai"></div>
+          <div class="vs-log-who ai">claude</div>
+          <div class="vs-log-msg">Add Poop Combo Streak System &mdash; chain hits for escalating XP <span class="vs-log-tag feature">feature</span></div>
+          <div class="vs-log-time">Mar 28, 10:09</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot ai"></div>
+          <div class="vs-log-who ai">claude</div>
+          <div class="vs-log-msg">Add Eagle Overlord &mdash; aerial raid boss requiring city-wide cooperation <span class="vs-log-tag feature">feature</span></div>
+          <div class="vs-log-time">Mar 28, 05:21</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot ai"></div>
+          <div class="vs-log-who ai">claude</div>
+          <div class="vs-log-msg">Add Drunk Pigeons at Night &mdash; pickpocket &amp; lightning coin shower <span class="vs-log-tag feature">feature</span></div>
+          <div class="vs-log-time">Mar 28, 00:12</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot human"></div>
+          <div class="vs-log-who human">akhil</div>
+          <div class="vs-log-msg">URGENT: Fix skill shop, UI overlaps, and missing close buttons <span class="vs-log-tag fix">fix</span></div>
+          <div class="vs-log-time">Mar 28, 16:57</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot human"></div>
+          <div class="vs-log-who human">akhil</div>
+          <div class="vs-log-msg">URGENT: Fix all boss/predator encounters &mdash; not random ambushes <span class="vs-log-tag fix">fix</span></div>
+          <div class="vs-log-time">Mar 28, 16:24</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot ai"></div>
+          <div class="vs-log-who ai">claude</div>
+          <div class="vs-log-msg">Add Black Market NPC &mdash; night-only contraband shop <span class="vs-log-tag feature">feature</span></div>
+          <div class="vs-log-time">Mar 27, 20:21</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot ai"></div>
+          <div class="vs-log-who ai">claude</div>
+          <div class="vs-log-msg">Add 5-Star Wanted Level System + Cop Bird pursuit NPCs <span class="vs-log-tag feature">feature</span></div>
+          <div class="vs-log-time">Mar 27, 15:22</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot human"></div>
+          <div class="vs-log-who human">akhil</div>
+          <div class="vs-log-msg">Migrate to Firestore + Cloud Run deployment <span class="vs-log-tag infra">infra</span></div>
+          <div class="vs-log-time">Mar 27, 16:21</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot human"></div>
+          <div class="vs-log-who human">akhil</div>
+          <div class="vs-log-msg">PRIORITY: Fix boss fights &mdash; make player-initiated, not random <span class="vs-log-tag fix">fix</span></div>
+          <div class="vs-log-time">Mar 27, 12:23</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot ai"></div>
+          <div class="vs-log-who ai">claude</div>
+          <div class="vs-log-msg">Add Territory Control System &mdash; flock turf wars across 5 city zones <span class="vs-log-tag feature">feature</span></div>
+          <div class="vs-log-time">Mar 27, 10:16</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot ai"></div>
+          <div class="vs-log-who ai">claude</div>
+          <div class="vs-log-msg">Add Weather System: Rain, Wind &amp; Storms with Lightning <span class="vs-log-tag feature">feature</span></div>
+          <div class="vs-log-time">Mar 27, 05:10</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot ai"></div>
+          <div class="vs-log-who ai">claude</div>
+          <div class="vs-log-msg">Add Raccoon Thieves (night-only NPCs) + Stars &amp; Moon visual <span class="vs-log-tag feature">feature</span></div>
+          <div class="vs-log-time">Mar 27, 00:32</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot ai"></div>
+          <div class="vs-log-who ai">claude</div>
+          <div class="vs-log-msg">Add Day/Night Cycle &mdash; the city now breathes <span class="vs-log-tag feature">feature</span></div>
+          <div class="vs-log-time">Mar 26, 22:05</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot human"></div>
+          <div class="vs-log-who human">akhil</div>
+          <div class="vs-log-msg">Add CLAUDE.md &mdash; autonomous creative director guide <span class="vs-log-tag infra">infra</span></div>
+          <div class="vs-log-time">Mar 26, 22:05</div>
+        </div>
+        <div class="vs-log-item">
+          <div class="vs-log-dot human"></div>
+          <div class="vs-log-who human">akhil</div>
+          <div class="vs-log-msg">Initial fork of Bird City &mdash; the AGI experiment begins <span class="vs-log-tag infra">infra</span></div>
+          <div class="vs-log-time">Mar 26, 21:59</div>
+        </div>
+      </div>
+
+      <div class="vs-links">
+        <a href="https://bird-city.web.app" target="_blank" class="vs-link">bird-city (akhil's build)</a>
+        <a href="https://bird-city-agi.web.app" target="_blank" class="vs-link">bird-city-agi (claude's build)</a>
+        <a href="https://github.com/woozie-boozie/bird-city-agi" target="_blank" class="vs-link">view on github</a>
       </div>
     </div>
   </section>
