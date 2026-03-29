@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-29T22:03:17Z",
+  "updated": "2026-03-29T22:06:23Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2864,
+  "total_commits": 2866,
   "streak": 29,
   "commits_by_day": [
     {
@@ -679,7 +679,7 @@
     },
     {
       "date": "2026-03-29",
-      "count": 43
+      "count": 45
     }
   ],
   "commits_by_month": [
@@ -721,7 +721,7 @@
     },
     {
       "month": "2026-03",
-      "count": 364
+      "count": 366
     }
   ],
   "commits_by_hour": [
@@ -815,7 +815,7 @@
     },
     {
       "hour": 22,
-      "count": 72
+      "count": 74
     },
     {
       "hour": 23,
@@ -823,6 +823,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:05:53Z",
+      "sha": "9c60251",
+      "message": "fix: simplify daily standup triggers — remove workflow_run"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:03:18Z",
+      "sha": "d53474f",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-29T22:02:53Z",
@@ -960,24 +972,12 @@
       "date": "2026-03-29T16:38:09Z",
       "sha": "5120f4e",
       "message": "Fix dSYM upload warning for App Store"
-    },
-    {
-      "repo": "fun-language-world",
-      "date": "2026-03-29T16:18:28Z",
-      "sha": "97cd06f",
-      "message": "Fix app icon: remove alpha channel for App Store"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-29T15:25:38Z",
-      "sha": "47216ac",
-      "message": "Add Radio Tower Control — capture the airwaves, broadcast to the whole city"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 57
+      "commits": 59
     },
     {
       "name": "hinglish-vinglish",
