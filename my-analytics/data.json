@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-29T23:48:08Z",
+  "updated": "2026-03-29T23:53:47Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2910,
+  "total_commits": 2912,
   "streak": 29,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-29",
-      "count": 89
+      "count": 91
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 410
+      "count": 412
     }
   ],
   "commits_by_hour": [
@@ -1407,10 +1407,22 @@
     },
     {
       "hour": 23,
-      "count": 161
+      "count": 163
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:52:49Z",
+      "sha": "b4f0dfb",
+      "message": "fix bird-city links: bird-city.com + Cloud Run AGI URL"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:48:08Z",
+      "sha": "b8687ed",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-29T23:47:25Z",
@@ -1548,24 +1560,12 @@
       "date": "2026-03-29T22:40:05Z",
       "sha": "62d4a8d",
       "message": "replace static mockups with fully interactive auto-playing demos"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T22:39:10Z",
-      "sha": "fd87e0d",
-      "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T22:38:14Z",
-      "sha": "3dc8977",
-      "message": "increase commit pagination to 15 pages (1500) per repo"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 103
+      "commits": 105
     },
     {
       "name": "hinglish-vinglish",
