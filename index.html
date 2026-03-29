@@ -7,33 +7,49 @@
   <meta name="description" content="Indie game studio based in London. Making fun, quirky mobile games that bring joy and laughter.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=Fira+Code:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/images/keeda_logo.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --primary: #6366F1;
-      --primary-dark: #4F46E5;
-      --accent: #F97316;
-      --accent-pink: #EC4899;
-      --accent-cyan: #06B6D4;
-      --accent-green: #10B981;
-      --dark: #0F172A;
-      --dark-card: #1E293B;
-      --dark-lighter: #334155;
-      --text: #F8FAFC;
-      --text-muted: #94A3B8;
+      --primary: #4dff9f;
+      --primary-dark: #2ed47a;
+      --accent: #ffc244;
+      --accent-pink: #ff6b8a;
+      --accent-cyan: #5eeaff;
+      --accent-green: #4dff9f;
+      --dark: #0b1010;
+      --dark-card: #111919;
+      --dark-lighter: #1d2a2a;
+      --text: #e8f0ea;
+      --text-muted: #a3bfaa;
+      --border: #1c3325;
+      --border2: #2a4a35;
+      --glow: 0 0 30px rgba(77,255,159,0.1);
+      --glow-strong: 0 0 60px rgba(77,255,159,0.15);
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'JetBrains Mono', monospace;
       background: var(--dark);
       color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* Scanlines overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,255,136,0.008) 3px, rgba(0,255,136,0.008) 4px);
+      pointer-events: none;
+      z-index: 9999;
     }
 
     /* Animations */
@@ -43,8 +59,8 @@
     }
 
     @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
-      50% { box-shadow: 0 0 40px rgba(99, 102, 241, 0.5); }
+      0%, 100% { box-shadow: 0 0 20px rgba(77,255,159,0.2); }
+      50% { box-shadow: 0 0 40px rgba(77,255,159,0.4); }
     }
 
     @keyframes wiggle {
@@ -69,6 +85,11 @@
       100% { background-position: 0% 50%; }
     }
 
+    @keyframes terminalBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
     /* Background decoration */
     .bg-decoration {
       position: fixed;
@@ -84,14 +105,14 @@
     .bg-blob {
       position: absolute;
       border-radius: 50%;
-      filter: blur(80px);
-      opacity: 0.15;
+      filter: blur(100px);
+      opacity: 0.08;
     }
 
     .blob-1 {
       width: 600px;
       height: 600px;
-      background: var(--primary);
+      background: #4dff9f;
       top: -200px;
       right: -200px;
     }
@@ -99,7 +120,7 @@
     .blob-2 {
       width: 400px;
       height: 400px;
-      background: var(--accent-pink);
+      background: #5eeaff;
       bottom: 20%;
       left: -100px;
     }
@@ -107,7 +128,7 @@
     .blob-3 {
       width: 300px;
       height: 300px;
-      background: var(--accent-cyan);
+      background: #4dff9f;
       bottom: -100px;
       right: 20%;
     }
@@ -136,9 +157,9 @@
     }
 
     .hero-logo {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 32px;
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 28px;
       animation: float 4s ease-in-out infinite;
     }
 
@@ -146,28 +167,31 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      border-radius: 24px;
+      border-radius: 16px;
     }
 
     .hero-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 10px 20px;
-      background: rgba(99, 102, 241, 0.15);
-      border: 1px solid rgba(99, 102, 241, 0.3);
-      border-radius: 50px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--primary);
+      padding: 8px 18px;
+      background: rgba(77,255,159,0.08);
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent-cyan);
       margin-bottom: 24px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .hero-badge .location-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--accent-green);
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
       border-radius: 50%;
+      box-shadow: 0 0 8px var(--primary);
       animation: pulse-glow 2s ease-in-out infinite;
     }
 
@@ -180,18 +204,14 @@
     }
 
     .hero-title .highlight {
-      background: linear-gradient(135deg, var(--primary), var(--accent-pink), var(--accent));
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: gradient-shift 5s ease infinite;
+      color: var(--primary);
+      text-shadow: var(--glow-strong);
     }
 
     .hero-subtitle {
-      font-size: 22px;
+      font-size: 16px;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.7;
       margin-bottom: 40px;
     }
 
@@ -206,34 +226,38 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 16px 32px;
-      border-radius: 16px;
-      font-size: 16px;
-      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
       text-decoration: none;
       transition: all 0.3s;
+      letter-spacing: 0.5px;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+      background: rgba(77,255,159,0.1);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      box-shadow: var(--glow);
     }
 
     .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
+      background: rgba(77,255,159,0.2);
+      transform: translateY(-2px);
+      box-shadow: var(--glow-strong);
     }
 
     .btn-secondary {
       background: var(--dark-card);
-      color: var(--text);
-      border: 1px solid var(--dark-lighter);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
     }
 
     .btn-secondary:hover {
-      background: var(--dark-lighter);
-      transform: translateY(-3px);
+      border-color: var(--border2);
+      color: var(--text);
+      transform: translateY(-2px);
     }
 
     .scroll-hint {
@@ -267,27 +291,28 @@
 
     .section-tag {
       display: inline-block;
-      padding: 8px 16px;
-      background: rgba(249, 115, 22, 0.15);
-      border: 1px solid rgba(249, 115, 22, 0.3);
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--accent);
+      padding: 6px 14px;
+      background: rgba(77,255,159,0.08);
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent-cyan);
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       margin-bottom: 16px;
     }
 
     .section-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 48px;
+      font-size: 36px;
       font-weight: 700;
       margin-bottom: 16px;
+      letter-spacing: -1px;
     }
 
     .section-subtitle {
-      font-size: 18px;
+      font-size: 14px;
       color: var(--text-muted);
       max-width: 600px;
       margin: 0 auto;
@@ -297,24 +322,25 @@
     .apps-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+      gap: 16px;
       max-width: 1000px;
       margin: 0 auto;
     }
 
     .app-card {
       background: var(--dark-card);
-      border-radius: 32px;
-      padding: 40px;
+      border-radius: 12px;
+      padding: 32px;
       position: relative;
       overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s;
+      border: 1px solid var(--border);
     }
 
     .app-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      transform: translateY(-4px);
+      background: #172020;
+      border-color: var(--border2);
     }
 
     .app-card::before {
@@ -323,56 +349,67 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 4px;
-      background: var(--card-accent, var(--primary));
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--card-accent, var(--primary)), transparent);
+      transition: background 0.3s;
     }
 
-    .app-card.pink { --card-accent: #EC4899; }
-    .app-card.purple { --card-accent: #A855F7; }
-    .app-card.blue { --card-accent: #3B82F6; }
-    .app-card.orange { --card-accent: #F97316; }
+    .app-card:hover::before {
+      background: linear-gradient(90deg, transparent, var(--card-accent, var(--primary)), transparent);
+      opacity: 1;
+    }
+
+    .app-card.pink { --card-accent: #ff6b8a; }
+    .app-card.purple { --card-accent: #c9a5ff; }
+    .app-card.blue { --card-accent: #5eeaff; }
+    .app-card.orange { --card-accent: #ffc244; }
 
     .app-icon {
-      width: 80px;
-      height: 80px;
-      border-radius: 20px;
-      margin-bottom: 24px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
       transition: transform 0.3s;
+      border: 1px solid var(--border);
     }
 
     .app-card:hover .app-icon {
-      transform: scale(1.05) rotate(-3deg);
+      transform: scale(1.05);
     }
 
     .app-name {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 700;
       margin-bottom: 8px;
+      letter-spacing: -0.5px;
     }
 
     .app-tagline {
-      font-size: 15px;
+      font-size: 13px;
       color: var(--text-muted);
       margin-bottom: 20px;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .app-tags {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
       margin-bottom: 24px;
     }
 
     .app-tag {
-      padding: 6px 12px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      font-size: 12px;
-      font-weight: 600;
+      padding: 4px 10px;
+      background: rgba(77,255,159,0.06);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 10px;
+      font-weight: 500;
       color: var(--text-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
     .store-links {
@@ -384,18 +421,20 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
+      padding: 10px 18px;
+      background: rgba(77,255,159,0.06);
+      border: 1px solid var(--border);
+      border-radius: 8px;
       color: var(--text);
       text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 500;
       transition: all 0.3s;
     }
 
     .store-link:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(77,255,159,0.12);
+      border-color: var(--border2);
       transform: translateY(-2px);
     }
 
@@ -415,7 +454,7 @@
       grid-column: span 2;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 32px;
       align-items: center;
     }
 
@@ -435,7 +474,8 @@
       background: var(--dark);
       border-radius: 24px;
       padding: 6px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--border);
       transform: rotate(-5deg);
       transition: transform 0.3s;
     }
@@ -463,19 +503,19 @@
     /* ============ COMING SOON ============ */
     .coming-soon-section {
       padding: 100px 24px;
-      background: linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%);
+      border-top: 1px solid var(--border);
     }
 
     .coming-soon-card {
       max-width: 800px;
       margin: 0 auto;
       background: var(--dark-card);
-      border-radius: 40px;
+      border-radius: 12px;
       padding: 60px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      border: 2px solid rgba(16, 185, 129, 0.2);
+      border: 1px solid var(--border);
     }
 
     .coming-soon-card::before {
@@ -483,13 +523,14 @@
       position: absolute;
       top: 20px;
       right: -40px;
-      background: var(--accent-green);
-      color: white;
-      padding: 8px 50px;
-      font-size: 12px;
+      background: var(--primary);
+      color: var(--dark);
+      padding: 6px 50px;
+      font-size: 10px;
       font-weight: 800;
       letter-spacing: 2px;
       transform: rotate(45deg);
+      font-family: 'JetBrains Mono', monospace;
     }
 
     .sidney-container {
@@ -508,7 +549,7 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      filter: drop-shadow(0 20px 40px rgba(16, 185, 129, 0.3));
+      filter: drop-shadow(0 20px 40px rgba(77,255,159,0.2));
     }
 
     .plant-emojis {
@@ -533,17 +574,19 @@
 
     .coming-soon-title {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 36px;
+      font-size: 28px;
       font-weight: 700;
       margin-bottom: 12px;
+      letter-spacing: -1px;
     }
 
     .coming-soon-name {
-      color: var(--accent-green);
+      color: var(--primary);
+      text-shadow: var(--glow);
     }
 
     .coming-soon-subtitle {
-      font-size: 18px;
+      font-size: 14px;
       color: var(--text-muted);
       margin-bottom: 32px;
       max-width: 500px;
@@ -561,42 +604,46 @@
 
     .notify-input {
       flex: 1;
-      padding: 16px 20px;
+      padding: 12px 16px;
       background: var(--dark);
-      border: 1px solid var(--dark-lighter);
-      border-radius: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
       color: var(--text);
-      font-size: 15px;
+      font-size: 13px;
+      font-family: 'JetBrains Mono', monospace;
     }
 
     .notify-input::placeholder {
-      color: var(--text-muted);
+      color: #6b8c74;
     }
 
     .notify-input:focus {
       outline: none;
-      border-color: var(--accent-green);
+      border-color: var(--primary);
+      box-shadow: var(--glow);
     }
 
     .notify-btn {
-      padding: 16px 28px;
-      background: var(--accent-green);
-      color: white;
-      border: none;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 700;
+      padding: 12px 24px;
+      background: rgba(77,255,159,0.1);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
       cursor: pointer;
       transition: all 0.3s;
     }
 
     .notify-btn:hover {
-      background: #059669;
+      background: rgba(77,255,159,0.2);
       transform: translateY(-2px);
     }
 
     /* ============ ABOUT ============ */
     .about-section {
+      border-top: 1px solid var(--border);
       padding: 100px 24px;
     }
 
@@ -607,27 +654,31 @@
     }
 
     .about-avatar {
-      width: 120px;
-      height: 120px;
-      background: linear-gradient(135deg, var(--primary), var(--accent-pink));
+      width: 100px;
+      height: 100px;
+      background: var(--dark-card);
+      border: 2px solid var(--primary);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 48px;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--primary);
       margin: 0 auto 32px;
-      animation: pulse-glow 3s ease-in-out infinite;
+      box-shadow: var(--glow);
     }
 
     .about-text {
-      font-size: 20px;
+      font-size: 15px;
       color: var(--text-muted);
       line-height: 1.8;
       margin-bottom: 32px;
     }
 
     .about-text strong {
-      color: var(--text);
+      color: var(--primary);
+      font-weight: 500;
     }
 
     .social-links {
@@ -637,10 +688,11 @@
     }
 
     .social-link {
-      width: 48px;
-      height: 48px;
+      width: 44px;
+      height: 44px;
       background: var(--dark-card);
-      border-radius: 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -650,9 +702,10 @@
     }
 
     .social-link:hover {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-3px);
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(77,255,159,0.08);
+      transform: translateY(-2px);
     }
 
     .social-link svg {
@@ -662,8 +715,8 @@
 
     /* ============ FOOTER ============ */
     footer {
-      padding: 60px 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 40px 24px;
+      border-top: 1px solid var(--border);
     }
 
     .footer-content {
@@ -691,13 +744,15 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
-      border-radius: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
     }
 
     .footer-name {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
+      color: var(--primary);
     }
 
     .footer-links {
@@ -706,31 +761,31 @@
     }
 
     .footer-link {
-      color: var(--text-muted);
+      color: #6b8c74;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 12px;
       transition: color 0.3s;
     }
 
     .footer-link:hover {
-      color: var(--text);
+      color: var(--primary);
     }
 
     .footer-copy {
-      color: var(--text-muted);
-      font-size: 14px;
+      color: #6b8c74;
+      font-size: 12px;
     }
 
     /* ============ RESPONSIVE ============ */
     @media (max-width: 900px) {
       .hero-title { font-size: 48px; }
-      .hero-subtitle { font-size: 18px; }
+      .hero-subtitle { font-size: 14px; }
 
       .apps-grid {
         grid-template-columns: 1fr;
       }
 
-      .app-card.featured {
+      .app-card.featured, .app-card.full-width {
         grid-column: span 1;
         grid-template-columns: 1fr;
       }
@@ -739,13 +794,13 @@
         order: -1;
       }
 
-      .section-title { font-size: 36px; }
+      .section-title { font-size: 28px; }
     }
 
     @media (max-width: 600px) {
       .hero { padding: 60px 20px; }
       .hero-title { font-size: 36px; }
-      .hero-subtitle { font-size: 16px; }
+      .hero-subtitle { font-size: 13px; }
       .hero-logo { width: 80px; height: 80px; }
 
       .hero-cta {
@@ -756,17 +811,17 @@
       .btn { width: 100%; justify-content: center; max-width: 280px; }
 
       .section { padding: 60px 20px; }
-      .section-title { font-size: 28px; }
+      .section-title { font-size: 24px; }
 
-      .app-card { padding: 28px; border-radius: 24px; }
-      .app-name { font-size: 24px; }
-      .app-icon { width: 64px; height: 64px; }
+      .app-card { padding: 24px; border-radius: 10px; }
+      .app-name { font-size: 20px; }
+      .app-icon { width: 56px; height: 56px; }
 
       .store-links { flex-direction: column; }
       .store-link { justify-content: center; }
 
-      .coming-soon-card { padding: 40px 24px; border-radius: 28px; }
-      .coming-soon-title { font-size: 28px; }
+      .coming-soon-card { padding: 40px 24px; border-radius: 10px; }
+      .coming-soon-title { font-size: 22px; }
       .sidney-img { width: 150px; height: 150px; }
 
       .notify-form { flex-direction: column; }
@@ -783,11 +838,13 @@
       }
     }
 
-    /* Fun hover effects */
-    .app-card.pink:hover { box-shadow: 0 20px 60px rgba(236, 72, 153, 0.2); }
-    .app-card.purple:hover { box-shadow: 0 20px 60px rgba(168, 85, 247, 0.2); }
-    .app-card.blue:hover { box-shadow: 0 20px 60px rgba(59, 130, 246, 0.2); }
-    .app-card.orange:hover { box-shadow: 0 20px 60px rgba(249, 115, 22, 0.2); }
+    .app-card.full-width { grid-column: span 2; }
+
+    /* Card hover glows */
+    .app-card.pink:hover { box-shadow: 0 0 40px rgba(255,107,138,0.08); }
+    .app-card.purple:hover { box-shadow: 0 0 40px rgba(201,165,255,0.08); }
+    .app-card.blue:hover { box-shadow: 0 0 40px rgba(94,234,255,0.08); }
+    .app-card.orange:hover { box-shadow: 0 0 40px rgba(255,194,68,0.08); }
 
     /* ============ BGMF DEMO STYLES ============ */
     .bgmf-demo {
@@ -1167,12 +1224,12 @@
 
     .thulaa-phone-frame {
       width: 140px;
-      background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%);
+      background: linear-gradient(180deg, #111919 0%, #0b1010 100%);
       border-radius: 24px;
       padding: 6px;
-      box-shadow: 0 0 40px rgba(168, 85, 247, 0.4), 0 15px 30px rgba(0,0,0,0.4);
+      box-shadow: 0 0 40px rgba(201,165,255,0.15), 0 15px 30px rgba(0,0,0,0.4);
       animation: thulaaFloat 4s ease-in-out infinite;
-      border: 1px solid rgba(168, 85, 247, 0.3);
+      border: 1px solid rgba(201,165,255,0.2);
       cursor: pointer;
       transition: transform 0.2s;
     }
@@ -2009,6 +2066,278 @@
     /* Remove plant emojis styles - no longer needed */
     .plant-emojis { display: none; }
 
+    /* ============ STATUS BADGES ============ */
+    .app-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .app-status.live {
+      background: rgba(77,255,159,0.1);
+      border: 1px solid rgba(77,255,159,0.3);
+      color: #4dff9f;
+    }
+
+    .app-status.live .status-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: #4dff9f;
+      box-shadow: 0 0 6px #4dff9f;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .app-status.launching {
+      background: rgba(255,194,68,0.1);
+      border: 1px solid rgba(255,194,68,0.3);
+      color: #ffc244;
+    }
+
+    .app-status.launching .status-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: #ffc244;
+      animation: pulse 1.5s infinite;
+    }
+
+    .app-status.soon {
+      background: rgba(94,234,255,0.08);
+      border: 1px solid rgba(94,234,255,0.2);
+      color: #5eeaff;
+    }
+
+    .app-status.soon .status-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: #5eeaff;
+      opacity: 0.5;
+    }
+
+    /* ============ HERO STATS ============ */
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-stat-val {
+      font-size: 36px;
+      font-weight: 800;
+      font-family: 'Fira Code', monospace;
+      color: var(--primary);
+      text-shadow: var(--glow);
+      line-height: 1;
+    }
+
+    .hero-stat-val.cyan { color: #5eeaff; text-shadow: 0 0 30px rgba(94,234,255,0.12); }
+    .hero-stat-val.amber { color: #ffc244; }
+
+    .hero-stat-label {
+      font-size: 9px;
+      color: #6b8c74;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* ============ SIMPLE APP CARDS (no demo) ============ */
+    .app-description {
+      font-size: 12px;
+      color: #6b8c74;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    .app-metrics {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    .app-metric {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-metric-val {
+      font-size: 18px;
+      font-weight: 700;
+      font-family: 'Fira Code', monospace;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .app-metric-val.cyan { color: #5eeaff; }
+    .app-metric-val.amber { color: #ffc244; }
+
+    .app-metric-label {
+      font-size: 9px;
+      color: #6b8c74;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* ============ PROOF BANNER ============ */
+    .proof-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      color: #6b8c74;
+    }
+
+    .proof-banner a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .proof-banner a:hover {
+      color: #5eeaff;
+    }
+
+    /* ============ PIPELINE SECTION ============ */
+    .pipeline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .pipeline-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: all 0.3s;
+    }
+
+    .pipeline-card:hover {
+      background: #172020;
+      border-color: var(--border2);
+    }
+
+    .pipeline-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .pipeline-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      background: rgba(77,255,159,0.06);
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .pipeline-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .pipeline-tagline {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .pipeline-detail {
+      font-size: 11px;
+      color: #6b8c74;
+      line-height: 1.7;
+    }
+
+    .pipeline-detail strong {
+      color: var(--text-muted);
+    }
+
+    /* ============ ABOUT REWRITE ============ */
+    .about-grid {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .about-story {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.9;
+    }
+
+    .about-story strong {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .about-story .cyan { color: #5eeaff; }
+    .about-story .amber { color: #ffc244; }
+
+    .about-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .tech-stack {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .tech-tag {
+      padding: 4px 10px;
+      background: rgba(77,255,159,0.06);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 10px;
+      color: #6b8c74;
+      letter-spacing: 0.5px;
+    }
+
+    /* Mobile responsive for pipeline */
+    @media (max-width: 600px) {
+      .hero-stats { gap: 20px; }
+      .hero-stat-val { font-size: 28px; }
+      .pipeline-grid { grid-template-columns: 1fr; }
+      .pipeline-card { padding: 24px; }
+      .about-cta { flex-direction: column; }
+    }
+
     /* Mobile responsive for Thulaa game */
     @media (max-width: 400px) {
       .thulaa-players {
@@ -2065,29 +2394,33 @@
         <img src="assets/images/keeda_logo.png" alt="Keeda Studios">
       </div>
 
-      <div class="hero-badge">
-        <span class="location-dot"></span>
-        Keeda Studios
-      </div>
-
       <h1 class="hero-title">
-        Making <span class="highlight">fun stuff</span><br>for your phone
+        Games, apps,<br><span class="highlight">and chaos.</span>
       </h1>
 
+      <p class="hero-subtitle">
+        <strong>Keeda</strong> means <span style="color:#ffc244;">"bug"</span> in Hindi &mdash; the annoying kind that won't leave you alone. That's the energy. We build things that get stuck in your head: games you can't stop playing, apps you didn't know you needed, and experiences that make you text your friends.
+        <br><br>
+        One-person indie studio out of London. No team, no investors, no committees. Just fast iteration, real users, and a lot of late nights.
+      </p>
+
       <div class="hero-cta">
-        <a href="#apps" class="btn btn-primary">
-          See My Apps
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+        <a href="https://discord.com/users/galactigiraffe" class="btn btn-primary" target="_blank">
+          Say hello on Discord
         </a>
-        <a href="mailto:akhil@keedastudios.com" class="btn btn-secondary">
-          Say Hello
+        <a href="mailto:akhil1189@gmail.com" class="btn btn-secondary">
+          Old school email
+        </a>
+        <a href="#apps" class="btn btn-secondary">
+          Check our apps
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
         </a>
       </div>
+
     </div>
 
     <div class="scroll-hint">
-      <span>Scroll to explore</span>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
     </div>
   </section>
 
@@ -2095,17 +2428,18 @@
   <section class="section" id="apps">
     <div class="container">
       <div class="section-header">
-        <div class="section-tag">The Collection</div>
-        <h2 class="section-title">Apps I've Built</h2>
-        <p class="section-subtitle">Each one made with love, late nights, and way too much coffee</p>
+        <div class="section-tag">Our apps</div>
+        <h2 class="section-title">The collection</h2>
+        <p class="section-subtitle">Card games, word games, fart games, language learning, gardening &mdash; if it's fun and slightly unhinged, we're probably building it.</p>
       </div>
 
       <div class="apps-grid">
         <!-- Babe, Guess My Fart -->
         <div class="app-card pink">
           <img src="assets/images/bgmf-icon.png" alt="Babe, Guess My Fart" class="app-icon">
+          <div class="app-status live"><span class="status-dot"></span> Live</div>
           <h3 class="app-name">Babe, Guess My Fart</h3>
-          <p class="app-tagline">The ultimate couples game that really stinks. Record, send, and guess - it's weirdly romantic.</p>
+          <p class="app-tagline">Real-time fart analysis engine disguised as a couples game. Record it, send it, let your partner guess the vibe. AI-powered TTS matching gives you a compatibility score.</p>
 
           <!-- Interactive Demo -->
           <div class="bgmf-demo">
@@ -2191,8 +2525,9 @@
         <!-- Thulaa -->
         <div class="app-card purple">
           <img src="assets/images/thulaa-icon.png" alt="Thulaa" class="app-icon">
+          <div class="app-status live"><span class="status-dot"></span> Live</div>
           <h3 class="app-name">Thulaa</h3>
-          <p class="app-tagline">The classic South Asian card game. Don't be the last person standing (aka Pabho)!</p>
+          <p class="app-tagline">The South Asian card game your parents never let you play growing up. 3k+ downloads, 500+ games daily, 2M+ reel views. Don't be the Pabho.</p>
 
           <!-- Interactive Demo -->
           <div class="thulaa-demo">
@@ -2281,10 +2616,11 @@
         </div>
 
         <!-- Word KO -->
-        <div class="app-card orange">
+        <div class="app-card orange full-width">
           <img src="assets/images/wordko-icon.png" alt="Word KO" class="app-icon">
+          <div class="app-status live"><span class="status-dot"></span> Live</div>
           <h3 class="app-name">Word KO</h3>
-          <p class="app-tagline">Two competitive word games. Race. Solve. Score. Outsmart your opponents!</p>
+          <p class="app-tagline">Two head-to-head word games in one app. Crossword Chaos + Word Chaser. 500+ organic downloads, $0 spent on ads.</p>
 
           <!-- Interactive Demo -->
           <div class="wordko-demo">
@@ -2387,31 +2723,81 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ============ COMING SOON ============ -->
-  <section class="coming-soon-section" id="coming-soon">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-tag" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); color: #10B981;">What's Next</div>
-        <h2 class="section-title">Something's Coming...</h2>
-      </div>
-
-      <div class="coming-soon-card">
-        <div class="sidney-container">
-          <div class="sidney-img">
-            <img src="assets/images/sidney.png" alt="Sidney the Snail">
+      <div class="pipeline-grid" style="margin-top: 16px;">
+        <!-- Hinglish Vinglish -->
+        <div class="app-card blue">
+          <div class="pipeline-icon" style="margin-bottom: 16px;">🇮🇳</div>
+          <div class="app-status live"><span class="status-dot"></span> Live</div>
+          <h3 class="app-name">Hinglish Vinglish</h3>
+          <p class="app-tagline">Hindi learning app built for my British wife before her Delhi trip. AI pronunciation coach, listening labs, Roman-script Hinglish. Influencer marketing + UAC campaigns running.</p>
+          <div class="app-metrics">
+            <div class="app-metric">
+              <span class="app-metric-val">300+</span>
+              <span class="app-metric-label">Users</span>
+            </div>
+            <div class="app-metric">
+              <span class="app-metric-val amber">~3wk</span>
+              <span class="app-metric-label">Idea to store</span>
+            </div>
+            <div class="app-metric">
+              <span class="app-metric-val cyan">5</span>
+              <span class="app-metric-label">Influencers</span>
+            </div>
+          </div>
+          <div class="app-tags">
+            <span class="app-tag">Language</span>
+            <span class="app-tag">AI-powered</span>
+            <span class="app-tag">Hindi</span>
           </div>
         </div>
 
-        <h3 class="coming-soon-title">
-          Meet <span class="coming-soon-name">Sidney the Snail</span>
-        </h3>
+        <!-- Vibe Lingo -->
+        <div class="app-card purple">
+          <div class="pipeline-icon" style="margin-bottom: 16px;">🌍</div>
+          <div class="app-status launching"><span class="status-dot"></span> Launching</div>
+          <h3 class="app-name">Vibe Lingo</h3>
+          <p class="app-tagline">The umbrella language platform sitting above Hinglish Vinglish. Same AI-powered formula scaled to 7 languages. Built in parallel while running 2 live campaigns.</p>
+          <div class="app-metrics">
+            <div class="app-metric">
+              <span class="app-metric-val">7</span>
+              <span class="app-metric-label">Languages</span>
+            </div>
+            <div class="app-metric">
+              <span class="app-metric-val cyan">96%</span>
+              <span class="app-metric-label">Complete</span>
+            </div>
+          </div>
+          <div class="app-tags">
+            <span class="app-tag">Language</span>
+            <span class="app-tag">AI-powered</span>
+            <span class="app-tag">Multi-lingual</span>
+          </div>
+        </div>
 
-        <p class="coming-soon-subtitle">
-          Your new companion. Coming soon.
-        </p>
+        <!-- Mali -->
+        <div class="app-card" style="--card-accent: #4dff9f;">
+          <div class="pipeline-icon" style="margin-bottom: 16px;">🌱</div>
+          <div class="app-status soon"><span class="status-dot"></span> Next week</div>
+          <h3 class="app-name">Mali</h3>
+          <p class="app-tagline">Strava for gardening. FarmVille with real stakes &mdash; design and grow your actual garden. Companion planting logic, gamified progress, community challenges.</p>
+          <div class="app-metrics">
+            <div class="app-metric">
+              <span class="app-metric-val">iOS</span>
+              <span class="app-metric-label">+ Android</span>
+            </div>
+            <div class="app-metric">
+              <span class="app-metric-val amber">~8wk</span>
+              <span class="app-metric-label">Idea to store</span>
+            </div>
+          </div>
+          <div class="app-tags">
+            <span class="app-tag">Gardening</span>
+            <span class="app-tag">Gamified</span>
+            <span class="app-tag">Community</span>
+          </div>
+          <p class="app-description">Featuring Sidney the Snail as your gardening companion.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -2419,35 +2805,28 @@
   <!-- ============ ABOUT ============ -->
   <section class="about-section" id="about">
     <div class="container">
-      <div class="about-content">
-        <div class="about-avatar">
-          <span>KS</span>
-        </div>
+      <div class="section-header">
+        <div class="section-tag">Connect</div>
+        <h2 class="section-title">Let's talk</h2>
+        <p class="section-subtitle">Got an idea, a collab, or just want to say what's up &mdash; we're always down.</p>
+      </div>
 
-        <p class="about-text">
-          <strong>Keeda Studios</strong> is a one-person indie game studio based in London.
-          I build fun, quirky apps that bring people together and make them laugh.
-          Whether it's a hilarious party game or a relaxing garden sim,
-          every project is made with passion and a sprinkle of chaos.
-        </p>
-
-        <div class="social-links">
-          <a href="mailto:akhil@keedastudios.com" class="social-link" title="Email">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/akhil-madan/" class="social-link" title="LinkedIn" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="https://discord.com/users/galactigiraffe" class="social-link" title="Discord" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
-          </a>
-          <a href="https://twitter.com/keedastudios" class="social-link" title="Twitter" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://github.com/keedastudios" class="social-link" title="GitHub" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          </a>
-        </div>
+      <div class="social-links" style="margin-top: 40px;">
+        <a href="mailto:akhil@keedastudios.com" class="social-link" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/akhil-madan/" class="social-link" title="LinkedIn" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://discord.com/users/galactigiraffe" class="social-link" title="Discord" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+        </a>
+        <a href="https://twitter.com/keedastudios" class="social-link" title="Twitter" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://github.com/keedastudios" class="social-link" title="GitHub" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -2463,10 +2842,12 @@
       </div>
 
       <div class="footer-links">
+        <a href="#apps" class="footer-link">Apps</a>
+        <a href="#about" class="footer-link">About</a>
         <a href="mailto:support@keedastudios.com" class="footer-link">Support</a>
       </div>
 
-      <p class="footer-copy">&copy; 2025 Keeda Studios. Made with love in London.</p>
+      <p class="footer-copy">&copy; 2025 Keeda Studios. Built solo in London.</p>
     </div>
   </footer>
 
@@ -2487,7 +2868,7 @@
     }, observerOptions);
 
     // Observe app cards
-    document.querySelectorAll('.app-card, .coming-soon-card').forEach(card => {
+    document.querySelectorAll('.app-card, .coming-soon-card, .pipeline-grid .app-card').forEach(card => {
       card.style.opacity = '0';
       card.style.transform = 'translateY(30px)';
       card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
