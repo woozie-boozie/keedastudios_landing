@@ -1203,24 +1203,19 @@ function renderActivityFeed(recentCommits) {
     return;
   }
 
-  recentCommits.forEach(ev => {
-    const repo = ev.repo;
-    const date = new Date(ev.date);
+  recentCommits.forEach(c => {
+    const date = new Date(c.date);
     const ago = timeAgo(date);
-    const commits = ev.commits || [];
-
-    commits.slice(0, 2).forEach(c => {
-      const el = document.createElement('div');
-      el.className = 'feed-item';
-      el.innerHTML = `
-        <div class="feed-time">${ago}</div>
-        <div class="feed-dot"></div>
-        <div class="feed-content">
-          <span class="feed-repo">${esc(repo)}</span> <span class="feed-msg">— ${esc(c.message)}</span>
-          <div class="feed-meta">${c.sha} · ${date.toLocaleDateString()}</div>
-        </div>`;
-      feed.appendChild(el);
-    });
+    const el = document.createElement('div');
+    el.className = 'feed-item';
+    el.innerHTML = `
+      <div class="feed-time">${ago}</div>
+      <div class="feed-dot"></div>
+      <div class="feed-content">
+        <span class="feed-repo">${esc(c.repo)}</span> <span class="feed-msg">— ${esc(c.message || 'commit')}</span>
+        <div class="feed-meta">${c.sha || ''} · ${date.toLocaleDateString()}</div>
+      </div>`;
+    feed.appendChild(el);
   });
 }
 

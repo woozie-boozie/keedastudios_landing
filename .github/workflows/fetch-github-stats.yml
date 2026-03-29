@@ -2,10 +2,10 @@ name: Fetch GitHub Stats
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # every 6 hours
+    - cron: '0 */6 * * *'
   push:
     branches: [main]
-  workflow_dispatch: # manual trigger
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -22,19 +22,18 @@ jobs:
         run: |
           set -e
 
-          USERNAME=$(curl -s -H "Authorization: token $GH_TOKEN" \
-            -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/user | jq -r '.login')
+          AUTH="Authorization: token $GH_TOKEN"
+          ACCEPT="Accept: application/vnd.github.v3+json"
 
-          echo "Fetching data for $USERNAME"
+          USERNAME=$(curl -s -H "$AUTH" -H "$ACCEPT" https://api.github.com/user | jq -r '.login')
+          echo "User: $USERNAME"
 
-          # Fetch all repos (paginated)
+          # ── Fetch all repos (paginated) ──
           REPOS="[]"
           PAGE=1
           while true; do
-            BATCH=$(curl -s -H "Authorization: token $GH_TOKEN" \
-              -H "Accept: application/vnd.github.v3+json" \
-              "https://api.github.com/user/repos?per_page=100&page=$PAGE&sort=updated")
+            BATCH=$(curl -s -H "$AUTH" -H "$ACCEPT" \
+              "https://api.github.com/user/repos?per_page=100&page=$PAGE&sort=pushed&affiliation=owner")
             COUNT=$(echo "$BATCH" | jq 'length')
             if [ "$COUNT" -eq 0 ]; then break; fi
             REPOS=$(echo "$REPOS $BATCH" | jq -s '.[0] + .[1]')
@@ -46,98 +45,107 @@ jobs:
           FORKS=$(echo "$REPOS" | jq '[.[] | select(.fork == true)] | length')
           echo "Found $REPO_COUNT repos ($ORIGINALS original, $FORKS forks)"
 
-          # Get commit counts per repo (top 30 by recent push)
+          # ── Get commit counts per repo + fetch recent commits directly ──
           TOTAL_COMMITS=0
           REPO_DETAILS="[]"
+          ALL_COMMITS="[]"
+          SINCE_DATE=$(date -u -d '90 days ago' +%Y-%m-%dT00:00:00Z 2>/dev/null || date -u -v-90d +%Y-%m-%dT00:00:00Z)
 
-          for FULL_NAME in $(echo "$REPOS" | jq -r '.[0:30] | .[].full_name'); do
-            # Pagination trick: fetch page 1 with per_page=1, read last page from Link header
-            RESPONSE=$(curl -s -I -H "Authorization: token $GH_TOKEN" \
-              -H "Accept: application/vnd.github.v3+json" \
+          for FULL_NAME in $(echo "$REPOS" | jq -r '.[].full_name'); do
+            REPO_NAME=$(echo "$FULL_NAME" | cut -d'/' -f2)
+
+            # Total commit count via pagination trick
+            RESPONSE=$(curl -s -I -H "$AUTH" -H "$ACCEPT" \
               "https://api.github.com/repos/$FULL_NAME/commits?per_page=1" 2>&1)
 
             LINK=$(echo "$RESPONSE" | grep -i '^link:' || echo "")
             if echo "$LINK" | grep -q 'rel="last"'; then
-              COUNT=$(echo "$LINK" | sed 's/.*page=\([0-9]*\)>; rel="last".*/\1/')
+              RCOUNT=$(echo "$LINK" | sed 's/.*page=\([0-9]*\)>; rel="last".*/\1/')
             else
-              COUNT=1
+              RCOUNT=1
             fi
 
-            # Validate it's a number
-            if [[ "$COUNT" =~ ^[0-9]+$ ]]; then
-              TOTAL_COMMITS=$((TOTAL_COMMITS + COUNT))
+            if [[ "$RCOUNT" =~ ^[0-9]+$ ]]; then
+              TOTAL_COMMITS=$((TOTAL_COMMITS + RCOUNT))
+            else
+              RCOUNT=0
             fi
 
-            REPO_NAME=$(echo "$FULL_NAME" | cut -d'/' -f2)
-            REPO_DETAILS=$(echo "$REPO_DETAILS" | jq --arg name "$REPO_NAME" --argjson count "${COUNT:-0}" '. + [{"name": $name, "commits": $count}]')
+            REPO_DETAILS=$(echo "$REPO_DETAILS" | jq --arg name "$REPO_NAME" --argjson count "$RCOUNT" '. + [{"name": $name, "commits": $count}]')
+
+            # Fetch actual recent commits (last 90 days, up to 100 per repo)
+            COMMITS=$(curl -s -H "$AUTH" -H "$ACCEPT" \
+              "https://api.github.com/repos/$FULL_NAME/commits?per_page=100&since=$SINCE_DATE" 2>/dev/null || echo "[]")
+
+            # Validate JSON array
+            if ! echo "$COMMITS" | jq -e 'type == "array"' > /dev/null 2>&1; then
+              COMMITS="[]"
+            fi
+
+            # Add repo name to each commit
+            TAGGED=$(echo "$COMMITS" | jq --arg repo "$REPO_NAME" '[.[] | {
+              repo: $repo,
+              sha: .sha[0:7],
+              message: (.commit.message | split("\n")[0][0:80]),
+              date: .commit.author.date,
+              author: .commit.author.name
+            }]' 2>/dev/null || echo "[]")
+
+            ALL_COMMITS=$(echo "$ALL_COMMITS $TAGGED" | jq -s '.[0] + .[1]')
+
+            echo "  $REPO_NAME: $RCOUNT total, $(echo "$TAGGED" | jq 'length') recent"
           done
 
-          echo "Total commits: $TOTAL_COMMITS"
+          echo "Total commits across all repos: $TOTAL_COMMITS"
+          echo "Recent commits fetched: $(echo "$ALL_COMMITS" | jq 'length')"
 
-          # Fetch events (up to 300 — 3 pages)
-          ALL_EVENTS="[]"
-          for P in 1 2 3; do
-            EVENTS=$(curl -s -H "Authorization: token $GH_TOKEN" \
-              -H "Accept: application/vnd.github.v3+json" \
-              "https://api.github.com/users/$USERNAME/events?per_page=100&page=$P")
-            if [ "$(echo "$EVENTS" | jq 'length')" -eq 0 ]; then break; fi
-            ALL_EVENTS=$(echo "$ALL_EVENTS $EVENTS" | jq -s '.[0] + .[1]')
-          done
-
-          # Extract push events with commit details
-          PUSH_EVENTS=$(echo "$ALL_EVENTS" | jq '[.[] | select(.type == "PushEvent") | {
-            repo: (.repo.name | split("/")[1]),
-            date: .created_at,
-            commits: [.payload.commits[]? | {sha: .sha[0:7], message: (.message | split("\n")[0][0:80])}]
-          }]')
-
-          # Build commits by day
-          COMMITS_BY_DAY=$(echo "$ALL_EVENTS" | jq '
-            [.[] | select(.type == "PushEvent")] |
-            group_by(.created_at[0:10]) |
-            [.[] | {date: .[0].created_at[0:10], count: ([.[].payload.commits | length] | add)}] |
+          # ── Build commits by day ──
+          COMMITS_BY_DAY=$(echo "$ALL_COMMITS" | jq '
+            [.[] | {date: .date[0:10]}] |
+            group_by(.date) |
+            [.[] | {date: .[0].date, count: length}] |
             sort_by(.date)')
 
-          # Build commits by month
-          COMMITS_BY_MONTH=$(echo "$ALL_EVENTS" | jq '
-            [.[] | select(.type == "PushEvent")] |
-            group_by(.created_at[0:7]) |
-            [.[] | {month: .[0].created_at[0:7], count: ([.[].payload.commits | length] | add)}] |
+          # ── Build commits by month ──
+          COMMITS_BY_MONTH=$(echo "$ALL_COMMITS" | jq '
+            [.[] | {month: .date[0:7]}] |
+            group_by(.month) |
+            [.[] | {month: .[0].month, count: length}] |
             sort_by(.month)')
 
-          # Commits by hour (for coding hours chart)
-          COMMITS_BY_HOUR=$(echo "$ALL_EVENTS" | jq '
-            [.[] | select(.type == "PushEvent") | .created_at[11:13]] |
+          # ── Commits by hour ──
+          COMMITS_BY_HOUR=$(echo "$ALL_COMMITS" | jq '
+            [.[] | .date[11:13]] |
             group_by(.) |
             [.[] | {hour: (.[0] | tonumber), count: length}] |
             sort_by(.hour)')
 
-          # Languages across repos
+          # ── Languages ──
           LANGUAGES=$(echo "$REPOS" | jq '[.[].language | select(. != null)] | group_by(.) | [.[] | {lang: .[0], count: length}] | sort_by(-.count)')
 
-          # Calculate streak from commits_by_day
+          # ── Streak (consecutive days with commits, counting back from today) ──
           STREAK=$(echo "$COMMITS_BY_DAY" | jq --arg today "$(date -u +%Y-%m-%d)" '
-            [.[] | .date] | reverse |
-            if length == 0 then 0
-            else
-              reduce .[] as $d (
-                {streak: 0, expected: $today, done: false};
-                if .done then .
-                elif $d == .expected then
-                  .streak += 1 |
-                  .expected = ($d | strptime("%Y-%m-%d") | mktime - 86400 | strftime("%Y-%m-%d"))
-                elif .streak > 0 then .done = true
-                else
-                  .expected = ($d | strptime("%Y-%m-%d") | mktime - 86400 | strftime("%Y-%m-%d")) |
-                  .streak = 1
-                end
-              ) | .streak
-            end')
+            [.[] | .date] as $dates |
+            {streak: 0, check: $today} |
+            until(.done == true;
+              if ($dates | index(.check)) then
+                .streak += 1 |
+                .check = (.check | strptime("%Y-%m-%d") | mktime - 86400 | strftime("%Y-%m-%d"))
+              elif .streak == 0 then
+                # today might not have commits yet, try yesterday
+                .check = (.check | strptime("%Y-%m-%d") | mktime - 86400 | strftime("%Y-%m-%d")) |
+                .skip = ((.skip // 0) + 1) |
+                if .skip > 1 then .done = true else . end
+              else
+                .done = true
+              end
+            ) | .streak')
 
-          # Recent commits for feed (last 20 push events)
-          RECENT_COMMITS=$(echo "$PUSH_EVENTS" | jq '.[0:15]')
+          # ── Recent commits for feed (sorted by date, last 20) ──
+          RECENT_COMMITS=$(echo "$ALL_COMMITS" | jq '[sort_by(.date) | reverse | .[0:25] |
+            .[] | {repo: .repo, date: .date, sha: .sha, message: .message}]')
 
-          # Build final JSON
+          # ── Build final JSON ──
           NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
           jq -n \
@@ -168,8 +176,8 @@ jobs:
               languages: $languages
             }' > my-analytics/data.json
 
-          echo "Written data.json"
-          cat my-analytics/data.json | jq '.total_commits, .repos.total, .streak'
+          echo "=== DONE ==="
+          cat my-analytics/data.json | jq '{total_commits, streak, days: (.commits_by_day | length), recent: (.recent_commits | length)}'
 
       - name: Commit and push
         run: |
