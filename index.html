@@ -2218,472 +2218,464 @@
       color: #5eeaff;
     }
 
-    /* ============ APP CAROUSEL ============ */
-    .app-carousel {
-      position: relative;
+    /* ============ HINGLISH LESSON DEMO ============ */
+    .hv-demo {
       margin: 16px 0;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      background: rgba(0,0,0,0.3);
-      border: 1px solid var(--border);
-    }
-
-    .app-carousel-track {
-      display: flex;
-      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .app-carousel-slide {
-      min-width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-
-    .app-carousel-slide img {
-      max-height: 340px;
-      width: auto;
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    }
-
-    .app-carousel-dots {
-      display: flex;
-      justify-content: center;
-      gap: 6px;
-      padding: 12px 0;
-    }
-
-    .app-carousel-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--border2);
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s;
+      background: linear-gradient(135deg, #FF6B35 0%, #FF3D00 100%);
+      border: 1px solid rgba(255,107,53,0.3);
       padding: 0;
+      min-height: 380px;
+      position: relative;
     }
 
-    .app-carousel-dot.active {
-      background: var(--primary);
-      box-shadow: 0 0 8px rgba(77,255,159,0.4);
-      width: 24px;
-      border-radius: 4px;
+    .hv-stage {
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 380px;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .app-carousel-dot.active-cyan {
-      background: #5eeaff;
-      box-shadow: 0 0 8px rgba(94,234,255,0.4);
-      width: 24px;
-      border-radius: 4px;
-    }
-
-    .app-carousel-dot.active-amber {
-      background: #ffc244;
-      box-shadow: 0 0 8px rgba(255,194,68,0.4);
-      width: 24px;
-      border-radius: 4px;
-    }
-
-    .carousel-nav {
+    .hv-step {
+      opacity: 0;
+      transform: translateY(16px) scale(0.96);
+      transition: opacity 0.5s, transform 0.5s cubic-bezier(0.34,1.56,0.64,1);
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.6);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s;
+      width: calc(100% - 40px);
+      text-align: center;
+    }
+    .hv-step.active { opacity: 1; transform: translateY(0) scale(1); position: relative; }
+
+    .hv-phrase-hindi {
+      font-size: 36px;
+      font-weight: 800;
+      color: white;
+      text-shadow: 0 2px 20px rgba(255,255,255,0.3);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .hv-phrase-roman {
+      font-family: 'JetBrains Mono', monospace;
       font-size: 14px;
-      z-index: 2;
-      padding: 0;
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.15);
+      padding: 4px 14px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 6px;
     }
 
-    .carousel-nav:hover {
-      background: rgba(0,0,0,0.8);
-      border-color: var(--primary);
-      color: var(--primary);
+    .hv-phrase-meaning {
+      font-size: 16px;
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
     }
 
-    .carousel-nav.prev { left: 8px; }
-    .carousel-nav.next { right: 8px; }
+    /* Mic + wave */
+    .hv-mic-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
 
-    /* ============ VIBE LINGO LANGUAGE PICKER ============ */
+    .hv-mic-btn {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      background: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .hv-mic-btn::after {
+      content: '';
+      position: absolute; inset: -8px;
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 50%;
+      animation: micPulse 1.5s ease-out infinite;
+    }
+
+    @keyframes micPulse {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(1.4); opacity: 0; }
+    }
+
+    .hv-waves {
+      display: flex; align-items: center; gap: 3px; height: 40px;
+    }
+
+    .hv-wave-bar {
+      width: 4px;
+      background: white;
+      border-radius: 2px;
+      animation: waveAnim 0.6s ease-in-out infinite alternate;
+    }
+
+    @keyframes waveAnim {
+      0% { height: 8px; opacity: 0.4; }
+      100% { height: 32px; opacity: 1; }
+    }
+
+    .hv-mic-label { font-size: 12px; color: rgba(255,255,255,0.7); }
+
+    /* Score */
+    .hv-score-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+
+    .hv-score-ring {
+      width: 100px; height: 100px;
+      position: relative;
+    }
+
+    .hv-score-ring svg {
+      width: 100%; height: 100%;
+      transform: rotate(-90deg);
+    }
+
+    .hv-score-ring .bg { fill: none; stroke: rgba(255,255,255,0.15); stroke-width: 6; }
+    .hv-score-ring .fg {
+      fill: none; stroke: white; stroke-width: 6;
+      stroke-linecap: round;
+      stroke-dasharray: 283;
+      stroke-dashoffset: 283;
+      transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .hv-score-ring .pct {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; font-weight: 800; color: white;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .hv-score-text { font-size: 16px; font-weight: 700; color: white; }
+    .hv-score-tip {
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.5;
+      text-align: left;
+      max-width: 280px;
+    }
+
+    /* Collectible */
+    .hv-collect-wrap {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+
+    .hv-collect-badge {
+      width: 80px; height: 80px;
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 40px;
+      transform: scale(0);
+      animation: collectPop 0.6s cubic-bezier(0.34,1.56,0.64,1) forwards;
+    }
+
+    @keyframes collectPop {
+      0% { transform: scale(0) rotate(-20deg); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
+
+    .hv-collect-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hv-collect-name {
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+    }
+
+    /* Step indicators */
+    .hv-steps-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex; gap: 6px;
+    }
+
+    .hv-steps-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+      transition: all 0.3s;
+    }
+    .hv-steps-dot.on {
+      background: white;
+      width: 20px;
+      border-radius: 3px;
+    }
+
+    /* ============ VIBE LINGO MORPH DEMO ============ */
     .vl-demo {
       margin: 16px 0;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      background: linear-gradient(135deg, rgba(94,234,255,0.06), rgba(77,255,159,0.04));
+      min-height: 380px;
+      position: relative;
       border: 1px solid var(--border);
-      padding: 24px 16px;
-      text-align: center;
-      min-height: 300px;
+      transition: background 1s;
+    }
+
+    .vl-stage {
+      padding: 32px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      min-height: 380px;
+      text-align: center;
+      position: relative;
     }
 
-    .vl-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 4px;
+    .vl-flag {
+      font-size: 48px;
+      margin-bottom: 8px;
+      transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
     }
 
-    .vl-sub {
+    .vl-flag.morph {
+      transform: scale(0.5) rotate(10deg);
+      opacity: 0;
+    }
+
+    .vl-lang-label {
       font-size: 11px;
-      color: var(--text-muted);
-      margin-bottom: 24px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      transition: opacity 0.3s;
     }
 
-    .vl-grid {
+    .vl-big-phrase {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: white;
+      text-shadow: 0 2px 30px rgba(255,255,255,0.2);
+      margin-bottom: 8px;
+      min-height: 50px;
+      transition: all 0.4s;
+      line-height: 1.2;
+    }
+
+    .vl-big-phrase.morph { opacity: 0; transform: translateY(-10px) scale(0.9); }
+
+    .vl-meaning {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+      transition: opacity 0.3s;
+    }
+
+    .vl-pronun {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.1);
+      padding: 4px 14px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 24px;
+      transition: opacity 0.3s;
+    }
+
+    .vl-lang-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .vl-lang-pill {
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex; align-items: center; gap: 6px;
+    }
+
+    .vl-lang-pill:hover { border-color: rgba(255,255,255,0.4); color: white; }
+    .vl-lang-pill.active {
+      border-color: white;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+
+    .vl-auto-label {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      font-size: 9px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* ============ MALI GARDEN DEMO ============ */
+    .mali-demo {
+      margin: 16px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #0a1a1a 0%, #0f2b1f 100%);
+      border: 1px solid rgba(77,255,159,0.15);
+      min-height: 380px;
+      position: relative;
+    }
+
+    .mali-weather-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: rgba(0,0,0,0.4);
+      border-bottom: 1px solid rgba(77,255,159,0.1);
+      font-size: 11px;
+      color: #a3bfaa;
+    }
+
+    .mali-weather-temp {
+      font-family: 'Fira Code', monospace;
+      font-weight: 700;
+      color: white;
+      font-size: 14px;
+    }
+
+    .mali-frost-warn {
+      font-size: 9px;
+      color: #ffc244;
+      display: flex; align-items: center; gap: 4px;
+    }
+
+    .mali-garden-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-      width: 100%;
-      max-width: 320px;
-      margin-bottom: 20px;
+      gap: 8px;
+      padding: 16px;
     }
 
-    .vl-lang {
+    .mali-plot {
+      aspect-ratio: 1;
+      background: rgba(77,255,159,0.04);
+      border: 1px solid rgba(77,255,159,0.1);
+      border-radius: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
-      padding: 14px 8px;
-      background: rgba(0,0,0,0.3);
-      border: 1px solid var(--border);
-      border-radius: 10px;
+      justify-content: center;
       cursor: pointer;
       transition: all 0.3s;
-      opacity: 0;
-      transform: translateY(12px);
-    }
-
-    .vl-lang.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .vl-lang:hover, .vl-lang.selected {
-      border-color: #5eeaff;
-      background: rgba(94,234,255,0.08);
-      box-shadow: 0 0 16px rgba(94,234,255,0.1);
-    }
-
-    .vl-lang-flag { font-size: 28px; }
-
-    .vl-lang-name {
-      font-size: 9px;
-      color: var(--text-muted);
-      letter-spacing: 0.5px;
-      font-weight: 600;
-    }
-
-    .vl-lang.selected .vl-lang-name { color: #5eeaff; }
-
-    .vl-phrase-display {
-      padding: 16px 20px;
-      background: rgba(0,0,0,0.3);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      min-height: 60px;
-      width: 100%;
-      max-width: 320px;
-      transition: all 0.3s;
-    }
-
-    .vl-phrase-display.active {
-      border-color: #5eeaff;
-    }
-
-    .vl-phrase-native {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      color: #5eeaff;
-      margin-bottom: 4px;
-      transition: opacity 0.15s, transform 0.3s;
-    }
-
-    .vl-phrase-english {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-
-    .vl-phrase-hint {
-      font-size: 10px;
-      color: #6b8c74;
-      margin-top: 12px;
-    }
-
-    @media (max-width: 400px) {
-      .vl-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
-    }
-
-    /* ============ PHONE MOCKUP SCREENS ============ */
-    .phone-mock {
-      width: 260px;
-      min-height: 420px;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
-      position: relative;
-      margin: 0 auto;
-    }
-
-    /* -- Hinglish Vinglish screens -- */
-    .hv-screen { font-family: 'Space Grotesk', -apple-system, sans-serif; }
-
-    .hv-welcome {
-      background: linear-gradient(180deg, #FF6B35 0%, #FF8F5E 100%);
-      padding: 28px 20px;
-      text-align: center;
-      color: white;
-    }
-    .hv-welcome-tag { font-size: 10px; background: rgba(255,255,255,0.25); padding: 3px 10px; border-radius: 10px; display: inline-block; margin-bottom: 12px; }
-    .hv-welcome h3 { font-size: 22px; font-weight: 700; margin-bottom: 6px; line-height: 1.2; }
-    .hv-welcome p { font-size: 11px; opacity: 0.85; margin-bottom: 20px; }
-    .hv-phone-inner {
-      background: #FAFAF8;
-      border-radius: 18px;
-      padding: 16px;
-      color: #1a1a1a;
-      text-align: left;
-    }
-    .hv-phone-inner .hv-label { font-size: 8px; color: #FF6B35; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
-    .hv-phone-inner h4 { font-size: 20px; font-weight: 700; margin-bottom: 2px; }
-    .hv-phone-inner h4 span { color: #FF6B35; font-style: italic; font-weight: 400; }
-    .hv-phone-inner .hv-sub { font-size: 9px; color: #888; margin-bottom: 12px; }
-    .hv-stats { display: flex; gap: 12px; margin-bottom: 14px; justify-content: center; text-align: center; }
-    .hv-stat-num { font-size: 18px; font-weight: 800; color: #1a1a1a; }
-    .hv-stat-label { font-size: 8px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
-    .hv-btn { width: 100%; padding: 10px; border-radius: 10px; border: 1px solid #e0e0e0; background: white; font-size: 11px; color: #333; text-align: center; margin-bottom: 6px; display: flex; align-items: center; justify-content: center; gap: 6px; }
-
-    .hv-home {
-      background: linear-gradient(180deg, #7B2FF2 0%, #9B59E8 100%);
-      padding: 24px 16px;
-      color: white;
-    }
-    .hv-home-tag { font-size: 10px; background: rgba(255,255,255,0.2); padding: 3px 10px; border-radius: 10px; display: inline-block; margin-bottom: 10px; }
-    .hv-home h3 { font-size: 20px; font-weight: 700; line-height: 1.2; margin-bottom: 4px; }
-    .hv-home p { font-size: 11px; opacity: 0.8; margin-bottom: 16px; }
-    .hv-home-inner {
-      background: #FAFAF8;
-      border-radius: 16px;
-      padding: 14px;
-      color: #1a1a1a;
-    }
-    .hv-greeting { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
-    .hv-streak { font-size: 9px; color: #888; margin-bottom: 12px; }
-    .hv-topic {
-      background: white;
-      border: 1px solid #f0f0f0;
-      border-radius: 12px;
-      padding: 10px 12px;
-      margin-bottom: 6px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .hv-topic-icon { font-size: 18px; }
-    .hv-topic-info { flex: 1; }
-    .hv-topic-name { font-size: 12px; font-weight: 700; }
-    .hv-topic-sub { font-size: 8px; color: #888; }
-    .hv-topic-bar { height: 4px; background: #f0f0f0; border-radius: 2px; margin-top: 4px; overflow: hidden; }
-    .hv-topic-fill { height: 100%; border-radius: 2px; }
-    .hv-topic-fill.orange { background: #FF6B35; }
-    .hv-topic-fill.purple { background: #7B2FF2; }
-    .hv-topic-fill.green { background: #10B981; }
-
-    .hv-practice {
-      background: linear-gradient(180deg, #FF6B8A 0%, #FF8FAA 100%);
-      padding: 24px 16px;
-      color: white;
-      text-align: center;
-    }
-    .hv-practice-tag { font-size: 10px; background: rgba(255,255,255,0.25); padding: 3px 10px; border-radius: 10px; display: inline-block; margin-bottom: 10px; }
-    .hv-practice h3 { font-size: 20px; font-weight: 700; line-height: 1.2; margin-bottom: 4px; }
-    .hv-practice > p { font-size: 11px; opacity: 0.8; margin-bottom: 16px; }
-    .hv-practice-inner {
-      background: #FAFAF8;
-      border-radius: 16px;
-      padding: 20px 16px;
-      color: #1a1a1a;
-      text-align: center;
-    }
-    .hv-practice-label { font-size: 9px; color: #FF6B35; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
-    .hv-practice-phrase { font-size: 22px; font-weight: 800; color: #FF6B35; margin-bottom: 4px; }
-    .hv-practice-roman { font-size: 10px; color: #aaa; background: #f5f5f5; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 4px; }
-    .hv-practice-meaning { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
-    .hv-practice-eng { font-size: 10px; color: #888; margin-bottom: 16px; }
-    .hv-mic {
-      width: 52px; height: 52px; border-radius: 50%;
-      background: linear-gradient(135deg, #FF6B35, #FF8F5E);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto; font-size: 22px;
-      box-shadow: 0 4px 16px rgba(255,107,53,0.4);
-    }
-
-    .hv-feedback {
-      background: linear-gradient(180deg, #3B82F6 0%, #60A5FA 100%);
-      padding: 24px 16px;
-      color: white;
-      text-align: center;
-    }
-    .hv-feedback-tag { font-size: 10px; background: rgba(255,255,255,0.25); padding: 3px 10px; border-radius: 10px; display: inline-block; margin-bottom: 10px; }
-    .hv-feedback h3 { font-size: 20px; font-weight: 700; line-height: 1.2; margin-bottom: 4px; }
-    .hv-feedback > p { font-size: 11px; opacity: 0.8; margin-bottom: 16px; }
-    .hv-feedback-inner {
-      background: #FAFAF8;
-      border-radius: 16px;
-      padding: 16px;
-      color: #1a1a1a;
-      text-align: center;
-    }
-    .hv-score-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px; }
-    .hv-score-emoji { font-size: 28px; }
-    .hv-score-pct { font-size: 28px; font-weight: 800; color: #10B981; }
-    .hv-score-label { font-size: 12px; color: #10B981; font-weight: 600; }
-    .hv-tip { background: #F8FAFC; border-radius: 10px; padding: 10px 12px; text-align: left; margin-top: 10px; }
-    .hv-tip-title { font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
-    .hv-tip-text { font-size: 10px; color: #555; line-height: 1.5; }
-    .hv-btns { display: flex; gap: 6px; margin-top: 12px; }
-    .hv-btns button { flex: 1; padding: 8px; border-radius: 8px; font-size: 10px; font-weight: 700; border: none; cursor: default; }
-    .hv-btns .retry { background: white; border: 1px solid #e0e0e0; color: #333; }
-    .hv-btns .cont { background: #FF6B35; color: white; }
-
-    /* -- Mali screens -- */
-    .mali-screen { font-family: 'Space Grotesk', -apple-system, sans-serif; }
-
-    .mali-welcome {
-      background: linear-gradient(180deg, #0C1F1F 0%, #142E2E 50%, #0C1F1F 100%);
-      padding: 60px 20px;
-      text-align: center;
-      color: white;
       position: relative;
     }
-    .mali-welcome .mali-sprout { font-size: 36px; margin-bottom: 16px; }
-    .mali-welcome h3 { font-size: 12px; font-weight: 400; color: #a0a0a0; margin-bottom: 4px; }
-    .mali-welcome h2 { font-size: 32px; font-weight: 700; color: #4dff9f; margin-bottom: 12px; }
-    .mali-welcome p { font-size: 10px; color: #888; line-height: 1.6; }
-    .mali-welcome .mali-glow {
+
+    .mali-plot:hover {
+      border-color: rgba(77,255,159,0.3);
+      background: rgba(77,255,159,0.08);
+    }
+
+    .mali-plot.active {
+      border-color: #4dff9f;
+      background: rgba(77,255,159,0.12);
+      box-shadow: 0 0 20px rgba(77,255,159,0.15);
+    }
+
+    .mali-plot-plant {
+      font-size: 28px;
+      animation: plantSway 3s ease-in-out infinite;
+    }
+
+    @keyframes plantSway {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+    }
+
+    .mali-plot-name { font-size: 8px; color: #6b8c74; margin-top: 2px; }
+
+    .mali-plot-health {
       position: absolute;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(77,255,159,0.08), transparent);
-      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      top: 4px;
+      right: 4px;
+      width: 8px; height: 8px;
       border-radius: 50%;
     }
 
-    .mali-dashboard {
-      background: linear-gradient(180deg, #0C1F1F 0%, #142E2E 100%);
-      padding: 20px 14px;
-      color: white;
-    }
-    .mali-dash-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-    .mali-dash-header span:first-child { font-size: 20px; }
-    .mali-dash-header h4 { font-size: 14px; font-weight: 700; }
-    .mali-dash-header p { font-size: 9px; color: #4dff9f; }
-    .mali-health-card {
-      background: rgba(77,255,159,0.08);
-      border: 1px solid rgba(77,255,159,0.2);
-      border-radius: 14px;
-      padding: 14px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .mali-health-score {
-      width: 56px; height: 56px; border-radius: 50%;
-      border: 3px solid #4dff9f;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      margin: 0 auto 8px;
-    }
-    .mali-health-score .num { font-size: 20px; font-weight: 800; color: #4dff9f; line-height: 1; }
-    .mali-health-score .label { font-size: 7px; color: #4dff9f; text-transform: uppercase; letter-spacing: 0.5px; }
-    .mali-health-stats { display: flex; gap: 8px; justify-content: center; margin-top: 8px; }
-    .mali-health-stat {
-      flex: 1;
-      background: rgba(0,0,0,0.3);
-      border-radius: 8px;
-      padding: 8px 4px;
-      text-align: center;
-    }
-    .mali-health-stat .val { font-size: 14px; font-weight: 700; }
-    .mali-health-stat .val.green { color: #4dff9f; }
-    .mali-health-stat .val.blue { color: #5eeaff; }
-    .mali-health-stat .val.amber { color: #ffc244; }
-    .mali-health-stat .lbl { font-size: 7px; color: #888; text-transform: uppercase; }
-    .mali-tasks { margin-top: 10px; }
-    .mali-tasks-title { font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-    .mali-task {
-      display: flex; align-items: center; gap: 8px;
-      padding: 8px 10px;
-      background: rgba(255,255,255,0.04);
-      border-radius: 8px;
-      margin-bottom: 4px;
-      font-size: 10px;
-    }
-    .mali-task-icon { font-size: 14px; }
-    .mali-task-text { flex: 1; color: #ccc; }
-    .mali-task-badge { font-size: 8px; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
-    .mali-task-badge.done { background: rgba(77,255,159,0.15); color: #4dff9f; }
-    .mali-task-badge.overdue { background: rgba(255,107,138,0.15); color: #ff6b8a; }
-    .mali-task-badge.time { background: rgba(94,234,255,0.15); color: #5eeaff; }
+    .mali-plot-health.good { background: #4dff9f; box-shadow: 0 0 6px #4dff9f; }
+    .mali-plot-health.warn { background: #ffc244; box-shadow: 0 0 6px #ffc244; animation: pulse 1.5s infinite; }
+    .mali-plot-health.danger { background: #ff6b8a; box-shadow: 0 0 6px #ff6b8a; animation: pulse 1s infinite; }
 
-    .mali-sidney {
-      background: linear-gradient(180deg, #0C1F1F 0%, #142E2E 100%);
-      padding: 20px 14px;
-      color: white;
-    }
-    .mali-sid-header { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
-    .mali-sid-header span { font-size: 24px; }
-    .mali-sid-header h4 { font-size: 16px; font-weight: 700; }
-    .mali-sid-sub { font-size: 9px; color: #4dff9f; margin-bottom: 14px; }
-    .mali-chat-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
-    .mali-chat-box {
-      background: rgba(0,0,0,0.3);
-      border-radius: 10px;
-      padding: 10px;
-      font-size: 9px;
-      color: #aaa;
-      line-height: 1.5;
-    }
-    .mali-chat-box.sidney { border: 1px solid rgba(77,255,159,0.2); }
-    .mali-chat-box .box-label { font-size: 8px; font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 4px; }
-    .mali-chat-box .box-label.generic { color: #888; }
-    .mali-chat-box .box-label.sid { color: #4dff9f; }
-    .mali-chat-box.sidney .highlight { color: #4dff9f; font-weight: 600; }
-    .mali-user-q {
-      background: rgba(77,255,159,0.08);
+    .mali-sidney-bar {
+      margin: 0 16px 12px;
+      background: rgba(77,255,159,0.06);
       border: 1px solid rgba(77,255,159,0.15);
-      border-radius: 10px;
-      padding: 10px;
-      font-size: 10px;
-      color: #ccc;
-      display: flex; align-items: center; gap: 8px;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      min-height: 64px;
+      transition: all 0.4s;
     }
-    .mali-user-q span { font-size: 16px; }
-    .mali-sid-reply {
-      background: rgba(0,0,0,0.3);
-      border: 1px solid rgba(77,255,159,0.2);
-      border-radius: 10px;
-      padding: 10px;
-      margin-top: 8px;
-      font-size: 9px;
-      color: #ccc;
+
+    .mali-sidney-bar .sid-icon { font-size: 24px; flex-shrink: 0; }
+
+    .mali-sidney-bar .sid-msg {
+      font-size: 11px;
+      color: #a3bfaa;
       line-height: 1.6;
+      transition: all 0.3s;
     }
-    .mali-sid-reply span { font-size: 14px; }
+
+    .mali-sidney-bar .sid-msg .plant-name { color: #4dff9f; font-weight: 600; }
+    .mali-sidney-bar .sid-msg .warn-text { color: #ffc244; }
+    .mali-sidney-bar .sid-msg .danger-text { color: #ff6b8a; }
+
+    .mali-health-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px 14px;
+      font-size: 10px;
+      color: #6b8c74;
+    }
+
+    .mali-health-num {
+      font-family: 'Fira Code', monospace;
+      font-size: 20px;
+      font-weight: 800;
+      color: #4dff9f;
+      text-shadow: 0 0 20px rgba(77,255,159,0.3);
+    }
+
+    .mali-tap-hint {
+      font-size: 9px;
+      color: #6b8c74;
+      text-align: center;
+      padding-bottom: 10px;
+    }
 
     /* ============ PIPELINE SECTION ============ */
     .pipeline-grid {
@@ -3172,127 +3164,48 @@
         <div class="app-card blue">
           <div class="app-status live"><span class="status-dot"></span> Live</div>
           <h3 class="app-name">Hinglish Vinglish</h3>
-          <p class="app-tagline">Learn Hindi the way it's actually spoken. AI pronunciation coach, real-life scenarios, collectible cultural badges. Built it for my wife before her Delhi trip &mdash; now 300+ people use it.</p>
+          <p class="app-tagline">AI pronunciation coach for Hindi. Real scenarios, instant feedback, cultural collectibles. Watch a live lesson play out:</p>
 
-          <div class="app-carousel" id="hinglishCarousel">
-            <button class="carousel-nav prev" onclick="carouselPrev('hinglish')">&lsaquo;</button>
-            <button class="carousel-nav next" onclick="carouselNext('hinglish')">&rsaquo;</button>
-            <div class="app-carousel-track" id="hinglishTrack">
-
-              <!-- Slide 1: Welcome -->
-              <div class="app-carousel-slide">
-                <div class="phone-mock hv-screen">
-                  <div class="hv-welcome">
-                    <div class="hv-welcome-tag">Welcome</div>
-                    <h3>Learn Hindi<br>The Right Way</h3>
-                    <p>A thoughtfully designed experience</p>
-                    <div class="hv-phone-inner">
-                      <div class="hv-label">Learn</div>
-                      <h4>Hindi <span>the right way</span></h4>
-                      <div class="hv-sub">A thoughtfully designed language learning experience for the modern learner.</div>
-                      <div class="hv-stats">
-                        <div><div class="hv-stat-num">50+</div><div class="hv-stat-label">Lessons</div></div>
-                        <div><div class="hv-stat-num">500+</div><div class="hv-stat-label">Words</div></div>
-                        <div><div class="hv-stat-num">&infin;</div><div class="hv-stat-label">Practice</div></div>
-                      </div>
-                      <div class="hv-btn">Continue with Google</div>
-                      <div class="hv-btn">Continue with Apple</div>
-                    </div>
-                  </div>
+          <div class="hv-demo" id="hvDemo">
+            <div class="hv-stage">
+              <!-- Step 1: Phrase -->
+              <div class="hv-step active" id="hvStep1">
+                <div class="hv-phrase-hindi">क्या बात है!</div>
+                <div class="hv-phrase-roman">kya baat hai!</div>
+                <div class="hv-phrase-meaning">"Wonderful!"</div>
+              </div>
+              <!-- Step 2: Record -->
+              <div class="hv-step" id="hvStep2">
+                <div class="hv-mic-wrap">
+                  <div style="font-size:11px;color:rgba(255,255,255,0.6);margin-bottom:4px;">Say it out loud</div>
+                  <div class="hv-phrase-hindi" style="font-size:28px;">क्या बात है!</div>
+                  <div class="hv-mic-btn">🎙️</div>
+                  <div class="hv-waves" id="hvWaves"></div>
+                  <div class="hv-mic-label">Recording...</div>
                 </div>
               </div>
-
-              <!-- Slide 2: Home -->
-              <div class="app-carousel-slide">
-                <div class="phone-mock hv-screen">
-                  <div class="hv-home">
-                    <div class="hv-home-tag">Your Journey</div>
-                    <h3>Speak Hindi<br>Like Family</h3>
-                    <p>Real phrases for real conversations</p>
-                    <div class="hv-home-inner">
-                      <div class="hv-greeting">Good afternoon</div>
-                      <div class="hv-streak">🔥 1 day streak &nbsp; 💎 15</div>
-                      <div class="hv-topic">
-                        <span class="hv-topic-icon">🍽️</span>
-                        <div class="hv-topic-info">
-                          <div class="hv-topic-name">Dinner Time</div>
-                          <div class="hv-topic-sub">Essential phrases for family meals</div>
-                          <div class="hv-topic-bar"><div class="hv-topic-fill orange" style="width:55%"></div></div>
-                        </div>
-                      </div>
-                      <div class="hv-topic">
-                        <span class="hv-topic-icon">💒</span>
-                        <div class="hv-topic-info">
-                          <div class="hv-topic-name">Shaadi Time</div>
-                          <div class="hv-topic-sub">Level 1/8</div>
-                          <div class="hv-topic-bar"><div class="hv-topic-fill purple" style="width:8%"></div></div>
-                        </div>
-                      </div>
-                      <div class="hv-topic">
-                        <span class="hv-topic-icon">☕</span>
-                        <div class="hv-topic-info">
-                          <div class="hv-topic-name">Chai Time</div>
-                          <div class="hv-topic-sub">Level 1/5</div>
-                          <div class="hv-topic-bar"><div class="hv-topic-fill green" style="width:11%"></div></div>
-                        </div>
-                      </div>
-                    </div>
+              <!-- Step 3: Score -->
+              <div class="hv-step" id="hvStep3">
+                <div class="hv-score-wrap">
+                  <div class="hv-score-ring">
+                    <svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="45"/><circle class="fg" id="hvScoreCircle" cx="50" cy="50" r="45"/></svg>
+                    <div class="pct" id="hvScorePct">0%</div>
                   </div>
+                  <div class="hv-score-text">Good effort! 👍</div>
+                  <div class="hv-score-tip">💡 Pronounce <strong>'hai'</strong> with a soft 'h' &mdash; more like <strong>'hai'</strong> than <strong>'hey'</strong>. The 'aa' in 'baat' should be long.</div>
                 </div>
               </div>
-
-              <!-- Slide 3: Practice Speaking -->
-              <div class="app-carousel-slide">
-                <div class="phone-mock hv-screen">
-                  <div class="hv-practice">
-                    <div class="hv-practice-tag">Speak Aloud</div>
-                    <h3>Practice Your<br>Pronunciation</h3>
-                    <p>Tap to record and speak</p>
-                    <div class="hv-practice-inner">
-                      <div class="hv-practice-label">Pronunciation Practice</div>
-                      <div style="font-size:11px;color:#888;margin-bottom:12px;">Say this phrase out loud</div>
-                      <div class="hv-practice-phrase">Kya baat hai!</div>
-                      <div class="hv-practice-roman">kyaa baat hai</div>
-                      <div class="hv-practice-meaning">Wonderful!</div>
-                      <div class="hv-practice-eng">Say "kyaa baat hai!"</div>
-                      <div class="hv-mic">🎙️</div>
-                    </div>
-                  </div>
+              <!-- Step 4: Collectible -->
+              <div class="hv-step" id="hvStep4">
+                <div class="hv-collect-wrap">
+                  <div class="hv-collect-label">New item collected!</div>
+                  <div class="hv-collect-badge" id="hvBadge">🍚</div>
+                  <div class="hv-collect-name">Steamed Rice</div>
+                  <div style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:4px;">Added to your Dinner Time collection</div>
                 </div>
               </div>
-
-              <!-- Slide 4: AI Feedback -->
-              <div class="app-carousel-slide">
-                <div class="phone-mock hv-screen">
-                  <div class="hv-feedback">
-                    <div class="hv-feedback-tag">Smart Feedback</div>
-                    <h3>Learn From<br>Every Try</h3>
-                    <p>AI tips to improve your accent</p>
-                    <div class="hv-feedback-inner">
-                      <div class="hv-score-row">
-                        <span class="hv-score-emoji">👍</span>
-                        <span class="hv-score-pct">70%</span>
-                      </div>
-                      <div class="hv-score-label">Good effort!</div>
-                      <div class="hv-tip">
-                        <div class="hv-tip-title">You said</div>
-                        <div class="hv-tip-text">"kya baat hai"</div>
-                      </div>
-                      <div class="hv-tip" style="margin-top:6px;">
-                        <div class="hv-tip-title">Tips to improve</div>
-                        <div class="hv-tip-text">Make sure to pronounce 'hai' as 'hai' and not 'hey'.</div>
-                      </div>
-                      <div class="hv-btns">
-                        <button class="retry">Try Again</button>
-                        <button class="cont">Continue &rarr;</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+              <div class="hv-steps-dots"><span class="hv-steps-dot on" id="hvd0"></span><span class="hv-steps-dot" id="hvd1"></span><span class="hv-steps-dot" id="hvd2"></span><span class="hv-steps-dot" id="hvd3"></span></div>
             </div>
-            <div class="app-carousel-dots" id="hinglishDots"></div>
           </div>
 
           <div class="app-tags">
@@ -3306,50 +3219,18 @@
         <div class="app-card purple">
           <div class="app-status launching"><span class="status-dot"></span> Launching</div>
           <h3 class="app-name">Vibe Lingo</h3>
-          <p class="app-tagline">The platform above Hinglish Vinglish. Same AI-powered formula &mdash; pronunciation coaching, real scenarios, gamified learning &mdash; scaled to 7 languages. Pick one and try it.</p>
+          <p class="app-tagline">Same AI formula as Hinglish Vinglish, scaled to 7 languages. One platform, every vibe.</p>
 
           <div class="vl-demo" id="vlDemo">
-            <div class="vl-title">Choose a language</div>
-            <div class="vl-sub">Tap one to hear a phrase</div>
-            <div class="vl-grid">
-              <div class="vl-lang" onclick="selectVLLang(this, 'persian')" data-lang="persian">
-                <span class="vl-lang-flag">🇮🇷</span>
-                <span class="vl-lang-name">Persian</span>
-              </div>
-              <div class="vl-lang" onclick="selectVLLang(this, 'spanish')" data-lang="spanish">
-                <span class="vl-lang-flag">🇪🇸</span>
-                <span class="vl-lang-name">Spanish</span>
-              </div>
-              <div class="vl-lang" onclick="selectVLLang(this, 'german')" data-lang="german">
-                <span class="vl-lang-flag">🇩🇪</span>
-                <span class="vl-lang-name">German</span>
-              </div>
-              <div class="vl-lang" onclick="selectVLLang(this, 'cantonese')" data-lang="cantonese">
-                <span class="vl-lang-flag">🇭🇰</span>
-                <span class="vl-lang-name">Cantonese</span>
-              </div>
-              <div class="vl-lang" onclick="selectVLLang(this, 'mandarin')" data-lang="mandarin">
-                <span class="vl-lang-flag">🇨🇳</span>
-                <span class="vl-lang-name">Mandarin</span>
-              </div>
-              <div class="vl-lang" onclick="selectVLLang(this, 'japanese')" data-lang="japanese">
-                <span class="vl-lang-flag">🇯🇵</span>
-                <span class="vl-lang-name">Japanese</span>
-              </div>
-              <div class="vl-lang" onclick="selectVLLang(this, 'punjabi')" data-lang="punjabi">
-                <span class="vl-lang-flag">🇮🇳</span>
-                <span class="vl-lang-name">Punjabi</span>
-              </div>
-              <div class="vl-lang" onclick="selectVLLang(this, 'hindi')" data-lang="hindi" style="border-color: rgba(94,234,255,0.3);">
-                <span class="vl-lang-flag">🇮🇳</span>
-                <span class="vl-lang-name" style="color: #5eeaff; font-size: 8px;">Hindi (live)</span>
-              </div>
+            <div class="vl-stage">
+              <div class="vl-auto-label">Auto-cycling</div>
+              <div class="vl-flag" id="vlFlag">🇪🇸</div>
+              <div class="vl-lang-label" id="vlLabel">Spanish</div>
+              <div class="vl-big-phrase" id="vlBigPhrase">¡Hola!</div>
+              <div class="vl-meaning" id="vlMeaning">Hello!</div>
+              <div class="vl-pronun" id="vlPronun">OH-la</div>
+              <div class="vl-lang-row" id="vlPills"></div>
             </div>
-            <div class="vl-phrase-display" id="vlPhrase">
-              <div class="vl-phrase-native" id="vlNative">...</div>
-              <div class="vl-phrase-english" id="vlEnglish">Select a language above</div>
-            </div>
-            <div class="vl-phrase-hint" id="vlHint"></div>
           </div>
 
           <div class="app-tags">
@@ -3363,83 +3244,32 @@
         <div class="app-card" style="--card-accent: #4dff9f;">
           <div class="app-status soon"><span class="status-dot"></span> Next week</div>
           <h3 class="app-name">Mali</h3>
-          <p class="app-tagline">Strava for gardening. Design a digital twin of your real garden, get AI plant care from Sidney the Snail, track weather, celebrate harvests. FarmVille but the stakes are real.</p>
+          <p class="app-tagline">Strava for gardening. Your real garden, digitally twinned. Tap a plant &mdash; Sidney the Snail tells you exactly what it needs.</p>
 
-          <div class="app-carousel" id="maliCarousel">
-            <button class="carousel-nav prev" onclick="carouselPrev('mali')">&lsaquo;</button>
-            <button class="carousel-nav next" onclick="carouselNext('mali')">&rsaquo;</button>
-            <div class="app-carousel-track" id="maliTrack">
-
-              <!-- Slide 1: Welcome -->
-              <div class="app-carousel-slide">
-                <div class="phone-mock mali-screen">
-                  <div class="mali-welcome">
-                    <div class="mali-glow"></div>
-                    <div class="mali-sprout">🌱</div>
-                    <h3>Welcome to</h3>
-                    <h2>Mali</h2>
-                    <p>Your garden, beautifully reimagined</p>
-                    <p style="margin-top:12px;font-size:9px;color:#6b8c74;">माली (m&#257;l&#299;) &mdash; "the gardener" in Sanskrit<br>มะลิ (mali) &mdash; "jasmine" in Thai</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 2: Dashboard -->
-              <div class="app-carousel-slide">
-                <div class="phone-mock mali-screen">
-                  <div class="mali-dashboard">
-                    <div class="mali-dash-header">
-                      <span>📊</span>
-                      <div>
-                        <h4>Your Garden at a Glance</h4>
-                        <p>know exactly what your plants need</p>
-                      </div>
-                    </div>
-                    <div class="mali-health-card">
-                      <div class="mali-health-score"><span class="num">87</span><span class="label">Health</span></div>
-                      <div style="font-size:10px;color:#ccc;">14 plants thriving &middot; 3 tasks today</div>
-                      <div class="mali-health-stats">
-                        <div class="mali-health-stat"><div class="val green">85%</div><div class="lbl">Watered</div></div>
-                        <div class="mali-health-stat"><div class="val blue">12</div><div class="lbl">Healthy</div></div>
-                        <div class="mali-health-stat"><div class="val amber">2</div><div class="lbl">Needs care</div></div>
-                      </div>
-                    </div>
-                    <div class="mali-tasks">
-                      <div class="mali-tasks-title">Today's Tasks</div>
-                      <div class="mali-task"><span class="mali-task-icon">💧</span><span class="mali-task-text">Water tomatoes in Bed 2</span><span class="mali-task-badge done">Done</span></div>
-                      <div class="mali-task"><span class="mali-task-icon">✂️</span><span class="mali-task-text">Prune basil &mdash; getting leggy</span><span class="mali-task-badge overdue">Overdue</span></div>
-                      <div class="mali-task"><span class="mali-task-icon">🧊</span><span class="mali-task-text">Cover peppers before frost</span><span class="mali-task-badge time">6:00 PM</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 3: Meet Sidney -->
-              <div class="app-carousel-slide">
-                <div class="phone-mock mali-screen">
-                  <div class="mali-sidney">
-                    <div class="mali-sid-header"><span>🐌</span><h4>Meet Sidney</h4></div>
-                    <div class="mali-sid-sub">no more guessing, no more Googling</div>
-                    <div class="mali-chat-compare">
-                      <div class="mali-chat-box">
-                        <div class="box-label generic">🤖 Generic AI</div>
-                        "Yellowing leaves could be overwatering, underwatering, nutrient deficiency, pests, or disease..."
-                      </div>
-                      <div class="mali-chat-box sidney">
-                        <div class="box-label sid">🐌 Sidney</div>
-                        "Your <span class="highlight">Roma Tomato</span> is in week 6 &mdash; drooping is normal. It hit 32&deg;C today. Water deeply this evening 💧"
-                      </div>
-                    </div>
-                    <div class="mali-user-q"><span>🌿</span> My basil is turning black at the tips &mdash; help!</div>
-                    <div class="mali-sid-reply">
-                      <span>🐌</span> Your <span style="color:#4dff9f;">Genovese Basil</span> in Bed 1 is getting hit by <span style="color:#ff6b8a;">-1&deg;C</span> overnight &mdash; that's cold damage, not disease. Bring it inside tonight and pinch off the blackened leaves. 🌱
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+          <div class="mali-demo" id="maliDemo">
+            <div class="mali-weather-bar">
+              <div><span>⛅</span> <span class="mali-weather-temp">18°C</span> Partly Cloudy</div>
+              <div class="mali-frost-warn">⚠️ Frost 11pm</div>
             </div>
-            <div class="app-carousel-dots" id="maliDots"></div>
+            <div class="mali-garden-grid">
+              <div class="mali-plot" onclick="maliTap(this,0)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🍅</div><div class="mali-plot-name">Tomato</div></div>
+              <div class="mali-plot" onclick="maliTap(this,1)"><div class="mali-plot-health warn"></div><div class="mali-plot-plant">🌿</div><div class="mali-plot-name">Basil</div></div>
+              <div class="mali-plot" onclick="maliTap(this,2)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🌹</div><div class="mali-plot-name">Rose</div></div>
+              <div class="mali-plot" onclick="maliTap(this,3)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🌶️</div><div class="mali-plot-name">Pepper</div></div>
+              <div class="mali-plot" onclick="maliTap(this,4)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🥕</div><div class="mali-plot-name">Carrot</div></div>
+              <div class="mali-plot" onclick="maliTap(this,5)"><div class="mali-plot-health danger"></div><div class="mali-plot-plant">🫑</div><div class="mali-plot-name">Pepper</div></div>
+              <div class="mali-plot" onclick="maliTap(this,6)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🌻</div><div class="mali-plot-name">Sunflower</div></div>
+              <div class="mali-plot" onclick="maliTap(this,7)"><div class="mali-plot-health good"></div><div class="mali-plot-plant">🌱</div><div class="mali-plot-name">Seedling</div></div>
+            </div>
+            <div class="mali-sidney-bar" id="maliSidney">
+              <span class="sid-icon">🐌</span>
+              <div class="sid-msg" id="maliMsg">Tap any plant and I'll tell you what it needs. I know your soil, your weather, everything.</div>
+            </div>
+            <div class="mali-health-footer">
+              <div>Garden Health</div>
+              <div class="mali-health-num">87</div>
+            </div>
+            <div class="mali-tap-hint">👆 Tap a plant</div>
           </div>
 
           <div class="app-tags">
@@ -4028,106 +3858,216 @@
       wordkoTimers.push(resultTimer);
     }
 
-    // ============ CAROUSEL ENGINE ============
-    const carousels = {};
+    // ============ HINGLISH VINGLISH LESSON DEMO ============
+    let hvTimer = null;
+    let hvStep = 0;
 
-    function initCarousel(name, dotActiveClass) {
-      const track = document.getElementById(name + 'Track');
-      const dotsContainer = document.getElementById(name + 'Dots');
-      if (!track || !dotsContainer) return;
-
-      const slides = track.children.length;
-      carousels[name] = { current: 0, total: slides, dotClass: dotActiveClass || 'active', autoTimer: null };
-
-      // Create dots
-      dotsContainer.innerHTML = '';
-      for (let i = 0; i < slides; i++) {
-        const dot = document.createElement('button');
-        dot.className = 'app-carousel-dot' + (i === 0 ? ' ' + carousels[name].dotClass : '');
-        dot.onclick = () => carouselGoTo(name, i);
-        dotsContainer.appendChild(dot);
+    function hvShowStep(n) {
+      hvStep = n;
+      for (let i = 0; i < 4; i++) {
+        const el = document.getElementById('hvStep' + (i + 1));
+        const dot = document.getElementById('hvd' + i);
+        if (el) el.classList.toggle('active', i === n);
+        if (dot) dot.classList.toggle('on', i === n);
       }
 
-      // Auto-advance
-      carousels[name].autoTimer = setInterval(() => carouselNext(name), 3500);
+      // Step-specific animations
+      if (n === 1) {
+        // Generate wave bars
+        const w = document.getElementById('hvWaves');
+        if (w && !w.children.length) {
+          for (let i = 0; i < 20; i++) {
+            const bar = document.createElement('div');
+            bar.className = 'hv-wave-bar';
+            bar.style.animationDelay = (i * 0.05) + 's';
+            w.appendChild(bar);
+          }
+        }
+      }
+      if (n === 2) {
+        // Animate score ring
+        setTimeout(() => {
+          const circle = document.getElementById('hvScoreCircle');
+          const pct = document.getElementById('hvScorePct');
+          if (circle) circle.style.strokeDashoffset = 283 - (283 * 0.7); // 70%
+          // Count up
+          let c = 0;
+          const counter = setInterval(() => {
+            c += 2;
+            if (c > 70) { c = 70; clearInterval(counter); }
+            if (pct) pct.textContent = c + '%';
+          }, 30);
+        }, 200);
+      }
+      if (n === 3) {
+        // Reset badge animation
+        const badge = document.getElementById('hvBadge');
+        if (badge) { badge.style.animation = 'none'; badge.offsetHeight; badge.style.animation = ''; }
+      }
     }
 
-    function carouselGoTo(name, index) {
-      const c = carousels[name];
-      if (!c) return;
-      c.current = ((index % c.total) + c.total) % c.total;
-      const track = document.getElementById(name + 'Track');
-      track.style.transform = `translateX(-${c.current * 100}%)`;
+    function hvLoop() {
+      // Reset score circle
+      const circle = document.getElementById('hvScoreCircle');
+      if (circle) circle.style.strokeDashoffset = 283;
+      const pct = document.getElementById('hvScorePct');
+      if (pct) pct.textContent = '0%';
 
-      // Update dots
-      const dots = document.getElementById(name + 'Dots').children;
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].className = 'app-carousel-dot' + (i === c.current ? ' ' + c.dotClass : '');
+      hvShowStep(0);
+      hvTimer = setTimeout(() => {
+        hvShowStep(1);
+        hvTimer = setTimeout(() => {
+          hvShowStep(2);
+          hvTimer = setTimeout(() => {
+            hvShowStep(3);
+            hvTimer = setTimeout(() => hvLoop(), 3000);
+          }, 3500);
+        }, 2500);
+      }, 2500);
+    }
+
+    // Start when visible
+    const hvObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { hvLoop(); hvObs.unobserve(e.target); } });
+    }, { threshold: 0.3 });
+    const hvEl = document.getElementById('hvDemo');
+    if (hvEl) hvObs.observe(hvEl);
+
+    // ============ VIBE LINGO MORPH DEMO ============
+    const vlLangs = [
+      { key: 'spanish',   flag: '🇪🇸', name: 'Spanish',   phrase: '¡Hola!',      meaning: 'Hello!',         pronun: 'OH-la',          bg: 'linear-gradient(135deg, #c0392b 0%, #e74c3c 100%)' },
+      { key: 'japanese',  flag: '🇯🇵', name: 'Japanese',  phrase: 'こんにちは!',   meaning: 'Hello!',         pronun: 'kon-NEE-chi-wa', bg: 'linear-gradient(135deg, #BC002D 0%, #e84393 100%)' },
+      { key: 'german',    flag: '🇩🇪', name: 'German',    phrase: 'Wie geht\'s?', meaning: 'How are you?',   pronun: 'vee GATES',      bg: 'linear-gradient(135deg, #2d3436 0%, #636e72 100%)' },
+      { key: 'mandarin',  flag: '🇨🇳', name: 'Mandarin',  phrase: '你好吗？',      meaning: 'How are you?',   pronun: 'nee how MA',     bg: 'linear-gradient(135deg, #c0392b 0%, #d4a017 100%)' },
+      { key: 'persian',   flag: '🇮🇷', name: 'Persian',   phrase: '!سلام',        meaning: 'Hello!',         pronun: 'sa-LAAM',        bg: 'linear-gradient(135deg, #1a5276 0%, #2ecc71 100%)' },
+      { key: 'cantonese', flag: '🇭🇰', name: 'Cantonese', phrase: '你好!',         meaning: 'Hello!',         pronun: 'nei HOU',        bg: 'linear-gradient(135deg, #ba2025 0%, #ff6348 100%)' },
+      { key: 'punjabi',   flag: '🇮🇳', name: 'Punjabi',   phrase: 'ਸਤ ਸ੍ਰੀ ਅਕਾਲ!', meaning: 'Hello!',         pronun: 'sat-sree-a-KAAL', bg: 'linear-gradient(135deg, #FF9933 0%, #138808 100%)' },
+    ];
+
+    let vlIdx = 0;
+    let vlAutoTimer = null;
+
+    function vlInit() {
+      const row = document.getElementById('vlPills');
+      if (!row) return;
+      row.innerHTML = '';
+      vlLangs.forEach((l, i) => {
+        const pill = document.createElement('div');
+        pill.className = 'vl-lang-pill' + (i === 0 ? ' active' : '');
+        pill.innerHTML = l.flag + ' ' + l.name;
+        pill.onclick = () => { vlGoTo(i); clearInterval(vlAutoTimer); vlAutoTimer = setInterval(vlNext, 3500); };
+        pill.id = 'vlPill' + i;
+        row.appendChild(pill);
+      });
+      vlApply(0, false);
+    }
+
+    function vlApply(i, animate) {
+      const l = vlLangs[i];
+      const demo = document.getElementById('vlDemo');
+      const flag = document.getElementById('vlFlag');
+      const label = document.getElementById('vlLabel');
+      const phrase = document.getElementById('vlBigPhrase');
+      const meaning = document.getElementById('vlMeaning');
+      const pronun = document.getElementById('vlPronun');
+
+      if (animate) {
+        flag.classList.add('morph');
+        phrase.classList.add('morph');
+        meaning.style.opacity = '0';
+        pronun.style.opacity = '0';
+
+        setTimeout(() => {
+          flag.textContent = l.flag;
+          label.textContent = l.name;
+          phrase.textContent = l.phrase;
+          meaning.textContent = l.meaning;
+          pronun.textContent = l.pronun;
+          demo.style.background = l.bg;
+
+          flag.classList.remove('morph');
+          phrase.classList.remove('morph');
+          meaning.style.opacity = '1';
+          pronun.style.opacity = '1';
+        }, 350);
+      } else {
+        flag.textContent = l.flag;
+        label.textContent = l.name;
+        phrase.textContent = l.phrase;
+        meaning.textContent = l.meaning;
+        pronun.textContent = l.pronun;
+        demo.style.background = l.bg;
       }
 
-      // Reset auto-advance timer
-      clearInterval(c.autoTimer);
-      c.autoTimer = setInterval(() => carouselNext(name), 3500);
+      // Update pills
+      vlLangs.forEach((_, j) => {
+        const p = document.getElementById('vlPill' + j);
+        if (p) p.classList.toggle('active', j === i);
+      });
     }
 
-    function carouselNext(name) { carouselGoTo(name, (carousels[name]?.current || 0) + 1); }
-    function carouselPrev(name) { carouselGoTo(name, (carousels[name]?.current || 0) - 1); }
+    function vlGoTo(i) { vlIdx = i; vlApply(i, true); }
+    function vlNext() { vlIdx = (vlIdx + 1) % vlLangs.length; vlGoTo(vlIdx); }
 
-    // Init carousels on load
-    initCarousel('hinglish', 'active');
-    initCarousel('mali', 'active-amber');
-
-    // ============ VIBE LINGO INTERACTIVE DEMO ============
-    const vlPhrases = {
-      persian:   { native: 'salam!', english: 'Hello!', hint: 'Pronounced: sa-LAAM' },
-      spanish:   { native: '!Hola!', english: 'Hello!', hint: 'Pronounced: OH-la' },
-      german:    { native: 'Wie geht\'s?', english: 'How are you?', hint: 'Pronounced: vee GATES' },
-      cantonese: { native: '你好!', english: 'Hello!', hint: 'Pronounced: nei HOU' },
-      mandarin:  { native: '你好吗？', english: 'How are you?', hint: 'Pronounced: nee how MA' },
-      japanese:  { native: 'こんにちは!', english: 'Hello!', hint: 'Pronounced: kon-NEE-chi-wa' },
-      punjabi:   { native: 'ਸਤ ਸ੍ਰੀ ਅਕਾਲ!', english: 'Hello!', hint: 'Pronounced: sat-sree-a-KAAL' },
-      hindi:     { native: 'क्या बात है!', english: 'What\'s up!', hint: 'Pronounced: kya BAAT hai' },
-    };
-
-    function selectVLLang(el, lang) {
-      // Remove selected from all
-      document.querySelectorAll('.vl-lang').forEach(l => l.classList.remove('selected'));
-      el.classList.add('selected');
-
-      const p = vlPhrases[lang];
-      const display = document.getElementById('vlPhrase');
-      const native = document.getElementById('vlNative');
-      const english = document.getElementById('vlEnglish');
-      const hint = document.getElementById('vlHint');
-
-      display.classList.add('active');
-      native.style.opacity = '0';
-      native.style.transform = 'translateY(8px)';
-
-      setTimeout(() => {
-        native.textContent = p.native;
-        english.textContent = p.english;
-        hint.textContent = p.hint;
-        native.style.opacity = '1';
-        native.style.transform = 'translateY(0)';
-      }, 150);
-    }
-
-    // Animate VL language cards in on scroll
-    const vlObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const langs = entry.target.querySelectorAll('.vl-lang');
-          langs.forEach((lang, i) => {
-            setTimeout(() => lang.classList.add('visible'), i * 80);
-          });
-          vlObserver.unobserve(entry.target);
+    const vlObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          vlInit();
+          vlAutoTimer = setInterval(vlNext, 3500);
+          vlObs.unobserve(e.target);
         }
       });
     }, { threshold: 0.3 });
+    const vlEl = document.getElementById('vlDemo');
+    if (vlEl) vlObs.observe(vlEl);
 
-    const vlDemo = document.getElementById('vlDemo');
-    if (vlDemo) vlObserver.observe(vlDemo);
+    // ============ MALI GARDEN DEMO ============
+    const maliAdvice = [
+      { msg: 'Your <span class="plant-name">Roma Tomato</span> is thriving! Week 6 — fruit is setting. Water deeply every 2 days. 🍅' },
+      { msg: 'Your <span class="plant-name">Basil</span> is <span class="warn-text">getting leggy</span>. Pinch the top leaves to encourage bushy growth. Harvest before it flowers! 🌿' },
+      { msg: 'Your <span class="plant-name">Rose</span> is loving this weather! Deadhead spent blooms to keep new ones coming. 🌹' },
+      { msg: '<span class="danger-text">Frost warning tonight!</span> Your <span class="plant-name">Pepper</span> can\'t handle below 5°C. Cover it or bring it inside by 11pm. 🌶️' },
+      { msg: 'Your <span class="plant-name">Carrots</span> are 3 weeks from harvest! The tops look great — don\'t pull yet, let them sweeten. 🥕' },
+      { msg: 'Your <span class="plant-name">Bell Pepper</span> leaves are <span class="danger-text">curling</span>. That\'s cold stress from last night\'s -1°C. Move to a warmer spot ASAP. 🫑' },
+      { msg: 'Your <span class="plant-name">Sunflower</span> is tracking the sun perfectly! It\'ll bloom in about 10 days. Don\'t move it now. 🌻' },
+      { msg: 'This <span class="plant-name">Seedling</span> just sprouted! Keep soil moist but not soggy. First true leaves in 5-7 days. 🌱' },
+    ];
+
+    function maliTap(el, idx) {
+      // Remove active from all
+      document.querySelectorAll('.mali-plot').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+
+      const msg = document.getElementById('maliMsg');
+      msg.style.opacity = '0';
+      setTimeout(() => {
+        msg.innerHTML = maliAdvice[idx].msg;
+        msg.style.opacity = '1';
+      }, 200);
+    }
+
+    // Auto-play mali demo
+    let maliAutoIdx = 0;
+    const maliObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const plots = document.querySelectorAll('.mali-plot');
+          const seq = [1, 3, 5, 0]; // Basil (warn), Pepper (frost), Bell pepper (danger), Tomato (good)
+          let i = 0;
+          const run = () => {
+            if (i < seq.length) {
+              maliTap(plots[seq[i]], seq[i]);
+              i++;
+              setTimeout(run, 2800);
+            }
+          };
+          setTimeout(run, 1500);
+          maliObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    const maliEl = document.getElementById('maliDemo');
+    if (maliEl) maliObs.observe(maliEl);
   </script>
 </body>
 </html>
