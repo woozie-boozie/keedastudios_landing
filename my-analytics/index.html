@@ -1214,26 +1214,35 @@ async function loadData() {
 }
 
 function renderFromData(d) {
+  try {
   // Total commits
   const total = d.total_commits || 0;
-  const totalStr = total >= 1000 ? `${(total / 1000).toFixed(1)}k` : total.toString();
+  const totalStr = total >= 1000 ? (total / 1000).toFixed(1) + 'k' : String(total);
 
-  setText('stat-commits', totalStr + '+', true);
-  setText('stat-commits-sub', `across ${d.repos.total} repos (${d.repos.original} original)`);
-  setText('hero-commits', totalStr + '+');
-  setText('hero-repos', d.repos.total);
+  var el;
+  el = document.getElementById('stat-commits');
+  if (el) { el.textContent = totalStr + '+'; el.classList.remove('loading'); }
+  el = document.getElementById('stat-commits-sub');
+  if (el) { el.textContent = 'across ' + d.repos.total + ' repos (' + d.repos.original + ' original)'; }
+  el = document.getElementById('hero-commits');
+  if (el) { el.textContent = totalStr + '+'; }
+  el = document.getElementById('hero-repos');
+  if (el) { el.textContent = d.repos.total; }
 
   // Streak
-  setText('stat-streak', d.streak || '?', true);
-  const streakSub = d.streak > 3 ? `${d.streak} days consecutive shipping` : 'based on recent events';
-  setText('stat-streak-sub', streakSub);
+  el = document.getElementById('stat-streak');
+  if (el) { el.textContent = d.streak || '?'; el.classList.remove('loading'); }
+  el = document.getElementById('stat-streak-sub');
+  if (el) { el.textContent = d.streak > 3 ? d.streak + ' days consecutive shipping' : 'based on recent events'; }
 
   // Average commits/day
-  const dayCount = (d.commits_by_day || []).length || 1;
-  const totalFromEvents = (d.commits_by_day || []).reduce((a, b) => a + (b.count || 0), 0);
-  const avg = (totalFromEvents / dayCount).toFixed(1);
-  setText('stat-avg', avg, true);
-  setText('stat-avg-sub', `over last ${dayCount} active days`);
+  var dayCount = (d.commits_by_day || []).length || 1;
+  var totalFromEvents = (d.commits_by_day || []).reduce(function(a, b) { return a + (b.count || 0); }, 0);
+  var avg = (totalFromEvents / dayCount).toFixed(1);
+  el = document.getElementById('stat-avg');
+  if (el) { el.textContent = avg; el.classList.remove('loading'); }
+  el = document.getElementById('stat-avg-sub');
+  if (el) { el.textContent = 'over last ' + dayCount + ' active days'; }
 
   // Contribution grid
   const byDay = {};
@@ -1270,6 +1279,7 @@ function renderFromData(d) {
     const badge = document.querySelector('.status-badge');
     if (badge) badge.innerHTML = `<div class="status-dot-live"></div> DATA FROM ${ago.toUpperCase()}`;
   }
+  } catch(err) { console.error('renderFromData error:', err); }
 }
 
 function setText(id, val, hasLoadingClass = false) {
