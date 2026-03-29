@@ -973,10 +973,6 @@ body::before {
 </div>
 
 <script>
-// ── CONFIG ──
-const GH_USER = 'woozie-boozie';
-const GH_HEADERS = { 'Accept': 'application/vnd.github.v3+json' };
-
 // ── BOOT ──
 window.addEventListener('load', () => {
   setTimeout(() => {
@@ -990,10 +986,8 @@ window.addEventListener('load', () => {
 function init() {
   initParticles();
   observeSections();
-  fetchGitHub();
+  loadData();
   renderTerminal();
-  renderHourChart();
-  renderFallbackMonthChart();
 }
 
 // ── PARTICLE BACKGROUND ──
@@ -1038,8 +1032,6 @@ function initParticles() {
   function loop() {
     ctx.clearRect(0, 0, w, h);
     particles.forEach(p => { p.update(); p.draw(); });
-
-    // Draw lines between close particles
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
@@ -1068,97 +1060,84 @@ function observeSections() {
   document.querySelectorAll('.section').forEach(s => obs.observe(s));
 }
 
-// ── GITHUB ──
-async function fetchGitHub() {
+// ── LOAD DATA FROM STATIC JSON ──
+async function loadData() {
   try {
-    const [user, repos, events] = await Promise.all([
-      fetch(`https://api.github.com/users/${GH_USER}`, { headers: GH_HEADERS }).then(r => r.json()),
-      fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&sort=updated`, { headers: GH_HEADERS }).then(r => r.json()),
-      fetch(`https://api.github.com/users/${GH_USER}/events?per_page=100`, { headers: GH_HEADERS }).then(r => r.json()),
-    ]);
-
-    if (!Array.isArray(repos)) throw new Error('Bad response');
-
-    const repoCount = repos.length;
-    const originals = repos.filter(r => !r.fork).length;
-
-    document.getElementById('hero-repos').textContent = repoCount;
-
-    // Count commits from events
-    let totalFromEvents = 0;
-    const commitsByDay = {};
-    const commitsByMonth = {};
-
-    if (Array.isArray(events)) {
-      events.forEach(ev => {
-        if (ev.type === 'PushEvent') {
-          const count = ev.payload.commits ? ev.payload.commits.length : 0;
-          totalFromEvents += count;
-          const date = ev.created_at.split('T')[0];
-          commitsByDay[date] = (commitsByDay[date] || 0) + count;
-          const month = date.substring(0, 7);
-          commitsByMonth[month] = (commitsByMonth[month] || 0) + count;
-        }
-      });
-    }
-
-    // Try pagination trick for commit totals on top repos
-    let repoTotal = 0;
-    const topRepos = repos.filter(r => !r.fork).slice(0, 15);
-    const countPromises = topRepos.map(r =>
-      fetch(`https://api.github.com/repos/${r.full_name}/commits?per_page=1`, { headers: GH_HEADERS })
-        .then(res => {
-          const link = res.headers.get('Link');
-          if (link) {
-            const m = link.match(/page=(\d+)>; rel="last"/);
-            return m ? parseInt(m[1]) : 1;
-          }
-          return 1;
-        }).catch(() => 0)
-    );
-    const counts = await Promise.all(countPromises);
-    repoTotal = counts.reduce((a, b) => a + b, 0);
-
-    const displayTotal = Math.max(repoTotal, totalFromEvents);
-    const totalStr = displayTotal >= 1000 ? `${(displayTotal / 1000).toFixed(1)}k` : displayTotal.toString();
-
-    document.getElementById('stat-commits').textContent = totalStr + '+';
-    document.getElementById('stat-commits').classList.remove('loading');
-    document.getElementById('stat-commits-sub').textContent = `across ${repoCount} repos (${originals} original)`;
-
-    document.getElementById('hero-commits').textContent = totalStr + '+';
-
-    // Streak
-    const today = new Date();
-    let streak = 0;
-    for (let i = 0; i < 90; i++) {
-      const d = new Date(today); d.setDate(d.getDate() - i);
-      const key = d.toISOString().split('T')[0];
-      if (commitsByDay[key]) streak++;
-      else if (i > 0) break;
-    }
-
-    document.getElementById('stat-streak').textContent = streak || '?';
-    document.getElementById('stat-streak').classList.remove('loading');
-    document.getElementById('stat-streak-sub').textContent = streak > 3 ? `${streak} days consecutive shipping` : 'based on recent events';
-
-    // Average
-    const dayCount = Object.keys(commitsByDay).length || 1;
-    const avg = (totalFromEvents / dayCount).toFixed(1);
-    document.getElementById('stat-avg').textContent = avg;
-    document.getElementById('stat-avg').classList.remove('loading');
-    document.getElementById('stat-avg-sub').textContent = `over last ${dayCount} active days`;
-
-    renderContribGrid(commitsByDay);
-    renderActivityFeed(events);
-    if (Object.keys(commitsByMonth).length) renderMonthChart(commitsByMonth);
-
-    document.getElementById('contrib-total').textContent = `${totalFromEvents} contributions in this period`;
-
+    const res = await fetch('data.json?t=' + Date.now());
+    if (!res.ok) throw new Error('data.json not found — run the GitHub Action first');
+    const data = await res.json();
+    renderFromData(data);
   } catch (e) {
-    console.error('GitHub fetch error:', e);
+    console.error('Failed to load data.json:', e);
     renderFallbackData();
   }
+}
+
+function renderFromData(d) {
+  // Total commits
+  const total = d.total_commits || 0;
+  const totalStr = total >= 1000 ? `${(total / 1000).toFixed(1)}k` : total.toString();
+
+  setText('stat-commits', totalStr + '+', false);
+  setText('stat-commits-sub', `across ${d.repos.total} repos (${d.repos.original} original)`);
+  setText('hero-commits', totalStr + '+');
+  setText('hero-repos', d.repos.total);
+
+  // Streak
+  setText('stat-streak', d.streak || '?', false);
+  const streakSub = d.streak > 3 ? `${d.streak} days consecutive shipping` : 'based on recent events';
+  setText('stat-streak-sub', streakSub);
+
+  // Average commits/day
+  const dayCount = (d.commits_by_day || []).length || 1;
+  const totalFromEvents = (d.commits_by_day || []).reduce((a, b) => a + (b.count || 0), 0);
+  const avg = (totalFromEvents / dayCount).toFixed(1);
+  setText('stat-avg', avg, false);
+  setText('stat-avg-sub', `over last ${dayCount} active days`);
+
+  // Contribution grid
+  const byDay = {};
+  (d.commits_by_day || []).forEach(x => { byDay[x.date] = x.count; });
+  renderContribGrid(byDay);
+  document.getElementById('contrib-total').textContent = `${totalFromEvents} contributions in this period`;
+
+  // Month chart
+  if (d.commits_by_month && d.commits_by_month.length) {
+    const labels = d.commits_by_month.map(x => {
+      const dt = new Date(x.month + '-01');
+      return dt.toLocaleString('default', { month: 'short' });
+    });
+    const vals = d.commits_by_month.map(x => x.count);
+    renderBarData('month-chart', labels, vals);
+  } else {
+    renderFallbackMonthChart();
+  }
+
+  // Hour chart
+  if (d.commits_by_hour && d.commits_by_hour.length) {
+    renderHourChartFromData(d.commits_by_hour);
+  } else {
+    renderHourChartFallback();
+  }
+
+  // Activity feed
+  renderActivityFeed(d.recent_commits || []);
+
+  // Updated timestamp
+  if (d.updated) {
+    const ago = timeAgo(new Date(d.updated));
+    document.querySelector('.loader-sub')?.remove();
+    const badge = document.querySelector('.status-badge');
+    if (badge) badge.innerHTML = `<div class="status-dot-live"></div> DATA FROM ${ago.toUpperCase()}`;
+  }
+}
+
+function setText(id, val, removeLoading = true) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = val;
+  if (removeLoading) return;
+  el.classList.remove('loading');
 }
 
 // ── CONTRIB GRID ──
@@ -1199,7 +1178,6 @@ function renderContribGrid(commitsByDay) {
     grid.appendChild(cell);
   });
 
-  // Month labels
   let lastM = '';
   const weeks = Math.ceil(dates.length / 7);
   for (let w = 0; w < weeks; w++) {
@@ -1216,18 +1194,20 @@ function renderContribGrid(commitsByDay) {
 }
 
 // ── ACTIVITY FEED ──
-function renderActivityFeed(events) {
+function renderActivityFeed(recentCommits) {
   const feed = document.getElementById('activity-feed');
   feed.innerHTML = '';
 
-  const pushes = (Array.isArray(events) ? events : []).filter(e => e.type === 'PushEvent').slice(0, 10);
-  if (!pushes.length) { feed.innerHTML = '<div class="feed-item"><div class="feed-content"><span class="feed-msg" style="color:var(--amber)">no recent public push events</span></div></div>'; return; }
+  if (!recentCommits.length) {
+    feed.innerHTML = '<div class="feed-item"><div class="feed-content"><span class="feed-msg" style="color:var(--amber)">no recent commit data — waiting for GitHub Action to run</span></div></div>';
+    return;
+  }
 
-  pushes.forEach(ev => {
-    const commits = ev.payload.commits || [];
-    const repo = ev.repo.name.split('/')[1];
-    const date = new Date(ev.created_at);
+  recentCommits.forEach(ev => {
+    const repo = ev.repo;
+    const date = new Date(ev.date);
     const ago = timeAgo(date);
+    const commits = ev.commits || [];
 
     commits.slice(0, 2).forEach(c => {
       const el = document.createElement('div');
@@ -1236,8 +1216,8 @@ function renderActivityFeed(events) {
         <div class="feed-time">${ago}</div>
         <div class="feed-dot"></div>
         <div class="feed-content">
-          <span class="feed-repo">${repo}</span> <span class="feed-msg">— ${esc(c.message.split('\n')[0].substring(0, 80))}</span>
-          <div class="feed-meta">${c.sha.substring(0, 7)} · ${date.toLocaleDateString()}</div>
+          <span class="feed-repo">${esc(repo)}</span> <span class="feed-msg">— ${esc(c.message)}</span>
+          <div class="feed-meta">${c.sha} · ${date.toLocaleDateString()}</div>
         </div>`;
       feed.appendChild(el);
     });
@@ -1246,6 +1226,7 @@ function renderActivityFeed(events) {
 
 function timeAgo(d) {
   const s = Math.floor((Date.now() - d.getTime()) / 1000);
+  if (s < 60) return 'just now';
   if (s < 3600) return Math.floor(s / 60) + 'm ago';
   if (s < 86400) return Math.floor(s / 3600) + 'h ago';
   return Math.floor(s / 86400) + 'd ago';
@@ -1253,18 +1234,11 @@ function timeAgo(d) {
 
 function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
 
-// ── MONTH CHART ──
+// ── CHARTS ──
 function renderFallbackMonthChart() {
   const months = ['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar'];
   const vals = [35, 50, 65, 45, 85, 75, 110, 90, 140, 125, 170, 195];
   renderBarData('month-chart', months, vals);
-}
-
-function renderMonthChart(data) {
-  const sorted = Object.entries(data).sort((a, b) => a[0].localeCompare(b[0])).slice(-12);
-  const labels = sorted.map(([m]) => new Date(m + '-01').toLocaleString('default', { month: 'short' }));
-  const vals = sorted.map(([, v]) => v);
-  renderBarData('month-chart', labels, vals);
 }
 
 function renderBarData(id, labels, vals) {
@@ -1279,10 +1253,25 @@ function renderBarData(id, labels, vals) {
   });
 }
 
-// ── HOUR CHART ──
-function renderHourChart() {
+function renderHourChartFromData(hourData) {
   const el = document.getElementById('hour-chart');
-  // Typical coding hours distribution (higher late night + morning)
+  el.innerHTML = '';
+  // Fill all 24 hours
+  const hours = new Array(24).fill(0);
+  hourData.forEach(h => { hours[h.hour] = h.count; });
+  const max = Math.max(...hours, 1);
+  hours.forEach((v, i) => {
+    const bar = document.createElement('div');
+    bar.className = 'hour-bar';
+    bar.style.height = (v / max) * 100 + '%';
+    bar.style.transitionDelay = i * 0.03 + 's';
+    bar.title = `${i}:00 — ${v} commits`;
+    el.appendChild(bar);
+  });
+}
+
+function renderHourChartFallback() {
+  const el = document.getElementById('hour-chart');
   const hours = [15,10,5,3,2,2,5,20,35,50,60,55,40,45,55,65,70,60,50,45,55,50,35,25];
   const max = Math.max(...hours);
   el.innerHTML = '';
@@ -1291,34 +1280,27 @@ function renderHourChart() {
     bar.className = 'hour-bar';
     bar.style.height = (v / max) * 100 + '%';
     bar.style.transitionDelay = i * 0.03 + 's';
-    bar.title = `${i}:00 — ${v}% activity`;
+    bar.title = `${i}:00 — estimated`;
     el.appendChild(bar);
   });
 }
 
 // ── FALLBACK ──
 function renderFallbackData() {
-  document.getElementById('stat-commits').textContent = '2.4k+';
+  document.getElementById('stat-commits').textContent = '---';
   document.getElementById('stat-commits').classList.remove('loading');
-  document.getElementById('stat-commits-sub').textContent = 'estimated across all repos';
-  document.getElementById('hero-commits').textContent = '2.4k+';
-  document.getElementById('hero-repos').textContent = '30+';
-  document.getElementById('stat-streak').textContent = '18';
+  document.getElementById('stat-commits-sub').textContent = 'waiting for first data fetch';
+  document.getElementById('hero-commits').textContent = '---';
+  document.getElementById('hero-repos').textContent = '---';
+  document.getElementById('stat-streak').textContent = '---';
   document.getElementById('stat-streak').classList.remove('loading');
-  document.getElementById('stat-streak-sub').textContent = 'estimated streak';
-  document.getElementById('stat-avg').textContent = '8.2';
+  document.getElementById('stat-streak-sub').textContent = 'add GH_STATS_TOKEN secret & run action';
+  document.getElementById('stat-avg').textContent = '---';
   document.getElementById('stat-avg').classList.remove('loading');
-  document.getElementById('stat-avg-sub').textContent = 'estimated daily avg';
-
-  // Simulated heatmap
-  const fake = {};
-  const today = new Date();
-  for (let i = 0; i < 365; i++) {
-    const d = new Date(today); d.setDate(d.getDate() - i);
-    const key = d.toISOString().split('T')[0];
-    if (Math.random() > 0.25) fake[key] = Math.floor(Math.random() * 14) + 1;
-  }
-  renderContribGrid(fake);
+  document.getElementById('stat-avg-sub').textContent = 'see setup instructions below';
+  renderContribGrid({});
+  renderFallbackMonthChart();
+  renderHourChartFallback();
 }
 
 // ── TERMINAL ──
