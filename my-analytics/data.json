@@ -1,156 +1,995 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-29T20:44:38Z",
+  "updated": "2026-03-29T21:04:01Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2848,
-  "streak": 4,
+  "total_commits": 2851,
+  "streak": 29,
   "commits_by_day": [
     {
+      "date": "2025-04-05",
+      "count": 1
+    },
+    {
+      "date": "2025-04-16",
+      "count": 3
+    },
+    {
+      "date": "2025-04-19",
+      "count": 1
+    },
+    {
+      "date": "2025-05-01",
+      "count": 1
+    },
+    {
+      "date": "2025-08-19",
+      "count": 10
+    },
+    {
+      "date": "2025-08-20",
+      "count": 16
+    },
+    {
+      "date": "2025-08-21",
+      "count": 2
+    },
+    {
+      "date": "2025-08-22",
+      "count": 1
+    },
+    {
+      "date": "2025-08-25",
+      "count": 2
+    },
+    {
+      "date": "2025-08-26",
+      "count": 6
+    },
+    {
+      "date": "2025-08-28",
+      "count": 2
+    },
+    {
+      "date": "2025-08-29",
+      "count": 5
+    },
+    {
+      "date": "2025-08-30",
+      "count": 4
+    },
+    {
+      "date": "2025-08-31",
+      "count": 2
+    },
+    {
+      "date": "2025-09-01",
+      "count": 27
+    },
+    {
+      "date": "2025-09-02",
+      "count": 18
+    },
+    {
+      "date": "2025-09-03",
+      "count": 4
+    },
+    {
+      "date": "2025-09-04",
+      "count": 8
+    },
+    {
+      "date": "2025-09-05",
+      "count": 10
+    },
+    {
+      "date": "2025-09-06",
+      "count": 3
+    },
+    {
+      "date": "2025-09-07",
+      "count": 7
+    },
+    {
+      "date": "2025-09-08",
+      "count": 10
+    },
+    {
+      "date": "2025-09-09",
+      "count": 2
+    },
+    {
+      "date": "2025-09-15",
+      "count": 1
+    },
+    {
+      "date": "2025-09-17",
+      "count": 2
+    },
+    {
+      "date": "2025-09-18",
+      "count": 2
+    },
+    {
+      "date": "2025-09-24",
+      "count": 13
+    },
+    {
+      "date": "2025-10-12",
+      "count": 15
+    },
+    {
+      "date": "2025-10-13",
+      "count": 12
+    },
+    {
+      "date": "2025-10-14",
+      "count": 16
+    },
+    {
+      "date": "2025-10-15",
+      "count": 7
+    },
+    {
+      "date": "2025-10-16",
+      "count": 2
+    },
+    {
+      "date": "2025-10-17",
+      "count": 3
+    },
+    {
+      "date": "2025-10-19",
+      "count": 3
+    },
+    {
+      "date": "2025-10-20",
+      "count": 3
+    },
+    {
+      "date": "2025-10-21",
+      "count": 8
+    },
+    {
+      "date": "2025-10-22",
+      "count": 13
+    },
+    {
+      "date": "2025-10-23",
+      "count": 4
+    },
+    {
+      "date": "2025-10-24",
+      "count": 1
+    },
+    {
+      "date": "2025-10-25",
+      "count": 4
+    },
+    {
+      "date": "2025-10-26",
+      "count": 2
+    },
+    {
+      "date": "2025-10-27",
+      "count": 4
+    },
+    {
+      "date": "2025-10-28",
+      "count": 12
+    },
+    {
+      "date": "2025-10-29",
+      "count": 14
+    },
+    {
+      "date": "2025-10-30",
+      "count": 14
+    },
+    {
+      "date": "2025-10-31",
+      "count": 26
+    },
+    {
+      "date": "2025-11-01",
+      "count": 12
+    },
+    {
+      "date": "2025-11-02",
+      "count": 4
+    },
+    {
+      "date": "2025-11-03",
+      "count": 7
+    },
+    {
+      "date": "2025-11-04",
+      "count": 10
+    },
+    {
+      "date": "2025-11-05",
+      "count": 7
+    },
+    {
+      "date": "2025-11-07",
+      "count": 5
+    },
+    {
+      "date": "2025-11-10",
+      "count": 8
+    },
+    {
+      "date": "2025-11-11",
+      "count": 4
+    },
+    {
+      "date": "2025-11-12",
+      "count": 9
+    },
+    {
+      "date": "2025-11-13",
+      "count": 6
+    },
+    {
+      "date": "2025-11-14",
+      "count": 9
+    },
+    {
+      "date": "2025-11-16",
+      "count": 12
+    },
+    {
+      "date": "2025-11-17",
+      "count": 13
+    },
+    {
+      "date": "2025-11-18",
+      "count": 12
+    },
+    {
+      "date": "2025-11-19",
+      "count": 8
+    },
+    {
+      "date": "2025-11-20",
+      "count": 14
+    },
+    {
+      "date": "2025-11-21",
+      "count": 11
+    },
+    {
+      "date": "2025-11-25",
+      "count": 2
+    },
+    {
+      "date": "2025-11-26",
+      "count": 6
+    },
+    {
+      "date": "2025-11-27",
+      "count": 15
+    },
+    {
+      "date": "2025-11-28",
+      "count": 27
+    },
+    {
+      "date": "2025-11-29",
+      "count": 10
+    },
+    {
+      "date": "2025-11-30",
+      "count": 7
+    },
+    {
+      "date": "2025-12-01",
+      "count": 12
+    },
+    {
+      "date": "2025-12-02",
+      "count": 26
+    },
+    {
+      "date": "2025-12-03",
+      "count": 19
+    },
+    {
+      "date": "2025-12-04",
+      "count": 32
+    },
+    {
+      "date": "2025-12-05",
+      "count": 1
+    },
+    {
+      "date": "2025-12-06",
+      "count": 11
+    },
+    {
+      "date": "2025-12-07",
+      "count": 16
+    },
+    {
+      "date": "2025-12-08",
+      "count": 16
+    },
+    {
+      "date": "2025-12-09",
+      "count": 8
+    },
+    {
+      "date": "2025-12-10",
+      "count": 12
+    },
+    {
+      "date": "2025-12-11",
+      "count": 12
+    },
+    {
+      "date": "2025-12-12",
+      "count": 6
+    },
+    {
+      "date": "2025-12-13",
+      "count": 4
+    },
+    {
+      "date": "2025-12-14",
+      "count": 15
+    },
+    {
+      "date": "2025-12-15",
+      "count": 8
+    },
+    {
+      "date": "2025-12-16",
+      "count": 8
+    },
+    {
+      "date": "2025-12-17",
+      "count": 5
+    },
+    {
+      "date": "2025-12-18",
+      "count": 6
+    },
+    {
+      "date": "2025-12-20",
+      "count": 2
+    },
+    {
+      "date": "2025-12-22",
+      "count": 3
+    },
+    {
+      "date": "2025-12-23",
+      "count": 2
+    },
+    {
+      "date": "2025-12-28",
+      "count": 2
+    },
+    {
+      "date": "2025-12-29",
+      "count": 1
+    },
+    {
+      "date": "2026-01-01",
+      "count": 5
+    },
+    {
+      "date": "2026-01-02",
+      "count": 3
+    },
+    {
+      "date": "2026-01-03",
+      "count": 3
+    },
+    {
+      "date": "2026-01-04",
+      "count": 15
+    },
+    {
+      "date": "2026-01-05",
+      "count": 13
+    },
+    {
+      "date": "2026-01-06",
+      "count": 5
+    },
+    {
+      "date": "2026-01-07",
+      "count": 3
+    },
+    {
+      "date": "2026-01-08",
+      "count": 3
+    },
+    {
+      "date": "2026-01-09",
+      "count": 15
+    },
+    {
+      "date": "2026-01-10",
+      "count": 26
+    },
+    {
+      "date": "2026-01-11",
+      "count": 6
+    },
+    {
+      "date": "2026-01-12",
+      "count": 5
+    },
+    {
+      "date": "2026-01-13",
+      "count": 9
+    },
+    {
+      "date": "2026-01-14",
+      "count": 3
+    },
+    {
+      "date": "2026-01-15",
+      "count": 2
+    },
+    {
+      "date": "2026-01-16",
+      "count": 1
+    },
+    {
+      "date": "2026-01-19",
+      "count": 4
+    },
+    {
+      "date": "2026-01-20",
+      "count": 3
+    },
+    {
+      "date": "2026-01-21",
+      "count": 13
+    },
+    {
+      "date": "2026-01-22",
+      "count": 1
+    },
+    {
+      "date": "2026-01-23",
+      "count": 5
+    },
+    {
+      "date": "2026-01-25",
+      "count": 1
+    },
+    {
+      "date": "2026-01-26",
+      "count": 1
+    },
+    {
+      "date": "2026-01-27",
+      "count": 8
+    },
+    {
+      "date": "2026-01-28",
+      "count": 18
+    },
+    {
+      "date": "2026-01-29",
+      "count": 12
+    },
+    {
+      "date": "2026-01-30",
+      "count": 13
+    },
+    {
+      "date": "2026-01-31",
+      "count": 9
+    },
+    {
+      "date": "2026-02-01",
+      "count": 6
+    },
+    {
+      "date": "2026-02-02",
+      "count": 5
+    },
+    {
+      "date": "2026-02-03",
+      "count": 11
+    },
+    {
+      "date": "2026-02-04",
+      "count": 2
+    },
+    {
+      "date": "2026-02-05",
+      "count": 2
+    },
+    {
+      "date": "2026-02-06",
+      "count": 3
+    },
+    {
+      "date": "2026-02-07",
+      "count": 3
+    },
+    {
+      "date": "2026-02-09",
+      "count": 1
+    },
+    {
+      "date": "2026-02-10",
+      "count": 1
+    },
+    {
+      "date": "2026-02-15",
+      "count": 7
+    },
+    {
+      "date": "2026-02-16",
+      "count": 1
+    },
+    {
+      "date": "2026-02-17",
+      "count": 1
+    },
+    {
+      "date": "2026-02-18",
+      "count": 1
+    },
+    {
+      "date": "2026-02-22",
+      "count": 7
+    },
+    {
+      "date": "2026-02-23",
+      "count": 3
+    },
+    {
+      "date": "2026-02-24",
+      "count": 2
+    },
+    {
+      "date": "2026-02-25",
+      "count": 2
+    },
+    {
+      "date": "2026-02-26",
+      "count": 7
+    },
+    {
+      "date": "2026-02-27",
+      "count": 3
+    },
+    {
+      "date": "2026-03-01",
+      "count": 1
+    },
+    {
+      "date": "2026-03-02",
+      "count": 10
+    },
+    {
+      "date": "2026-03-03",
+      "count": 3
+    },
+    {
+      "date": "2026-03-04",
+      "count": 7
+    },
+    {
+      "date": "2026-03-05",
+      "count": 6
+    },
+    {
+      "date": "2026-03-06",
+      "count": 5
+    },
+    {
+      "date": "2026-03-07",
+      "count": 10
+    },
+    {
+      "date": "2026-03-08",
+      "count": 6
+    },
+    {
+      "date": "2026-03-09",
+      "count": 9
+    },
+    {
+      "date": "2026-03-10",
+      "count": 27
+    },
+    {
+      "date": "2026-03-11",
+      "count": 27
+    },
+    {
+      "date": "2026-03-12",
+      "count": 14
+    },
+    {
+      "date": "2026-03-13",
+      "count": 6
+    },
+    {
+      "date": "2026-03-14",
+      "count": 7
+    },
+    {
+      "date": "2026-03-15",
+      "count": 7
+    },
+    {
+      "date": "2026-03-16",
+      "count": 9
+    },
+    {
+      "date": "2026-03-17",
+      "count": 3
+    },
+    {
+      "date": "2026-03-18",
+      "count": 17
+    },
+    {
+      "date": "2026-03-19",
+      "count": 24
+    },
+    {
+      "date": "2026-03-20",
+      "count": 5
+    },
+    {
+      "date": "2026-03-21",
+      "count": 5
+    },
+    {
+      "date": "2026-03-22",
+      "count": 30
+    },
+    {
+      "date": "2026-03-23",
+      "count": 6
+    },
+    {
+      "date": "2026-03-24",
+      "count": 18
+    },
+    {
+      "date": "2026-03-25",
+      "count": 9
+    },
+    {
       "date": "2026-03-26",
-      "count": 0
+      "count": 8
     },
     {
       "date": "2026-03-27",
-      "count": 0
+      "count": 15
     },
     {
       "date": "2026-03-28",
-      "count": 0
+      "count": 27
     },
     {
       "date": "2026-03-29",
-      "count": 0
+      "count": 30
     }
   ],
   "commits_by_month": [
     {
+      "month": "2025-04",
+      "count": 5
+    },
+    {
+      "month": "2025-05",
+      "count": 1
+    },
+    {
+      "month": "2025-08",
+      "count": 50
+    },
+    {
+      "month": "2025-09",
+      "count": 107
+    },
+    {
+      "month": "2025-10",
+      "count": 163
+    },
+    {
+      "month": "2025-11",
+      "count": 218
+    },
+    {
+      "month": "2025-12",
+      "count": 227
+    },
+    {
+      "month": "2026-01",
+      "count": 205
+    },
+    {
+      "month": "2026-02",
+      "count": 68
+    },
+    {
       "month": "2026-03",
-      "count": 0
+      "count": 351
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 3
+      "count": 70
+    },
+    {
+      "hour": 1,
+      "count": 72
+    },
+    {
+      "hour": 2,
+      "count": 39
+    },
+    {
+      "hour": 3,
+      "count": 7
+    },
+    {
+      "hour": 4,
+      "count": 1
     },
     {
       "hour": 5,
-      "count": 3
+      "count": 8
     },
     {
-      "hour": 10,
-      "count": 3
-    },
-    {
-      "hour": 12,
-      "count": 1
-    },
-    {
-      "hour": 15,
-      "count": 3
-    },
-    {
-      "hour": 16,
-      "count": 3
-    },
-    {
-      "hour": 20,
+      "hour": 6,
       "count": 5
     },
     {
+      "hour": 7,
+      "count": 9
+    },
+    {
+      "hour": 8,
+      "count": 25
+    },
+    {
+      "hour": 9,
+      "count": 35
+    },
+    {
+      "hour": 10,
+      "count": 51
+    },
+    {
+      "hour": 11,
+      "count": 55
+    },
+    {
+      "hour": 12,
+      "count": 93
+    },
+    {
+      "hour": 13,
+      "count": 90
+    },
+    {
+      "hour": 14,
+      "count": 88
+    },
+    {
+      "hour": 15,
+      "count": 102
+    },
+    {
+      "hour": 16,
+      "count": 94
+    },
+    {
+      "hour": 17,
+      "count": 103
+    },
+    {
+      "hour": 18,
+      "count": 101
+    },
+    {
+      "hour": 19,
+      "count": 80
+    },
+    {
+      "hour": 20,
+      "count": 62
+    },
+    {
+      "hour": 21,
+      "count": 54
+    },
+    {
+      "hour": 22,
+      "count": 70
+    },
+    {
       "hour": 23,
-      "count": 1
+      "count": 81
     }
   ],
   "recent_commits": [
     {
       "repo": "keedastudios_landing",
-      "date": "2026-03-29T20:42:18Z",
-      "commits": []
+      "date": "2026-03-29T21:03:27Z",
+      "sha": "7ad3e3a",
+      "message": "fix: jq streak calculation — use variable capture for index lookup"
     },
     {
       "repo": "keedastudios_landing",
-      "date": "2026-03-29T20:38:00Z",
-      "commits": []
+      "date": "2026-03-29T20:49:32Z",
+      "sha": "1f3e584",
+      "message": "fix: make workflow more defensive — handle empty repos, paginate commits"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T20:46:15Z",
+      "sha": "f17066b",
+      "message": "fix: fetch commits directly from repos API instead of events"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T20:44:39Z",
+      "sha": "047fe86",
+      "message": "update analytics data [automated]"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T20:42:16Z",
+      "sha": "fe8f1a3",
+      "message": "add GitHub Action to fetch private repo stats into data.json"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T20:37:55Z",
+      "sha": "fc9e95c",
+      "message": "add work rate analytics page at /my-analytics"
     },
     {
       "repo": "bird-city-agi",
-      "date": "2026-03-29T20:31:18Z",
-      "commits": []
+      "date": "2026-03-29T20:31:12Z",
+      "sha": "d3905f5",
+      "message": "Add Pigeon Racing Track — city-wide 5-checkpoint speed circuit"
+    },
+    {
+      "repo": "bird-city",
+      "date": "2026-03-29T17:33:44Z",
+      "sha": "4d477c6",
+      "message": "Rebalance economy + add Stripe coin purchase system"
+    },
+    {
+      "repo": "fun-language-world",
+      "date": "2026-03-29T16:41:47Z",
+      "sha": "1a8d177",
+      "message": "Fix app stuck on loading screen"
+    },
+    {
+      "repo": "fun-language-world",
+      "date": "2026-03-29T16:38:09Z",
+      "sha": "5120f4e",
+      "message": "Fix dSYM upload warning for App Store"
+    },
+    {
+      "repo": "fun-language-world",
+      "date": "2026-03-29T16:18:28Z",
+      "sha": "97cd06f",
+      "message": "Fix app icon: remove alpha channel for App Store"
     },
     {
       "repo": "bird-city-agi",
-      "date": "2026-03-29T15:25:55Z",
-      "commits": []
+      "date": "2026-03-29T15:25:38Z",
+      "sha": "47216ac",
+      "message": "Add Radio Tower Control — capture the airwaves, broadcast to the whole city"
+    },
+    {
+      "repo": "bird-city",
+      "date": "2026-03-29T12:50:00Z",
+      "sha": "cb8324e",
+      "message": "Fix mobile touch scrolling in skill shop and all modals"
+    },
+    {
+      "repo": "bird-city",
+      "date": "2026-03-29T12:38:06Z",
+      "sha": "4d94773",
+      "message": "Fix skill shop UI: scrolling, readability, close button, contrast"
+    },
+    {
+      "repo": "bird-city",
+      "date": "2026-03-29T12:20:43Z",
+      "sha": "00dee04",
+      "message": "Add stampede chaos: tourists + dancers panic, trip, collide, scream"
     },
     {
       "repo": "bird-city-agi",
-      "date": "2026-03-29T10:14:13Z",
-      "commits": []
+      "date": "2026-03-29T10:14:07Z",
+      "sha": "2bfb409",
+      "message": "Add Graffiti Tagging System — spray buildings to dominate the streets"
     },
     {
       "repo": "bird-city-agi",
-      "date": "2026-03-29T05:15:39Z",
-      "commits": []
+      "date": "2026-03-29T05:15:34Z",
+      "sha": "f537db7",
+      "message": "Update CLAUDE.md: log Session 13 Bank Heist, mark bank heist as done"
     },
     {
       "repo": "bird-city-agi",
-      "date": "2026-03-29T00:29:33Z",
-      "commits": []
+      "date": "2026-03-29T05:14:50Z",
+      "sha": "022e124",
+      "message": "Add The Bank Heist — 3-phase multiplayer robbery event"
     },
     {
-      "repo": "bird-city-agi",
-      "date": "2026-03-28T20:17:29Z",
-      "commits": []
+      "repo": "bird-city",
+      "date": "2026-03-29T01:56:09Z",
+      "sha": "e76235e",
+      "message": "Animate tourists and flash mob dancers (were standing still)"
     },
     {
-      "repo": "bird-city-agi",
-      "date": "2026-03-28T16:57:07Z",
-      "commits": []
+      "repo": "fun-language-world",
+      "date": "2026-03-29T01:43:27Z",
+      "sha": "2c9d502",
+      "message": "Add Android release signing configuration"
     },
     {
-      "repo": "bird-city-agi",
-      "date": "2026-03-28T16:24:54Z",
-      "commits": []
+      "repo": "bird-city",
+      "date": "2026-03-29T01:35:34Z",
+      "sha": "ee4ff04",
+      "message": "Remove kid grab/stun mechanic — kids chase but can't catch you"
     },
     {
-      "repo": "bird-city-agi",
-      "date": "2026-03-28T15:18:49Z",
-      "commits": []
+      "repo": "bird-city",
+      "date": "2026-03-29T01:29:29Z",
+      "sha": "63c32bd",
+      "message": "Fix mission board: merge flock lobby in, fix overlap, better layout"
     },
     {
-      "repo": "bird-city-agi",
-      "date": "2026-03-28T10:09:38Z",
-      "commits": []
+      "repo": "fun-language-world",
+      "date": "2026-03-29T01:24:04Z",
+      "sha": "63e3723",
+      "message": "Wire up Firebase config files for iOS and Android"
     },
     {
-      "repo": "bird-city-agi",
-      "date": "2026-03-28T05:21:43Z",
-      "commits": []
+      "repo": "fun-language-world",
+      "date": "2026-03-29T01:07:59Z",
+      "sha": "e84239f",
+      "message": "Add Google and Apple Sign-In authentication"
     },
     {
-      "repo": "bird-city-agi",
-      "date": "2026-03-28T00:12:40Z",
-      "commits": []
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-27T20:22:04Z",
-      "commits": []
+      "repo": "bird-city",
+      "date": "2026-03-29T00:41:29Z",
+      "sha": "153b80b",
+      "message": "Redesign prison UI: clean, focused, readable"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 40
+      "commits": 44
+    },
+    {
+      "name": "hinglish-vinglish",
+      "commits": 223
     },
     {
       "name": "bird-city-agi",
       "commits": 24
+    },
+    {
+      "name": "pabho",
+      "commits": 393
     },
     {
       "name": "bird-city",
@@ -169,12 +1008,12 @@
       "commits": 1123
     },
     {
-      "name": "hinglish-vinglish",
-      "commits": 223
-    },
-    {
       "name": "farsi-darsi",
       "commits": 3
+    },
+    {
+      "name": "crossword-chaos",
+      "commits": 644
     },
     {
       "name": "babe-guess-my-fart",
@@ -185,12 +1024,8 @@
       "commits": 13
     },
     {
-      "name": "crossword-chaos",
-      "commits": 644
-    },
-    {
       "name": "mali-legal",
-      "commits": 1
+      "commits": 0
     },
     {
       "name": "backup_budin",
@@ -199,10 +1034,6 @@
     {
       "name": "trellis-backend-backup",
       "commits": 6
-    },
-    {
-      "name": "pabho",
-      "commits": 393
     },
     {
       "name": "budin_mvp_1",
