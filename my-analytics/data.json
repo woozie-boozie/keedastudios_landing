@@ -1,0 +1,238 @@
+{
+  "username": "woozie-boozie",
+  "updated": "2026-03-29T20:44:38Z",
+  "repos": {
+    "total": 19,
+    "original": 18,
+    "forks": 1
+  },
+  "total_commits": 2848,
+  "streak": 4,
+  "commits_by_day": [
+    {
+      "date": "2026-03-26",
+      "count": 0
+    },
+    {
+      "date": "2026-03-27",
+      "count": 0
+    },
+    {
+      "date": "2026-03-28",
+      "count": 0
+    },
+    {
+      "date": "2026-03-29",
+      "count": 0
+    }
+  ],
+  "commits_by_month": [
+    {
+      "month": "2026-03",
+      "count": 0
+    }
+  ],
+  "commits_by_hour": [
+    {
+      "hour": 0,
+      "count": 3
+    },
+    {
+      "hour": 5,
+      "count": 3
+    },
+    {
+      "hour": 10,
+      "count": 3
+    },
+    {
+      "hour": 12,
+      "count": 1
+    },
+    {
+      "hour": 15,
+      "count": 3
+    },
+    {
+      "hour": 16,
+      "count": 3
+    },
+    {
+      "hour": 20,
+      "count": 5
+    },
+    {
+      "hour": 23,
+      "count": 1
+    }
+  ],
+  "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T20:42:18Z",
+      "commits": []
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T20:38:00Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-29T20:31:18Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-29T15:25:55Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-29T10:14:13Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-29T05:15:39Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-29T00:29:33Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-28T20:17:29Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-28T16:57:07Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-28T16:24:54Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-28T15:18:49Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-28T10:09:38Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-28T05:21:43Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-28T00:12:40Z",
+      "commits": []
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-27T20:22:04Z",
+      "commits": []
+    }
+  ],
+  "repo_details": [
+    {
+      "name": "keedastudios_landing",
+      "commits": 40
+    },
+    {
+      "name": "bird-city-agi",
+      "commits": 24
+    },
+    {
+      "name": "bird-city",
+      "commits": 46
+    },
+    {
+      "name": "fun-language-world",
+      "commits": 17
+    },
+    {
+      "name": "english-seekho",
+      "commits": 1
+    },
+    {
+      "name": "budin",
+      "commits": 1123
+    },
+    {
+      "name": "hinglish-vinglish",
+      "commits": 223
+    },
+    {
+      "name": "farsi-darsi",
+      "commits": 3
+    },
+    {
+      "name": "babe-guess-my-fart",
+      "commits": 148
+    },
+    {
+      "name": "word-chaser",
+      "commits": 13
+    },
+    {
+      "name": "crossword-chaos",
+      "commits": 644
+    },
+    {
+      "name": "mali-legal",
+      "commits": 1
+    },
+    {
+      "name": "backup_budin",
+      "commits": 1
+    },
+    {
+      "name": "trellis-backend-backup",
+      "commits": 6
+    },
+    {
+      "name": "pabho",
+      "commits": 393
+    },
+    {
+      "name": "budin_mvp_1",
+      "commits": 1
+    },
+    {
+      "name": "wedding_planner",
+      "commits": 1
+    },
+    {
+      "name": "Random-Data",
+      "commits": 3
+    },
+    {
+      "name": "2048",
+      "commits": 160
+    }
+  ],
+  "languages": [
+    {
+      "lang": "Dart",
+      "count": 6
+    },
+    {
+      "lang": "JavaScript",
+      "count": 6
+    },
+    {
+      "lang": "Python",
+      "count": 1
+    }
+  ]
+}
