@@ -2286,11 +2286,129 @@
       .app-gallery-item video { height: 280px; }
     }
 
-    /* legacy — keep for unused refs */
+    /* ============ HINGLISH CHAI DEMO ============ */
     .hv-demo {
       margin: 16px 0;
-      border-radius: 12px;
-      overflow: hidden;
+      min-height: 360px;
+      position: relative;
+    }
+
+    .hv-chai-view {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: 360px;
+      transition: opacity 0.4s, transform 0.4s;
+      cursor: pointer;
+    }
+
+    .hv-chai-view.hidden {
+      opacity: 0;
+      transform: scale(0.8);
+      pointer-events: none;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+    }
+
+    .hv-chai-img {
+      width: 120px;
+      height: 120px;
+      animation: chaiFloat 3s ease-in-out infinite;
+    }
+
+    .hv-chai-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 20px rgba(255,194,68,0.3));
+    }
+
+    @keyframes chaiFloat {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+
+    .hv-chai-hint {
+      margin-top: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #ffc244;
+    }
+
+    /* Brewing countdown overlay */
+    .hv-brew-view {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+      transition: opacity 0.4s, transform 0.4s;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hv-brew-view.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+      position: relative;
+    }
+
+    .hv-brew-emoji {
+      font-size: 60px;
+      margin-bottom: 16px;
+      animation: brewShake 0.4s ease-in-out infinite;
+    }
+
+    @keyframes brewShake {
+      0%, 100% { transform: rotate(-3deg); }
+      50% { transform: rotate(3deg); }
+    }
+
+    .hv-brew-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffc244;
+    }
+
+    .hv-brew-count {
+      font-family: 'Fira Code', monospace;
+      font-size: 64px;
+      font-weight: 800;
+      color: white;
+      text-shadow: 0 0 30px rgba(255,194,68,0.4);
+      animation: countPop 0.5s cubic-bezier(0.34,1.56,0.64,1);
+    }
+
+    @keyframes countPop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Video view */
+    .hv-video-view {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+      transition: opacity 0.4s, transform 0.4s;
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      min-height: 360px;
+    }
+
+    .hv-video-view.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+      position: relative;
     }
 
     /* ============ PIPELINE SECTION ============ */
@@ -2732,18 +2850,28 @@
           <h3 class="app-name">Hinglish Vinglish</h3>
           <p class="app-tagline">AI pronunciation coach for Hindi. Real-life scenarios, instant speaking feedback, cultural collectible badges.</p>
 
-          <div class="app-gallery">
-            <div class="app-gallery-item"><img src="assets/images/hinglish/01-welcome.png" alt="Welcome" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/hinglish/02-not-textbook-hindi.png" alt="Not Textbook Hindi" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/hinglish/03-home.png" alt="Home" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/hinglish/04-real-situations.png" alt="Real Situations" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/hinglish/05-phrases.png" alt="Phrases" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/hinglish/06-practice-speaking.png" alt="Practice Speaking" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/hinglish/07-ai-feedback.png" alt="AI Feedback" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/hinglish/08-listening-quiz.png" alt="Listening Quiz" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/hinglish/10-collectibles.png" alt="Collectibles" loading="lazy"></div>
+          <div class="hv-demo">
+            <!-- Default: chai image -->
+            <div class="hv-chai-view" id="hvChaiView" onclick="startHvBrew()">
+              <div class="hv-chai-img">
+                <img src="assets/images/hinglish/chai-time.png" alt="Chai Time">
+              </div>
+              <p class="hv-chai-hint">☕ Tap to brew a lesson</p>
+            </div>
+            <!-- Brewing countdown -->
+            <div class="hv-brew-view" id="hvBrewView">
+              <div class="hv-brew-emoji" id="hvBrewEmoji">☕</div>
+              <div class="hv-brew-text">Brewing...</div>
+              <div class="hv-brew-count" id="hvBrewCount">3</div>
+            </div>
+            <!-- Video -->
+            <div class="hv-video-view" id="hvVideoView">
+              <video id="hvVideo" controls playsinline style="width:100%;border-radius:12px;">
+                <source src="assets/images/hinglish-vinglish-gameplay.mp4" type="video/mp4">
+              </video>
+              <button class="thulaa-back-btn visible" onclick="resetHvDemo()" style="margin-top:10px;">↺ Back</button>
+            </div>
           </div>
-          <div class="gallery-hint">Swipe to explore &rarr;</div>
 
           <div class="app-tags">
             <span class="app-tag">Language</span>
@@ -2988,6 +3116,61 @@
       if (vid) { vid.pause(); vid.currentTime = 0; }
       videoView.classList.remove('visible');
       homeView.classList.remove('hidden');
+    }
+
+    // ============ HINGLISH VINGLISH CHAI BREW DEMO ============
+    let hvBrewTimers = [];
+
+    function startHvBrew() {
+      const chaiView = document.getElementById('hvChaiView');
+      const brewView = document.getElementById('hvBrewView');
+      const countEl = document.getElementById('hvBrewCount');
+      const emojiEl = document.getElementById('hvBrewEmoji');
+
+      chaiView.classList.add('hidden');
+      brewView.classList.add('visible');
+
+      // Countdown 3..2..1..brrrr
+      const steps = [
+        { count: '3', emoji: '☕', delay: 0 },
+        { count: '2', emoji: '🫖', delay: 1000 },
+        { count: '1', emoji: '🔥', delay: 2000 },
+        { count: 'brrrr!', emoji: '💨', delay: 3000 },
+      ];
+
+      steps.forEach(({ count, emoji, delay }) => {
+        const t = setTimeout(() => {
+          countEl.textContent = count;
+          countEl.style.animation = 'none';
+          countEl.offsetHeight;
+          countEl.style.animation = '';
+          emojiEl.textContent = emoji;
+        }, delay);
+        hvBrewTimers.push(t);
+      });
+
+      // Show video after countdown
+      const t = setTimeout(() => {
+        brewView.classList.remove('visible');
+        const videoView = document.getElementById('hvVideoView');
+        videoView.classList.add('visible');
+        const vid = document.getElementById('hvVideo');
+        if (vid) vid.play();
+      }, 4000);
+      hvBrewTimers.push(t);
+    }
+
+    function resetHvDemo() {
+      hvBrewTimers.forEach(t => clearTimeout(t));
+      hvBrewTimers = [];
+      const chaiView = document.getElementById('hvChaiView');
+      const brewView = document.getElementById('hvBrewView');
+      const videoView = document.getElementById('hvVideoView');
+      const vid = document.getElementById('hvVideo');
+      if (vid) { vid.pause(); vid.currentTime = 0; }
+      videoView.classList.remove('visible');
+      brewView.classList.remove('visible');
+      chaiView.classList.remove('hidden');
     }
 
     // ============ WORD KO INTERACTIVE DEMO ============
