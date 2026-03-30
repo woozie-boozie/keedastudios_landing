@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T00:02:45Z",
+  "updated": "2026-03-30T00:06:12Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2914,
+  "total_commits": 2916,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 1
+      "count": 3
     }
   ],
   "commits_by_month": [
@@ -1309,13 +1309,13 @@
     },
     {
       "month": "2026-03",
-      "count": 414
+      "count": 416
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 119
+      "count": 121
     },
     {
       "hour": 1,
@@ -1411,6 +1411,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T00:05:37Z",
+      "sha": "b6afa14",
+      "message": "use chai icon for Hinglish Vinglish, move Mali up to main grid"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T00:02:45Z",
+      "sha": "10a1c0e",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-30T00:01:56Z",
@@ -1548,24 +1560,12 @@
       "date": "2026-03-29T22:50:40Z",
       "sha": "c68bdff",
       "message": "make 'rate.' bold green instead of outline, remove eyebrow box"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T22:48:46Z",
-      "sha": "bcd9ef9",
-      "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T22:48:05Z",
-      "sha": "5bb9a03",
-      "message": "fix: fastest time to market is 3 days, not 3 weeks"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 107
+      "commits": 109
     },
     {
       "name": "hinglish-vinglish",
