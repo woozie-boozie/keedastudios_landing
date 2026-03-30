@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T14:01:03Z",
+  "updated": "2026-03-30T14:50:07Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2931,
+  "total_commits": 2933,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 18
+      "count": 20
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 431
+      "count": 433
     }
   ],
   "commits_by_hour": [
@@ -1371,7 +1371,7 @@
     },
     {
       "hour": 14,
-      "count": 167
+      "count": 169
     },
     {
       "hour": 15,
@@ -1411,6 +1411,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T14:49:09Z",
+      "sha": "59da9c2",
+      "message": "add iOS + Android store links to CV for Thulaa, HV, WordKO"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T14:01:04Z",
+      "sha": "9c85497",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-30T14:00:03Z",
@@ -1548,24 +1560,16 @@
       "date": "2026-03-29T23:45:16Z",
       "sha": "368e195",
       "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T23:44:29Z",
-      "sha": "cc6bf11",
-      "message": "reorder apps: Hinglish Vinglish first, BGMF last"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T23:42:05Z",
-      "sha": "080ca26",
-      "message": "update analytics data [automated]"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 121
+      "commits": 123
+    },
+    {
+      "name": "pabho",
+      "commits": 393
     },
     {
       "name": "bird-city-agi",
@@ -1574,10 +1578,6 @@
     {
       "name": "hinglish-vinglish",
       "commits": 223
-    },
-    {
-      "name": "pabho",
-      "commits": 393
     },
     {
       "name": "bird-city",
