@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T18:25:29Z",
+  "updated": "2026-03-30T18:28:43Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2950,
+  "total_commits": 2952,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 37
+      "count": 39
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 450
+      "count": 452
     }
   ],
   "commits_by_hour": [
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 18,
-      "count": 179
+      "count": 181
     },
     {
       "hour": 19,
@@ -1413,27 +1413,21 @@
   "recent_commits": [
     {
       "repo": "keedastudios_landing",
+      "date": "2026-03-30T18:28:02Z",
+      "sha": "7feaf19",
+      "message": "fix standup to include all repos, not just keedastudios_landing"
+    },
+    {
+      "repo": "keedastudios_landing",
       "date": "2026-03-30T18:24:24Z",
       "sha": "c6f2c24",
       "message": "CV: restructure apps into grid layout, add Capco experience, update agent descri"
     },
     {
       "repo": "keedastudios_landing",
-      "date": "2026-03-30T18:05:02Z",
-      "sha": "57f48a4",
-      "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
       "date": "2026-03-30T18:04:06Z",
       "sha": "3323bc2",
       "message": "CV: combine ElevenLabs + GitHub stats into single live portfolio agent bullet"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T18:02:05Z",
-      "sha": "4e235fb",
-      "message": "update analytics data [automated]"
     },
     {
       "repo": "keedastudios_landing",
@@ -1449,21 +1443,9 @@
     },
     {
       "repo": "keedastudios_landing",
-      "date": "2026-03-30T15:04:31Z",
-      "sha": "c4ee0c2",
-      "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
       "date": "2026-03-30T15:03:36Z",
       "sha": "0bf08b2",
       "message": "CV: simplify header to Full-Stack Product Engineer"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T15:03:20Z",
-      "sha": "43561d3",
-      "message": "update analytics data [automated]"
     },
     {
       "repo": "keedastudios_landing",
@@ -1473,21 +1455,9 @@
     },
     {
       "repo": "keedastudios_landing",
-      "date": "2026-03-30T14:58:35Z",
-      "sha": "d894bb1",
-      "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
       "date": "2026-03-30T14:57:51Z",
       "sha": "ce51f93",
       "message": "CV: add monetization details for Thulaa, HV revenue, WordKO status"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T14:54:22Z",
-      "sha": "71e2546",
-      "message": "update analytics data [automated]"
     },
     {
       "repo": "keedastudios_landing",
@@ -1497,21 +1467,9 @@
     },
     {
       "repo": "keedastudios_landing",
-      "date": "2026-03-30T14:52:32Z",
-      "sha": "72ab783",
-      "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
       "date": "2026-03-30T14:51:35Z",
       "sha": "334ca96",
       "message": "add Bird City AGI live demo link to CV"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T14:50:07Z",
-      "sha": "23b079a",
-      "message": "update analytics data [automated]"
     },
     {
       "repo": "keedastudios_landing",
@@ -1521,21 +1479,9 @@
     },
     {
       "repo": "keedastudios_landing",
-      "date": "2026-03-30T14:01:04Z",
-      "sha": "9c85497",
-      "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
       "date": "2026-03-30T14:00:03Z",
       "sha": "78612e3",
       "message": "update CV app descriptions: reorder, expand Mali/Sidney, fix WordKO"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T13:41:39Z",
-      "sha": "aa73fc0",
-      "message": "update analytics data [automated]"
     },
     {
       "repo": "keedastudios_landing",
@@ -1545,27 +1491,231 @@
     },
     {
       "repo": "keedastudios_landing",
-      "date": "2026-03-30T13:20:41Z",
-      "sha": "7992ba9",
-      "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
       "date": "2026-03-30T13:19:47Z",
       "sha": "3c49f0a",
       "message": "restructure CV: merge apps into experience with full context"
     },
     {
       "repo": "keedastudios_landing",
-      "date": "2026-03-30T13:08:17Z",
-      "sha": "9066089",
-      "message": "update analytics data [automated]"
+      "date": "2026-03-30T13:07:29Z",
+      "sha": "b1c9fc5",
+      "message": "add CV page tailored for ElevenLabs AI Automations Engineer role"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-30T10:16:22Z",
+      "sha": "d8fdb62",
+      "message": "Add Underground Sewer System — secret world beneath Bird City"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-30T05:09:47Z",
+      "sha": "640e8b3",
+      "message": "Add Fog & Hailstorm — two new weather types with real gameplay consequences"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-30T00:28:32Z",
+      "sha": "78fbdd4",
+      "message": "Add Race Betting System — spectators bet coins on racers for pari-mutuel payouts"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T00:05:37Z",
+      "sha": "b6afa14",
+      "message": "use chai icon for Hinglish Vinglish, move Mali up to main grid"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T00:01:56Z",
+      "sha": "1a6850c",
+      "message": "add app icon + store links to Hinglish Vinglish card"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:52:49Z",
+      "sha": "b4f0dfb",
+      "message": "fix bird-city links: bird-city.com + Cloud Run AGI URL"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:47:25Z",
+      "sha": "3394d91",
+      "message": "add Me vs Claude scoreboard — bird-city-agi experiment"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:44:29Z",
+      "sha": "cc6bf11",
+      "message": "reorder apps: Hinglish Vinglish first, BGMF last"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:41:13Z",
+      "sha": "39ee3cb",
+      "message": "Hinglish Vinglish: chai brew animation → gameplay video"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:31:25Z",
+      "sha": "34722f3",
+      "message": "fix mobile grid: force 1-column at 768px with !important"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:26:44Z",
+      "sha": "4c13e1d",
+      "message": "fix mobile: stack apps-grid and pipeline-grid to 1 column at 900px"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:24:19Z",
+      "sha": "45fde41",
+      "message": "revert Thulaa to floating phone frame, tap to play gameplay video"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:18:07Z",
+      "sha": "2bddd24",
+      "message": "update open-to-work: product + engineering + growth + automation"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:10:14Z",
+      "sha": "007920f",
+      "message": "replace Thulaa interactive demo with app store screenshot gallery"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T23:07:06Z",
+      "sha": "45f3d5f",
+      "message": "simplify app showcases: horizontal screenshot galleries + video"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:50:40Z",
+      "sha": "c68bdff",
+      "message": "make 'rate.' bold green instead of outline, remove eyebrow box"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:48:05Z",
+      "sha": "5bb9a03",
+      "message": "fix: fastest time to market is 3 days, not 3 weeks"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:40:05Z",
+      "sha": "62d4a8d",
+      "message": "replace static mockups with fully interactive auto-playing demos"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:38:14Z",
+      "sha": "3dc8977",
+      "message": "increase commit pagination to 15 pages (1500) per repo"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:35:20Z",
+      "sha": "1f458ba",
+      "message": "fix: align month labels with contribution grid columns"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:32:58Z",
+      "sha": "7b08b85",
+      "message": "add spacing below TTS button to separate from stats"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:30:02Z",
+      "sha": "fa3f86b",
+      "message": "fix: replace setText with direct DOM manipulation for stat cards"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:25:22Z",
+      "sha": "e351a80",
+      "message": "replace screenshot carousels with native HTML/CSS app mockups"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:20:58Z",
+      "sha": "39bd1f8",
+      "message": "rewrite standup workflow — move logic to script file"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:20:32Z",
+      "sha": "0d5788f",
+      "message": "add interactive carousels for Hinglish Vinglish, Vibe Lingo, Mali + reorder apps"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:15:36Z",
+      "sha": "b724e41",
+      "message": "fix: rename workflow to avoid special chars in name"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:11:11Z",
+      "sha": "1a6fe56",
+      "message": "rename workflow to force GitHub re-registration"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:08:39Z",
+      "sha": "5b2d833",
+      "message": "fix: reorder workflow triggers to force re-index"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:05:53Z",
+      "sha": "9c60251",
+      "message": "fix: simplify daily standup triggers — remove workflow_run"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:02:53Z",
+      "sha": "d6ec97f",
+      "message": "redesign landing page: terminal theme, studio-focused hero, add all 6 apps"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T22:02:51Z",
+      "sha": "f2a812f",
+      "message": "wire up ElevenLabs voice agent with live agent ID"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T21:32:06Z",
+      "sha": "0c73125",
+      "message": "add ElevenLabs voice agent, TTS narration, and autonomous daily standup"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T21:18:09Z",
+      "sha": "18c6e5d",
+      "message": "fix: setText had inverted loading class logic — data wasn't rendering"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T21:14:04Z",
+      "sha": "6d6cd10",
+      "message": "fix: use absolute path for data.json fetch"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-29T21:09:07Z",
+      "sha": "43f7fc7",
+      "message": "improve readability — brighter backgrounds, higher contrast text"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 139
+      "commits": 141
     },
     {
       "name": "bird-city-agi",
