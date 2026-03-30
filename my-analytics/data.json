@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T18:28:43Z",
+  "updated": "2026-03-30T18:43:36Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2952,
+  "total_commits": 2954,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 39
+      "count": 41
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 452
+      "count": 454
     }
   ],
   "commits_by_hour": [
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 18,
-      "count": 181
+      "count": 183
     },
     {
       "hour": 19,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T18:42:51Z",
+      "sha": "1a24742",
+      "message": "add project links on analytics page, update Capco to 11 years with city-based bu"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-30T18:28:02Z",
@@ -1704,18 +1710,12 @@
       "date": "2026-03-29T21:14:04Z",
       "sha": "6d6cd10",
       "message": "fix: use absolute path for data.json fetch"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T21:09:07Z",
-      "sha": "43f7fc7",
-      "message": "improve readability — brighter backgrounds, higher contrast text"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 141
+      "commits": 143
     },
     {
       "name": "bird-city-agi",
