@@ -1186,14 +1186,6 @@ body::before {
     </div>
     <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
       <div class="project-card">
-        <div class="project-name" style="margin-bottom:10px">influencer pipeline</div>
-        <div class="project-desc">Autonomous agent: outreach → negotiation → contract → daily summary. Manages 5 active partnerships for Hinglish Vinglish.</div>
-        <div class="project-metrics">
-          <div class="project-metric"><span class="v green">5</span> <span class="l">active deals</span></div>
-          <div class="project-metric"><span class="v amber">fully automated</span></div>
-        </div>
-      </div>
-      <div class="project-card">
         <div class="project-name" style="margin-bottom:10px">daily analytics agent</div>
         <div class="project-desc">Pulls Firebase + Ads data every morning. Surfaces insights. Self-improves. Zero manual reporting.</div>
         <div class="project-metrics">
@@ -1207,6 +1199,22 @@ body::before {
         <div class="project-metrics">
           <div class="project-metric"><span class="v red">losing</span> <span class="l">current score</span></div>
           <div class="project-metric"><span class="v cyan">claude</span> <span class="l">winning</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-name" style="margin-bottom:10px">bud agent <span class="badge badge-live" style="font-size:8px;margin-left:6px">DISCORD</span></div>
+        <div class="project-desc">Watches co-founder messages in Discord. Claude classifies bugs vs features, auto-creates GitHub issues, triggers Claude Code to implement, pings me for PR review. Chat message → shipped code, fully autonomous.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v green">live</span> <span class="l">status</span></div>
+          <div class="project-metric"><span class="v amber">chat → code</span> <span class="l">pipeline</span></div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-name" style="margin-bottom:10px">keeda agent <span class="badge badge-live" style="font-size:8px;margin-left:6px">DISCORD</span></div>
+        <div class="project-desc">Tracks unanswered questions and blockers across Discord. Sends escalating reminders (gentle → firm → critical). Generates daily recaps with promises and action items. Delivers via email, push, and DM. Nothing slips.</div>
+        <div class="project-metrics">
+          <div class="project-metric"><span class="v green">live</span> <span class="l">status</span></div>
+          <div class="project-metric"><span class="v cyan">3-tier</span> <span class="l">reminders</span></div>
         </div>
       </div>
     </div>
@@ -1809,9 +1817,10 @@ const termLines = [
   { c: 'te', t: '[✗] babe guess my fart → BLOCKED by Apple · appeal filed' },
   { c: 'to', t: '──────────────────────────────────────────────' },
   { c: 'tp', t: '$ agents --status' },
-  { c: 'ti', t: '[agent] influencer-pipeline   → 5 deals active · fully autonomous' },
   { c: 'ti', t: '[agent] daily-analytics       → 4 apps monitored · report: today' },
   { c: 'ti', t: '[agent] bird-city-agi          → running · claude: winning' },
+  { c: 'ti', t: '[agent] bud (discord)          → watching · chat → code pipeline' },
+  { c: 'ti', t: '[agent] keeda (discord)        → tracking · 3-tier reminders active' },
   { c: 'to', t: '──────────────────────────────────────────────' },
   { c: 'tp', t: '$ ./open-to-work' },
   { c: 'ts', t: 'seeking: product · engineering · growth · automation' },
