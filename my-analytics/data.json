@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T18:53:04Z",
+  "updated": "2026-03-30T23:36:31Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2960,
+  "total_commits": 2963,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 47
+      "count": 50
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 460
+      "count": 463
     }
   ],
   "commits_by_hour": [
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 18,
-      "count": 189
+      "count": 190
     },
     {
       "hour": 19,
@@ -1395,7 +1395,7 @@
     },
     {
       "hour": 20,
-      "count": 122
+      "count": 123
     },
     {
       "hour": 21,
@@ -1407,10 +1407,22 @@
     },
     {
       "hour": 23,
-      "count": 164
+      "count": 165
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T23:35:56Z",
+      "sha": "b78bb9c",
+      "message": "CV: remove summary paragraph, move Why ElevenLabs to top after highlights"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-30T20:16:21Z",
+      "sha": "a2b85bf",
+      "message": "Add Golden Egg Scramble — city-wide capture-the-egg chaos event"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-30T18:52:19Z",
@@ -1698,28 +1710,16 @@
       "date": "2026-03-29T22:05:53Z",
       "sha": "9c60251",
       "message": "fix: simplify daily standup triggers — remove workflow_run"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T22:02:53Z",
-      "sha": "d6ec97f",
-      "message": "redesign landing page: terminal theme, studio-focused hero, add all 6 apps"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T22:02:51Z",
-      "sha": "f2a812f",
-      "message": "wire up ElevenLabs voice agent with live agent ID"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 149
+      "commits": 151
     },
     {
       "name": "bird-city-agi",
-      "commits": 28
+      "commits": 29
     },
     {
       "name": "pabho",
