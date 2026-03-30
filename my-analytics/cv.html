@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akhil Madan — CV</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  @page { margin: 0; size: A4; }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 10.5px;
+    line-height: 1.55;
+    color: #1a1a1a;
+    background: #fff;
+    max-width: 794px;
+    margin: 0 auto;
+    padding: 36px 44px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  a { color: #2563eb; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── HEADER ── */
+  .header { margin-bottom: 22px; border-bottom: 2px solid #111; padding-bottom: 16px; }
+
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; }
+
+  .name { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; color: #111; line-height: 1.1; }
+  .tagline { font-size: 12px; color: #555; margin-top: 4px; font-weight: 500; }
+
+  .contact { text-align: right; font-size: 9.5px; color: #555; line-height: 1.6; }
+  .contact a { color: #555; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 16px; }
+  .section-title {
+    font-size: 9px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: #111;
+    border-bottom: 1px solid #ddd; padding-bottom: 4px;
+    margin-bottom: 10px;
+  }
+
+  /* ── SUMMARY ── */
+  .summary {
+    font-size: 10.5px; color: #333; line-height: 1.65;
+  }
+
+  .summary strong { color: #111; }
+
+  /* ── HIGHLIGHT GRID ── */
+  .highlights {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 8px; margin: 12px 0;
+  }
+
+  .hl {
+    background: #f7f7f7; border: 1px solid #eee;
+    padding: 8px 10px; border-radius: 4px; text-align: center;
+  }
+
+  .hl-val { font-size: 16px; font-weight: 700; color: #111; font-family: 'JetBrains Mono', monospace; }
+  .hl-label { font-size: 8px; color: #777; letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+
+  /* ── EXPERIENCE ── */
+  .exp { margin-bottom: 14px; }
+  .exp:last-child { margin-bottom: 0; }
+
+  .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px; }
+  .exp-role { font-size: 11.5px; font-weight: 700; color: #111; }
+  .exp-date { font-size: 9.5px; color: #777; white-space: nowrap; }
+  .exp-company { font-size: 10px; color: #555; margin-bottom: 4px; }
+
+  .exp ul { padding-left: 14px; }
+  .exp li { margin-bottom: 2px; color: #333; font-size: 10.5px; }
+  .exp li strong { color: #111; font-weight: 600; }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+  .tag {
+    font-size: 8.5px; font-weight: 500;
+    background: #f0f0f0; color: #555;
+    padding: 2px 7px; border-radius: 3px;
+  }
+
+  /* ── APPS GRID ── */
+  .apps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+  .app-card { border: 1px solid #eee; border-radius: 4px; padding: 8px 10px; }
+  .app-name { font-size: 10.5px; font-weight: 700; color: #111; }
+  .app-desc { font-size: 9.5px; color: #555; margin: 2px 0 4px; }
+  .app-stats { font-size: 9px; color: #777; }
+  .app-stats strong { color: #111; font-weight: 600; }
+
+  /* ── SKILLS ── */
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .skill-cat { }
+  .skill-cat-title { font-size: 9px; font-weight: 700; color: #111; margin-bottom: 3px; }
+  .skill-cat-items { font-size: 10px; color: #444; line-height: 1.6; }
+
+  /* ── EDUCATION ── */
+  .edu-line { display: flex; justify-content: space-between; }
+  .edu-school { font-weight: 600; color: #111; }
+  .edu-date { color: #777; font-size: 9.5px; }
+  .edu-detail { color: #555; font-size: 10px; }
+
+  /* ── PRINT ── */
+  @media print {
+    body { padding: 32px 40px; }
+    a { color: #111; }
+    .hl { border-color: #ddd; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <div class="name">Akhil Madan</div>
+      <div class="tagline">Full-Stack Engineer &middot; AI Automations &middot; Solo Founder, Keeda Studios</div>
+    </div>
+    <div class="contact">
+      London, UK (remote-first)<br>
+      <a href="mailto:akhil@keedastudios.com">akhil@keedastudios.com</a><br>
+      <a href="https://keedastudios.com/my-analytics">keedastudios.com/my-analytics</a> &middot; <a href="https://github.com/woozie-boozie">github</a>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY -->
+<div class="section">
+  <div class="section-title">Summary</div>
+  <div class="summary">
+    Full-stack engineer and solo founder who left FinTech consulting in October 2024 to build. Since then: <strong>6 apps shipped</strong> across iOS, Android, and web &mdash; from idea to app store, solo. <strong>2,900+ commits</strong> across 19 repositories. I build the product, the growth engine, and the autonomous agents that run both. Fastest time to market: <strong>3 days</strong>. I treat every broken process as a system design problem, and I use AI to solve it faster than anyone expects.
+  </div>
+
+  <div class="highlights">
+    <div class="hl"><div class="hl-val">2,900+</div><div class="hl-label">Commits</div></div>
+    <div class="hl"><div class="hl-val">6</div><div class="hl-label">Apps Shipped</div></div>
+    <div class="hl"><div class="hl-val">3 days</div><div class="hl-label">Fastest TTM</div></div>
+    <div class="hl"><div class="hl-val">19</div><div class="hl-label">Repos</div></div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="section">
+  <div class="section-title">Experience</div>
+
+  <div class="exp">
+    <div class="exp-header">
+      <div class="exp-role">Founder &amp; Solo Engineer</div>
+      <div class="exp-date">Oct 2024 &mdash; Present</div>
+    </div>
+    <div class="exp-company">Keeda Studios &middot; London, UK</div>
+    <ul>
+      <li><strong>Shipped 6 apps solo</strong> (Flutter/Firebase) across gaming, education, and utility &mdash; full stack from design to deployment to growth campaigns.</li>
+      <li><strong>Built AI agents that run autonomously:</strong> influencer outreach pipeline (5 active deals, zero manual work), daily analytics agent (pulls Firebase + Ads data, generates reports via Claude API), and bird-city-agi (autonomous Claude agent that ships creative features while I sleep).</li>
+      <li><strong>Grew Thulaa to 3,000+ downloads, 150 DAU, 500+ games/day.</strong> Trained MCTS AI bots (Monte Carlo Tree Search) that took D7 retention from 10% to 54%. Organic Instagram reel hit 2M views.</li>
+      <li><strong>Built and ran Google Ads UAC campaigns</strong> for Hinglish Vinglish. Managed influencer partnerships (5 active). Revenue live within 3 weeks of launch.</li>
+      <li><strong>Integrated ElevenLabs Conversational AI</strong> on portfolio site &mdash; voice agent answers questions about my work in real-time. ElevenLabs TTS narrates live GitHub stats. Both running in production.</li>
+      <li><strong>Automated the entire analytics pipeline:</strong> GitHub Actions fetch commit data from 19 private repos, Claude API generates daily standups, ElevenLabs API generates audio narration &mdash; all auto-committed and deployed with zero human intervention.</li>
+    </ul>
+    <div class="tag-row">
+      <span class="tag">Flutter</span>
+      <span class="tag">Firebase</span>
+      <span class="tag">Python</span>
+      <span class="tag">Node.js</span>
+      <span class="tag">React</span>
+      <span class="tag">Claude API</span>
+      <span class="tag">ElevenLabs API</span>
+      <span class="tag">Google Ads</span>
+      <span class="tag">GitHub Actions</span>
+      <span class="tag">MCTS / AI</span>
+    </div>
+  </div>
+
+  <div class="exp">
+    <div class="exp-header">
+      <div class="exp-role">Technology Consultant</div>
+      <div class="exp-date">2021 &mdash; Oct 2024</div>
+    </div>
+    <div class="exp-company">FinTech Consulting &middot; London, UK</div>
+    <ul>
+      <li>Delivered technology solutions for financial services clients &mdash; system architecture, API integrations, and process automation.</li>
+      <li>Worked cross-functionally with engineering, product, and operations teams to scope and deliver complex technical projects.</li>
+      <li>Left to build full-time &mdash; the consulting taught me how enterprises think; building taught me how to ship.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- SHIPPED APPS -->
+<div class="section">
+  <div class="section-title">Apps Shipped (Solo, Oct 2024 &mdash; Present)</div>
+  <div class="apps-grid">
+    <div class="app-card">
+      <div class="app-name">Thulaa</div>
+      <div class="app-desc">Strategy card game with MCTS AI bots</div>
+      <div class="app-stats"><strong>3k+ downloads</strong> &middot; 150 DAU &middot; 54% D7 retention &middot; 2M viral views</div>
+    </div>
+    <div class="app-card">
+      <div class="app-name">Hinglish Vinglish</div>
+      <div class="app-desc">AI-powered Hindi learning app</div>
+      <div class="app-stats"><strong>300 users</strong> &middot; 5 influencer deals &middot; revenue live &middot; <strong>3-day TTM</strong></div>
+    </div>
+    <div class="app-card">
+      <div class="app-name">Vibe Lingo</div>
+      <div class="app-desc">7-language learning platform</div>
+      <div class="app-stats">Built on HV engine &middot; launching now &middot; 7 languages</div>
+    </div>
+    <div class="app-card">
+      <div class="app-name">Mali</div>
+      <div class="app-desc">Strava for gardening &mdash; gamified real gardens</div>
+      <div class="app-stats">iOS + Android &middot; launching next week</div>
+    </div>
+    <div class="app-card">
+      <div class="app-name">WordKO</div>
+      <div class="app-desc">Real-time 1v1 word game</div>
+      <div class="app-stats"><strong>500+ organic downloads</strong> &middot; $0 UA spend</div>
+    </div>
+    <div class="app-card">
+      <div class="app-name">Bird City / Bird City AGI</div>
+      <div class="app-desc">GTA for birds + autonomous AI experiment</div>
+      <div class="app-stats">Me vs Claude: 6 vs 11 commits &middot; Claude is winning</div>
+    </div>
+  </div>
+</div>
+
+<!-- AI & AUTOMATION -->
+<div class="section">
+  <div class="section-title">AI Agents &amp; Automation (Built &amp; Running in Production)</div>
+  <ul style="padding-left: 14px;">
+    <li><strong>Influencer Pipeline Agent:</strong> Autonomous outreach &rarr; negotiation &rarr; contract &rarr; daily summary. Currently managing 5 active partnerships. Zero manual intervention.</li>
+    <li><strong>Daily Analytics Agent:</strong> Pulls Firebase + Google Ads data every morning, synthesizes with Claude API, auto-generates standup report, commits to site. Runs on GitHub Actions cron.</li>
+    <li><strong>TTS Narration Pipeline:</strong> ElevenLabs API generates audio narration of live GitHub stats. Auto-regenerated daily. Served on portfolio page.</li>
+    <li><strong>ElevenLabs Voice Agent:</strong> Conversational AI widget embedded on portfolio. Visitors can ask questions and hear responses in real-time. Built with ElevenAgents SDK.</li>
+    <li><strong>Bird City AGI:</strong> Forked a project, gave Claude autonomous creative control. Claude ships features at 5am (bosses, NPCs, weather systems). I fix bugs. Claude is winning 11-6.</li>
+    <li><strong>GitHub Stats Pipeline:</strong> Fetches commit data from 19 private repos (paginated), computes streaks, coding hours, contribution heatmaps. Updates every 6 hours.</li>
+  </ul>
+</div>
+
+<!-- SKILLS -->
+<div class="section">
+  <div class="section-title">Technical Skills</div>
+  <div class="skills-grid">
+    <div class="skill-cat">
+      <div class="skill-cat-title">Languages &amp; Frameworks</div>
+      <div class="skill-cat-items">Python, Dart/Flutter, JavaScript, TypeScript, React, Node.js, SQL, HTML/CSS</div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-title">AI &amp; APIs</div>
+      <div class="skill-cat-items">Claude API, ElevenLabs (TTS, Agents), MCTS, LLM prompting, AI agent design, REST APIs</div>
+    </div>
+    <div class="skill-cat">
+      <div class="skill-cat-title">Infrastructure &amp; Tools</div>
+      <div class="skill-cat-items">Firebase, Firestore, Cloud Run, GitHub Actions, Google Ads, ASO, Figma</div>
+    </div>
+  </div>
+</div>
+
+<!-- EDUCATION -->
+<div class="section">
+  <div class="section-title">Education</div>
+  <div class="edu-line">
+    <div class="edu-school">Computer Science &amp; Actuarial Science</div>
+    <div class="edu-date">University</div>
+  </div>
+  <div class="edu-detail">Quantitative foundation in algorithms, statistics, and risk modelling.</div>
+</div>
+
+<!-- WHY ELEVENLABS -->
+<div class="section">
+  <div class="section-title">Why ElevenLabs</div>
+  <div class="summary">
+    I already use your products in production. My portfolio has an <strong>ElevenLabs voice agent</strong> answering questions about my work and <strong>ElevenLabs TTS</strong> narrating my GitHub stats &mdash; both automated, both live. I build AI agents that run autonomously, I ship at high velocity (2,900+ commits, 6 apps, 17 months), and I treat every manual process as an automation opportunity. The Automations Engineer role is exactly what I do every day &mdash; except I've been doing it for myself. I'd love to do it at the scale ElevenLabs operates at.
+    <br><br>
+    <strong>Live portfolio:</strong> <a href="https://keedastudios.com/my-analytics">keedastudios.com/my-analytics</a> &mdash; real-time GitHub data, ElevenLabs voice agent, autonomous daily standups, and a scoreboard of me losing to my own AI.
+  </div>
+</div>
+
+</body>
+</html>
