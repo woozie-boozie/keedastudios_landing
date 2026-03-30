@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T01:12:30Z",
+  "updated": "2026-03-30T07:12:58Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2918,
+  "total_commits": 2920,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 5
+      "count": 7
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 418
+      "count": 420
     }
   ],
   "commits_by_hour": [
@@ -1319,7 +1319,7 @@
     },
     {
       "hour": 1,
-      "count": 97
+      "count": 98
     },
     {
       "hour": 2,
@@ -1335,7 +1335,7 @@
     },
     {
       "hour": 5,
-      "count": 20
+      "count": 21
     },
     {
       "hour": 6,
@@ -1411,6 +1411,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-30T05:09:47Z",
+      "sha": "640e8b3",
+      "message": "Add Fog & Hailstorm — two new weather types with real gameplay consequences"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T01:12:31Z",
+      "sha": "65ede8f",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-03-30T00:28:32Z",
@@ -1548,32 +1560,20 @@
       "date": "2026-03-29T23:10:14Z",
       "sha": "007920f",
       "message": "replace Thulaa interactive demo with app store screenshot gallery"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T23:08:09Z",
-      "sha": "4ac71af",
-      "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T23:07:06Z",
-      "sha": "45f3d5f",
-      "message": "simplify app showcases: horizontal screenshot galleries + video"
     }
   ],
   "repo_details": [
     {
       "name": "bird-city-agi",
-      "commits": 25
+      "commits": 26
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 111
     },
     {
       "name": "hinglish-vinglish",
       "commits": 223
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 110
     },
     {
       "name": "pabho",
