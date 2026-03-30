@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T15:04:31Z",
+  "updated": "2026-03-30T18:02:05Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2943,
+  "total_commits": 2946,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 30
+      "count": 33
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 443
+      "count": 446
     }
   ],
   "commits_by_hour": [
@@ -1375,7 +1375,7 @@
     },
     {
       "hour": 15,
-      "count": 181
+      "count": 183
     },
     {
       "hour": 16,
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 18,
-      "count": 174
+      "count": 175
     },
     {
       "hour": 19,
@@ -1411,6 +1411,24 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T18:01:01Z",
+      "sha": "b81e66c",
+      "message": "add Bud + Keeda Discord agents to CV and analytics, remove influencer pipeline"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-30T15:24:25Z",
+      "sha": "8705df8",
+      "message": "Add Territory Control System — flocks finally have something to fight over"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T15:04:31Z",
+      "sha": "c4ee0c2",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-30T15:03:36Z",
@@ -1542,38 +1560,20 @@
       "date": "2026-03-30T09:21:54Z",
       "sha": "b6d76d6",
       "message": "update standup + TTS [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T07:12:59Z",
-      "sha": "996e70c",
-      "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-30T05:09:47Z",
-      "sha": "640e8b3",
-      "message": "Add Fog & Hailstorm — two new weather types with real gameplay consequences"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T01:12:31Z",
-      "sha": "65ede8f",
-      "message": "update analytics data [automated]"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 133
+      "commits": 135
+    },
+    {
+      "name": "bird-city-agi",
+      "commits": 28
     },
     {
       "name": "pabho",
       "commits": 393
-    },
-    {
-      "name": "bird-city-agi",
-      "commits": 27
     },
     {
       "name": "hinglish-vinglish",
