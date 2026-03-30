@@ -87,15 +87,6 @@
     padding: 2px 7px; border-radius: 3px;
   }
 
-  /* ── APPS GRID ── */
-  .apps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-
-  .app-card { border: 1px solid #eee; border-radius: 4px; padding: 8px 10px; }
-  .app-name { font-size: 10.5px; font-weight: 700; color: #111; }
-  .app-desc { font-size: 9.5px; color: #555; margin: 2px 0 4px; }
-  .app-stats { font-size: 9px; color: #777; }
-  .app-stats strong { color: #111; font-weight: 600; }
-
   /* ── SKILLS ── */
   .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
   .skill-cat { }
@@ -156,15 +147,26 @@
       <div class="exp-role">Founder &amp; Solo Engineer</div>
       <div class="exp-date">Oct 2024 &mdash; Present</div>
     </div>
-    <div class="exp-company">Keeda Studios &middot; London, UK</div>
+    <div class="exp-company">Keeda Studios &middot; London, UK &middot; Shipped 6 apps solo across iOS, Android, and web in 17 months.</div>
     <ul>
-      <li><strong>Shipped 6 apps solo</strong> (Flutter/Firebase) across gaming, education, and utility &mdash; full stack from design to deployment to growth campaigns.</li>
-      <li><strong>Built AI agents that run autonomously:</strong> influencer outreach pipeline (5 active deals, zero manual work), daily analytics agent (pulls Firebase + Ads data, generates reports via Claude API), and bird-city-agi (autonomous Claude agent that ships creative features while I sleep).</li>
-      <li><strong>Grew Thulaa to 3,000+ downloads, 150 DAU, 500+ games/day.</strong> Trained MCTS AI bots (Monte Carlo Tree Search) that took D7 retention from 10% to 54%. Organic Instagram reel hit 2M views.</li>
-      <li><strong>Built and ran Google Ads UAC campaigns</strong> for Hinglish Vinglish. Managed influencer partnerships (5 active). Revenue live within 3 weeks of launch.</li>
-      <li><strong>Integrated ElevenLabs Conversational AI</strong> on portfolio site &mdash; voice agent answers questions about my work in real-time. ElevenLabs TTS narrates live GitHub stats. Both running in production.</li>
-      <li><strong>Automated the entire analytics pipeline:</strong> GitHub Actions fetch commit data from 19 private repos, Claude API generates daily standups, ElevenLabs API generates audio narration &mdash; all auto-committed and deployed with zero human intervention.</li>
+      <li><strong>Thulaa</strong> &mdash; Strategy-meets-sabotage card game. Built the entire game engine, trained AI opponents using <strong>Monte Carlo Tree Search</strong> (MCTS), which took D7 retention from 10% to 54%. Grew to <strong>3,000+ downloads, 150 DAU, 500+ games/day</strong>. Produced a viral Instagram reel that hit <strong>2M organic views</strong>. Full-stack: Flutter, Firebase, Python (MCTS), Google Ads.</li>
+      <li><strong>Hinglish Vinglish</strong> &mdash; AI-powered Hindi learning app built for my British wife before her Delhi trip. Roman-script Hinglish, AI pronunciation coach, listening labs. Shipped in <strong>3 days</strong> (fastest TTM). <strong>300 users, revenue live, 5 influencer partnerships</strong> managed by an autonomous agent. Running Google Ads UAC campaigns.</li>
+      <li><strong>Vibe Lingo</strong> &mdash; Scaled the Hinglish Vinglish engine into a <strong>7-language learning platform</strong>. Built in parallel while running 2 live campaigns. Launching now.</li>
+      <li><strong>Mali</strong> &mdash; "Strava for gardening." Design and grow your real garden with companion planting logic, gamified progress, and community challenges. iOS + Android, launching next week.</li>
+      <li><strong>WordKO</strong> &mdash; Real-time 1v1 multiplayer word game. Learned real-time multiplayer architecture from scratch to ship it. <strong>500+ organic downloads, $0 paid acquisition.</strong></li>
+      <li><strong>Bird City / Bird City AGI</strong> &mdash; Top-down GTA-style game for birds (bird-city.com). Forked it into an <strong>autonomous AI experiment</strong>: gave Claude creative control via CLAUDE.md and let it ship features while I sleep. Claude has 11 commits (bosses, NPCs, weather systems at 5am). I have 6 (URGENT bug fixes). Claude is winning.</li>
     </ul>
+
+    <div style="margin-top:8px; font-size:10.5px; color:#333;">
+      <strong>Automation &amp; agents built across these projects:</strong>
+    </div>
+    <ul>
+      <li><strong>Influencer pipeline agent:</strong> autonomous outreach &rarr; negotiation &rarr; contract &rarr; daily summary. 5 active partnerships, zero manual work.</li>
+      <li><strong>Daily analytics agent:</strong> pulls Firebase + Ads data, synthesizes with Claude API, generates standup, auto-commits to site.</li>
+      <li><strong>ElevenLabs integration:</strong> Conversational AI voice agent on portfolio (answers questions live) + TTS narration of GitHub stats. Both in production.</li>
+      <li><strong>GitHub stats pipeline:</strong> fetches commit data from 19 private repos, computes streaks and heatmaps, auto-deploys every 6 hours.</li>
+    </ul>
+
     <div class="tag-row">
       <span class="tag">Flutter</span>
       <span class="tag">Firebase</span>
@@ -188,59 +190,9 @@
     <ul>
       <li>Delivered technology solutions for financial services clients &mdash; system architecture, API integrations, and process automation.</li>
       <li>Worked cross-functionally with engineering, product, and operations teams to scope and deliver complex technical projects.</li>
-      <li>Left to build full-time &mdash; the consulting taught me how enterprises think; building taught me how to ship.</li>
+      <li>Left to build full-time &mdash; consulting taught me how enterprises think; building taught me how to ship.</li>
     </ul>
   </div>
-</div>
-
-<!-- SHIPPED APPS -->
-<div class="section">
-  <div class="section-title">Apps Shipped (Solo, Oct 2024 &mdash; Present)</div>
-  <div class="apps-grid">
-    <div class="app-card">
-      <div class="app-name">Thulaa</div>
-      <div class="app-desc">Strategy card game with MCTS AI bots</div>
-      <div class="app-stats"><strong>3k+ downloads</strong> &middot; 150 DAU &middot; 54% D7 retention &middot; 2M viral views</div>
-    </div>
-    <div class="app-card">
-      <div class="app-name">Hinglish Vinglish</div>
-      <div class="app-desc">AI-powered Hindi learning app</div>
-      <div class="app-stats"><strong>300 users</strong> &middot; 5 influencer deals &middot; revenue live &middot; <strong>3-day TTM</strong></div>
-    </div>
-    <div class="app-card">
-      <div class="app-name">Vibe Lingo</div>
-      <div class="app-desc">7-language learning platform</div>
-      <div class="app-stats">Built on HV engine &middot; launching now &middot; 7 languages</div>
-    </div>
-    <div class="app-card">
-      <div class="app-name">Mali</div>
-      <div class="app-desc">Strava for gardening &mdash; gamified real gardens</div>
-      <div class="app-stats">iOS + Android &middot; launching next week</div>
-    </div>
-    <div class="app-card">
-      <div class="app-name">WordKO</div>
-      <div class="app-desc">Real-time 1v1 word game</div>
-      <div class="app-stats"><strong>500+ organic downloads</strong> &middot; $0 UA spend</div>
-    </div>
-    <div class="app-card">
-      <div class="app-name">Bird City / Bird City AGI</div>
-      <div class="app-desc">GTA for birds + autonomous AI experiment</div>
-      <div class="app-stats">Me vs Claude: 6 vs 11 commits &middot; Claude is winning</div>
-    </div>
-  </div>
-</div>
-
-<!-- AI & AUTOMATION -->
-<div class="section">
-  <div class="section-title">AI Agents &amp; Automation (Built &amp; Running in Production)</div>
-  <ul style="padding-left: 14px;">
-    <li><strong>Influencer Pipeline Agent:</strong> Autonomous outreach &rarr; negotiation &rarr; contract &rarr; daily summary. Currently managing 5 active partnerships. Zero manual intervention.</li>
-    <li><strong>Daily Analytics Agent:</strong> Pulls Firebase + Google Ads data every morning, synthesizes with Claude API, auto-generates standup report, commits to site. Runs on GitHub Actions cron.</li>
-    <li><strong>TTS Narration Pipeline:</strong> ElevenLabs API generates audio narration of live GitHub stats. Auto-regenerated daily. Served on portfolio page.</li>
-    <li><strong>ElevenLabs Voice Agent:</strong> Conversational AI widget embedded on portfolio. Visitors can ask questions and hear responses in real-time. Built with ElevenAgents SDK.</li>
-    <li><strong>Bird City AGI:</strong> Forked a project, gave Claude autonomous creative control. Claude ships features at 5am (bosses, NPCs, weather systems). I fix bugs. Claude is winning 11-6.</li>
-    <li><strong>GitHub Stats Pipeline:</strong> Fetches commit data from 19 private repos (paginated), computes streaks, coding hours, contribution heatmaps. Updates every 6 hours.</li>
-  </ul>
 </div>
 
 <!-- SKILLS -->
