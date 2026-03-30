@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T18:05:01Z",
+  "updated": "2026-03-30T18:25:29Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2948,
+  "total_commits": 2950,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 35
+      "count": 37
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 448
+      "count": 450
     }
   ],
   "commits_by_hour": [
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 18,
-      "count": 177
+      "count": 179
     },
     {
       "hour": 19,
@@ -1411,6 +1411,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T18:24:24Z",
+      "sha": "c6f2c24",
+      "message": "CV: restructure apps into grid layout, add Capco experience, update agent descri"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T18:05:02Z",
+      "sha": "57f48a4",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-30T18:04:06Z",
@@ -1548,24 +1560,12 @@
       "date": "2026-03-30T13:08:17Z",
       "sha": "9066089",
       "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T13:07:29Z",
-      "sha": "b1c9fc5",
-      "message": "add CV page tailored for ElevenLabs AI Automations Engineer role"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T12:46:57Z",
-      "sha": "a2a4aca",
-      "message": "update analytics data [automated]"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 137
+      "commits": 139
     },
     {
       "name": "bird-city-agi",
