@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T18:50:05Z",
+  "updated": "2026-03-30T18:53:04Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2958,
+  "total_commits": 2960,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 45
+      "count": 47
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 458
+      "count": 460
     }
   ],
   "commits_by_hour": [
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 18,
-      "count": 187
+      "count": 189
     },
     {
       "hour": 19,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T18:52:19Z",
+      "sha": "1b17af2",
+      "message": "CV: make Why ElevenLabs section more human and relatable"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-30T18:49:25Z",
@@ -1704,18 +1710,12 @@
       "date": "2026-03-29T22:02:51Z",
       "sha": "f2a812f",
       "message": "wire up ElevenLabs voice agent with live agent ID"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T21:32:06Z",
-      "sha": "0c73125",
-      "message": "add ElevenLabs voice agent, TTS narration, and autonomous daily standup"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 147
+      "commits": 149
     },
     {
       "name": "bird-city-agi",
