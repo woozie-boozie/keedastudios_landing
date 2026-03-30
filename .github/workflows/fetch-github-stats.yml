@@ -162,7 +162,9 @@ jobs:
             ) | .streak')
 
           # ── Recent commits for feed (sorted by date, last 20) ──
-          RECENT_COMMITS=$(echo "$ALL_COMMITS" | jq '[sort_by(.date) | reverse | .[0:25] |
+          RECENT_COMMITS=$(echo "$ALL_COMMITS" | jq '[
+            [.[] | select(.message | test("\\[automated\\]") | not)] |
+            sort_by(.date) | reverse | .[0:50] |
             .[] | {repo: .repo, date: .date, sha: .sha, message: .message}]')
 
           # ── Build final JSON ──

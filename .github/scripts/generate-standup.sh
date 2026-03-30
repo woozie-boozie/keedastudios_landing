@@ -12,8 +12,8 @@ REPOS=$(echo "$DATA" | jq '.repos.total')
 STREAK=$(echo "$DATA" | jq '.streak')
 
 # Get yesterday's and today's commits
-YESTERDAY_COMMITS=$(echo "$DATA" | jq -r --arg d "$YESTERDAY" '[.recent_commits // [] | .[] | select(.date[0:10] == $d) | "\(.repo): \(.message)"] | if length == 0 then "No commits" else join("; ") end')
-TODAY_COMMITS=$(echo "$DATA" | jq -r --arg d "$TODAY" '[.recent_commits // [] | .[] | select(.date[0:10] == $d) | "\(.repo): \(.message)"] | if length == 0 then "No commits yet" else join("; ") end')
+YESTERDAY_COMMITS=$(echo "$DATA" | jq -r --arg d "$YESTERDAY" '[.recent_commits // [] | .[] | select(.date[0:10] == $d) | select(.message | test("\\[automated\\]") | not) | "\(.repo): \(.message)"] | if length == 0 then "No commits" else join("; ") end')
+TODAY_COMMITS=$(echo "$DATA" | jq -r --arg d "$TODAY" '[.recent_commits // [] | .[] | select(.date[0:10] == $d) | select(.message | test("\\[automated\\]") | not) | "\(.repo): \(.message)"] | if length == 0 then "No commits yet" else join("; ") end')
 TOP_REPOS=$(echo "$DATA" | jq -r '[.recent_commits // [] | .[].repo] | group_by(.) | [.[] | {r: .[0], c: length}] | sort_by(-.c) | .[0:5] | [.[] | "\(.r) (\(.c))"] | join(", ")')
 
 echo "Today: $TODAY"
