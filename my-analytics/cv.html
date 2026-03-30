@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Akhil Madan — CV</title>
+<title>Akhil Madan - CV</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   @page { margin: 0; size: A4; }
@@ -87,6 +87,16 @@
     padding: 2px 7px; border-radius: 3px;
   }
 
+  /* ── APP GRID ── */
+  .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; margin-bottom: 10px; }
+  .app-entry { margin-bottom: 4px; }
+  .app-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .app-name { font-size: 10.5px; font-weight: 700; color: #111; }
+  .app-date { font-size: 9px; color: #777; white-space: nowrap; }
+  .app-desc { font-size: 10px; color: #444; line-height: 1.5; margin-top: 1px; }
+  .app-metrics { font-size: 9.5px; color: #111; font-weight: 600; margin-top: 1px; }
+  .app-links { font-size: 9px; margin-top: 1px; }
+
   /* ── SKILLS ── */
   .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
   .skill-cat { }
@@ -118,7 +128,7 @@
     <div class="contact">
       London, UK (remote-first)<br>
       <a href="mailto:akhil@keedastudios.com">akhil@keedastudios.com</a><br>
-      <a href="https://keedastudios.com/my-analytics">keedastudios.com/my-analytics</a> &middot; <a href="https://github.com/woozie-boozie">github</a>
+      <a href="https://keedastudios.com/my-analytics">keedastudios.com/my-analytics</a> &middot; <a href="https://www.linkedin.com/in/akhil-madan/">linkedin</a>
     </div>
   </div>
 </div>
@@ -148,21 +158,51 @@
       <div class="exp-date">Oct 2024 - Present</div>
     </div>
     <div class="exp-company">Keeda Studios &middot; London, UK &middot; Shipped 6 apps solo across iOS, Android, and web in 17 months.</div>
-    <ul>
-      <li><strong>Thulaa</strong> (live since Dec 2024) - Multiplayer card game. Built the entire game engine, trained AI opponents using <strong>Monte Carlo Tree Search</strong> (MCTS), which took D7 retention from 10% to 54%. Grew to <strong>3,000+ downloads, 150 DAU, 500+ games/day</strong>. Produced a viral Instagram reel that hit <strong>2M organic views</strong>. Monetization: ads + subscriptions to remove ads. Full-stack: Flutter, Firebase, Python (MCTS). <a href="https://apps.apple.com/gb/app/thulaa/id6755297654">iOS</a> &middot; <a href="https://play.google.com/store/apps/details?id=com.keedastudios.pabho">Android</a></li>
-      <li><strong>Hinglish Vinglish</strong> (live since Mar 2025) - AI-powered Hindi learning app built for my British wife before her Delhi trip. Roman-script Hinglish, AI pronunciation coach, listening labs. Shipped in <strong>3 days</strong> (fastest TTM). <strong>300 users, $80 revenue so far, 5 influencer partnerships.</strong> <a href="https://apps.apple.com/us/app/hinglish-vinglish/id6757343562">iOS</a> &middot; <a href="https://play.google.com/store/apps/details?id=com.keedastudios.hinglishvinglish">Android</a></li>
-      <li><strong>Babe, Guess My Fart</strong> (live since Dec 2024) - Real-time fart analysis engine disguised as a couples game. AI-powered TTS matching gives compatibility scores. <a href="https://babeguessmyfart.com/">babeguessmyfart.com</a></li>
-      <li><strong>WordKO</strong> - 1v1 word games, because Wordle and crosswords weren't competitive enough. Built real-time multiplayer architecture from scratch. <strong>500+ users, all organic traffic, $0 paid acquisition.</strong> Not monetized yet. <a href="https://apps.apple.com/gb/app/crossword-chaos/id6752734096">iOS</a> &middot; <a href="https://play.google.com/store/apps/details?id=com.crosswordchaos.game">Android</a></li>
-      <li><strong>Mali</strong> - Gardening app that builds a digital twin of your real garden. Features <strong>Sidney</strong>, an AI assistant that knows your specific plants, your local weather, and your care history - so it gives precise advice, not generic "it could be 12 different things." Tracks live weather, warns before frost/heatwaves, and generates personalised daily action plans. iOS + Android, launching next week. <a href="https://trymali.web.app">trymali.web.app</a></li>
-      <li><strong>Bird City / Bird City AGI</strong> - Top-down GTA-style game for birds (<a href="https://bird-city.com">bird-city.com</a>). Forked it into an <strong>autonomous AI experiment</strong> (<a href="https://bird-city-agi-972783930926.europe-west1.run.app/">live demo</a>): gave Claude creative control via CLAUDE.md and let it ship features while I sleep. Claude has 11 commits (bosses, NPCs, weather systems at 5am). I have 6 (URGENT bug fixes). Claude is winning.</li>
-      <li><strong>Vibe Lingo</strong> - Scaled the Hinglish Vinglish engine into a <strong>7-language learning platform</strong>. Built in parallel while running 2 live products. Launching now.</li>
-    </ul>
+    <div class="app-grid">
+      <div class="app-entry">
+        <div class="app-head"><span class="app-name">Thulaa</span><span class="app-date">Dec 2024 &middot; Live</span></div>
+        <div class="app-desc">Multiplayer card game with MCTS-trained AI opponents. D7 retention: 10% &rarr; 54%. Viral reel: 2M views.</div>
+        <div class="app-metrics">3,000+ downloads &middot; 150 DAU &middot; 500+ games/day</div>
+        <div class="app-links"><a href="https://apps.apple.com/gb/app/thulaa/id6755297654">iOS</a> &middot; <a href="https://play.google.com/store/apps/details?id=com.keedastudios.pabho">Android</a></div>
+      </div>
+      <div class="app-entry">
+        <div class="app-head"><span class="app-name">Hinglish Vinglish</span><span class="app-date">Mar 2025 &middot; Live</span></div>
+        <div class="app-desc">AI-powered Hindi learning app. Roman-script Hinglish, pronunciation coach, listening labs. Shipped in 3 days.</div>
+        <div class="app-metrics">300 users &middot; $80 revenue &middot; 5 influencer partnerships</div>
+        <div class="app-links"><a href="https://apps.apple.com/us/app/hinglish-vinglish/id6757343562">iOS</a> &middot; <a href="https://play.google.com/store/apps/details?id=com.keedastudios.hinglishvinglish">Android</a></div>
+      </div>
+      <div class="app-entry">
+        <div class="app-head"><span class="app-name">WordKO</span><span class="app-date">Nov 2024 &middot; Live</span></div>
+        <div class="app-desc">1v1 competitive word games. Real-time multiplayer architecture from scratch.</div>
+        <div class="app-metrics">500+ users &middot; all organic &middot; $0 paid acquisition</div>
+        <div class="app-links"><a href="https://apps.apple.com/gb/app/crossword-chaos/id6752734096">iOS</a> &middot; <a href="https://play.google.com/store/apps/details?id=com.crosswordchaos.game">Android</a></div>
+      </div>
+      <div class="app-entry">
+        <div class="app-head"><span class="app-name">Babe, Guess My Fart</span><span class="app-date">Dec 2024 &middot; Live</span></div>
+        <div class="app-desc">Real-time fart analysis engine disguised as a couples game. AI-powered compatibility scores.</div>
+        <div class="app-links"><a href="https://babeguessmyfart.com/">babeguessmyfart.com</a></div>
+      </div>
+      <div class="app-entry">
+        <div class="app-head"><span class="app-name">Bird City / Bird City AGI</span><span class="app-date">Mar 2026 &middot; Live</span></div>
+        <div class="app-desc">Top-down GTA-style game for birds. Forked into an autonomous AI experiment - Claude has creative control, ships features while I sleep. Claude: 11 commits. Me: 6 bug fixes.</div>
+        <div class="app-links"><a href="https://bird-city.com">bird-city.com</a> &middot; <a href="https://bird-city-agi-972783930926.europe-west1.run.app/">AGI live demo</a></div>
+      </div>
+      <div class="app-entry">
+        <div class="app-head"><span class="app-name">Mali</span><span class="app-date">Apr 2026 &middot; Launching</span></div>
+        <div class="app-desc">Digital twin of your garden with proactive AI - Sidney knows your plants, your weather, and your care history, so it tells you what to do before problems happen. No more generic "it could be 12 things" answers.</div>
+        <div class="app-links"><a href="https://trymali.web.app">trymali.web.app</a></div>
+      </div>
+      <div class="app-entry">
+        <div class="app-head"><span class="app-name">Vibe Lingo</span><span class="app-date">Apr 2026 &middot; Launching</span></div>
+        <div class="app-desc">Scaled Hinglish Vinglish engine into a 7-language learning platform. Built in parallel while running 2 live products.</div>
+      </div>
+    </div>
 
     <div style="margin-top:8px; font-size:10.5px; color:#333;">
       <strong>Automation &amp; agents built across these projects:</strong>
     </div>
     <ul>
-      <li><strong>Daily analytics agent:</strong> pulls Firebase + Ads data, synthesizes with Claude API, generates standup, auto-commits to site.</li>
+      <li><strong>Daily analytics agent:</strong> pulls Firebase + Ads data from all shipped apps, synthesizes with Claude API, flags issues, provides recommendations, and surfaces it all on Discord and the live dashboard.</li>
       <li><strong>Live portfolio agent:</strong> fetches commit data from 19 repos, computes streaks and heatmaps, narrates stats with ElevenLabs TTS, and answers questions live via conversational voice agent. Auto-deploys every 6 hours. <a href="https://keedastudios.com/my-analytics">keedastudios.com/my-analytics</a></li>
       <li><strong>Bud agent (Discord):</strong> monitors co-founder messages in Discord, classifies bugs vs features with Claude, auto-creates GitHub issues, triggers Claude Code to implement, and pings me for PR review. Full loop from chat message to shipped code.</li>
       <li><strong>Keeda agent (Discord):</strong> tracks unanswered questions and blockers across Discord channels, sends escalating reminders (gentle &rarr; firm &rarr; critical), generates daily recaps with action items, and delivers via email + push + DM. Nothing falls through the cracks.</li>
@@ -185,14 +225,16 @@
 
   <div class="exp">
     <div class="exp-header">
-      <div class="exp-role">Technology Consultant</div>
-      <div class="exp-date">2021 - Oct 2024</div>
+      <div class="exp-role">Product Consultant</div>
+      <div class="exp-date">Aug 2016 - Oct 2024</div>
     </div>
-    <div class="exp-company">FinTech Consulting &middot; London, UK</div>
+    <div class="exp-company">Capco &middot; London &amp; Hong Kong &middot; B2C FinTech/Banking &middot; 8 years shipping digital products at scale.</div>
     <ul>
-      <li>Delivered technology solutions for financial services clients - system architecture, API integrations, and process automation.</li>
-      <li>Worked cross-functionally with engineering, product, and operations teams to scope and deliver complex technical projects.</li>
-      <li>Left to build full-time - consulting taught me how enterprises think; building taught me how to ship.</li>
+      <li><strong>Product Consultant</strong> (Jul 2023 - Oct 2024) - Built new payment propositions for millions of UK customers at a global payments leader. Owned partner integrations, product specs, and go-to-market delivery.</li>
+      <li><strong>Product Owner</strong> (Dec 2022 - Jun 2023) - Led digital customer experience for one of the UK's largest mortgage lenders. Managed analysts, designers, researchers, and devs. Achieved product-market fit and drove digital transformation.</li>
+      <li><strong>Product Owner</strong> (Feb 2020 - Nov 2022) - Owned the customer experience for a flagship digital payments product: multicurrency wallet, international payments, global debit card. Won the <strong>Digital Banker Innovation Award (EMEA)</strong>. Managed cross-functional teams from requirements through to post-live performance.</li>
+      <li><strong>Lead Digital Analyst</strong> (Jan 2018 - Jan 2020, Hong Kong) - Led digital product delivery for bancassurance. Launched the first-ever Endowment product - sold out within 6 months. Data-driven optimisation drove <strong>30% increase in conversions</strong>.</li>
+      <li><strong>Growth Product Manager</strong> (Aug 2016 - Feb 2018, Hong Kong) - Built growth strategy for credit card onboarding in India: <strong>30% increase in digital sales, $100k incremental revenue</strong>. Built performance dashboards, funnel analytics, and trained teams on data and reporting to C-level.</li>
     </ul>
   </div>
 </div>
