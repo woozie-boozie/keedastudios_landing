@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T18:02:05Z",
+  "updated": "2026-03-30T18:05:01Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2946,
+  "total_commits": 2948,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 33
+      "count": 35
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 446
+      "count": 448
     }
   ],
   "commits_by_hour": [
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 18,
-      "count": 175
+      "count": 177
     },
     {
       "hour": 19,
@@ -1411,6 +1411,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T18:04:06Z",
+      "sha": "3323bc2",
+      "message": "CV: combine ElevenLabs + GitHub stats into single live portfolio agent bullet"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T18:02:05Z",
+      "sha": "4e235fb",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-30T18:01:01Z",
@@ -1548,24 +1560,12 @@
       "date": "2026-03-30T12:46:57Z",
       "sha": "a2a4aca",
       "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-30T10:16:22Z",
-      "sha": "d8fdb62",
-      "message": "Add Underground Sewer System — secret world beneath Bird City"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T09:21:54Z",
-      "sha": "b6d76d6",
-      "message": "update standup + TTS [automated]"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 135
+      "commits": 137
     },
     {
       "name": "bird-city-agi",
