@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T14:52:31Z",
+  "updated": "2026-03-30T14:54:22Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2935,
+  "total_commits": 2937,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 22
+      "count": 24
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 435
+      "count": 437
     }
   ],
   "commits_by_hour": [
@@ -1371,7 +1371,7 @@
     },
     {
       "hour": 14,
-      "count": 171
+      "count": 173
     },
     {
       "hour": 15,
@@ -1411,6 +1411,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T14:53:26Z",
+      "sha": "cb2d8c0",
+      "message": "add live-since dates to CV, add BGMF to CV, update BGMF link"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T14:52:32Z",
+      "sha": "72ab783",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-30T14:51:35Z",
@@ -1548,24 +1560,12 @@
       "date": "2026-03-29T23:53:48Z",
       "sha": "2506168",
       "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T23:52:49Z",
-      "sha": "b4f0dfb",
-      "message": "fix bird-city links: bird-city.com + Cloud Run AGI URL"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T23:48:08Z",
-      "sha": "b8687ed",
-      "message": "update analytics data [automated]"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 125
+      "commits": 127
     },
     {
       "name": "pabho",
