@@ -163,8 +163,7 @@
     </div>
     <ul>
       <li><strong>Daily analytics agent:</strong> pulls Firebase + Ads data, synthesizes with Claude API, generates standup, auto-commits to site.</li>
-      <li><strong>ElevenLabs integration:</strong> Conversational AI voice agent on portfolio (answers questions live) + TTS narration of GitHub stats. Both in production.</li>
-      <li><strong>GitHub stats pipeline:</strong> fetches commit data from 19 private repos, computes streaks and heatmaps, auto-deploys every 6 hours.</li>
+      <li><strong>Live portfolio agent:</strong> fetches commit data from 19 repos, computes streaks and heatmaps, narrates stats with ElevenLabs TTS, and answers questions live via conversational voice agent. Auto-deploys every 6 hours. <a href="https://keedastudios.com/my-analytics">keedastudios.com/my-analytics</a></li>
       <li><strong>Bud agent (Discord):</strong> monitors co-founder messages in Discord, classifies bugs vs features with Claude, auto-creates GitHub issues, triggers Claude Code to implement, and pings me for PR review. Full loop from chat message to shipped code.</li>
       <li><strong>Keeda agent (Discord):</strong> tracks unanswered questions and blockers across Discord channels, sends escalating reminders (gentle &rarr; firm &rarr; critical), generates daily recaps with action items, and delivers via email + push + DM. Nothing falls through the cracks.</li>
     </ul>
