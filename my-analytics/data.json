@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T14:58:35Z",
+  "updated": "2026-03-30T15:03:20Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2939,
+  "total_commits": 2941,
   "streak": 30,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-30",
-      "count": 26
+      "count": 28
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 439
+      "count": 441
     }
   ],
   "commits_by_hour": [
@@ -1371,11 +1371,11 @@
     },
     {
       "hour": 14,
-      "count": 175
+      "count": 176
     },
     {
       "hour": 15,
-      "count": 178
+      "count": 179
     },
     {
       "hour": 16,
@@ -1411,6 +1411,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T15:02:37Z",
+      "sha": "07acce9",
+      "message": "CV: update title to Full-Stack Full-Funnel Product Engineer"
+    },
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-30T14:58:35Z",
+      "sha": "d894bb1",
+      "message": "update analytics data [automated]"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-30T14:57:51Z",
@@ -1548,24 +1560,12 @@
       "date": "2026-03-30T00:06:12Z",
       "sha": "97fe564",
       "message": "update analytics data [automated]"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T00:05:37Z",
-      "sha": "b6afa14",
-      "message": "use chai icon for Hinglish Vinglish, move Mali up to main grid"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T00:02:45Z",
-      "sha": "10a1c0e",
-      "message": "update analytics data [automated]"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 129
+      "commits": 131
     },
     {
       "name": "pabho",
