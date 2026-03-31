@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inbound Lead Qualification Agent - Built for ElevenLabs</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --border: #1e1e2e;
+    --border2: #2a2a3e;
+    --text: #e0e0e8;
+    --dim: #888;
+    --green: #4ade80;
+    --amber: #fbbf24;
+    --red: #f87171;
+    --cyan: #22d3ee;
+    --purple: #a78bfa;
+    --blue: #60a5fa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+
+  /* HERO */
+  .hero { text-align: center; margin-bottom: 48px; }
+  .hero-badge {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--cyan); border: 1px solid var(--cyan);
+    padding: 4px 14px; border-radius: 20px; margin-bottom: 16px;
+    opacity: 0.8;
+  }
+  .hero h1 {
+    font-size: 36px; font-weight: 800; letter-spacing: -1px;
+    line-height: 1.2; margin-bottom: 12px;
+  }
+  .hero h1 span { color: var(--cyan); }
+  .hero p { color: var(--dim); font-size: 16px; max-width: 650px; margin: 0 auto; }
+
+  /* LEAD SELECTOR */
+  .selector-section { margin-bottom: 40px; }
+  .selector-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--dim); margin-bottom: 12px;
+  }
+  .lead-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .lead-card {
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 16px; border-radius: 8px; cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lead-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+  .lead-card.active { border-color: var(--cyan); background: #12121f; }
+  .lead-card .lc-company { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .lead-card .lc-desc { font-size: 11px; color: var(--dim); line-height: 1.5; }
+  .lead-card .lc-tag {
+    display: inline-block; font-size: 9px; font-weight: 600;
+    padding: 2px 8px; border-radius: 10px; margin-top: 8px;
+    letter-spacing: 0.5px;
+  }
+  .tag-enterprise { background: rgba(74,222,128,0.15); color: var(--green); }
+  .tag-developer { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .tag-startup { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .tag-atrisk { background: rgba(248,113,113,0.15); color: var(--red); }
+  .tag-creator { background: rgba(251,191,36,0.15); color: var(--amber); }
+
+  /* PIPELINE */
+  .pipeline { display: none; }
+  .pipeline.visible { display: block; }
+
+  .pipeline-header {
+    font-size: 11px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--dim);
+    margin-bottom: 16px; margin-top: 8px;
+  }
+
+  .step {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; padding: 20px 24px; margin-bottom: 12px;
+    opacity: 0; transform: translateY(10px);
+    transition: all 0.4s ease;
+  }
+  .step.show { opacity: 1; transform: translateY(0); }
+
+  .step-header {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+  }
+  .step-num {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    font-weight: 600; color: var(--cyan); background: rgba(34,211,238,0.1);
+    padding: 3px 8px; border-radius: 4px;
+  }
+  .step-title { font-weight: 700; font-size: 14px; }
+
+  .step-content { font-size: 13px; color: #bbb; line-height: 1.7; }
+
+  /* ENRICHMENT GRID */
+  .enrich-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .enrich-item {
+    background: rgba(255,255,255,0.03); padding: 10px 14px; border-radius: 6px;
+  }
+  .enrich-label { font-size: 10px; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; }
+  .enrich-val { font-size: 13px; font-weight: 600; color: var(--text); margin-top: 2px; }
+
+  /* USAGE BARS */
+  .usage-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .usage-label { font-size: 12px; color: var(--dim); width: 140px; flex-shrink: 0; }
+  .usage-bar { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .usage-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
+  .usage-val { font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--text); width: 60px; text-align: right; }
+
+  /* SCORE */
+  .score-display { display: flex; align-items: center; gap: 20px; }
+  .score-circle {
+    width: 80px; height: 80px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .score-detail { flex: 1; }
+  .score-class { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .score-reason { font-size: 12px; color: var(--dim); line-height: 1.6; }
+  .score-action {
+    display: inline-block; margin-top: 8px; font-size: 11px; font-weight: 600;
+    padding: 4px 12px; border-radius: 4px;
+  }
+
+  /* EMAIL */
+  .email-preview {
+    background: #fff; color: #333; border-radius: 8px; padding: 24px;
+    font-size: 13px; line-height: 1.7;
+  }
+  .email-meta { font-size: 12px; color: #999; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #eee; }
+  .email-meta span { color: #333; font-weight: 600; }
+  .email-body { color: #444; }
+  .email-body p { margin-bottom: 10px; }
+  .email-sig { color: #999; font-size: 12px; margin-top: 16px; padding-top: 12px; border-top: 1px solid #eee; }
+
+  /* AUDIO */
+  .audio-section {
+    display: flex; align-items: center; gap: 16px;
+    background: rgba(34,211,238,0.05); border: 1px solid rgba(34,211,238,0.2);
+    padding: 20px 24px; border-radius: 8px;
+  }
+  .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--cyan); border: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: transform 0.2s;
+  }
+  .play-btn:hover { transform: scale(1.1); }
+  .play-btn svg { width: 24px; height: 24px; fill: var(--bg); margin-left: 3px; }
+  .audio-info { flex: 1; }
+  .audio-title { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+  .audio-desc { font-size: 12px; color: var(--dim); }
+  .audio-wave {
+    display: flex; align-items: center; gap: 2px; margin-top: 8px; height: 20px;
+  }
+  .audio-wave .bar {
+    width: 3px; background: var(--cyan); border-radius: 2px; opacity: 0.4;
+    animation: none;
+  }
+  .audio-wave.playing .bar { animation: wave 0.8s ease-in-out infinite alternate; }
+  @keyframes wave { from { height: 4px; } to { height: 18px; } }
+
+  /* CONNECTOR */
+  .connector {
+    width: 2px; height: 20px; background: var(--border);
+    margin: 0 auto;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center; margin-top: 48px; padding-top: 24px;
+    border-top: 1px solid var(--border); color: var(--dim); font-size: 12px;
+  }
+  .footer a { color: var(--cyan); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* HOW IT WORKS */
+  .how-section {
+    margin-bottom: 40px; padding: 24px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  }
+  .how-title { font-weight: 700; font-size: 14px; margin-bottom: 12px; }
+  .how-flow {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    font-size: 12px; font-family: 'JetBrains Mono', monospace;
+  }
+  .how-node {
+    background: rgba(34,211,238,0.1); color: var(--cyan);
+    padding: 6px 12px; border-radius: 4px; white-space: nowrap;
+  }
+  .how-arrow { color: var(--dim); }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 24px; }
+    .lead-cards { grid-template-columns: 1fr; }
+    .enrich-grid { grid-template-columns: 1fr; }
+    .score-display { flex-direction: column; text-align: center; }
+    .audio-section { flex-direction: column; text-align: center; }
+    .how-flow { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="hero">
+    <div class="hero-badge">Prototype</div>
+    <h1>Inbound Lead <span>Qualification Agent</span></h1>
+    <p>An AI agent that turns raw signups into qualified pipeline. Enriches leads, analyses API usage, scores intent, generates personalised outreach - and delivers it in ElevenLabs' own voice. Built as a proof of concept for the Automations Engineer role.</p>
+  </div>
+
+  <div class="how-section">
+    <div class="how-title">Pipeline architecture</div>
+    <div class="how-flow">
+      <span class="how-node">Signup Event</span>
+      <span class="how-arrow">&rarr;</span>
+      <span class="how-node">Lead Enrichment</span>
+      <span class="how-arrow">&rarr;</span>
+      <span class="how-node">Usage Analysis</span>
+      <span class="how-arrow">&rarr;</span>
+      <span class="how-node">Claude Scoring</span>
+      <span class="how-arrow">&rarr;</span>
+      <span class="how-node">Personalised Email</span>
+      <span class="how-arrow">&rarr;</span>
+      <span class="how-node">ElevenLabs Voice</span>
+    </div>
+  </div>
+
+  <div class="selector-section">
+    <div class="selector-label">Select a lead profile to run the pipeline</div>
+    <div class="lead-cards" id="lead-cards"></div>
+  </div>
+
+  <div class="pipeline" id="pipeline"></div>
+
+  <div class="footer">
+    Built by <strong>Akhil Madan</strong> &middot; 7 agents in production &middot;
+    <a href="https://keedastudios.com/my-analytics">keedastudios.com/my-analytics</a> &middot;
+    <a href="https://keedastudios.com/my-analytics/cv.html">CV</a>
+  </div>
+
+</div>
+
+<script>
+const leads = [
+  {
+    id: 'fintech',
+    company: 'PayFlow',
+    desc: 'Series B fintech building voice agents for customer support',
+    tag: 'Enterprise Prospect', tagClass: 'tag-enterprise',
+    enrichment: {
+      industry: 'FinTech / Payments',
+      size: '120 employees',
+      funding: 'Series B - $28M',
+      location: 'San Francisco, US',
+      techStack: 'React, Python, AWS',
+      crmStatus: 'No existing record'
+    },
+    usage: [
+      { label: 'Text-to-Speech', pct: 85, val: '12,400 chars/day', color: 'var(--green)' },
+      { label: 'Conversational AI', pct: 72, val: '340 sessions', color: 'var(--cyan)' },
+      { label: 'Voice Cloning', pct: 45, val: '8 clones', color: 'var(--purple)' },
+      { label: 'Error Rate', pct: 3, val: '0.3%', color: 'var(--green)' }
+    ],
+    score: 92, scoreColor: 'var(--green)', scoreBg: 'rgba(74,222,128,0.15)',
+    classification: 'High-Intent Enterprise',
+    scoreReason: 'High API volume across multiple endpoints. Conversational AI usage suggests building production voice agents. Series B funding indicates budget and scaling intent. Low error rate shows strong integration.',
+    action: 'Route to Enterprise AE', actionColor: 'rgba(74,222,128,0.15)', actionText: 'var(--green)',
+    email: {
+      to: 'sarah.chen@payflow.com',
+      subject: 'Your voice agent architecture at PayFlow',
+      body: `<p>Hi Sarah,</p>
+<p>I noticed PayFlow has been building with our Conversational AI and TTS APIs over the past week - 340 voice agent sessions and 12,400 characters daily. That's a serious integration, not a test.</p>
+<p>Companies in payments like Stripe and Square use our platform for exactly this - automated customer support that sounds human, handles authentication flows, and scales without hiring. Your usage pattern suggests you're heading the same direction.</p>
+<p>A few things that might help as you scale:</p>
+<p>- <strong>Dedicated voice clones</strong> for brand consistency across all agent touchpoints<br>
+- <strong>Latency optimisation</strong> for real-time conversations (we can get sub-300ms)<br>
+- <strong>Enterprise SLA</strong> with guaranteed uptime for production voice agents</p>
+<p>Would a 20-minute call this week make sense? I can walk through how our enterprise customers in fintech have architected their voice agent infrastructure.</p>`,
+      sig: 'Best,<br>ElevenLabs Enterprise Team'
+    },
+    audioText: 'Personalised voice outreach generated for PayFlow, highlighting their Conversational AI usage and enterprise scaling path.'
+  },
+  {
+    id: 'creator',
+    company: 'IndieStudio',
+    desc: 'Solo content creator generating podcast intros and audiobooks',
+    tag: 'Creator / Self-Serve', tagClass: 'tag-creator',
+    enrichment: {
+      industry: 'Content Creation',
+      size: 'Solo creator',
+      funding: 'Self-funded',
+      location: 'Austin, US',
+      techStack: 'Wordpress, Riverside.fm',
+      crmStatus: 'Free tier user'
+    },
+    usage: [
+      { label: 'Text-to-Speech', pct: 60, val: '4,200 chars/day', color: 'var(--green)' },
+      { label: 'Conversational AI', pct: 0, val: '0 sessions', color: 'var(--dim)' },
+      { label: 'Voice Cloning', pct: 20, val: '1 clone', color: 'var(--purple)' },
+      { label: 'Error Rate', pct: 2, val: '0.2%', color: 'var(--green)' }
+    ],
+    score: 35, scoreColor: 'var(--amber)', scoreBg: 'rgba(251,191,36,0.15)',
+    classification: 'Self-Serve Creator',
+    scoreReason: 'Moderate TTS usage focused on content creation. Solo creator profile with no enterprise signals. Good candidate for Creator Pro plan upsell but not enterprise pipeline.',
+    action: 'Auto-nurture sequence', actionColor: 'rgba(251,191,36,0.15)', actionText: 'var(--amber)',
+    email: {
+      to: 'jake@indiestudio.co',
+      subject: 'Your podcast is about to sound a lot better',
+      body: `<p>Hey Jake,</p>
+<p>Saw you've been using ElevenLabs for podcast intros and cloned your voice last week - nice. Most creators start exactly where you are.</p>
+<p>Quick tip: our <strong>Projects</strong> feature lets you produce full audiobook chapters with multiple voices, scene directions, and pacing control - way faster than recording yourself. Creators like you are shipping entire audiobooks in a weekend.</p>
+<p>Your free tier gives you 10,000 characters/month. If you're hitting that ceiling, Creator Pro ($22/mo) bumps it to 100,000 with priority voice quality and commercial usage rights.</p>
+<p>Keep building cool stuff.</p>`,
+      sig: 'ElevenLabs Creator Team'
+    },
+    audioText: 'Personalised voice outreach for IndieStudio, suggesting Creator Pro upgrade and Projects feature for audiobook production.'
+  },
+  {
+    id: 'atrisk',
+    company: 'HealthBridge',
+    desc: 'Series A healthtech with high API error rates in first 48 hours',
+    tag: 'At Risk - Integration Issues', tagClass: 'tag-atrisk',
+    enrichment: {
+      industry: 'HealthTech / Telehealth',
+      size: '45 employees',
+      funding: 'Series A - $12M',
+      location: 'London, UK',
+      techStack: 'Next.js, Python, GCP',
+      crmStatus: 'No existing record'
+    },
+    usage: [
+      { label: 'Text-to-Speech', pct: 30, val: '1,800 chars/day', color: 'var(--amber)' },
+      { label: 'Conversational AI', pct: 15, val: '42 sessions', color: 'var(--amber)' },
+      { label: 'Voice Cloning', pct: 0, val: '0 clones', color: 'var(--dim)' },
+      { label: 'Error Rate', pct: 34, val: '34%', color: 'var(--red)' }
+    ],
+    score: 68, scoreColor: 'var(--red)', scoreBg: 'rgba(248,113,113,0.15)',
+    classification: 'High-Value At Risk',
+    scoreReason: 'Strong company profile (Series A healthtech) but 34% error rate in first 48 hours signals integration problems. If not addressed, they will churn before ever seeing the product work properly. High-value lead that needs immediate developer support.',
+    action: 'Trigger DevRel outreach NOW', actionColor: 'rgba(248,113,113,0.15)', actionText: 'var(--red)',
+    email: {
+      to: 'dev-team@healthbridge.io',
+      subject: 'Noticed some integration hiccups - here to help',
+      body: `<p>Hi HealthBridge team,</p>
+<p>I'm reaching out because our system flagged a higher-than-usual error rate on your API integration over the past 48 hours (34% of calls returning errors). That's almost always a quick fix.</p>
+<p>Looking at the pattern, it seems like the issue might be:</p>
+<p>- <strong>Authentication headers</strong> not being passed correctly on WebSocket connections for Conversational AI<br>
+- <strong>Character encoding</strong> on the TTS requests (we need UTF-8, some medical terminology with special characters can trip this up)</p>
+<p>I've put together a <strong>quickstart guide specifically for healthtech integrations</strong> - covers HIPAA-compatible configurations, streaming audio for telehealth, and the auth pattern that works with GCP.</p>
+<p>Want me to jump on a 15-minute call? We can debug this live and have you running clean in one session.</p>`,
+      sig: 'ElevenLabs Developer Relations'
+    },
+    audioText: 'Urgent outreach for HealthBridge - flagging integration issues, offering immediate developer support to prevent churn.'
+  },
+  {
+    id: 'enterprise',
+    company: 'GlobalMedia Corp',
+    desc: 'Enterprise media company evaluating TTS for 70+ language content',
+    tag: 'Enterprise Evaluation', tagClass: 'tag-enterprise',
+    enrichment: {
+      industry: 'Media & Entertainment',
+      size: '2,400 employees',
+      funding: 'Public (NASDAQ)',
+      location: 'New York, US',
+      techStack: 'AWS, Java, Kubernetes',
+      crmStatus: 'Existing free trial'
+    },
+    usage: [
+      { label: 'Text-to-Speech', pct: 95, val: '48,000 chars/day', color: 'var(--green)' },
+      { label: 'Conversational AI', pct: 10, val: '12 sessions', color: 'var(--dim)' },
+      { label: 'Voice Cloning', pct: 80, val: '24 clones', color: 'var(--purple)' },
+      { label: 'Error Rate', pct: 1, val: '0.1%', color: 'var(--green)' }
+    ],
+    score: 97, scoreColor: 'var(--green)', scoreBg: 'rgba(74,222,128,0.15)',
+    classification: 'Enterprise - Immediate Priority',
+    scoreReason: 'Massive TTS volume (48K chars/day) with 24 voice clones across what appears to be multilingual content production. Public company with budget. Already stress-testing the platform. This is a six-figure annual deal if handled correctly.',
+    action: 'Route to VP Sales + AE', actionColor: 'rgba(74,222,128,0.15)', actionText: 'var(--green)',
+    email: {
+      to: 'michael.torres@globalmedia.com',
+      subject: 'Your multilingual content pipeline at GlobalMedia',
+      body: `<p>Hi Michael,</p>
+<p>Your team's usage this week caught our attention - 48,000 characters daily across 24 voice clones. That's production-grade volume, and it tells me you're evaluating ElevenLabs for something bigger than a pilot.</p>
+<p>For media companies producing content across multiple languages, our enterprise tier unlocks:</p>
+<p>- <strong>Professional voice cloning</strong> with studio-quality fidelity for brand voices<br>
+- <strong>70+ language support</strong> with native-quality pronunciation (not translated-sounding)<br>
+- <strong>Dedicated infrastructure</strong> with guaranteed throughput for your volume<br>
+- <strong>Priority support</strong> with a dedicated solutions engineer for your integration</p>
+<p>Companies like Deutsche Telekom and Meta run their content pipelines through us at similar scale. I'd love to set up a call with our solutions team to discuss an enterprise agreement that matches your production needs.</p>
+<p>Are you available this week for a 30-minute conversation?</p>`,
+      sig: 'ElevenLabs Enterprise Sales'
+    },
+    audioText: 'High-priority enterprise outreach for GlobalMedia Corp, highlighting multilingual content pipeline capabilities and enterprise tier benefits.'
+  },
+  {
+    id: 'developer',
+    company: 'VoiceKit.dev',
+    desc: 'Developer building an open-source voice SDK on top of ElevenLabs',
+    tag: 'Developer / DevRel', tagClass: 'tag-developer',
+    enrichment: {
+      industry: 'Developer Tools',
+      size: '3 people (open source)',
+      funding: 'Bootstrapped',
+      location: 'Berlin, Germany',
+      techStack: 'TypeScript, Rust, Vercel',
+      crmStatus: 'Free tier - high API diversity'
+    },
+    usage: [
+      { label: 'Text-to-Speech', pct: 50, val: '3,200 chars/day', color: 'var(--green)' },
+      { label: 'Conversational AI', pct: 40, val: '180 sessions', color: 'var(--cyan)' },
+      { label: 'Voice Cloning', pct: 60, val: '15 clones', color: 'var(--purple)' },
+      { label: 'Error Rate', pct: 5, val: '0.5%', color: 'var(--green)' }
+    ],
+    score: 74, scoreColor: 'var(--blue)', scoreBg: 'rgba(96,165,250,0.15)',
+    classification: 'Developer Ecosystem',
+    scoreReason: 'High API endpoint diversity (using TTS, Conversational AI, and Voice Cloning together) with low volume per endpoint - classic SDK builder pattern. Building tooling that could drive adoption from their developer community. DevRel opportunity, not direct revenue.',
+    action: 'Route to DevRel team', actionColor: 'rgba(96,165,250,0.15)', actionText: 'var(--blue)',
+    email: {
+      to: 'nina@voicekit.dev',
+      subject: 'Love what you are building with VoiceKit',
+      body: `<p>Hi Nina,</p>
+<p>We noticed VoiceKit.dev is building across our full API surface - TTS, Conversational AI, and Voice Cloning. That's rare for a new integration, and it tells us you're building something comprehensive.</p>
+<p>We love when developers build tooling on top of our platform. A few things we can offer:</p>
+<p>- <strong>Free API credits</strong> for open-source projects building on ElevenLabs<br>
+- <strong>Early access</strong> to new API features and models before public release<br>
+- <strong>Featured listing</strong> in our developer ecosystem and documentation<br>
+- <strong>Direct Slack channel</strong> with our engineering team for integration support</p>
+<p>Would you be interested in joining our developer partnership programme? We'd love to feature VoiceKit in our docs and give you the resources to keep building.</p>`,
+      sig: 'ElevenLabs Developer Relations'
+    },
+    audioText: 'Developer relations outreach for VoiceKit.dev, offering partnership programme, free credits, and early API access.'
+  }
+];
+
+// Render lead cards
+const cardsEl = document.getElementById('lead-cards');
+leads.forEach(lead => {
+  cardsEl.innerHTML += `
+    <div class="lead-card" data-id="${lead.id}" onclick="selectLead('${lead.id}')">
+      <div class="lc-company">${lead.company}</div>
+      <div class="lc-desc">${lead.desc}</div>
+      <div class="lc-tag ${lead.tagClass}">${lead.tag}</div>
+    </div>`;
+});
+
+function selectLead(id) {
+  const lead = leads.find(l => l.id === id);
+  if (!lead) return;
+
+  // Update active state
+  document.querySelectorAll('.lead-card').forEach(c => c.classList.remove('active'));
+  document.querySelector(`[data-id="${id}"]`).classList.add('active');
+
+  const pipeline = document.getElementById('pipeline');
+  pipeline.className = 'pipeline visible';
+
+  // Build pipeline HTML
+  const usageBars = lead.usage.map(u => `
+    <div class="usage-row">
+      <div class="usage-label">${u.label}</div>
+      <div class="usage-bar"><div class="usage-fill" style="width:0%;background:${u.color}" data-width="${u.pct}%"></div></div>
+      <div class="usage-val">${u.val}</div>
+    </div>`).join('');
+
+  const enrichItems = Object.entries(lead.enrichment).map(([k, v]) => {
+    const labels = { industry:'Industry', size:'Company Size', funding:'Funding', location:'Location', techStack:'Tech Stack', crmStatus:'CRM Status' };
+    return `<div class="enrich-item"><div class="enrich-label">${labels[k] || k}</div><div class="enrich-val">${v}</div></div>`;
+  }).join('');
+
+  const waveBars = Array.from({length: 40}, () =>
+    `<div class="bar" style="height:${3 + Math.random()*12}px;animation-delay:${Math.random()*0.8}s"></div>`
+  ).join('');
+
+  pipeline.innerHTML = `
+    <div class="pipeline-header">Agent pipeline output</div>
+
+    <div class="step" id="s1">
+      <div class="step-header">
+        <span class="step-num">01</span>
+        <span class="step-title">Lead Enrichment</span>
+      </div>
+      <div class="step-content">
+        <div class="enrich-grid">${enrichItems}</div>
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="step" id="s2">
+      <div class="step-header">
+        <span class="step-num">02</span>
+        <span class="step-title">API Usage Analysis (First 7 Days)</span>
+      </div>
+      <div class="step-content">${usageBars}</div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="step" id="s3">
+      <div class="step-header">
+        <span class="step-num">03</span>
+        <span class="step-title">Lead Score &amp; Classification</span>
+      </div>
+      <div class="step-content">
+        <div class="score-display">
+          <div class="score-circle" style="background:${lead.scoreBg};color:${lead.scoreColor}">${lead.score}</div>
+          <div class="score-detail">
+            <div class="score-class">${lead.classification}</div>
+            <div class="score-reason">${lead.scoreReason}</div>
+            <div class="score-action" style="background:${lead.actionColor};color:${lead.actionText}">${lead.action}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="step" id="s4">
+      <div class="step-header">
+        <span class="step-num">04</span>
+        <span class="step-title">Personalised Email Outreach</span>
+      </div>
+      <div class="step-content">
+        <div class="email-preview">
+          <div class="email-meta">
+            To: <span>${lead.email.to}</span><br>
+            Subject: <span>${lead.email.subject}</span>
+          </div>
+          <div class="email-body">${lead.email.body}</div>
+          <div class="email-sig">${lead.email.sig}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="connector"></div>
+
+    <div class="step" id="s5">
+      <div class="step-header">
+        <span class="step-num">05</span>
+        <span class="step-title">ElevenLabs Voice Outreach</span>
+      </div>
+      <div class="step-content">
+        <div class="audio-section">
+          <button class="play-btn" onclick="toggleAudio(this)">
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <div class="audio-info">
+            <div class="audio-title">Generated voice message for ${lead.company}</div>
+            <div class="audio-desc">${lead.audioText}</div>
+            <div class="audio-wave" id="wave-${lead.id}">${waveBars}</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;font-size:11px;color:var(--dim)">
+          In production, this audio would be generated via the ElevenLabs TTS API with a custom voice clone matching the sender's brand.
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Animate steps in sequence
+  const steps = pipeline.querySelectorAll('.step');
+  steps.forEach((step, i) => {
+    setTimeout(() => {
+      step.classList.add('show');
+      // Animate usage bars
+      if (i === 1) {
+        setTimeout(() => {
+          step.querySelectorAll('.usage-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width;
+          });
+        }, 200);
+      }
+    }, i * 300);
+  });
+
+  // Scroll to pipeline
+  setTimeout(() => {
+    pipeline.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+function toggleAudio(btn) {
+  const wave = btn.closest('.audio-section').querySelector('.audio-wave');
+  const isPlaying = wave.classList.contains('playing');
+  if (isPlaying) {
+    wave.classList.remove('playing');
+    btn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+  } else {
+    wave.classList.add('playing');
+    btn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>';
+    setTimeout(() => {
+      wave.classList.remove('playing');
+      btn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+    }, 8000);
+  }
+}
+
+// Auto-select first lead
+setTimeout(() => selectLead('fintech'), 500);
+</script>
+
+</body>
+</html>
