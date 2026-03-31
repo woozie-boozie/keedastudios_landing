@@ -1,24 +1,22 @@
 {
-  "date": "2026-03-30",
+  "date": "2026-03-31",
   "yesterday": [
-    "Launched Me vs Claude scoreboard for bird-city-agi experiment on landing page",
-    "Fixed mobile responsiveness - forced 1-column layout at 768px for apps grid",
-    "Replaced Hinglish Vinglish chai brew animation with actual gameplay video",
-    "Updated open-to-work section to include product + engineering + growth + automation roles",
-    "Switched Thulaa from interactive demo back to app store screenshot gallery"
+    "Restructured CV for ElevenLabs role - added 3 new agents (Sidney, Guru Ji, Mayor), moved Why ElevenLabs to top with human motivation",
+    "Added Golden Egg Scramble chaos event and Territory Control System to bird-city-agi for flock battles",
+    "Updated keedastudios_landing analytics with project links, added Bud + Keeda Discord agents, removed influencer pipeline",
+    "Added iOS/Android store links and live demo links to CV apps, restructured apps into grid layout with monetization details"
   ],
   "today": [
-    "Added Fog & Hailstorm weather types with gameplay consequences to bird-city-agi",
-    "Implemented Race Betting System with pari-mutuel payouts for spectators in bird-city-agi",
-    "Updated Hinglish Vinglish card with chai icon and moved Mali up to main grid",
-    "Added app icon and store links to Hinglish Vinglish card on landing page"
+    "Built ElevenLabs inbound lead qualification agent prototype and updated CV with Plant By Number Technical Advisor role",
+    "Fixed territory-based predator system for hawk and mega cat in bird-city-agi, added Pigeon Mafia Don crime boss",
+    "Made CV mobile responsive, expanded tech stack tags (Stripe, OpenAI, Qdrant, Cloud Run, RevenueCat), updated location to London/SF/Remote",
+    "Refined agent descriptions across keedastudios_landing - simplified product engineer agent, cleaned up Bud pipeline and Mayor descriptions"
   ],
   "blockers": [
-    "BGMF still blocked by Apple - awaiting resolution"
+    "BGMF still blocked by Apple review process"
   ],
   "metrics": [
-    "30-day commit streak maintained with 2920 total commits across 19 repos",
-    "Thulaa at 150 DAU, Hinglish Vinglish reached 300 users",
-    "25 commits yesterday across keedastudios_landing repo, 7 commits today split between landing and bird-city-agi"
+    "31 day commit streak maintained with 50 commits across keedastudios_landing (43) and bird-city-agi (7)",
+    "Thulaa stable at 150 DAU, Hinglish Vinglish at 300 users, Mali launching next week"
   ]
 }
