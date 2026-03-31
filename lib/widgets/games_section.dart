@@ -19,10 +19,15 @@ class _GamesSectionState extends State<GamesSection> {
   final PageController _pageController = PageController();
   Timer? _autoPlayTimer;
   int _currentPage = 0;
+  bool _showCarousel = false;
 
   @override
   void initState() {
     super.initState();
+  }
+
+  void _activateCarousel() {
+    setState(() => _showCarousel = true);
     _startAutoPlay();
   }
 
@@ -171,6 +176,85 @@ class _GamesSectionState extends State<GamesSection> {
   }
 
   Widget _buildPhoneCarousel(double phoneHeight) {
+    if (!_showCarousel) {
+      // Show snail image, tap to activate carousel
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Expanded(
+            child: GestureDetector(
+              onTap: _activateCarousel,
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: AspectRatio(
+                  aspectRatio: 1290 / 2796,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(36),
+                      border: Border.all(
+                        color: AppColors.glassBorder.withOpacity(0.6),
+                        width: 3,
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.accentPrimary.withOpacity(0.12),
+                          blurRadius: 60,
+                          spreadRadius: 5,
+                        ),
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.4),
+                          blurRadius: 30,
+                          offset: const Offset(0, 15),
+                        ),
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(33),
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: [
+                          Image.asset(
+                            'assets/images/snail.PNG',
+                            fit: BoxFit.cover,
+                          ),
+                          // Tap hint overlay
+                          Center(
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 12),
+                              decoration: BoxDecoration(
+                                color: Colors.black.withOpacity(0.5),
+                                borderRadius: BorderRadius.circular(24),
+                                border: Border.all(
+                                    color: AppColors.glassBorder, width: 1),
+                              ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(Icons.touch_app_rounded,
+                                      color: Colors.white, size: 20),
+                                  const SizedBox(width: 8),
+                                  Text(
+                                    'Tap to explore',
+                                    style: AppTextStyles.bodySmall
+                                        .copyWith(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
