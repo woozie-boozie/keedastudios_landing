@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-31T00:16:38Z",
+  "updated": "2026-03-31T00:18:20Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2971,
+  "total_commits": 2973,
   "streak": 31,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-31",
-      "count": 3
+      "count": 5
     }
   ],
   "commits_by_month": [
@@ -1309,13 +1309,13 @@
     },
     {
       "month": "2026-03",
-      "count": 471
+      "count": 473
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 126
+      "count": 128
     },
     {
       "hour": 1,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-31T00:17:38Z",
+      "sha": "139e31a",
+      "message": "CV: reorder Capco bullets - title first, city second"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-31T00:16:08Z",
@@ -1704,18 +1710,12 @@
       "date": "2026-03-29T22:20:58Z",
       "sha": "39bd1f8",
       "message": "rewrite standup workflow — move logic to script file"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T22:20:32Z",
-      "sha": "0d5788f",
-      "message": "add interactive carousels for Hinglish Vinglish, Vibe Lingo, Mali + reorder apps"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 159
+      "commits": 161
     },
     {
       "name": "bird-city-agi",
