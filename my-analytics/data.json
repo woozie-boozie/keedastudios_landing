@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-31T01:54:42Z",
+  "updated": "2026-03-31T06:59:51Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2989,
+  "total_commits": 2991,
   "streak": 31,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-31",
-      "count": 21
+      "count": 23
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 489
+      "count": 491
     }
   ],
   "commits_by_hour": [
@@ -1319,7 +1319,7 @@
     },
     {
       "hour": 1,
-      "count": 100
+      "count": 101
     },
     {
       "hour": 2,
@@ -1335,7 +1335,7 @@
     },
     {
       "hour": 5,
-      "count": 21
+      "count": 22
     },
     {
       "hour": 6,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-31T05:30:11Z",
+      "sha": "55fdee0",
+      "message": "Fix #1 fun-killer: territory-based predator system for hawk and mega cat"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-31T01:54:09Z",
@@ -1704,22 +1710,16 @@
       "date": "2026-03-29T23:07:06Z",
       "sha": "45f3d5f",
       "message": "simplify app showcases: horizontal screenshot galleries + video"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T22:50:40Z",
-      "sha": "c68bdff",
-      "message": "make 'rate.' bold green instead of outline, remove eyebrow box"
     }
   ],
   "repo_details": [
     {
-      "name": "keedastudios_landing",
-      "commits": 176
+      "name": "bird-city-agi",
+      "commits": 31
     },
     {
-      "name": "bird-city-agi",
-      "commits": 30
+      "name": "keedastudios_landing",
+      "commits": 177
     },
     {
       "name": "pabho",
