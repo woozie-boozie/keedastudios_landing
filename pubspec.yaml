@@ -67,6 +67,11 @@ flutter:
     - assets/images/snail_2.mp4
     - assets/images/crossword_chaos_icon.png
     - assets/images/keeda_logo.png
+    - mali/1_welcome_iphone67.png
+    - mali/2_garden_iphone67.png
+    - mali/3_sidney_iphone67.png
+    - mali/4_dashboard_iphone67.png
+    - mali/5_weather_iphone67.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

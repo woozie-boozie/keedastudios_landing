@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:ui';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../constants/app_colors.dart';
@@ -5,14 +8,65 @@ import '../constants/app_text_styles.dart';
 import '../constants/app_strings.dart';
 import 'glass_card.dart';
 
-class GamesSection extends StatelessWidget {
+class GamesSection extends StatefulWidget {
   const GamesSection({super.key});
+
+  @override
+  State<GamesSection> createState() => _GamesSectionState();
+}
+
+class _GamesSectionState extends State<GamesSection> {
+  final PageController _pageController = PageController();
+  Timer? _autoPlayTimer;
+  int _currentPage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _startAutoPlay();
+  }
+
+  void _startAutoPlay() {
+    _autoPlayTimer?.cancel();
+    _autoPlayTimer = Timer.periodic(const Duration(milliseconds: 4500), (_) {
+      if (!mounted) return;
+      final nextPage = (_currentPage + 1) % AppStrings.maliScreenPaths.length;
+      _pageController.animateToPage(
+        nextPage,
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.easeInOutCubic,
+      );
+    });
+  }
+
+  void _resetAutoPlay() {
+    _autoPlayTimer?.cancel();
+    Future.delayed(const Duration(seconds: 8), () {
+      if (mounted) _startAutoPlay();
+    });
+  }
+
+  void _goToPage(int page) {
+    _pageController.animateToPage(
+      page,
+      duration: const Duration(milliseconds: 400),
+      curve: Curves.easeInOutCubic,
+    );
+    _resetAutoPlay();
+  }
 
   Future<void> _launchURL(String url) async {
     final uri = Uri.parse(url);
     if (await canLaunchUrl(uri)) {
       await launchUrl(uri, mode: LaunchMode.externalApplication);
     }
+  }
+
+  @override
+  void dispose() {
+    _autoPlayTimer?.cancel();
+    _pageController.dispose();
+    super.dispose();
   }
 
   @override
@@ -34,7 +88,9 @@ class GamesSection extends StatelessWidget {
             AppStrings.gamesTitle,
             style: isMobile
                 ? AppTextStyles.displaySmall
-                : (isTablet ? AppTextStyles.displayMedium : AppTextStyles.displayLarge),
+                : (isTablet
+                    ? AppTextStyles.displayMedium
+                    : AppTextStyles.displayLarge),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 16),
@@ -45,7 +101,17 @@ class GamesSection extends StatelessWidget {
           ),
           SizedBox(height: isMobile ? 40 : 60),
 
-          // Games grid
+          // Mali showcase
+          ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 1200),
+            child: isMobile
+                ? _buildMaliMobile(size)
+                : _buildMaliDesktop(size, isTablet),
+          ),
+
+          SizedBox(height: isMobile ? 60 : 80),
+
+          // Crossword Chaos card
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1200),
             child: Wrap(
@@ -59,15 +125,417 @@ class GamesSection extends StatelessWidget {
                   iconPath: 'assets/images/crossword_chaos_icon.png',
                   platforms: const ['iOS', 'Android'],
                   onIOSTap: () => _launchURL(AppStrings.crosswordChaosIOSUrl),
-                  onAndroidTap: () => _launchURL(AppStrings.crosswordChaosAndroidUrl),
+                  onAndroidTap: () =>
+                      _launchURL(AppStrings.crosswordChaosAndroidUrl),
                   isMobile: isMobile,
                 ),
-                // Add more games here in the future
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildMaliDesktop(Size size, bool isTablet) {
+    final phoneHeight = isTablet ? 480.0 : 550.0;
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        // Phone carousel
+        SizedBox(
+          height: phoneHeight,
+          child: _buildPhoneCarousel(phoneHeight),
+        ),
+        SizedBox(width: isTablet ? 40 : 64),
+        // Info panel
+        Expanded(child: _buildMaliInfo(false)),
+      ],
+    );
+  }
+
+  Widget _buildMaliMobile(Size size) {
+    final phoneHeight = (size.height * 0.55).clamp(350.0, 480.0);
+
+    return Column(
+      children: [
+        SizedBox(
+          height: phoneHeight,
+          child: _buildPhoneCarousel(phoneHeight),
+        ),
+        const SizedBox(height: 32),
+        _buildMaliInfo(true),
+      ],
+    );
+  }
+
+  Widget _buildPhoneCarousel(double phoneHeight) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        // Phone frame with screenshots
+        Expanded(child: _PhoneFrame(
+          pageController: _pageController,
+          onPageChanged: (page) {
+            setState(() => _currentPage = page);
+          },
+          onManualInteraction: _resetAutoPlay,
+        )),
+        const SizedBox(height: 20),
+        // Navigation dots
+        _CarouselDots(
+          count: AppStrings.maliScreenPaths.length,
+          currentIndex: _currentPage,
+          onDotTap: _goToPage,
+        ),
+      ],
+    );
+  }
+
+  Widget _buildMaliInfo(bool isMobile) {
+    return Column(
+      crossAxisAlignment:
+          isMobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+      children: [
+        // Mali name with gradient
+        ShaderMask(
+          shaderCallback: (bounds) =>
+              AppColors.accentGradient.createShader(bounds),
+          child: Text(
+            AppStrings.maliName,
+            style: (isMobile ? AppTextStyles.displaySmall : AppTextStyles.displayMedium)
+                .copyWith(color: Colors.white),
+          ),
+        ),
+        const SizedBox(height: 8),
+        Text(
+          AppStrings.maliTagline,
+          style: AppTextStyles.bodyLarge.copyWith(
+            color: AppColors.textSecondary,
+          ),
+          textAlign: isMobile ? TextAlign.center : TextAlign.start,
+        ),
+        const SizedBox(height: 20),
+        Text(
+          AppStrings.maliDescription,
+          style: AppTextStyles.bodyMedium.copyWith(
+            color: AppColors.textSecondary,
+            height: 1.6,
+          ),
+          textAlign: isMobile ? TextAlign.center : TextAlign.start,
+        ),
+        const SizedBox(height: 28),
+        // Feature highlights
+        _FeatureRow(
+          icon: Icons.eco_rounded,
+          title: 'AI Plant Care',
+          description: 'Personalized advice from Sidney, your garden AI',
+        ),
+        const SizedBox(height: 12),
+        _FeatureRow(
+          icon: Icons.cloud_rounded,
+          title: 'Weather Aware',
+          description: 'Smart reminders based on your local forecast',
+        ),
+        const SizedBox(height: 12),
+        _FeatureRow(
+          icon: Icons.dashboard_rounded,
+          title: 'Garden Dashboard',
+          description: 'Track all your plants in one beautiful view',
+        ),
+        const SizedBox(height: 28),
+        // Coming Soon badge
+        GlassCard(
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+          borderRadius: 12,
+          borderColor: AppColors.accentPrimary.withOpacity(0.4),
+          backgroundColor: AppColors.accentPrimary.withOpacity(0.1),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.rocket_launch_rounded,
+                  color: AppColors.accentPrimary, size: 18),
+              const SizedBox(width: 8),
+              Text(
+                AppStrings.maliComingSoon,
+                style: AppTextStyles.buttonSmall.copyWith(
+                  color: AppColors.accentPrimary,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+// Phone frame widget
+class _PhoneFrame extends StatefulWidget {
+  final PageController pageController;
+  final ValueChanged<int> onPageChanged;
+  final VoidCallback onManualInteraction;
+
+  const _PhoneFrame({
+    required this.pageController,
+    required this.onPageChanged,
+    required this.onManualInteraction,
+  });
+
+  @override
+  State<_PhoneFrame> createState() => _PhoneFrameState();
+}
+
+class _PhoneFrameState extends State<_PhoneFrame> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    // iPhone 6.7" aspect ratio
+    const phoneAspectRatio = 1290 / 2796;
+
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AspectRatio(
+        aspectRatio: phoneAspectRatio,
+        child: Stack(
+          children: [
+            // Phone body
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(36),
+                border: Border.all(
+                  color: AppColors.glassBorder.withOpacity(0.6),
+                  width: 3,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.accentPrimary.withOpacity(0.12),
+                    blurRadius: 60,
+                    spreadRadius: 5,
+                  ),
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.4),
+                    blurRadius: 30,
+                    offset: const Offset(0, 15),
+                  ),
+                ],
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(33),
+                child: ScrollConfiguration(
+                  behavior: ScrollConfiguration.of(context).copyWith(
+                    dragDevices: {
+                      PointerDeviceKind.touch,
+                      PointerDeviceKind.mouse,
+                    },
+                  ),
+                  child: NotificationListener<ScrollNotification>(
+                    onNotification: (notification) {
+                      if (notification is ScrollStartNotification &&
+                          notification.dragDetails != null) {
+                        widget.onManualInteraction();
+                      }
+                      return false;
+                    },
+                    child: PageView.builder(
+                      controller: widget.pageController,
+                      onPageChanged: widget.onPageChanged,
+                      itemCount: AppStrings.maliScreenPaths.length,
+                      itemBuilder: (context, index) {
+                        return Image.asset(
+                          AppStrings.maliScreenPaths[index],
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Container(
+                              color: AppColors.backgroundEnd,
+                              child: Center(
+                                child: Icon(
+                                  Icons.image_rounded,
+                                  size: 48,
+                                  color: AppColors.textTertiary,
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            // Left arrow
+            Positioned(
+              left: 4,
+              top: 0,
+              bottom: 0,
+              child: Center(
+                child: AnimatedOpacity(
+                  opacity: _isHovered ? 0.9 : 0.0,
+                  duration: const Duration(milliseconds: 200),
+                  child: _ArrowButton(
+                    icon: Icons.chevron_left_rounded,
+                    onTap: () {
+                      final prev = (widget.pageController.page?.round() ?? 0) - 1;
+                      if (prev >= 0) {
+                        widget.pageController.animateToPage(
+                          prev,
+                          duration: const Duration(milliseconds: 400),
+                          curve: Curves.easeInOutCubic,
+                        );
+                        widget.onManualInteraction();
+                      }
+                    },
+                  ),
+                ),
+              ),
+            ),
+
+            // Right arrow
+            Positioned(
+              right: 4,
+              top: 0,
+              bottom: 0,
+              child: Center(
+                child: AnimatedOpacity(
+                  opacity: _isHovered ? 0.9 : 0.0,
+                  duration: const Duration(milliseconds: 200),
+                  child: _ArrowButton(
+                    icon: Icons.chevron_right_rounded,
+                    onTap: () {
+                      final next = (widget.pageController.page?.round() ?? 0) + 1;
+                      if (next < AppStrings.maliScreenPaths.length) {
+                        widget.pageController.animateToPage(
+                          next,
+                          duration: const Duration(milliseconds: 400),
+                          curve: Curves.easeInOutCubic,
+                        );
+                        widget.onManualInteraction();
+                      }
+                    },
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ArrowButton extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback onTap;
+
+  const _ArrowButton({required this.icon, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 36,
+        height: 36,
+        decoration: BoxDecoration(
+          color: Colors.black.withOpacity(0.5),
+          shape: BoxShape.circle,
+          border: Border.all(color: AppColors.glassBorder, width: 1),
+        ),
+        child: Icon(icon, color: Colors.white, size: 22),
+      ),
+    );
+  }
+}
+
+class _CarouselDots extends StatelessWidget {
+  final int count;
+  final int currentIndex;
+  final ValueChanged<int> onDotTap;
+
+  const _CarouselDots({
+    required this.count,
+    required this.currentIndex,
+    required this.onDotTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(count, (index) {
+        final isActive = index == currentIndex;
+        return GestureDetector(
+          onTap: () => onDotTap(index),
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.easeInOut,
+            width: isActive ? 28 : 8,
+            height: 8,
+            margin: const EdgeInsets.symmetric(horizontal: 4),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(4),
+              gradient: isActive ? AppColors.accentGradient : null,
+              color: isActive ? null : AppColors.glassBorder,
+            ),
+          ),
+        );
+      }),
+    );
+  }
+}
+
+class _FeatureRow extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String description;
+
+  const _FeatureRow({
+    required this.icon,
+    required this.title,
+    required this.description,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+          width: 40,
+          height: 40,
+          decoration: BoxDecoration(
+            gradient: AppColors.accentGradient,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Icon(icon, color: Colors.white, size: 20),
+        ),
+        const SizedBox(width: 14),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: AppTextStyles.bodyMedium.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+              Text(
+                description,
+                style: AppTextStyles.bodySmall.copyWith(
+                  color: AppColors.textTertiary,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
@@ -148,7 +616,8 @@ class _GameCard extends StatelessWidget {
             spacing: 8,
             children: platforms.map((platform) {
               return Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
                   color: AppColors.glassBackground,
                   border: Border.all(color: AppColors.glassBorder),

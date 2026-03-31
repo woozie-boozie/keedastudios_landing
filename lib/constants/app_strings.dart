@@ -33,6 +33,28 @@ class AppStrings {
   static const String crosswordChaosIOSUrl = 'https://apps.apple.com/gb/app/crossword-chaos/id6752734096';
   static const String crosswordChaosAndroidUrl = 'https://play.google.com/store/apps/details?id=com.crosswordchaos.game';
 
+  // Mali
+  static const String maliName = 'Mali';
+  static const String maliTagline = 'Your AI-powered garden companion';
+  static const String maliDescription =
+      'Get personalized plant care advice, weather-aware reminders, and expert guidance '
+      'from Sidney — your dedicated garden assistant. Beautiful, smart, and always growing with you.';
+  static const String maliComingSoon = 'Coming Soon';
+  static const List<String> maliScreenLabels = [
+    'Welcome',
+    'Garden',
+    'Sidney AI',
+    'Dashboard',
+    'Weather',
+  ];
+  static const List<String> maliScreenPaths = [
+    'mali/1_welcome_iphone67.png',
+    'mali/2_garden_iphone67.png',
+    'mali/3_sidney_iphone67.png',
+    'mali/4_dashboard_iphone67.png',
+    'mali/5_weather_iphone67.png',
+  ];
+
   // Contact section
   static const String contactTitle = 'Get in Touch';
   static const String contactDescription =
