@@ -2286,6 +2286,76 @@
       .app-gallery-item video { height: 280px; }
     }
 
+    /* ============ MALI CAROUSEL ============ */
+    .mali-preview {
+      position: relative;
+      margin: 16px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .mali-preview:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+    .mali-preview img {
+      width: 100%;
+      display: block;
+    }
+    .mali-tap-hint {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.6);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 8px 18px;
+      font-size: 12px;
+      color: var(--text);
+      backdrop-filter: blur(8px);
+      pointer-events: none;
+    }
+
+    .mali-carousel {
+      position: relative;
+      margin: 16px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      border: 1px solid var(--border);
+    }
+    .mali-carousel-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .mali-carousel-track img {
+      width: 100%;
+      flex-shrink: 0;
+      display: block;
+    }
+    .mali-carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .mali-carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 4px;
+      background: var(--border2);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .mali-carousel-dot.active {
+      width: 28px;
+      background: var(--primary);
+    }
+
     /* ============ HINGLISH CHAI DEMO ============ */
     .hv-demo {
       margin: 16px 0;
@@ -2828,15 +2898,23 @@
           <h3 class="app-name">Mali</h3>
           <p class="app-tagline">Strava for gardening. Design a digital twin of your real garden, get AI care from Sidney the Snail, track weather, celebrate harvests.</p>
 
-          <div class="app-gallery">
-            <div class="app-gallery-item"><video src="assets/images/snail.mp4" autoplay muted loop playsinline></video></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/1_welcome_iphone65.png" alt="Welcome" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/2_garden_iphone65.png" alt="Garden Designer" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/3_sidney_iphone65.png" alt="Meet Sidney" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/4_dashboard_iphone65.png" alt="Dashboard" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/5_weather_iphone65.png" alt="Weather" loading="lazy"></div>
+          <!-- Snail preview (default) -->
+          <div class="mali-preview" id="maliPreview" onclick="startMaliCarousel()">
+            <img src="assets/images/snail.PNG" alt="Sidney the Snail">
+            <div class="mali-tap-hint">👆 Tap to explore the app</div>
           </div>
-          <div class="gallery-hint">Swipe to explore &rarr;</div>
+
+          <!-- Auto-playing carousel (hidden until tapped) -->
+          <div class="mali-carousel" id="maliCarousel" style="display: none;">
+            <div class="mali-carousel-track" id="maliTrack">
+              <img src="assets/images/mali/1_welcome_iphone65.png" alt="Welcome">
+              <img src="assets/images/mali/2_garden_iphone65.png" alt="Garden Designer">
+              <img src="assets/images/mali/3_sidney_iphone65.png" alt="Meet Sidney">
+              <img src="assets/images/mali/4_dashboard_iphone65.png" alt="Dashboard">
+              <img src="assets/images/mali/5_weather_iphone65.png" alt="Weather">
+            </div>
+          </div>
+          <div class="mali-carousel-dots" id="maliDots" style="display: none;"></div>
 
           <div class="app-tags">
             <span class="app-tag">Gardening</span>
@@ -2993,6 +3071,50 @@
       card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(card);
     });
+
+    // Mali Carousel
+    let maliInterval = null;
+    let maliPage = 0;
+    const maliTotal = 5;
+
+    function startMaliCarousel() {
+      document.getElementById('maliPreview').style.display = 'none';
+      document.getElementById('maliCarousel').style.display = 'block';
+      const dotsContainer = document.getElementById('maliDots');
+      dotsContainer.style.display = 'flex';
+
+      // Create dots
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < maliTotal; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'mali-carousel-dot' + (i === 0 ? ' active' : '');
+        dot.onclick = () => goToMaliSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+
+      maliPage = 0;
+      maliInterval = setInterval(() => {
+        maliPage = (maliPage + 1) % maliTotal;
+        updateMaliCarousel();
+      }, 3500);
+    }
+
+    function goToMaliSlide(index) {
+      maliPage = index;
+      updateMaliCarousel();
+      clearInterval(maliInterval);
+      maliInterval = setInterval(() => {
+        maliPage = (maliPage + 1) % maliTotal;
+        updateMaliCarousel();
+      }, 3500);
+    }
+
+    function updateMaliCarousel() {
+      const track = document.getElementById('maliTrack');
+      track.style.transform = `translateX(-${maliPage * 100}%)`;
+      const dots = document.querySelectorAll('.mali-carousel-dot');
+      dots.forEach((d, i) => d.classList.toggle('active', i === maliPage));
+    }
 
     // BGMF Interactive Demo - Butt to Chat transition
     let chatTimers = [];
