@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-31T17:57:11Z",
+  "updated": "2026-03-31T18:02:56Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 3018,
+  "total_commits": 3020,
   "streak": 31,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-31",
-      "count": 50
+      "count": 52
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 518
+      "count": 520
     }
   ],
   "commits_by_hour": [
@@ -1383,11 +1383,11 @@
     },
     {
       "hour": 17,
-      "count": 184
+      "count": 185
     },
     {
       "hour": 18,
-      "count": 190
+      "count": 191
     },
     {
       "hour": 19,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-31T18:01:29Z",
+      "sha": "bb3408b",
+      "message": "simplify apps section: clean card grid with icons, descriptions, and store links"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-31T17:56:02Z",
@@ -1704,18 +1710,12 @@
       "date": "2026-03-30T10:16:22Z",
       "sha": "d8fdb62",
       "message": "Add Underground Sewer System — secret world beneath Bird City"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-30T05:09:47Z",
-      "sha": "640e8b3",
-      "message": "Add Fog & Hailstorm — two new weather types with real gameplay consequences"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 202
+      "commits": 204
     },
     {
       "name": "bird-city-agi",
