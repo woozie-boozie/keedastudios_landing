@@ -330,12 +330,55 @@
     @media (max-width: 768px) {
       .apps-grid,
       .pipeline-grid {
-        grid-template-columns: 1fr !important;
+        display: none !important;
       }
       .app-card.full-width {
         grid-column: span 1 !important;
       }
+
+      /* Mobile carousel */
+      .mobile-apps-carousel {
+        display: flex !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+        gap: 0;
+        margin: 0 -20px;
+        padding: 0 20px;
+      }
+      .mobile-apps-carousel::-webkit-scrollbar { display: none; }
+      .mobile-apps-carousel .app-card {
+        flex-shrink: 0;
+        width: calc(100vw - 56px);
+        scroll-snap-align: center;
+        margin-right: 16px;
+      }
+      .mobile-apps-carousel .app-card:last-child {
+        margin-right: 20px;
+      }
+      .mobile-carousel-dots {
+        display: flex !important;
+        justify-content: center;
+        gap: 6px;
+        margin-top: 20px;
+      }
+      .mobile-carousel-dots .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background: var(--border2);
+        transition: all 0.3s;
+        cursor: pointer;
+      }
+      .mobile-carousel-dots .dot.active {
+        width: 24px;
+        background: var(--primary);
+      }
     }
+
+    .mobile-apps-carousel { display: none; }
+    .mobile-carousel-dots { display: none; }
 
     .app-card {
       background: var(--dark-card);
@@ -2696,6 +2739,10 @@
         <p class="section-subtitle">Card games, word games, fart games, language learning, gardening &mdash; if it's fun and slightly unhinged, we're probably building it.</p>
       </div>
 
+      <!-- Mobile horizontal carousel (shown only on mobile) -->
+      <div class="mobile-apps-carousel" id="mobileAppsCarousel"></div>
+      <div class="mobile-carousel-dots" id="mobileAppsDots"></div>
+
       <div class="apps-grid">
         <!-- Hinglish Vinglish -->
         <div class="app-card blue">
@@ -3071,6 +3118,47 @@
       card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(card);
     });
+
+    // Mobile Apps Carousel — move cards into horizontal scroll on mobile
+    (function() {
+      if (window.innerWidth > 768) return;
+
+      const carousel = document.getElementById('mobileAppsCarousel');
+      const dotsContainer = document.getElementById('mobileAppsDots');
+      if (!carousel || !dotsContainer) return;
+
+      // Move all app-cards from both grids into the carousel
+      const grids = document.querySelectorAll('.apps-grid, .pipeline-grid');
+      grids.forEach(g => {
+        const cards = Array.from(g.querySelectorAll('.app-card'));
+        cards.forEach(c => carousel.appendChild(c));
+      });
+
+      // Create dots
+      const total = carousel.children.length;
+      for (let i = 0; i < total; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.onclick = () => {
+          carousel.children[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        };
+        dotsContainer.appendChild(dot);
+      }
+
+      // Update dots on scroll
+      let scrollTimeout;
+      carousel.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          const scrollLeft = carousel.scrollLeft;
+          const cardWidth = carousel.children[0]?.offsetWidth + 16 || 1;
+          const active = Math.round(scrollLeft / cardWidth);
+          dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
+            d.classList.toggle('active', i === active);
+          });
+        }, 50);
+      });
+    })();
 
     // Mali Carousel
     let maliInterval = null;
