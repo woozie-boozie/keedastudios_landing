@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-31T18:24:08Z",
+  "updated": "2026-03-31T18:26:48Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 3024,
+  "total_commits": 3026,
   "streak": 31,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-31",
-      "count": 56
+      "count": 58
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 524
+      "count": 526
     }
   ],
   "commits_by_hour": [
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 18,
-      "count": 195
+      "count": 197
     },
     {
       "hour": 19,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-31T18:25:45Z",
+      "sha": "dd32733",
+      "message": "change we/our to I/my — one-person studio voice"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-31T18:22:57Z",
@@ -1704,18 +1710,12 @@
       "date": "2026-03-30T13:40:46Z",
       "sha": "cc80bc7",
       "message": "replace em dashes with regular hyphens in CV"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T13:19:47Z",
-      "sha": "3c49f0a",
-      "message": "restructure CV: merge apps into experience with full context"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 208
+      "commits": 210
     },
     {
       "name": "bird-city-agi",
