@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-31T12:45:56Z",
+  "updated": "2026-03-31T13:57:50Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2994,
+  "total_commits": 2996,
   "streak": 31,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-31",
-      "count": 26
+      "count": 28
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 494
+      "count": 496
     }
   ],
   "commits_by_hour": [
@@ -1363,11 +1363,11 @@
     },
     {
       "hour": 12,
-      "count": 141
+      "count": 142
     },
     {
       "hour": 13,
-      "count": 152
+      "count": 153
     },
     {
       "hour": 14,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-31T13:56:27Z",
+      "sha": "5307810",
+      "message": "CV: final polish - tagline, live portfolio link, reorder apps, move Bud to PBN"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-03-31T10:34:47Z",
@@ -1704,15 +1710,13 @@
       "date": "2026-03-29T23:18:07Z",
       "sha": "2bddd24",
       "message": "update open-to-work: product + engineering + growth + automation"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T23:10:14Z",
-      "sha": "007920f",
-      "message": "replace Thulaa interactive demo with app store screenshot gallery"
     }
   ],
   "repo_details": [
+    {
+      "name": "keedastudios_landing",
+      "commits": 181
+    },
     {
       "name": "bird-city-agi",
       "commits": 32
@@ -1720,10 +1724,6 @@
     {
       "name": "budin",
       "commits": 1123
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 179
     },
     {
       "name": "pabho",
