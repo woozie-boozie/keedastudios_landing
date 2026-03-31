@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-31T17:08:22Z",
+  "updated": "2026-03-31T17:15:47Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 3012,
+  "total_commits": 3014,
   "streak": 31,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-31",
-      "count": 44
+      "count": 46
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-03",
-      "count": 512
+      "count": 514
     }
   ],
   "commits_by_hour": [
@@ -1383,7 +1383,7 @@
     },
     {
       "hour": 17,
-      "count": 178
+      "count": 180
     },
     {
       "hour": 18,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-31T17:14:30Z",
+      "sha": "01c04b1",
+      "message": "mali: show snail preview by default, tap to start auto-playing screenshot carous"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-31T17:07:16Z",
@@ -1704,18 +1710,12 @@
       "date": "2026-03-30T00:05:37Z",
       "sha": "b6afa14",
       "message": "use chai icon for Hinglish Vinglish, move Mali up to main grid"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T00:01:56Z",
-      "sha": "1a6850c",
-      "message": "add app icon + store links to Hinglish Vinglish card"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 196
+      "commits": 198
     },
     {
       "name": "bird-city-agi",
