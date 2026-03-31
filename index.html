@@ -319,22 +319,84 @@
     }
 
     /* Apps Grid */
-    .apps-grid {
+    .apps-grid.simple-cards {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
-    @media (max-width: 768px) {
-      .apps-grid,
-      .pipeline-grid {
-        grid-template-columns: 1fr !important;
-      }
-      .app-card.full-width {
-        grid-column: span 1 !important;
-      }
+    @media (max-width: 900px) {
+      .apps-grid.simple-cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .apps-grid.simple-cards { grid-template-columns: 1fr; }
+    }
+
+    .app-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .app-icon-sm {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .app-icon-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .app-card-header .app-name {
+      margin-bottom: 4px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 9px;
+      padding: 3px 10px;
+      border-radius: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .badge-live { background: rgba(77,255,159,0.08); color: var(--primary); border: 1px solid rgba(77,255,159,0.2); }
+    .badge-soon { background: rgba(255,171,0,0.08); color: var(--accent); border: 1px solid rgba(255,171,0,0.2); }
+    .badge-blocked { background: rgba(255,107,138,0.08); color: var(--accent-pink); border: 1px solid rgba(255,107,138,0.2); }
+
+    .app-store-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .store-pill {
+      font-size: 11px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(77,255,159,0.06);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .store-pill:hover {
+      background: rgba(77,255,159,0.12);
+      border-color: var(--border2);
+    }
+    .store-pill.coming {
+      color: var(--text-muted);
+      cursor: default;
     }
 
     .app-card {
@@ -2626,295 +2688,97 @@
         <p class="section-subtitle">Card games, word games, fart games, language learning, gardening &mdash; if it's fun and slightly unhinged, we're probably building it.</p>
       </div>
 
-      <div class="apps-grid">
-        <!-- Hinglish Vinglish -->
-        <div class="app-card blue">
-          <img src="assets/images/hinglish/chai-time.png" alt="Hinglish Vinglish" class="app-icon">
-          <div class="app-status live"><span class="status-dot"></span> Live</div>
-          <h3 class="app-name">Hinglish Vinglish</h3>
-          <p class="app-tagline">AI pronunciation coach for Hindi. Real-life scenarios, instant speaking feedback, cultural collectible badges.</p>
-
-          <div class="hv-demo">
-            <div class="hv-chai-view" id="hvChaiView" onclick="startHvBrew()">
-              <div class="hv-chai-img">
-                <img src="assets/images/hinglish/chai-time.png" alt="Chai Time">
-              </div>
-              <p class="hv-chai-hint">☕ Tap to brew a lesson</p>
-            </div>
-            <div class="hv-brew-view" id="hvBrewView">
-              <div class="hv-brew-emoji" id="hvBrewEmoji">☕</div>
-              <div class="hv-brew-text">Brewing...</div>
-              <div class="hv-brew-count" id="hvBrewCount">3</div>
-            </div>
-            <div class="hv-video-view" id="hvVideoView">
-              <video id="hvVideo" controls playsinline style="width:100%;border-radius:12px;">
-                <source src="assets/images/hinglish-vinglish-gameplay.mp4" type="video/mp4">
-              </video>
-              <button class="thulaa-back-btn visible" onclick="resetHvDemo()" style="margin-top:10px;">↺ Back</button>
+      <div class="apps-grid simple-cards">
+        <!-- Thulaa -->
+        <div class="app-card">
+          <div class="app-card-header">
+            <img src="assets/images/thulaa-icon.png" alt="Thulaa" class="app-icon-sm">
+            <div>
+              <h3 class="app-name">Thulaa</h3>
+              <span class="badge badge-live">LIVE</span>
             </div>
           </div>
-
-          <div class="app-tags">
-            <span class="app-tag">Language</span>
-            <span class="app-tag">AI-powered</span>
-            <span class="app-tag">Hindi</span>
-          </div>
-          <div class="store-links">
-            <a href="https://apps.apple.com/us/app/hinglish-vinglish/id6757343562" class="store-link" target="_blank">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              App Store
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.keedastudios.hinglishvinglish" class="store-link" target="_blank">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-              Google Play
-            </a>
+          <p class="app-tagline">Strategy-meets-sabotage card game. Trained AI bots with Monte Carlo Tree Search (MCTS) &mdash; like Stockfish for chess.</p>
+          <div class="app-store-links">
+            <a href="https://apps.apple.com/gb/app/thulaa/id6755297654" class="store-pill" target="_blank">&#63743; App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.keedastudios.pabho" class="store-pill" target="_blank">&#9654; Google Play</a>
           </div>
         </div>
 
-        <!-- Thulaa -->
-        <div class="app-card purple">
-          <img src="assets/images/thulaa-icon.png" alt="Thulaa" class="app-icon">
-          <div class="app-status live"><span class="status-dot"></span> Live</div>
-          <h3 class="app-name">Thulaa</h3>
-          <p class="app-tagline">The South Asian card game your parents never let you play growing up. 3k+ downloads, 500+ games daily, 2M+ reel views. Don't be the Pabho.</p>
-
-          <div class="thulaa-demo">
-            <!-- Default: animated phone frame -->
-            <div class="thulaa-home-view" id="thulaaHomeView">
-              <div class="thulaa-phone-display">
-                <div class="thulaa-phone-frame" onclick="showThulaaVideo()">
-                  <img src="assets/images/thulaa-home.png" alt="Thulaa Home">
-                </div>
-              </div>
-              <p class="thulaa-tap-hint">👆 Tap to watch gameplay</p>
-            </div>
-            <!-- Video view (after tap) -->
-            <div class="thulaa-game-view" id="thulaaVideoView">
-              <video id="thulaaVideo" controls playsinline style="width:100%;border-radius:12px;">
-                <source src="assets/images/thulaa-gameplay.mp4" type="video/mp4">
-              </video>
-              <button class="thulaa-back-btn visible" onclick="resetThulaaVideo()" style="margin-top:10px;">↺ Back</button>
+        <!-- Hinglish Vinglish -->
+        <div class="app-card">
+          <div class="app-card-header">
+            <img src="assets/images/hinglish/chai-time.png" alt="Hinglish Vinglish" class="app-icon-sm">
+            <div>
+              <h3 class="app-name">Hinglish Vinglish</h3>
+              <span class="badge badge-live">LIVE</span>
             </div>
           </div>
-
-          <div class="app-tags">
-            <span class="app-tag">Card Game</span>
-            <span class="app-tag">Multiplayer</span>
-            <span class="app-tag">Classic</span>
-          </div>
-          <div class="store-links">
-            <a href="https://apps.apple.com/gb/app/thulaa/id6755297654" class="store-link" target="_blank">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              App Store
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.keedastudios.pabho" class="store-link" target="_blank">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-              Google Play
-            </a>
+          <p class="app-tagline">AI pronunciation coach for Hindi. Real-life scenarios, instant speaking feedback, cultural collectible badges.</p>
+          <div class="app-store-links">
+            <a href="https://apps.apple.com/us/app/hinglish-vinglish/id6757343562" class="store-pill" target="_blank">&#63743; App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.keedastudios.hinglishvinglish" class="store-pill" target="_blank">&#9654; Google Play</a>
           </div>
         </div>
 
         <!-- Word KO -->
-        <div class="app-card orange">
-          <img src="assets/images/wordko-icon.png" alt="Word KO" class="app-icon">
-          <div class="app-status live"><span class="status-dot"></span> Live</div>
-          <h3 class="app-name">Word KO</h3>
+        <div class="app-card">
+          <div class="app-card-header">
+            <img src="assets/images/wordko-icon.png" alt="Word KO" class="app-icon-sm">
+            <div>
+              <h3 class="app-name">Word KO</h3>
+              <span class="badge badge-live">LIVE</span>
+            </div>
+          </div>
           <p class="app-tagline">Two head-to-head word games in one app. Crossword Chaos + Word Chaser. 500+ organic downloads, $0 spent on ads.</p>
-
-          <!-- Interactive Demo -->
-          <div class="wordko-demo">
-            <!-- View 1: Home Screen -->
-            <div class="wordko-home-view" id="wordkoHomeView" onclick="showWordkoSelect()">
-              <div class="wordko-floating-letters">
-                <span class="wordko-float-letter">W</span>
-                <span class="wordko-float-letter">O</span>
-                <span class="wordko-float-letter">R</span>
-                <span class="wordko-float-letter">D</span>
-              </div>
-              <div class="wordko-logo"><span class="wk-word">WORD</span><span class="wk-ko">KO</span></div>
-              <p class="wordko-tagline">Race. Solve. Score.</p>
-              <p class="wordko-subtitle">Two games. One winner.</p>
-              <p class="wordko-tap-hint">👆 Tap to play!</p>
-            </div>
-
-            <!-- View 2: Game Selection -->
-            <div class="wordko-select-view" id="wordkoSelectView">
-              <div class="wordko-select-title">Choose Your Battle</div>
-              <p class="wordko-select-subtitle">Two games. Infinite competition.</p>
-              <div class="wordko-game-cards">
-                <div class="wordko-game-card cc" onclick="showWordkoDemo('cc')">
-                  <div class="wordko-game-card-icon">🧩</div>
-                  <h4>Crossword Chaos</h4>
-                  <p>Race to fill the grid</p>
-                </div>
-                <div class="wordko-game-card wc" onclick="showWordkoDemo('wc')">
-                  <div class="wordko-game-card-icon">🔍</div>
-                  <h4>Word Chaser</h4>
-                  <p>Hunt hidden words</p>
-                </div>
-              </div>
-              <button class="wordko-back-select" onclick="resetWordko()">↺ Back</button>
-            </div>
-
-            <!-- View 3a: Crossword Chaos Demo -->
-            <div class="wordko-demo-view" id="wordkoCCDemo">
-              <div class="wordko-demo-header">
-                <div class="wordko-demo-title cc">Crossword Chaos</div>
-                <div class="wordko-demo-timer" id="ccTimer">2:00</div>
-              </div>
-              <div class="wordko-players">
-                <div class="wordko-player p1" id="ccP1"><div class="wordko-player-avatar">P1</div><div><div class="wordko-player-name">You</div><div class="wordko-player-score">Score: <span id="ccP1Score">0</span></div></div></div>
-                <div class="wordko-player p2" id="ccP2"><div class="wordko-player-avatar">P2</div><div><div class="wordko-player-name">CPU</div><div class="wordko-player-score">Score: <span id="ccP2Score">0</span></div></div></div>
-              </div>
-              <div class="wordko-crossword-grid" id="ccGrid"></div>
-              <div class="wordko-clues">
-                <div class="wordko-clue-col">
-                  <div class="wordko-clue-header cc">ACROSS</div>
-                  <div class="wordko-clue-item" id="clue-a1"><span>1.</span> Written language (5)</div>
-                  <div class="wordko-clue-item" id="clue-a4"><span>4.</span> Have fun (4)</div>
-                </div>
-                <div class="wordko-clue-col">
-                  <div class="wordko-clue-header wc">DOWN</div>
-                  <div class="wordko-clue-item" id="clue-d1"><span>1.</span> Succeed (3)</div>
-                  <div class="wordko-clue-item" id="clue-d2"><span>2.</span> Competition (4)</div>
-                  <div class="wordko-clue-item" id="clue-d3"><span>3.</span> Points (5)</div>
-                </div>
-              </div>
-              <p class="wordko-result" id="ccResult"><strong>You win!</strong> Great wordplay! 🎉</p>
-              <button class="wordko-back-btn" id="ccBackBtn" onclick="backToWordkoSelect()">↺ Try another game</button>
-            </div>
-
-            <!-- View 3b: Word Chaser Demo -->
-            <div class="wordko-demo-view" id="wordkoWCDemo">
-              <div class="wordko-demo-header">
-                <div class="wordko-demo-title wc">Word Chaser</div>
-                <div class="wordko-demo-timer" id="wcTimer">1:30</div>
-              </div>
-              <div class="wordko-theme">
-                <span class="wordko-theme-label">Theme:</span>
-                <span class="wordko-theme-name">Gaming & Victory 🎮</span>
-              </div>
-              <div class="wordko-players">
-                <div class="wordko-player p1" id="wcP1"><div class="wordko-player-avatar">P1</div><div><div class="wordko-player-name">You</div><div class="wordko-player-score">Score: <span id="wcP1Score">0</span></div></div></div>
-                <div class="wordko-player p2" id="wcP2"><div class="wordko-player-avatar">P2</div><div><div class="wordko-player-name">CPU</div><div class="wordko-player-score">Score: <span id="wcP2Score">0</span></div></div></div>
-              </div>
-              <div class="wordko-wordsearch-grid" id="wcGrid"></div>
-              <div class="wordko-word-list" id="wcWordList"></div>
-              <p class="wordko-result" id="wcResult"><strong>You win!</strong> Sharp eyes! 🎉</p>
-              <button class="wordko-back-btn" id="wcBackBtn" onclick="backToWordkoSelect()">↺ Try another game</button>
-            </div>
-          </div>
-
-          <div class="app-tags">
-            <span class="app-tag">Crossword Chaos</span>
-            <span class="app-tag">Word Chaser</span>
-            <span class="app-tag">Multiplayer</span>
-          </div>
-          <div class="store-links">
-            <a href="https://apps.apple.com/gb/app/crossword-chaos/id6752734096" class="store-link" target="_blank">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-              App Store
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.crosswordchaos.game" class="store-link" target="_blank">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-              Google Play
-            </a>
+          <div class="app-store-links">
+            <a href="https://apps.apple.com/gb/app/crossword-chaos/id6752734096" class="store-pill" target="_blank">&#63743; App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.crosswordchaos.game" class="store-pill" target="_blank">&#9654; Google Play</a>
           </div>
         </div>
 
         <!-- Mali -->
-        <div class="app-card" style="--card-accent: #4dff9f;">
-          <div class="app-status soon"><span class="status-dot"></span> Next week</div>
-          <h3 class="app-name">Mali</h3>
-          <p class="app-tagline">Strava for gardening. Design a digital twin of your real garden, get AI care from Sidney the Snail, track weather, celebrate harvests.</p>
-
-          <div class="app-gallery">
-            <div class="app-gallery-item"><video src="assets/images/snail.mp4" autoplay muted loop playsinline></video></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/1_welcome_iphone65.png" alt="Welcome" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/2_garden_iphone65.png" alt="Garden Designer" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/3_sidney_iphone65.png" alt="Meet Sidney" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/4_dashboard_iphone65.png" alt="Dashboard" loading="lazy"></div>
-            <div class="app-gallery-item"><img src="assets/images/mali/5_weather_iphone65.png" alt="Weather" loading="lazy"></div>
+        <div class="app-card">
+          <div class="app-card-header">
+            <div class="app-icon-sm app-icon-placeholder" style="background: linear-gradient(135deg, #2ed47a, #4dff9f);">🌱</div>
+            <div>
+              <h3 class="app-name">Mali</h3>
+              <span class="badge badge-soon">NEXT WEEK</span>
+            </div>
           </div>
-          <div class="gallery-hint">Swipe to explore &rarr;</div>
-
-          <div class="app-tags">
-            <span class="app-tag">Gardening</span>
-            <span class="app-tag">AI companion</span>
-            <span class="app-tag">iOS + Android</span>
+          <p class="app-tagline">Strava for gardening. Design a digital twin of your real garden, get AI care from Sidney the Snail, track weather, celebrate harvests.</p>
+          <div class="app-store-links">
+            <span class="store-pill coming">iOS + Android &mdash; coming soon</span>
           </div>
         </div>
-      </div>
 
-      <div class="pipeline-grid" style="margin-top: 16px;">
         <!-- Vibe Lingo -->
-        <div class="app-card purple">
-          <div class="app-status launching"><span class="status-dot"></span> Launching</div>
-          <h3 class="app-name">Vibe Lingo</h3>
-          <p class="app-tagline">Same AI-powered formula as Hinglish Vinglish, scaled to 7 languages. Persian, Spanish, German, Cantonese, Mandarin, Japanese, Punjabi. One platform, every vibe.</p>
-
-          <div class="app-tags">
-            <span class="app-tag">Language</span>
-            <span class="app-tag">AI-powered</span>
-            <span class="app-tag">7 languages</span>
+        <div class="app-card">
+          <div class="app-card-header">
+            <img src="assets/images/vibelingo-icon.png" alt="Vibe Lingo" class="app-icon-sm">
+            <div>
+              <h3 class="app-name">Vibe Lingo</h3>
+              <span class="badge badge-soon">LAUNCHING</span>
+            </div>
+          </div>
+          <p class="app-tagline">Same AI-powered formula as Hinglish Vinglish, scaled to 7 languages. Persian, Spanish, German, Cantonese, Mandarin, Japanese, Punjabi.</p>
+          <div class="app-store-links">
+            <span class="store-pill coming">7 languages &mdash; launching soon</span>
           </div>
         </div>
 
         <!-- Babe, Guess My Fart -->
-        <div class="app-card pink">
-          <img src="assets/images/bgmf-icon.png" alt="Babe, Guess My Fart" class="app-icon">
-          <div class="app-status live"><span class="status-dot"></span> Live</div>
-          <h3 class="app-name">Babe, Guess My Fart</h3>
-          <p class="app-tagline">Real-time fart analysis engine disguised as a couples game. Record it, send it, let your partner guess the vibe. AI-powered TTS matching gives you a compatibility score.</p>
-
-          <div class="bgmf-demo">
-            <div class="butt-view" id="buttView">
-              <div class="denim-butt" onclick="tapButt()">
-                <div class="denim-pocket left"></div>
-                <div class="denim-pocket right"></div>
-                <div class="fart-clouds">
-                  <span class="fart-puff">💨</span>
-                  <span class="fart-puff">💨</span>
-                  <span class="fart-puff">💨</span>
-                </div>
-              </div>
-              <p class="butt-tap-hint">👆 Tap the booty!</p>
-            </div>
-            <div class="chat-view" id="chatView">
-              <div class="chat-demo">
-                <div class="chat-header">
-                  <div class="chat-avatar">🍑</div>
-                  <div class="chat-info">
-                    <div class="chat-name">SweetCheeks</div>
-                    <div class="chat-status">your bae 💕</div>
-                  </div>
-                </div>
-                <div class="chat-messages" id="chatMessages">
-                  <div class="chat-msg sent" id="msg1">You sent a fart! 💨<div class="msg-tags"><span class="msg-tag">🌶️ spicy</span><span class="msg-tag">📢 loud</span></div></div>
-                  <div class="chat-msg system" id="msg2">💨 SweetCheeks received your fart!</div>
-                  <div class="chat-msg received" id="msg3">Omg babe 😂 let me think...</div>
-                  <div class="chat-msg received" id="msg4">Post-taco rumbler? 🌮<div class="msg-tags"><span class="msg-tag guess-tag">🤔 their guess</span></div></div>
-                  <div class="chat-msg result" id="msg5"><div class="result-circle">83%</div><div class="result-text"><div class="title">Fart Match!</div><div class="subtitle">Pretty impressive! 🎯</div></div></div>
-                  <div class="chat-msg system" id="msg6">🎧 Listened to the original!</div>
-                  <div class="chat-msg stickers" id="msg7"><span class="sticker" id="s1">😂</span><span class="sticker" id="s2">💨</span><span class="sticker" id="s3">🔥</span><span class="sticker" id="s4">🍑</span><span class="sticker" id="s5">😭</span></div>
-                  <div class="chat-msg received" id="msg8">LMAOOO I was so close!! 😂🔥</div>
-                  <div class="chat-msg sent" id="msg9">You know me too well 💕</div>
-                  <div class="chat-msg received" id="msg10">That's 83% synergy babe 😏💨</div>
-                </div>
-                <button class="replay-btn" id="replayBtn" onclick="resetToButt()">↺ Try again</button>
-              </div>
+        <div class="app-card">
+          <div class="app-card-header">
+            <img src="assets/images/bgmf-icon.png" alt="Babe, Guess My Fart" class="app-icon-sm">
+            <div>
+              <h3 class="app-name">Babe, Guess My Fart</h3>
+              <span class="badge badge-blocked">APPLE BLOCKED</span>
             </div>
           </div>
-
-          <div class="app-tags">
-            <span class="app-tag">Couples</span>
-            <span class="app-tag">Party Game</span>
-            <span class="app-tag">Hilarious</span>
-          </div>
-          <div class="store-links">
-            <a href="https://babeguessmyfart.com/" class="store-link" target="_blank">
-              🌐 babeguessmyfart.com
-            </a>
+          <p class="app-tagline">Real TTS analysis engine. Oura Ring for couples. Legitimate audio processing tech &mdash; Apple thinks it's "just another fart app."</p>
+          <div class="app-store-links">
+            <a href="https://babeguessmyfart.com/" class="store-pill" target="_blank">&#127760; babeguessmyfart.com</a>
           </div>
         </div>
       </div>
