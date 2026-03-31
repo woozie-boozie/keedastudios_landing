@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-30T23:54:02Z",
+  "updated": "2026-03-31T00:15:57Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2967,
-  "streak": 30,
+  "total_commits": 2969,
+  "streak": 31,
   "commits_by_day": [
-    {
-      "date": "2025-03-30",
-      "count": 1
-    },
     {
       "date": "2025-03-31",
       "count": 3
@@ -1255,13 +1251,17 @@
     },
     {
       "date": "2026-03-30",
-      "count": 54
+      "count": 55
+    },
+    {
+      "date": "2026-03-31",
+      "count": 1
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-03",
-      "count": 4
+      "count": 3
     },
     {
       "month": "2025-04",
@@ -1309,13 +1309,13 @@
     },
     {
       "month": "2026-03",
-      "count": 467
+      "count": 469
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 123
+      "count": 124
     },
     {
       "hour": 1,
@@ -1371,7 +1371,7 @@
     },
     {
       "hour": 14,
-      "count": 176
+      "count": 175
     },
     {
       "hour": 15,
@@ -1407,10 +1407,16 @@
     },
     {
       "hour": 23,
-      "count": 169
+      "count": 170
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-31T00:15:06Z",
+      "sha": "2c2c6cd",
+      "message": "refine agent descriptions: Bud pipeline, Mayor remove dupe, quotes"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-30T23:53:13Z",
@@ -1704,18 +1710,12 @@
       "date": "2026-03-29T22:15:36Z",
       "sha": "b724e41",
       "message": "fix: rename workflow to avoid special chars in name"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T22:11:11Z",
-      "sha": "1a6fe56",
-      "message": "rename workflow to force GitHub re-registration"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 155
+      "commits": 157
     },
     {
       "name": "bird-city-agi",
