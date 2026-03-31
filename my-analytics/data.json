@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-31T00:20:00Z",
+  "updated": "2026-03-31T00:21:20Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2975,
+  "total_commits": 2977,
   "streak": 31,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-31",
-      "count": 7
+      "count": 9
     }
   ],
   "commits_by_month": [
@@ -1309,13 +1309,13 @@
     },
     {
       "month": "2026-03",
-      "count": 475
+      "count": 477
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 130
+      "count": 132
     },
     {
       "hour": 1,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-31T00:20:44Z",
+      "sha": "ff3238f",
+      "message": "CV: update location to London / SF / Remote"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-31T00:19:16Z",
@@ -1704,18 +1710,12 @@
       "date": "2026-03-29T22:30:02Z",
       "sha": "fa3f86b",
       "message": "fix: replace setText with direct DOM manipulation for stat cards"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T22:25:22Z",
-      "sha": "e351a80",
-      "message": "replace screenshot carousels with native HTML/CSS app mockups"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 163
+      "commits": 165
     },
     {
       "name": "bird-city-agi",
