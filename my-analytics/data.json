@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-31T00:21:20Z",
+  "updated": "2026-03-31T00:25:16Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 2977,
+  "total_commits": 2979,
   "streak": 31,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-03-31",
-      "count": 9
+      "count": 11
     }
   ],
   "commits_by_month": [
@@ -1309,13 +1309,13 @@
     },
     {
       "month": "2026-03",
-      "count": 477
+      "count": 479
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 132
+      "count": 134
     },
     {
       "hour": 1,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-03-31T00:24:45Z",
+      "sha": "a54bea8",
+      "message": "CV: add mobile responsive styles, split education into BTech + Actuarial"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-31T00:20:44Z",
@@ -1704,18 +1710,12 @@
       "date": "2026-03-29T22:32:58Z",
       "sha": "7b08b85",
       "message": "add spacing below TTS button to separate from stats"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-29T22:30:02Z",
-      "sha": "fa3f86b",
-      "message": "fix: replace setText with direct DOM manipulation for stat cards"
     }
   ],
   "repo_details": [
     {
       "name": "keedastudios_landing",
-      "commits": 165
+      "commits": 167
     },
     {
       "name": "bird-city-agi",
