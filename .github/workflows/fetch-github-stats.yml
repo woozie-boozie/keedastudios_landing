@@ -210,5 +210,6 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "update analytics data [automated]"
+            git pull --rebase origin main
             git push
           fi
