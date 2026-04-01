@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-03-31T18:43:26Z",
+  "updated": "2026-04-01T01:17:15Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 3027,
-  "streak": 31,
+  "total_commits": 3030,
+  "streak": 32,
   "commits_by_day": [
-    {
-      "date": "2025-03-31",
-      "count": 3
-    },
     {
       "date": "2025-04-01",
       "count": 5
@@ -1255,14 +1251,14 @@
     },
     {
       "date": "2026-03-31",
-      "count": 59
+      "count": 61
+    },
+    {
+      "date": "2026-04-01",
+      "count": 1
     }
   ],
   "commits_by_month": [
-    {
-      "month": "2025-03",
-      "count": 3
-    },
     {
       "month": "2025-04",
       "count": 107
@@ -1309,13 +1305,17 @@
     },
     {
       "month": "2026-03",
-      "count": 527
+      "count": 529
+    },
+    {
+      "month": "2026-04",
+      "count": 1
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 142
+      "count": 143
     },
     {
       "hour": 1,
@@ -1351,7 +1351,7 @@
     },
     {
       "hour": 9,
-      "count": 79
+      "count": 78
     },
     {
       "hour": 10,
@@ -1367,7 +1367,7 @@
     },
     {
       "hour": 13,
-      "count": 154
+      "count": 153
     },
     {
       "hour": 14,
@@ -1387,15 +1387,15 @@
     },
     {
       "hour": 18,
-      "count": 198
+      "count": 199
     },
     {
       "hour": 19,
-      "count": 133
+      "count": 132
     },
     {
       "hour": 20,
-      "count": 123
+      "count": 124
     },
     {
       "hour": 21,
@@ -1411,6 +1411,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-01T00:17:40Z",
+      "sha": "806874d",
+      "message": "Add Pigeonhole Slots Casino — gambling den with progressive jackpot and bird-the"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-03-31T20:31:17Z",
+      "sha": "b14cb46",
+      "message": "Add Kingpin System — richest bird wears the crown and becomes a hunted target"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-03-31T18:25:45Z",
@@ -1698,28 +1710,16 @@
       "date": "2026-03-30T14:49:09Z",
       "sha": "59da9c2",
       "message": "add iOS + Android store links to CV for Thulaa, HV, WordKO"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T14:00:03Z",
-      "sha": "78612e3",
-      "message": "update CV app descriptions: reorder, expand Mali/Sidney, fix WordKO"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T13:40:46Z",
-      "sha": "cc80bc7",
-      "message": "replace em dashes with regular hyphens in CV"
     }
   ],
   "repo_details": [
     {
-      "name": "keedastudios_landing",
-      "commits": 211
+      "name": "bird-city-agi",
+      "commits": 35
     },
     {
-      "name": "bird-city-agi",
-      "commits": 33
+      "name": "keedastudios_landing",
+      "commits": 212
     },
     {
       "name": "budin",
