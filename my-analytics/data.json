@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-01T01:17:15Z",
+  "updated": "2026-04-01T07:06:28Z",
   "repos": {
     "total": 19,
     "original": 18,
     "forks": 1
   },
-  "total_commits": 3030,
+  "total_commits": 3032,
   "streak": 32,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-04-01",
-      "count": 1
+      "count": 3
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-04",
-      "count": 1
+      "count": 3
     }
   ],
   "commits_by_hour": [
@@ -1319,7 +1319,7 @@
     },
     {
       "hour": 1,
-      "count": 101
+      "count": 102
     },
     {
       "hour": 2,
@@ -1335,7 +1335,7 @@
     },
     {
       "hour": 5,
-      "count": 22
+      "count": 23
     },
     {
       "hour": 6,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-01T05:21:18Z",
+      "sha": "8f42491",
+      "message": "Add Bird Gangs — persistent criminal crews with treasury, territory, and war"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-01T00:17:40Z",
@@ -1704,22 +1710,16 @@
       "date": "2026-03-30T14:51:35Z",
       "sha": "334ca96",
       "message": "add Bird City AGI live demo link to CV"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T14:49:09Z",
-      "sha": "59da9c2",
-      "message": "add iOS + Android store links to CV for Thulaa, HV, WordKO"
     }
   ],
   "repo_details": [
     {
       "name": "bird-city-agi",
-      "commits": 35
+      "commits": 36
     },
     {
       "name": "keedastudios_landing",
-      "commits": 212
+      "commits": 213
     },
     {
       "name": "budin",
