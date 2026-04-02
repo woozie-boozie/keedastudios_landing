@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-02T01:11:15Z",
+  "updated": "2026-04-02T06:58:14Z",
   "repos": {
-    "total": 20,
-    "original": 19,
+    "total": 21,
+    "original": 20,
     "forks": 1
   },
-  "total_commits": 3051,
+  "total_commits": 3058,
   "streak": 33,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-04-02",
-      "count": 6
+      "count": 13
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-04",
-      "count": 19
+      "count": 26
     }
   ],
   "commits_by_hour": [
@@ -1319,7 +1319,7 @@
     },
     {
       "hour": 1,
-      "count": 104
+      "count": 110
     },
     {
       "hour": 2,
@@ -1335,7 +1335,7 @@
     },
     {
       "hour": 5,
-      "count": 23
+      "count": 24
     },
     {
       "hour": 6,
@@ -1411,6 +1411,42 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-02T05:25:07Z",
+      "sha": "fe876d5",
+      "message": "Add Weather Betting — forecast the chaos between weather events"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T01:47:34Z",
+      "sha": "a3999c2",
+      "message": "docs: add professional setup guide and usage instructions"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T01:41:48Z",
+      "sha": "6ee68c0",
+      "message": "feat: require Google sign-in with @primamente.com domain"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T01:38:59Z",
+      "sha": "ed32310",
+      "message": "chore: update Chrome extension to use production Vercel URL"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T01:34:10Z",
+      "sha": "942f748",
+      "message": "chore: trigger Vercel deployment"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T01:31:58Z",
+      "sha": "a35a44f",
+      "message": "chore: update .env.local.example with Google OAuth vars"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-04-02T01:10:13Z",
@@ -1674,56 +1710,24 @@
       "date": "2026-03-31T00:15:06Z",
       "sha": "2c2c6cd",
       "message": "refine agent descriptions: Bud pipeline, Mayor remove dupe, quotes"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T23:53:13Z",
-      "sha": "dd6be55",
-      "message": "add Sidney, Guru Ji, and Mayor of Bird City agents to CV and analytics"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T23:39:36Z",
-      "sha": "114d448",
-      "message": "CV: move highlights into Experience section, Why ElevenLabs now at top"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T23:35:56Z",
-      "sha": "b78bb9c",
-      "message": "CV: remove summary paragraph, move Why ElevenLabs to top after highlights"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-30T20:16:21Z",
-      "sha": "a2b85bf",
-      "message": "Add Golden Egg Scramble — city-wide capture-the-egg chaos event"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T18:52:19Z",
-      "sha": "1b17af2",
-      "message": "CV: make Why ElevenLabs section more human and relatable"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T18:49:25Z",
-      "sha": "81329c7",
-      "message": "CV: add human motivation to Why ElevenLabs section"
     }
   ],
   "repo_details": [
     {
-      "name": "keedastudios_landing",
-      "commits": 219
+      "name": "bird-city-agi",
+      "commits": 40
+    },
+    {
+      "name": "ashby-interview-assistant",
+      "commits": 0
     },
     {
       "name": "ashby-granola",
-      "commits": 4
+      "commits": 9
     },
     {
-      "name": "bird-city-agi",
-      "commits": 39
+      "name": "keedastudios_landing",
+      "commits": 220
     },
     {
       "name": "budin",
