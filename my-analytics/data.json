@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-02T12:42:23Z",
+  "updated": "2026-04-02T18:39:01Z",
   "repos": {
-    "total": 21,
-    "original": 20,
+    "total": 22,
+    "original": 21,
     "forks": 1
   },
-  "total_commits": 3061,
+  "total_commits": 3101,
   "streak": 33,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-04-02",
-      "count": 16
+      "count": 56
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-04",
-      "count": 29
+      "count": 69
     }
   ],
   "commits_by_hour": [
@@ -1359,31 +1359,31 @@
     },
     {
       "hour": 11,
-      "count": 100
+      "count": 103
     },
     {
       "hour": 12,
-      "count": 143
+      "count": 152
     },
     {
       "hour": 13,
-      "count": 153
+      "count": 154
     },
     {
       "hour": 14,
-      "count": 180
+      "count": 183
     },
     {
       "hour": 15,
-      "count": 190
+      "count": 196
     },
     {
       "hour": 16,
-      "count": 174
+      "count": 187
     },
     {
       "hour": 17,
-      "count": 186
+      "count": 191
     },
     {
       "hour": 18,
@@ -1411,6 +1411,240 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "budin",
+      "date": "2026-04-02T17:47:44Z",
+      "sha": "f1fd65e",
+      "message": "fix: In Season filter now only shows plants with confirmed in-season status"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T17:30:38Z",
+      "sha": "00004cf",
+      "message": "feat: use real SowWindowChecker with Firestore data for plant picker sow status"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T17:13:14Z",
+      "sha": "44b7cec",
+      "message": "fix: resolve zone from location when not passed to plant picker, fix null zone"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T17:07:52Z",
+      "sha": "4af42b5",
+      "message": "debug: add sow window debug prints for zone/latitude/frost date diagnosis"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T17:05:48Z",
+      "sha": "bfba31b",
+      "message": "feat: allow akhil1189@gmail.com to bypass domain restriction"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T16:55:08Z",
+      "sha": "d79cd49",
+      "message": "fix: use latitude-adjusted frost dates in plant picker sow window calculation"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T16:48:48Z",
+      "sha": "0cdb3d1",
+      "message": "feat: replace sign-out button with user menu popover"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T16:44:58Z",
+      "sha": "924986f",
+      "message": "feat: add Seeds/Transplants toggle to adjust sow window calculation"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T16:35:15Z",
+      "sha": "42d5a1a",
+      "message": "feat: add In Season Only filter toggle to plant picker, default on"
+    },
+    {
+      "repo": "hireflow",
+      "date": "2026-04-02T16:33:49Z",
+      "sha": "9ec0b77",
+      "message": "feat: server-side candidate cache for instant first load"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T16:31:26Z",
+      "sha": "95af6ae",
+      "message": "fix: increase info icon tap target size for accessibility"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T16:29:04Z",
+      "sha": "cc688ff",
+      "message": "fix: zoom out plant harvest images slightly with padding and contain fit"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T16:27:30Z",
+      "sha": "27a9f1d",
+      "message": "fix: use AssetCacheService for plant harvest images instead of Image.asset"
+    },
+    {
+      "repo": "hireflow",
+      "date": "2026-04-02T16:26:38Z",
+      "sha": "012ce8e",
+      "message": "feat: smart TTL-based candidate cache — no redundant refetching"
+    },
+    {
+      "repo": "hireflow",
+      "date": "2026-04-02T16:18:19Z",
+      "sha": "2264294",
+      "message": "feat: sessionStorage cache + paginated candidate grid"
+    },
+    {
+      "repo": "hireflow",
+      "date": "2026-04-02T16:06:02Z",
+      "sha": "fa86648",
+      "message": "feat: progressive candidate loading — Netflix-style streaming"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T16:04:56Z",
+      "sha": "f275315",
+      "message": "feat: show harvest images on plant cards with emoji badge and sow status overlay"
+    },
+    {
+      "repo": "hireflow",
+      "date": "2026-04-02T16:01:19Z",
+      "sha": "97b414f",
+      "message": "fix: force session refresh after org creation via signIn redirect"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T15:54:37Z",
+      "sha": "1d8dccb",
+      "message": "fix: taller plant cards with more info, fix overflow issues"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T15:42:08Z",
+      "sha": "44543cd",
+      "message": "feat: unified 2-column plant grid with bigger cards for all tabs"
+    },
+    {
+      "repo": "hireflow",
+      "date": "2026-04-02T15:41:26Z",
+      "sha": "1cbcdbe",
+      "message": "feat: second UX polish pass — all remaining components"
+    },
+    {
+      "repo": "hireflow",
+      "date": "2026-04-02T15:37:11Z",
+      "sha": "17ee692",
+      "message": "feat: comprehensive UX polish across all components"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-02T15:30:02Z",
+      "sha": "96de53b",
+      "message": "Add Bioluminescent Park Pond — Sacred Night Ecosystem with Owl Enforcer"
+    },
+    {
+      "repo": "hireflow",
+      "date": "2026-04-02T15:05:27Z",
+      "sha": "d714cc7",
+      "message": "feat: polished onboarding UX with step wizard and Ashby key validation"
+    },
+    {
+      "repo": "hireflow",
+      "date": "2026-04-02T14:02:01Z",
+      "sha": "7ee6294",
+      "message": "feat: transform to HireFlow — multi-tenant interview workflow SaaS"
+    },
+    {
+      "repo": "hireflow",
+      "date": "2026-04-02T14:02:01Z",
+      "sha": "c00d0be",
+      "message": "fix: handle null session in settings page during prerender"
+    },
+    {
+      "repo": "hireflow",
+      "date": "2026-04-02T14:02:00Z",
+      "sha": "fb2f29e",
+      "message": "Initial commit: fork from Interview Cockpit"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T13:24:41Z",
+      "sha": "ddecf29",
+      "message": "fix: align plant picker sow window with planning system's SowWindowChecker"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T12:56:49Z",
+      "sha": "c586c55",
+      "message": "feat: add sow window status, height tags, and clearer labels to plant picker"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T12:37:47Z",
+      "sha": "05e943f",
+      "message": "fix: make plant picker a floating modal (80% height) instead of full-screen"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T12:33:50Z",
+      "sha": "e8c4f4c",
+      "message": "feat: convert plant picker from bottom sheet to full-screen modal overlay"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T12:26:50Z",
+      "sha": "6096c34",
+      "message": "fix: improve empty state text contrast with bold dark font on white canvas"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T12:23:49Z",
+      "sha": "0a6d5f2",
+      "message": "fix: switch bed wizard canvas to white background for better contrast"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T12:19:45Z",
+      "sha": "58080ad",
+      "message": "fix: replace beige bed canvas with dark soil color matching management view"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T12:14:16Z",
+      "sha": "852e995",
+      "message": "fix: clean up bed wizard empty state, move +Add to floating FAB, fix contrast"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T12:09:50Z",
+      "sha": "87aa92d",
+      "message": "feat: improve bed wizard empty state with auto-open picker, quick suggestions, a"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T11:35:49Z",
+      "sha": "82d7582",
+      "message": "fix: add padding between Ask Sidney button and bottom tab bar"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T11:33:54Z",
+      "sha": "03b2d06",
+      "message": "fix: make care summary banner read-only, remove confusing tap-to-sow"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-02T11:30:25Z",
+      "sha": "5bda69d",
+      "message": "feat: redesign bed canvas care indicators with clustered badges, summary banner,"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-02T10:21:24Z",
@@ -1476,262 +1710,32 @@
       "date": "2026-04-02T00:14:19Z",
       "sha": "e9106f9",
       "message": "feat: Chrome extension to auto-open candidate on Google Meet join"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T00:01:44Z",
-      "sha": "158b04f",
-      "message": "feat: Interview Cockpit — Ashby + Granola + Google Calendar integration"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-01T22:00:12Z",
-      "sha": "362d464",
-      "message": "feat: initial commit"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-01T20:18:08Z",
-      "sha": "9d2eaa7",
-      "message": "Add Race Boost Gates — 5 lightning arches transform racing into chaos"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-01T18:43:55Z",
-      "sha": "cc6cdba",
-      "message": "feat: latitude-aware frost dates for accurate non-US sowing windows"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-01T16:50:33Z",
-      "sha": "bab5e3e",
-      "message": "fix: remove confetti animation from bed wizard success screen"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-01T16:43:53Z",
-      "sha": "728b32d",
-      "message": "fix: redesign bed size UI, remove orphaned compass labels, drop sun zone haptics"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-01T10:16:04Z",
-      "sha": "5262cdf",
-      "message": "Add Bird Tattoo Parlor — permanent emoji identity ink for every bird"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-01T05:21:18Z",
-      "sha": "8f42491",
-      "message": "Add Bird Gangs — persistent criminal crews with treasury, territory, and war"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-01T00:17:40Z",
-      "sha": "806874d",
-      "message": "Add Pigeonhole Slots Casino — gambling den with progressive jackpot and bird-the"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-31T20:31:17Z",
-      "sha": "b14cb46",
-      "message": "Add Kingpin System — richest bird wears the crown and becomes a hunted target"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T18:25:45Z",
-      "sha": "dd32733",
-      "message": "change we/our to I/my — one-person studio voice"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T18:22:57Z",
-      "sha": "8b00274",
-      "message": "bird city: update status badge from BUILDING to LIVE"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T18:13:33Z",
-      "sha": "0615841",
-      "message": "add Bird City to apps section"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T18:01:29Z",
-      "sha": "bb3408b",
-      "message": "simplify apps section: clean card grid with icons, descriptions, and store links"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T17:56:02Z",
-      "sha": "1f67025",
-      "message": "revert mali carousel and mobile carousel changes to index.html"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T17:51:49Z",
-      "sha": "0b7da24",
-      "message": "mobile: convert apps section to horizontal swipe carousel with nav dots"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T17:14:30Z",
-      "sha": "01c04b1",
-      "message": "mali: show snail preview by default, tap to start auto-playing screenshot carous"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T17:07:16Z",
-      "sha": "982b458",
-      "message": "show snail image by default, tap to activate Mali screenshot carousel"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T17:02:46Z",
-      "sha": "b2de450",
-      "message": "add Mali app showcase with interactive phone carousel to games section"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T15:44:14Z",
-      "sha": "35c5484",
-      "message": "fix fetch-stats push conflict: add pull --rebase before push"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T15:38:22Z",
-      "sha": "071324a",
-      "message": "switch TTS narration voice from Rachel to Eric to match conversational agent"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-31T15:26:50Z",
-      "sha": "c3e8a72",
-      "message": "Add Hit Contract System — player-placed bounties via The Don"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T14:59:48Z",
-      "sha": "e75a8d9",
-      "message": "update TTS narration text to match current CV - 7 agents, 3 days TTM"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T14:45:33Z",
-      "sha": "95764a8",
-      "message": "CV: minor copy fixes - WordKO, Growth PM, cleanup"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T14:39:33Z",
-      "sha": "d9081af",
-      "message": "CV: move stats under title, remove dupe line, update to Nov 2024"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T13:56:27Z",
-      "sha": "5307810",
-      "message": "CV: final polish - tagline, live portfolio link, reorder apps, move Bud to PBN"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-31T10:34:47Z",
-      "sha": "9aa42b9",
-      "message": "Add Daily Challenges + Streak System — the #1 retention mechanic"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-03-31T09:42:55Z",
-      "sha": "57d439d",
-      "message": "fix: remove duplicate journal entry insertion, rely on Firestore listener"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-31T05:30:11Z",
-      "sha": "55fdee0",
-      "message": "Fix #1 fun-killer: territory-based predator system for hawk and mega cat"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T01:54:09Z",
-      "sha": "2f0d6c4",
-      "message": "add ElevenLabs inbound lead qualification agent prototype + CV updates"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T00:53:12Z",
-      "sha": "09feca9",
-      "message": "CV: update Plant By Number - add link, simplify description"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-31T00:43:01Z",
-      "sha": "ae7c0fc",
-      "message": "Add Pigeon Mafia Don — crime boss questgiver with Mafia Rep progression"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T00:40:40Z",
-      "sha": "6c5bdb0",
-      "message": "CV: expand tech stack tags - add Stripe, OpenAI, Qdrant, Cloud Run, RevenueCat, "
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T00:29:35Z",
-      "sha": "ad6a83f",
-      "message": "CV: add Plant By Number Technical Advisor role"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T00:24:45Z",
-      "sha": "a54bea8",
-      "message": "CV: add mobile responsive styles, split education into BTech + Actuarial"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T00:20:44Z",
-      "sha": "ff3238f",
-      "message": "CV: update location to London / SF / Remote"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T00:19:16Z",
-      "sha": "cd24e6c",
-      "message": "CV: simplify Capco role titles"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T00:17:38Z",
-      "sha": "139e31a",
-      "message": "CV: reorder Capco bullets - title first, city second"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-31T00:16:08Z",
-      "sha": "4d2b411",
-      "message": "CV: rename to product engineer agent, drop redundant 'autonomous'"
     }
   ],
   "repo_details": [
     {
       "name": "budin",
-      "commits": 1129
+      "commits": 1154
+    },
+    {
+      "name": "ashby-granola",
+      "commits": 11
+    },
+    {
+      "name": "hireflow",
+      "commits": 11
     },
     {
       "name": "bird-city-agi",
-      "commits": 41
+      "commits": 42
     },
     {
       "name": "keedastudios_landing",
-      "commits": 222
+      "commits": 223
     },
     {
       "name": "ashby-interview-assistant",
       "commits": 0
-    },
-    {
-      "name": "ashby-granola",
-      "commits": 9
     },
     {
       "name": "pabho",
@@ -1808,11 +1812,11 @@
       "count": 6
     },
     {
-      "lang": "Python",
-      "count": 1
+      "lang": "TypeScript",
+      "count": 2
     },
     {
-      "lang": "TypeScript",
+      "lang": "Python",
       "count": 1
     }
   ]
