@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-01T18:42:46Z",
+  "updated": "2026-04-02T01:07:49Z",
   "repos": {
-    "total": 19,
-    "original": 18,
+    "total": 20,
+    "original": 19,
     "forks": 1
   },
-  "total_commits": 3036,
-  "streak": 32,
+  "total_commits": 3049,
+  "streak": 33,
   "commits_by_day": [
-    {
-      "date": "2025-04-01",
-      "count": 5
-    },
     {
       "date": "2025-04-02",
       "count": 6
@@ -1235,7 +1231,7 @@
     },
     {
       "date": "2026-03-27",
-      "count": 15
+      "count": 17
     },
     {
       "date": "2026-03-28",
@@ -1251,17 +1247,21 @@
     },
     {
       "date": "2026-03-31",
-      "count": 61
+      "count": 62
     },
     {
       "date": "2026-04-01",
-      "count": 7
+      "count": 13
+    },
+    {
+      "date": "2026-04-02",
+      "count": 4
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 107
+      "count": 102
     },
     {
       "month": "2025-05",
@@ -1305,17 +1305,17 @@
     },
     {
       "month": "2026-03",
-      "count": 529
+      "count": 532
     },
     {
       "month": "2026-04",
-      "count": 7
+      "count": 17
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 143
+      "count": 147
     },
     {
       "hour": 1,
@@ -1347,7 +1347,7 @@
     },
     {
       "hour": 8,
-      "count": 53
+      "count": 51
     },
     {
       "hour": 9,
@@ -1379,15 +1379,15 @@
     },
     {
       "hour": 16,
-      "count": 171
+      "count": 174
     },
     {
       "hour": 17,
-      "count": 185
+      "count": 186
     },
     {
       "hour": 18,
-      "count": 199
+      "count": 201
     },
     {
       "hour": 19,
@@ -1395,11 +1395,11 @@
     },
     {
       "hour": 20,
-      "count": 124
+      "count": 125
     },
     {
       "hour": 21,
-      "count": 122
+      "count": 121
     },
     {
       "hour": 22,
@@ -1411,6 +1411,60 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T00:38:51Z",
+      "sha": "77d306b",
+      "message": "perf: instant candidate load via direct API call when ?candidateId= provided"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-02T00:16:12Z",
+      "sha": "9cc9b8e",
+      "message": "Add City Hall + Dethronement Pool — collective Kingpin assassination fund"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T00:14:19Z",
+      "sha": "e9106f9",
+      "message": "feat: Chrome extension to auto-open candidate on Google Meet join"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T00:01:44Z",
+      "sha": "158b04f",
+      "message": "feat: Interview Cockpit — Ashby + Granola + Google Calendar integration"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-01T22:00:12Z",
+      "sha": "362d464",
+      "message": "feat: initial commit"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-01T20:18:08Z",
+      "sha": "9d2eaa7",
+      "message": "Add Race Boost Gates — 5 lightning arches transform racing into chaos"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-01T18:43:55Z",
+      "sha": "cc6cdba",
+      "message": "feat: latitude-aware frost dates for accurate non-US sowing windows"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-01T16:50:33Z",
+      "sha": "bab5e3e",
+      "message": "fix: remove confetti animation from bed wizard success screen"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-01T16:43:53Z",
+      "sha": "728b32d",
+      "message": "fix: redesign bed size UI, remove orphaned compass labels, drop sun zone haptics"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-01T10:16:04Z",
@@ -1538,6 +1592,12 @@
       "message": "Add Daily Challenges + Streak System — the #1 retention mechanic"
     },
     {
+      "repo": "budin",
+      "date": "2026-03-31T09:42:55Z",
+      "sha": "57d439d",
+      "message": "fix: remove duplicate journal entry insertion, rely on Firestore listener"
+    },
+    {
       "repo": "bird-city-agi",
       "date": "2026-03-31T05:30:11Z",
       "sha": "55fdee0",
@@ -1650,80 +1710,24 @@
       "date": "2026-03-30T18:45:00Z",
       "sha": "639819a",
       "message": "CV: add breathing room - more spacing between sections, apps, and agents"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T18:42:51Z",
-      "sha": "1a24742",
-      "message": "add project links on analytics page, update Capco to 11 years with city-based bu"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T18:28:02Z",
-      "sha": "7feaf19",
-      "message": "fix standup to include all repos, not just keedastudios_landing"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T18:24:24Z",
-      "sha": "c6f2c24",
-      "message": "CV: restructure apps into grid layout, add Capco experience, update agent descri"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T18:04:06Z",
-      "sha": "3323bc2",
-      "message": "CV: combine ElevenLabs + GitHub stats into single live portfolio agent bullet"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T18:01:01Z",
-      "sha": "b81e66c",
-      "message": "add Bud + Keeda Discord agents to CV and analytics, remove influencer pipeline"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-03-30T15:24:25Z",
-      "sha": "8705df8",
-      "message": "Add Territory Control System — flocks finally have something to fight over"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T15:03:36Z",
-      "sha": "0bf08b2",
-      "message": "CV: simplify header to Full-Stack Product Engineer"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T15:02:37Z",
-      "sha": "07acce9",
-      "message": "CV: update title to Full-Stack Full-Funnel Product Engineer"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T14:57:51Z",
-      "sha": "ce51f93",
-      "message": "CV: add monetization details for Thulaa, HV revenue, WordKO status"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-03-30T14:53:26Z",
-      "sha": "cb2d8c0",
-      "message": "add live-since dates to CV, add BGMF to CV, update BGMF link"
     }
   ],
   "repo_details": [
     {
-      "name": "budin",
-      "commits": 1123
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 216
+      "name": "ashby-granola",
+      "commits": 4
     },
     {
       "name": "bird-city-agi",
-      "commits": 37
+      "commits": 39
+    },
+    {
+      "name": "budin",
+      "commits": 1129
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 217
     },
     {
       "name": "pabho",
@@ -1801,6 +1805,10 @@
     },
     {
       "lang": "Python",
+      "count": 1
+    },
+    {
+      "lang": "TypeScript",
       "count": 1
     }
   ]
