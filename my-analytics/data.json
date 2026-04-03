@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-02T18:39:01Z",
+  "updated": "2026-04-03T01:09:54Z",
   "repos": {
     "total": 22,
     "original": 21,
     "forks": 1
   },
-  "total_commits": 3101,
-  "streak": 33,
+  "total_commits": 3113,
+  "streak": 34,
   "commits_by_day": [
-    {
-      "date": "2025-04-02",
-      "count": 6
-    },
     {
       "date": "2025-04-03",
       "count": 1
@@ -1255,13 +1251,17 @@
     },
     {
       "date": "2026-04-02",
-      "count": 56
+      "count": 67
+    },
+    {
+      "date": "2026-04-03",
+      "count": 1
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 102
+      "count": 96
     },
     {
       "month": "2025-05",
@@ -1309,13 +1309,13 @@
     },
     {
       "month": "2026-04",
-      "count": 69
+      "count": 81
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 147
+      "count": 148
     },
     {
       "hour": 1,
@@ -1363,7 +1363,7 @@
     },
     {
       "hour": 12,
-      "count": 152
+      "count": 150
     },
     {
       "hour": 13,
@@ -1375,7 +1375,7 @@
     },
     {
       "hour": 15,
-      "count": 196
+      "count": 195
     },
     {
       "hour": 16,
@@ -1395,11 +1395,11 @@
     },
     {
       "hour": 20,
-      "count": 125
+      "count": 130
     },
     {
       "hour": 21,
-      "count": 121
+      "count": 124
     },
     {
       "hour": 22,
@@ -1411,6 +1411,72 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-03T00:28:25Z",
+      "sha": "40f99a1",
+      "message": "Add Prestige System — Ascend 5 times, earn ⚜️ badges + permanent power"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T22:05:34Z",
+      "sha": "d768a93",
+      "message": "fix: deep-link to candidate profile when joining Google Meet"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T21:41:28Z",
+      "sha": "ead4e44",
+      "message": "feat: swap layout — CV left, feedback form right"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T21:35:11Z",
+      "sha": "52aaa4d",
+      "message": "fix: fixed-height notes, calendar matching, remove preview/header name"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T21:18:55Z",
+      "sha": "dc6861c",
+      "message": "fix: hide PDF sidebar/thumbnail panel in CV viewer"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T21:04:34Z",
+      "sha": "741505f",
+      "message": "perf: cache active candidates for 15 minutes"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T20:59:36Z",
+      "sha": "cb74a54",
+      "message": "fix: fetch active candidates correctly and faster"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T20:54:50Z",
+      "sha": "c3c66fa",
+      "message": "chore: rename Interview Cockpit to Interview Agent"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T20:51:41Z",
+      "sha": "1b381bd",
+      "message": "feat: simplify candidate card and inline feedback form"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-02T20:47:15Z",
+      "sha": "3aa057a",
+      "message": "feat: filter candidates to active applications only"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-02T20:14:41Z",
+      "sha": "0b98291",
+      "message": "Add Heatwave Weather — scorching sun, thirst drain, and water puddles"
+    },
     {
       "repo": "budin",
       "date": "2026-04-02T17:47:44Z",
@@ -1644,94 +1710,28 @@
       "date": "2026-04-02T11:30:25Z",
       "sha": "5bda69d",
       "message": "feat: redesign bed canvas care indicators with clustered badges, summary banner,"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-02T10:21:24Z",
-      "sha": "37a0edd",
-      "message": "Add Gang Nest Building — permanent home bases for criminal crews"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-02T05:25:07Z",
-      "sha": "fe876d5",
-      "message": "Add Weather Betting — forecast the chaos between weather events"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T01:47:34Z",
-      "sha": "a3999c2",
-      "message": "docs: add professional setup guide and usage instructions"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T01:41:48Z",
-      "sha": "6ee68c0",
-      "message": "feat: require Google sign-in with @primamente.com domain"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T01:38:59Z",
-      "sha": "ed32310",
-      "message": "chore: update Chrome extension to use production Vercel URL"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T01:34:10Z",
-      "sha": "942f748",
-      "message": "chore: trigger Vercel deployment"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T01:31:58Z",
-      "sha": "a35a44f",
-      "message": "chore: update .env.local.example with Google OAuth vars"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-04-02T01:10:13Z",
-      "sha": "183c5e4",
-      "message": "add recruiter agent to my-analytics agents section"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T00:38:51Z",
-      "sha": "77d306b",
-      "message": "perf: instant candidate load via direct API call when ?candidateId= provided"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-02T00:16:12Z",
-      "sha": "9cc9b8e",
-      "message": "Add City Hall + Dethronement Pool — collective Kingpin assassination fund"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T00:14:19Z",
-      "sha": "e9106f9",
-      "message": "feat: Chrome extension to auto-open candidate on Google Meet join"
     }
   ],
   "repo_details": [
+    {
+      "name": "bird-city-agi",
+      "commits": 44
+    },
+    {
+      "name": "ashby-granola",
+      "commits": 20
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 224
+    },
     {
       "name": "budin",
       "commits": 1154
     },
     {
-      "name": "ashby-granola",
-      "commits": 11
-    },
-    {
       "name": "hireflow",
       "commits": 11
-    },
-    {
-      "name": "bird-city-agi",
-      "commits": 42
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 223
     },
     {
       "name": "ashby-interview-assistant",
