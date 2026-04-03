@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-03T06:55:14Z",
+  "updated": "2026-04-03T12:35:10Z",
   "repos": {
     "total": 22,
     "original": 21,
     "forks": 1
   },
-  "total_commits": 3116,
+  "total_commits": 3121,
   "streak": 34,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-04-03",
-      "count": 4
+      "count": 9
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-04",
-      "count": 84
+      "count": 89
     }
   ],
   "commits_by_hour": [
@@ -1339,7 +1339,7 @@
     },
     {
       "hour": 6,
-      "count": 26
+      "count": 27
     },
     {
       "hour": 7,
@@ -1351,15 +1351,15 @@
     },
     {
       "hour": 9,
-      "count": 80
+      "count": 81
     },
     {
       "hour": 10,
-      "count": 104
+      "count": 105
     },
     {
       "hour": 11,
-      "count": 103
+      "count": 105
     },
     {
       "hour": 12,
@@ -1411,6 +1411,24 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-03T11:40:21Z",
+      "sha": "9ac7766",
+      "message": "feat: responsive layout + open candidate in popup window"
+    },
+    {
+      "repo": "ashby-granola",
+      "date": "2026-04-03T11:22:58Z",
+      "sha": "17100b5",
+      "message": "fix: refresh expired Google tokens + sync URL with selected candidate"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-03T10:26:20Z",
+      "sha": "053443f",
+      "message": "Add Mystery Crate Airdrop — city-wide scramble for 10 powerful random items"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-03T05:25:12Z",
@@ -1692,42 +1710,24 @@
       "date": "2026-04-02T12:19:45Z",
       "sha": "58080ad",
       "message": "fix: replace beige bed canvas with dark soil color matching management view"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T12:14:16Z",
-      "sha": "852e995",
-      "message": "fix: clean up bed wizard empty state, move +Add to floating FAB, fix contrast"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T12:09:50Z",
-      "sha": "87aa92d",
-      "message": "feat: improve bed wizard empty state with auto-open picker, quick suggestions, a"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T11:35:49Z",
-      "sha": "82d7582",
-      "message": "fix: add padding between Ask Sidney button and bottom tab bar"
     }
   ],
   "repo_details": [
     {
-      "name": "bird-city-agi",
-      "commits": 46
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 225
+      "name": "budin",
+      "commits": 1154
     },
     {
       "name": "ashby-granola",
-      "commits": 20
+      "commits": 22
     },
     {
-      "name": "budin",
-      "commits": 1154
+      "name": "bird-city-agi",
+      "commits": 47
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 227
     },
     {
       "name": "hireflow",
