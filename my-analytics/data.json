@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-04T12:27:47Z",
+  "updated": "2026-04-04T18:24:29Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3139,
+  "total_commits": 3141,
   "streak": 35,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-04-04",
-      "count": 6
+      "count": 8
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-04",
-      "count": 107
+      "count": 109
     }
   ],
   "commits_by_hour": [
@@ -1363,7 +1363,7 @@
     },
     {
       "hour": 12,
-      "count": 151
+      "count": 152
     },
     {
       "hour": 13,
@@ -1379,7 +1379,7 @@
     },
     {
       "hour": 16,
-      "count": 187
+      "count": 188
     },
     {
       "hour": 17,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-04T16:42:11Z",
+      "sha": "b9ca497",
+      "message": "Add Tornado — city-wide destructive weather event that flings birds"
+    },
     {
       "repo": "budin",
       "date": "2026-04-04T01:57:07Z",
@@ -1704,30 +1710,28 @@
       "date": "2026-04-02T15:42:08Z",
       "sha": "44543cd",
       "message": "feat: unified 2-column plant grid with bigger cards for all tabs"
-    },
-    {
-      "repo": "hireflow",
-      "date": "2026-04-02T15:41:26Z",
-      "sha": "1cbcdbe",
-      "message": "feat: second UX polish pass — all remaining components"
     }
   ],
   "repo_details": [
     {
-      "name": "keedastudios_landing",
-      "commits": 232
+      "name": "hinglish-vinglish",
+      "commits": 223
     },
     {
       "name": "budin",
       "commits": 1155
     },
     {
-      "name": "prima-mente-finance",
-      "commits": 9
+      "name": "bird-city-agi",
+      "commits": 51
     },
     {
-      "name": "bird-city-agi",
-      "commits": 50
+      "name": "keedastudios_landing",
+      "commits": 233
+    },
+    {
+      "name": "prima-mente-finance",
+      "commits": 9
     },
     {
       "name": "ashby-granola",
@@ -1744,10 +1748,6 @@
     {
       "name": "pabho",
       "commits": 393
-    },
-    {
-      "name": "hinglish-vinglish",
-      "commits": 223
     },
     {
       "name": "bird-city",
