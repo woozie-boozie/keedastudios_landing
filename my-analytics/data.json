@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-03T18:30:51Z",
+  "updated": "2026-04-04T01:04:14Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3125,
-  "streak": 34,
+  "total_commits": 3134,
+  "streak": 35,
   "commits_by_day": [
-    {
-      "date": "2025-04-03",
-      "count": 1
-    },
     {
       "date": "2025-04-04",
       "count": 6
@@ -1255,13 +1251,17 @@
     },
     {
       "date": "2026-04-03",
-      "count": 13
+      "count": 21
+    },
+    {
+      "date": "2026-04-04",
+      "count": 1
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 96
+      "count": 95
     },
     {
       "month": "2025-05",
@@ -1309,13 +1309,13 @@
     },
     {
       "month": "2026-04",
-      "count": 93
+      "count": 102
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 148
+      "count": 149
     },
     {
       "hour": 1,
@@ -1355,7 +1355,7 @@
     },
     {
       "hour": 10,
-      "count": 105
+      "count": 104
     },
     {
       "hour": 11,
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 18,
-      "count": 202
+      "count": 203
     },
     {
       "hour": 19,
@@ -1395,22 +1395,70 @@
     },
     {
       "hour": 20,
-      "count": 130
+      "count": 134
     },
     {
       "hour": 21,
-      "count": 124
+      "count": 125
     },
     {
       "hour": 22,
-      "count": 144
+      "count": 145
     },
     {
       "hour": 23,
-      "count": 170
+      "count": 171
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-04T00:40:56Z",
+      "sha": "7f762ff",
+      "message": "Add Formation Flying — V-Formation speed + Wedge Attack power for flocks"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-03T23:53:18Z",
+      "sha": "8e8e5ea",
+      "message": "Add Slack Finance Bot + update scanner to 12h schedule"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-03T22:42:26Z",
+      "sha": "47bbfee",
+      "message": "Deploy live scanner to Google Cloud Functions"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-03T21:18:39Z",
+      "sha": "a11d0a0",
+      "message": "Add estimated due dates for invoices missing them"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-03T20:55:59Z",
+      "sha": "04bc5d5",
+      "message": "Add live email scanner + fix append bug"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-03T20:31:24Z",
+      "sha": "561709d",
+      "message": "Add LLM invoice extraction via Claude Haiku"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-03T20:26:48Z",
+      "sha": "3531dd3",
+      "message": "Add Bird City Gazette — Morning Edition newspaper publishes every 20-minute game"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-03T20:18:24Z",
+      "sha": "71c9588",
+      "message": "Add Analytics tab + improve Command Center KPI cards"
+    },
     {
       "repo": "prima-mente-finance",
       "date": "2026-04-03T18:20:47Z",
@@ -1662,72 +1710,24 @@
       "date": "2026-04-02T15:30:02Z",
       "sha": "96de53b",
       "message": "Add Bioluminescent Park Pond — Sacred Night Ecosystem with Owl Enforcer"
-    },
-    {
-      "repo": "hireflow",
-      "date": "2026-04-02T15:05:27Z",
-      "sha": "d714cc7",
-      "message": "feat: polished onboarding UX with step wizard and Ashby key validation"
-    },
-    {
-      "repo": "hireflow",
-      "date": "2026-04-02T14:02:01Z",
-      "sha": "7ee6294",
-      "message": "feat: transform to HireFlow — multi-tenant interview workflow SaaS"
-    },
-    {
-      "repo": "hireflow",
-      "date": "2026-04-02T14:02:01Z",
-      "sha": "c00d0be",
-      "message": "fix: handle null session in settings page during prerender"
-    },
-    {
-      "repo": "hireflow",
-      "date": "2026-04-02T14:02:00Z",
-      "sha": "fb2f29e",
-      "message": "Initial commit: fork from Interview Cockpit"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T13:24:41Z",
-      "sha": "ddecf29",
-      "message": "fix: align plant picker sow window with planning system's SowWindowChecker"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T12:56:49Z",
-      "sha": "c586c55",
-      "message": "feat: add sow window status, height tags, and clearer labels to plant picker"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T12:37:47Z",
-      "sha": "05e943f",
-      "message": "fix: make plant picker a floating modal (80% height) instead of full-screen"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T12:33:50Z",
-      "sha": "e8c4f4c",
-      "message": "feat: convert plant picker from bottom sheet to full-screen modal overlay"
     }
   ],
   "repo_details": [
     {
-      "name": "prima-mente-finance",
-      "commits": 2
+      "name": "bird-city-agi",
+      "commits": 50
     },
     {
-      "name": "bird-city-agi",
-      "commits": 48
+      "name": "prima-mente-finance",
+      "commits": 8
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 229
     },
     {
       "name": "budin",
       "commits": 1154
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 228
     },
     {
       "name": "ashby-granola",
