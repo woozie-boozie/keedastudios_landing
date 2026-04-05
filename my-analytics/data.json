@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-04T18:24:29Z",
+  "updated": "2026-04-05T01:13:04Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3141,
-  "streak": 35,
+  "total_commits": 3151,
+  "streak": 36,
   "commits_by_day": [
-    {
-      "date": "2025-04-04",
-      "count": 6
-    },
     {
       "date": "2025-04-05",
       "count": 3
@@ -1255,13 +1251,17 @@
     },
     {
       "date": "2026-04-04",
-      "count": 8
+      "count": 14
+    },
+    {
+      "date": "2026-04-05",
+      "count": 4
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 95
+      "count": 89
     },
     {
       "month": "2025-05",
@@ -1309,13 +1309,13 @@
     },
     {
       "month": "2026-04",
-      "count": 109
+      "count": 119
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 149
+      "count": 153
     },
     {
       "hour": 1,
@@ -1351,7 +1351,7 @@
     },
     {
       "hour": 9,
-      "count": 81
+      "count": 80
     },
     {
       "hour": 10,
@@ -1359,7 +1359,7 @@
     },
     {
       "hour": 11,
-      "count": 105
+      "count": 104
     },
     {
       "hour": 12,
@@ -1379,7 +1379,7 @@
     },
     {
       "hour": 16,
-      "count": 188
+      "count": 187
     },
     {
       "hour": 17,
@@ -1387,19 +1387,19 @@
     },
     {
       "hour": 18,
-      "count": 203
+      "count": 205
     },
     {
       "hour": 19,
-      "count": 132
-    },
-    {
-      "hour": 20,
       "count": 134
     },
     {
+      "hour": 20,
+      "count": 135
+    },
+    {
       "hour": 21,
-      "count": 125
+      "count": 123
     },
     {
       "hour": 22,
@@ -1411,6 +1411,60 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-05T00:39:38Z",
+      "sha": "58c194e",
+      "message": "Add Bird City Idol — city-wide singing contest and talent show"
+    },
+    {
+      "repo": "hinglish-vinglish",
+      "date": "2026-04-05T00:13:20Z",
+      "sha": "282da03",
+      "message": "fix: quiz text must include the actual question, not just 'here's a quiz'"
+    },
+    {
+      "repo": "hinglish-vinglish",
+      "date": "2026-04-05T00:08:22Z",
+      "sha": "9d89923",
+      "message": "fix: recentWords includes latest lesson words, not just pronunciation"
+    },
+    {
+      "repo": "hinglish-vinglish",
+      "date": "2026-04-05T00:02:33Z",
+      "sha": "ce112c7",
+      "message": "feat: add BETA badge next to Guru Ji title"
+    },
+    {
+      "repo": "hinglish-vinglish",
+      "date": "2026-04-04T23:53:51Z",
+      "sha": "6e0cdc1",
+      "message": "Ak/chat bot (#3)"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-04T20:09:37Z",
+      "sha": "8311faa",
+      "message": "Add Crow Cartel Raids — NPC gang assaults player territories for forced cooperat"
+    },
+    {
+      "repo": "fun-language-world",
+      "date": "2026-04-04T19:09:21Z",
+      "sha": "4646e39",
+      "message": "Add explicit Firebase options to fix initialization failure"
+    },
+    {
+      "repo": "fun-language-world",
+      "date": "2026-04-04T19:01:40Z",
+      "sha": "b7fa1f4",
+      "message": "Fix sign-in crash by guarding against uninitialized Firebase"
+    },
+    {
+      "repo": "fun-language-world",
+      "date": "2026-04-04T18:24:18Z",
+      "sha": "ba63ec5",
+      "message": "Lazy-init FirebaseAuth and bump build number to 6"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-04T16:42:11Z",
@@ -1656,78 +1710,28 @@
       "date": "2026-04-02T16:31:26Z",
       "sha": "95af6ae",
       "message": "fix: increase info icon tap target size for accessibility"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T16:29:04Z",
-      "sha": "cc688ff",
-      "message": "fix: zoom out plant harvest images slightly with padding and contain fit"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T16:27:30Z",
-      "sha": "27a9f1d",
-      "message": "fix: use AssetCacheService for plant harvest images instead of Image.asset"
-    },
-    {
-      "repo": "hireflow",
-      "date": "2026-04-02T16:26:38Z",
-      "sha": "012ce8e",
-      "message": "feat: smart TTL-based candidate cache — no redundant refetching"
-    },
-    {
-      "repo": "hireflow",
-      "date": "2026-04-02T16:18:19Z",
-      "sha": "2264294",
-      "message": "feat: sessionStorage cache + paginated candidate grid"
-    },
-    {
-      "repo": "hireflow",
-      "date": "2026-04-02T16:06:02Z",
-      "sha": "fa86648",
-      "message": "feat: progressive candidate loading — Netflix-style streaming"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T16:04:56Z",
-      "sha": "f275315",
-      "message": "feat: show harvest images on plant cards with emoji badge and sow status overlay"
-    },
-    {
-      "repo": "hireflow",
-      "date": "2026-04-02T16:01:19Z",
-      "sha": "97b414f",
-      "message": "fix: force session refresh after org creation via signIn redirect"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T15:54:37Z",
-      "sha": "1d8dccb",
-      "message": "fix: taller plant cards with more info, fix overflow issues"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T15:42:08Z",
-      "sha": "44543cd",
-      "message": "feat: unified 2-column plant grid with bigger cards for all tabs"
     }
   ],
   "repo_details": [
     {
+      "name": "bird-city-agi",
+      "commits": 53
+    },
+    {
       "name": "hinglish-vinglish",
-      "commits": 223
+      "commits": 227
     },
     {
       "name": "budin",
       "commits": 1155
     },
     {
-      "name": "bird-city-agi",
-      "commits": 51
+      "name": "fun-language-world",
+      "commits": 20
     },
     {
       "name": "keedastudios_landing",
-      "commits": 233
+      "commits": 234
     },
     {
       "name": "prima-mente-finance",
@@ -1752,10 +1756,6 @@
     {
       "name": "bird-city",
       "commits": 46
-    },
-    {
-      "name": "fun-language-world",
-      "commits": 17
     },
     {
       "name": "english-seekho",
