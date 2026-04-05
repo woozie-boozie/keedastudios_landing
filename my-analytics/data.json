@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-05T12:29:06Z",
+  "updated": "2026-04-05T18:26:13Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3157,
+  "total_commits": 3163,
   "streak": 36,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-04-05",
-      "count": 10
+      "count": 16
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-04",
-      "count": 125
+      "count": 131
     }
   ],
   "commits_by_hour": [
@@ -1363,7 +1363,7 @@
     },
     {
       "hour": 12,
-      "count": 152
+      "count": 153
     },
     {
       "hour": 13,
@@ -1375,7 +1375,7 @@
     },
     {
       "hour": 15,
-      "count": 196
+      "count": 197
     },
     {
       "hour": 16,
@@ -1383,11 +1383,11 @@
     },
     {
       "hour": 17,
-      "count": 192
+      "count": 195
     },
     {
       "hour": 18,
-      "count": 205
+      "count": 206
     },
     {
       "hour": 19,
@@ -1411,6 +1411,36 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-05T18:10:15Z",
+      "sha": "30d2e3e",
+      "message": "Fix garbled due dates + eliminate \"No Due Date\" section"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-05T17:58:11Z",
+      "sha": "3056daa",
+      "message": "Separate statements of account into their own section"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-05T17:51:02Z",
+      "sha": "1b9baaa",
+      "message": "Fix Command Center: empty rows, Revolut match, hyperlinks, append bug"
+    },
+    {
+      "repo": "hinglish-vinglish",
+      "date": "2026-04-05T17:18:45Z",
+      "sha": "62c9d02",
+      "message": "feat: Guru Ji personality overhaul, client-side pronunciation retry, UI fixes"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-05T15:29:41Z",
+      "sha": "51ffc93",
+      "message": "Add The Cursed Coin — legendary item that turns Bird City into a city-wide hunt"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-05T10:47:57Z",
@@ -1680,50 +1710,24 @@
       "date": "2026-04-02T17:13:14Z",
       "sha": "44b7cec",
       "message": "fix: resolve zone from location when not passed to plant picker, fix null zone"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T17:07:52Z",
-      "sha": "4af42b5",
-      "message": "debug: add sow window debug prints for zone/latitude/frost date diagnosis"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T17:05:48Z",
-      "sha": "bfba31b",
-      "message": "feat: allow akhil1189@gmail.com to bypass domain restriction"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T16:55:08Z",
-      "sha": "d79cd49",
-      "message": "fix: use latitude-adjusted frost dates in plant picker sow window calculation"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T16:48:48Z",
-      "sha": "0cdb3d1",
-      "message": "feat: replace sign-out button with user menu popover"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T16:44:58Z",
-      "sha": "924986f",
-      "message": "feat: add Seeds/Transplants toggle to adjust sow window calculation"
     }
   ],
   "repo_details": [
     {
-      "name": "bird-city-agi",
-      "commits": 56
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 237
+      "name": "prima-mente-finance",
+      "commits": 12
     },
     {
       "name": "hinglish-vinglish",
-      "commits": 227
+      "commits": 228
+    },
+    {
+      "name": "bird-city-agi",
+      "commits": 57
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 238
     },
     {
       "name": "budin",
@@ -1732,10 +1736,6 @@
     {
       "name": "fun-language-world",
       "commits": 20
-    },
-    {
-      "name": "prima-mente-finance",
-      "commits": 9
     },
     {
       "name": "ashby-granola",
