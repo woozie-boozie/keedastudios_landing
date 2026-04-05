@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-05T06:52:39Z",
+  "updated": "2026-04-05T12:29:06Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3154,
+  "total_commits": 3157,
   "streak": 36,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-04-05",
-      "count": 7
+      "count": 10
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-04",
-      "count": 122
+      "count": 125
     }
   ],
   "commits_by_hour": [
@@ -1339,7 +1339,7 @@
     },
     {
       "hour": 6,
-      "count": 28
+      "count": 29
     },
     {
       "hour": 7,
@@ -1347,7 +1347,7 @@
     },
     {
       "hour": 8,
-      "count": 52
+      "count": 53
     },
     {
       "hour": 9,
@@ -1355,7 +1355,7 @@
     },
     {
       "hour": 10,
-      "count": 104
+      "count": 105
     },
     {
       "hour": 11,
@@ -1411,6 +1411,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-05T10:47:57Z",
+      "sha": "4de97e2",
+      "message": "Add Bird Skill Tree — Permanent Character Builds via Feather Points"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-05T05:20:17Z",
@@ -1704,22 +1710,16 @@
       "date": "2026-04-02T16:44:58Z",
       "sha": "924986f",
       "message": "feat: add Seeds/Transplants toggle to adjust sow window calculation"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T16:35:15Z",
-      "sha": "42d5a1a",
-      "message": "feat: add In Season Only filter toggle to plant picker, default on"
     }
   ],
   "repo_details": [
     {
       "name": "bird-city-agi",
-      "commits": 55
+      "commits": 56
     },
     {
       "name": "keedastudios_landing",
-      "commits": 235
+      "commits": 237
     },
     {
       "name": "hinglish-vinglish",
