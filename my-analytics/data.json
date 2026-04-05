@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-05T01:13:04Z",
+  "updated": "2026-04-05T06:52:39Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3151,
+  "total_commits": 3154,
   "streak": 36,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-04-05",
-      "count": 4
+      "count": 7
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-04",
-      "count": 119
+      "count": 122
     }
   ],
   "commits_by_hour": [
@@ -1319,7 +1319,7 @@
     },
     {
       "hour": 1,
-      "count": 114
+      "count": 115
     },
     {
       "hour": 2,
@@ -1335,7 +1335,7 @@
     },
     {
       "hour": 5,
-      "count": 26
+      "count": 28
     },
     {
       "hour": 6,
@@ -1411,6 +1411,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-05T05:20:17Z",
+      "sha": "4447956",
+      "message": "Update CLAUDE.md — Session 45 dev log and ideas queue"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-05T05:19:18Z",
+      "sha": "7e22def",
+      "message": "Add Pigeon Pied Piper — enchanting NPC who magnetically pulls birds and blocks p"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-05T00:39:38Z",
@@ -1698,24 +1710,16 @@
       "date": "2026-04-02T16:35:15Z",
       "sha": "42d5a1a",
       "message": "feat: add In Season Only filter toggle to plant picker, default on"
-    },
-    {
-      "repo": "hireflow",
-      "date": "2026-04-02T16:33:49Z",
-      "sha": "9ec0b77",
-      "message": "feat: server-side candidate cache for instant first load"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T16:31:26Z",
-      "sha": "95af6ae",
-      "message": "fix: increase info icon tap target size for accessibility"
     }
   ],
   "repo_details": [
     {
       "name": "bird-city-agi",
-      "commits": 53
+      "commits": 55
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 235
     },
     {
       "name": "hinglish-vinglish",
@@ -1728,10 +1732,6 @@
     {
       "name": "fun-language-world",
       "commits": 20
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 234
     },
     {
       "name": "prima-mente-finance",
