@@ -1,22 +1,23 @@
 {
-  "date": "2026-04-04",
+  "date": "2026-04-05",
   "yesterday": [
-    "Shipped Prima Mente Finance Dashboard with Command Center KPIs, Analytics tab with real charts, and live email scanner with Claude Haiku LLM invoice extraction",
-    "Deployed prima-mente-finance scanner to Google Cloud Functions with 12h schedule and Slack Finance Bot integration",
-    "Added Bird City AGI endgame content: Hall of Legends prestige system with Eagle Feather drops and Bird Flu Outbreak contagious mechanics",
-    "Fixed Ashby Granola responsive layout and Google token refresh issues"
+    "Fixed Firebase initialization crash in fun-language-world causing sign-in failures, lazy-loaded auth and pushed build 6",
+    "Added major Bird City AGI features: Crow Cartel Raids for territory warfare, Tornado weather events, and V-Formation flying mechanics",
+    "Shipped analytics improvements to prima-mente-finance with real charts and proper £M/£K formatting",
+    "Merged chatbot PR #3 for hinglish-vinglish and fast followers PR #98 for budin"
   ],
   "today": [
-    "Implementing fast followers feature in budin repo (PR #98)",
-    "Enhancing prima-mente-finance Analytics with improved chart formatting and £M/£K display",
-    "Adding Formation Flying mechanics to bird-city-agi with V-Formation speed boosts and Wedge Attack power"
+    "Launched Bird City Idol singing contest feature and Pigeon Pied Piper magnetic NPC in bird-city-agi",
+    "Fixed critical hinglish-vinglish quiz bug where questions weren't displaying actual text",
+    "Added BETA badge to Guru Ji title and fixed recentWords to include latest lesson vocabulary",
+    "Updated CLAUDE.md with Session 45 dev log and roadmap priorities"
   ],
   "blockers": [
-    "BGMF project blocked by Apple approval process"
+    "BGMF still blocked by Apple - need resolution strategy",
+    "Mali launch scheduled next week needs final testing"
   ],
   "metrics": [
-    "35-day commit streak maintained with 3137 total commits across 23 repos",
-    "Thulaa card game at 150 DAU, Hinglish Vinglish at 300 users",
-    "Most active repos: budin (14), ashby-granola (13), prima-mente-finance (9), bird-city-agi (8)"
+    "36-day commit streak maintained with 6 commits today across 2 active repos",
+    "Thulaa stable at 150 DAU, Hinglish Vinglish growing to 300 users total"
   ]
 }
