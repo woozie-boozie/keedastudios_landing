@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-05T18:26:13Z",
+  "updated": "2026-04-06T01:13:39Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3163,
-  "streak": 36,
+  "total_commits": 3174,
+  "streak": 37,
   "commits_by_day": [
-    {
-      "date": "2025-04-05",
-      "count": 3
-    },
     {
       "date": "2025-04-06",
       "count": 2
@@ -1255,13 +1251,17 @@
     },
     {
       "date": "2026-04-05",
-      "count": 16
+      "count": 26
+    },
+    {
+      "date": "2026-04-06",
+      "count": 1
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 89
+      "count": 86
     },
     {
       "month": "2025-05",
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-04",
-      "count": 131
+      "count": 142
     }
   ],
   "commits_by_hour": [
@@ -1355,7 +1355,7 @@
     },
     {
       "hour": 10,
-      "count": 105
+      "count": 104
     },
     {
       "hour": 11,
@@ -1383,34 +1383,94 @@
     },
     {
       "hour": 17,
-      "count": 195
+      "count": 194
     },
     {
       "hour": 18,
-      "count": 206
+      "count": 208
     },
     {
       "hour": 19,
-      "count": 134
-    },
-    {
-      "hour": 20,
       "count": 135
     },
     {
+      "hour": 20,
+      "count": 137
+    },
+    {
       "hour": 21,
-      "count": 123
+      "count": 125
     },
     {
       "hour": 22,
-      "count": 145
+      "count": 146
     },
     {
       "hour": 23,
-      "count": 171
+      "count": 173
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-06T00:29:43Z",
+      "sha": "2c69f98",
+      "message": "Add Bounty Hunter Bird — persistent manhunter NPC at Wanted Level 4+"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-05T23:18:15Z",
+      "sha": "e8c7c97",
+      "message": "Re-run Claude extraction + fix header detection in all scripts"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-05T23:07:01Z",
+      "sha": "3afd6d3",
+      "message": "Fix header detection across all scripts + monthly category breakdown"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-05T22:21:18Z",
+      "sha": "6c85801",
+      "message": "Fix analytics: split GBP/USD in category breakdown"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-05T21:42:38Z",
+      "sha": "365ef66",
+      "message": "Add Hannah's urgent analytics: category breakdown, weekly forecast, budget estim"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-05T21:35:14Z",
+      "sha": "721fd53",
+      "message": "Add Requested By + Line Items columns, grace period fix, Edit links, smart bot"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-05T20:30:21Z",
+      "sha": "51ba6bc",
+      "message": "Add Akhil to Slack bot whitelist"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-05T20:20:54Z",
+      "sha": "d55530b",
+      "message": "Add Crime Wave Event — 2 minutes of pure lawlessness every 40-60 minutes"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-05T19:28:32Z",
+      "sha": "fe57597",
+      "message": "Add refresh button + Slack refresh command"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-05T18:55:19Z",
+      "sha": "e399e1c",
+      "message": "Add two-digit year date format + garbled date parser + live CC attempt"
+    },
     {
       "repo": "prima-mente-finance",
       "date": "2026-04-05T18:10:15Z",
@@ -1650,84 +1710,24 @@
       "date": "2026-04-02T21:35:11Z",
       "sha": "52aaa4d",
       "message": "fix: fixed-height notes, calendar matching, remove preview/header name"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T21:18:55Z",
-      "sha": "dc6861c",
-      "message": "fix: hide PDF sidebar/thumbnail panel in CV viewer"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T21:04:34Z",
-      "sha": "741505f",
-      "message": "perf: cache active candidates for 15 minutes"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T20:59:36Z",
-      "sha": "cb74a54",
-      "message": "fix: fetch active candidates correctly and faster"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T20:54:50Z",
-      "sha": "c3c66fa",
-      "message": "chore: rename Interview Cockpit to Interview Agent"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T20:51:41Z",
-      "sha": "1b381bd",
-      "message": "feat: simplify candidate card and inline feedback form"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-02T20:47:15Z",
-      "sha": "3aa057a",
-      "message": "feat: filter candidates to active applications only"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-02T20:14:41Z",
-      "sha": "0b98291",
-      "message": "Add Heatwave Weather — scorching sun, thirst drain, and water puddles"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T17:47:44Z",
-      "sha": "f1fd65e",
-      "message": "fix: In Season filter now only shows plants with confirmed in-season status"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T17:30:38Z",
-      "sha": "00004cf",
-      "message": "feat: use real SowWindowChecker with Firestore data for plant picker sow status"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-02T17:13:14Z",
-      "sha": "44b7cec",
-      "message": "fix: resolve zone from location when not passed to plant picker, fix null zone"
     }
   ],
   "repo_details": [
     {
+      "name": "bird-city-agi",
+      "commits": 59
+    },
+    {
       "name": "prima-mente-finance",
-      "commits": 12
+      "commits": 20
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 239
     },
     {
       "name": "hinglish-vinglish",
       "commits": 228
-    },
-    {
-      "name": "bird-city-agi",
-      "commits": 57
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 238
     },
     {
       "name": "budin",
