@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-06T07:15:20Z",
+  "updated": "2026-04-06T12:41:39Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3179,
+  "total_commits": 3185,
   "streak": 37,
   "commits_by_day": [
     {
@@ -1255,7 +1255,7 @@
     },
     {
       "date": "2026-04-06",
-      "count": 6
+      "count": 12
     }
   ],
   "commits_by_month": [
@@ -1309,7 +1309,7 @@
     },
     {
       "month": "2026-04",
-      "count": 147
+      "count": 153
     }
   ],
   "commits_by_hour": [
@@ -1343,7 +1343,7 @@
     },
     {
       "hour": 7,
-      "count": 24
+      "count": 25
     },
     {
       "hour": 8,
@@ -1351,19 +1351,19 @@
     },
     {
       "hour": 9,
-      "count": 80
+      "count": 81
     },
     {
       "hour": 10,
-      "count": 104
+      "count": 105
     },
     {
       "hour": 11,
-      "count": 104
+      "count": 106
     },
     {
       "hour": 12,
-      "count": 153
+      "count": 154
     },
     {
       "hour": 13,
@@ -1411,6 +1411,30 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "budin",
+      "date": "2026-04-06T12:10:24Z",
+      "sha": "d3a4e25",
+      "message": "fix: use SubscriptionProvider in SidneyApiService, add real-time prompts listene"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-06T11:40:14Z",
+      "sha": "216dc46",
+      "message": "Clean analytics rebuild: 7 focused tables, no charts"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-06T11:28:58Z",
+      "sha": "af4dd79",
+      "message": "fix: block client writes to subscription field, remove _syncToFirestore"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-06T10:08:47Z",
+      "sha": "b6431d9",
+      "message": "Add Witness Protection Program — vanish from the grid for 3 minutes"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-06T05:13:46Z",
@@ -1686,48 +1710,24 @@
       "date": "2026-04-03T11:40:21Z",
       "sha": "9ac7766",
       "message": "feat: responsive layout + open candidate in popup window"
-    },
-    {
-      "repo": "ashby-granola",
-      "date": "2026-04-03T11:22:58Z",
-      "sha": "17100b5",
-      "message": "fix: refresh expired Google tokens + sync URL with selected candidate"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-03T10:26:20Z",
-      "sha": "053443f",
-      "message": "Add Mystery Crate Airdrop — city-wide scramble for 10 powerful random items"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-03T05:25:12Z",
-      "sha": "180521e",
-      "message": "Update CLAUDE.md with Session 37 dev log — Hall of Legends"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-03T05:23:34Z",
-      "sha": "e19f679",
-      "message": "Add Hall of Legends — prestige endgame landmark with Eagle Feather drop and LEGE"
     }
   ],
   "repo_details": [
     {
-      "name": "bird-city-agi",
-      "commits": 61
-    },
-    {
       "name": "budin",
-      "commits": 1157
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 240
+      "commits": 1159
     },
     {
       "name": "prima-mente-finance",
-      "commits": 20
+      "commits": 21
+    },
+    {
+      "name": "bird-city-agi",
+      "commits": 62
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 242
     },
     {
       "name": "hinglish-vinglish",
