@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-06T18:39:39Z",
+  "updated": "2026-04-07T01:10:51Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3192,
-  "streak": 37,
+  "total_commits": 3196,
+  "streak": 38,
   "commits_by_day": [
-    {
-      "date": "2025-04-06",
-      "count": 2
-    },
     {
       "date": "2025-04-08",
       "count": 4
@@ -1255,13 +1251,17 @@
     },
     {
       "date": "2026-04-06",
-      "count": 19
+      "count": 22
+    },
+    {
+      "date": "2026-04-07",
+      "count": 1
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 86
+      "count": 84
     },
     {
       "month": "2025-05",
@@ -1309,13 +1309,13 @@
     },
     {
       "month": "2026-04",
-      "count": 160
+      "count": 164
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 153
+      "count": 154
     },
     {
       "hour": 1,
@@ -1371,7 +1371,7 @@
     },
     {
       "hour": 14,
-      "count": 183
+      "count": 182
     },
     {
       "hour": 15,
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 18,
-      "count": 208
+      "count": 209
     },
     {
       "hour": 19,
@@ -1395,11 +1395,11 @@
     },
     {
       "hour": 20,
-      "count": 137
+      "count": 139
     },
     {
       "hour": 21,
-      "count": 125
+      "count": 124
     },
     {
       "hour": 22,
@@ -1411,6 +1411,24 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-07T00:46:15Z",
+      "sha": "45cd315",
+      "message": "Add Skill Tree Mastery + Skill Respec — completing the endgame arc"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-06T20:39:43Z",
+      "sha": "ae9c649",
+      "message": "Update CLAUDE.md — Session 53 dev log and ideas queue"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-06T20:38:50Z",
+      "sha": "8ad84d2",
+      "message": "Add Bird Royale: Champion Badge + Spectator Crowd Cheers + Gang Territory Bonus"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-06T16:45:34Z",
@@ -1692,38 +1710,20 @@
       "date": "2026-04-03T22:42:26Z",
       "sha": "47bbfee",
       "message": "Deploy live scanner to Google Cloud Functions"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-03T21:18:39Z",
-      "sha": "a11d0a0",
-      "message": "Add estimated due dates for invoices missing them"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-03T20:55:59Z",
-      "sha": "04bc5d5",
-      "message": "Add live email scanner + fix append bug"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-03T20:31:24Z",
-      "sha": "561709d",
-      "message": "Add LLM invoice extraction via Claude Haiku"
     }
   ],
   "repo_details": [
     {
       "name": "bird-city-agi",
-      "commits": 63
+      "commits": 66
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 244
     },
     {
       "name": "prima-mente-finance",
       "commits": 26
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 243
     },
     {
       "name": "budin",
