@@ -1,13 +1,13 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-07T18:43:36Z",
+  "updated": "2026-04-08T01:12:11Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3203,
-  "streak": 38,
+  "total_commits": 3207,
+  "streak": 39,
   "commits_by_day": [
     {
       "date": "2025-04-08",
@@ -1255,7 +1255,11 @@
     },
     {
       "date": "2026-04-07",
-      "count": 8
+      "count": 10
+    },
+    {
+      "date": "2026-04-08",
+      "count": 2
     }
   ],
   "commits_by_month": [
@@ -1309,13 +1313,13 @@
     },
     {
       "month": "2026-04",
-      "count": 171
+      "count": 175
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 154
+      "count": 156
     },
     {
       "hour": 1,
@@ -1387,7 +1391,7 @@
     },
     {
       "hour": 18,
-      "count": 209
+      "count": 210
     },
     {
       "hour": 19,
@@ -1395,7 +1399,7 @@
     },
     {
       "hour": 20,
-      "count": 139
+      "count": 140
     },
     {
       "hour": 21,
@@ -1411,6 +1415,24 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-08T00:50:27Z",
+      "sha": "83824ee",
+      "message": "Update CLAUDE.md — Session 59 dev log and ideas queue"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-08T00:49:45Z",
+      "sha": "a73ad35",
+      "message": "Add Duel Betting + Rematch System — Street fights now have a crowd"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-07T20:20:10Z",
+      "sha": "ded79f8",
+      "message": "Add Street Duels — spontaneous 1v1 poop fights anywhere on the map"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-07T15:39:57Z",
@@ -1692,42 +1714,24 @@
       "date": "2026-04-04T18:24:18Z",
       "sha": "ba63ec5",
       "message": "Lazy-init FirebaseAuth and bump build number to 6"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-04T16:42:11Z",
-      "sha": "b9ca497",
-      "message": "Add Tornado — city-wide destructive weather event that flings birds"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-04T01:57:07Z",
-      "sha": "bfa1350",
-      "message": "Ak/fast followers (#98)"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-04T01:39:52Z",
-      "sha": "9f13346",
-      "message": "Improve Analytics tab: real charts + £M/£K formatting + layout fix"
     }
   ],
   "repo_details": [
     {
-      "name": "budin",
-      "commits": 1159
-    },
-    {
       "name": "bird-city-agi",
-      "commits": 69
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 248
+      "commits": 72
     },
     {
       "name": "hinglish-vinglish",
       "commits": 228
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 249
+    },
+    {
+      "name": "budin",
+      "commits": 1159
     },
     {
       "name": "prima-mente-finance",
