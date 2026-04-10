@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-10T07:13:09Z",
+  "updated": "2026-04-10T12:40:34Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3251,
+  "total_commits": 3255,
   "streak": 41,
   "commits_by_day": [
     {
@@ -1259,7 +1259,7 @@
     },
     {
       "date": "2026-04-10",
-      "count": 9
+      "count": 13
     }
   ],
   "commits_by_month": [
@@ -1313,7 +1313,7 @@
     },
     {
       "month": "2026-04",
-      "count": 219
+      "count": 223
     }
   ],
   "commits_by_hour": [
@@ -1347,7 +1347,7 @@
     },
     {
       "hour": 7,
-      "count": 29
+      "count": 30
     },
     {
       "hour": 8,
@@ -1355,11 +1355,11 @@
     },
     {
       "hour": 9,
-      "count": 84
+      "count": 85
     },
     {
       "hour": 10,
-      "count": 109
+      "count": 111
     },
     {
       "hour": 11,
@@ -1415,6 +1415,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-10T10:28:33Z",
+      "sha": "0204155",
+      "message": "Update CLAUDE.md with Session 71 history and blizzard cross-system ideas"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-10T10:27:34Z",
+      "sha": "e56e8e1",
+      "message": "Session 71: The Blizzard — 8th Weather Type with Snowball Poop + Hot Cocoa"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-10T05:35:28Z",
@@ -1702,32 +1714,20 @@
       "date": "2026-04-06T13:06:04Z",
       "sha": "b23a590",
       "message": "Process full email archive: 1153 emails → 373 invoices via Claude + PDFs"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-06T12:10:24Z",
-      "sha": "d3a4e25",
-      "message": "fix: use SubscriptionProvider in SidneyApiService, add real-time prompts listene"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-06T11:40:14Z",
-      "sha": "216dc46",
-      "message": "Clean analytics rebuild: 7 focused tables, no charts"
     }
   ],
   "repo_details": [
     {
+      "name": "budin",
+      "commits": 1179
+    },
+    {
       "name": "bird-city-agi",
-      "commits": 85
+      "commits": 87
     },
     {
       "name": "keedastudios_landing",
-      "commits": 260
-    },
-    {
-      "name": "budin",
-      "commits": 1179
+      "commits": 262
     },
     {
       "name": "hinglish-vinglish",
