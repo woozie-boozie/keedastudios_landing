@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-09T18:44:26Z",
+  "updated": "2026-04-10T01:12:35Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3227,
-  "streak": 40,
+  "total_commits": 3249,
+  "streak": 41,
   "commits_by_day": [
-    {
-      "date": "2025-04-09",
-      "count": 1
-    },
     {
       "date": "2025-04-11",
       "count": 1
@@ -1255,17 +1251,21 @@
     },
     {
       "date": "2026-04-08",
-      "count": 14
+      "count": 18
     },
     {
       "date": "2026-04-09",
-      "count": 8
+      "count": 19
+    },
+    {
+      "date": "2026-04-10",
+      "count": 7
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 80
+      "count": 79
     },
     {
       "month": "2025-05",
@@ -1313,17 +1313,17 @@
     },
     {
       "month": "2026-04",
-      "count": 195
+      "count": 217
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 157
+      "count": 164
     },
     {
       "hour": 1,
-      "count": 121
+      "count": 122
     },
     {
       "hour": 2,
@@ -1351,7 +1351,7 @@
     },
     {
       "hour": 8,
-      "count": 52
+      "count": 51
     },
     {
       "hour": 9,
@@ -1383,7 +1383,7 @@
     },
     {
       "hour": 16,
-      "count": 190
+      "count": 191
     },
     {
       "hour": 17,
@@ -1391,30 +1391,126 @@
     },
     {
       "hour": 18,
-      "count": 211
+      "count": 216
     },
     {
       "hour": 19,
-      "count": 135
+      "count": 136
     },
     {
       "hour": 20,
-      "count": 141
+      "count": 143
     },
     {
       "hour": 21,
-      "count": 125
+      "count": 127
     },
     {
       "hour": 22,
-      "count": 146
+      "count": 147
     },
     {
       "hour": 23,
-      "count": 173
+      "count": 175
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-10T01:00:25Z",
+      "sha": "1a62745",
+      "message": "Update CLAUDE.md with Session 69 history and new Next Ideas Queue entries"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-10T00:59:27Z",
+      "sha": "4b4c209",
+      "message": "Session 69: 5 New Chaos Events — Poop Party, Coin Shower, Food Festival, Blackou"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T00:50:59Z",
+      "sha": "22d1919",
+      "message": "feat: canvas tap opens 3-page plant detail for growing plants"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T00:47:03Z",
+      "sha": "84fd736",
+      "message": "feat: visual growth stage journey page, bigger images, tidy layout"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T00:38:41Z",
+      "sha": "6d7c175",
+      "message": "feat: tappable ring meters with care detail sheets"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T00:16:46Z",
+      "sha": "2776d11",
+      "message": "feat: responsive spacing, forecast on page 1, dark theme polish"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T00:04:08Z",
+      "sha": "5878870",
+      "message": "feat: tamagotchi plant detail page with ring meters, tip grid, and journal timel"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-09T21:12:41Z",
+      "sha": "c1f480c",
+      "message": "fix: readable text colors for growing phase bottom sheet"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-09T20:29:51Z",
+      "sha": "0d962ba",
+      "message": "Session 68: Aurora Night Market — Sacred Cosmic Shop"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-09T20:15:58Z",
+      "sha": "fb38ee3",
+      "message": "fix: eliminate ghost greenhouse plants via journey cleanup and reconcile guard"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-09T19:37:18Z",
+      "sha": "24d9ca0",
+      "message": "feat: sync planning tab plant detail with canvas, fix plant names and stage pick"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-09T18:43:12Z",
+      "sha": "fefc3eb",
+      "message": "fix: remove guide text from stage picker cards"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-09T18:39:15Z",
+      "sha": "9f24558",
+      "message": "fix: add blue tint to plant detail sheet background"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-09T18:37:07Z",
+      "sha": "5842ae7",
+      "message": "feat: interactive plant journey sheet, fix germination guide lookup"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-09T18:02:02Z",
+      "sha": "47f1c6f",
+      "message": "feat: interactive plant journey sheet with warm palette and readable text"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-09T16:43:16Z",
+      "sha": "493f3c9",
+      "message": "fix: care guide visibility and germination guide info-only mode"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-09T15:33:11Z",
@@ -1434,10 +1530,40 @@
       "message": "Add Cross-System Synergies Vol. 2 — Fog Escape Alert, NG Lightning, Champion Shi"
     },
     {
+      "repo": "budin",
+      "date": "2026-04-09T00:53:24Z",
+      "sha": "b779ad1",
+      "message": "fix: align canvas sow window with planning frost-aware deadline"
+    },
+    {
       "repo": "bird-city-agi",
       "date": "2026-04-09T00:51:18Z",
       "sha": "4d8b1d9",
       "message": "Add City Lockdown + Most Wanted Board + National Guard — 3+ criminals trigger 90"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-08T23:44:52Z",
+      "sha": "5665790",
+      "message": "fix: stable bed canvas, visible plant labels, transparent oregano asset"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-08T23:17:53Z",
+      "sha": "6f477e0",
+      "message": "feat: declutter design bed canvas and plant cards"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-08T22:52:54Z",
+      "sha": "b8b8869",
+      "message": "feat: plant discovery and bed design polish"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-08T21:32:12Z",
+      "sha": "758003e",
+      "message": "merge issue fix"
     },
     {
       "repo": "budin",
@@ -1588,146 +1714,20 @@
       "date": "2026-04-06T11:28:58Z",
       "sha": "af4dd79",
       "message": "fix: block client writes to subscription field, remove _syncToFirestore"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-06T10:08:47Z",
-      "sha": "b6431d9",
-      "message": "Add Witness Protection Program — vanish from the grid for 3 minutes"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-06T05:13:46Z",
-      "sha": "63c669e",
-      "message": "Update CLAUDE.md — Session 50 dev log and ideas queue"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-06T05:12:38Z",
-      "sha": "bf962f2",
-      "message": "Add Seagull Invasion — coastal raiders swoop in to steal food"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-06T01:28:07Z",
-      "sha": "a7cccff",
-      "message": "fix: add heading markdown parsing to Sidney chat widgets"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-06T01:27:57Z",
-      "sha": "ceb6f69",
-      "message": "feat: add debug-only subscription tier override in Dev Tools"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-06T00:29:43Z",
-      "sha": "2c69f98",
-      "message": "Add Bounty Hunter Bird — persistent manhunter NPC at Wanted Level 4+"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-05T23:18:15Z",
-      "sha": "e8c7c97",
-      "message": "Re-run Claude extraction + fix header detection in all scripts"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-05T23:07:01Z",
-      "sha": "3afd6d3",
-      "message": "Fix header detection across all scripts + monthly category breakdown"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-05T22:21:18Z",
-      "sha": "6c85801",
-      "message": "Fix analytics: split GBP/USD in category breakdown"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-05T21:42:38Z",
-      "sha": "365ef66",
-      "message": "Add Hannah's urgent analytics: category breakdown, weekly forecast, budget estim"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-05T21:35:14Z",
-      "sha": "721fd53",
-      "message": "Add Requested By + Line Items columns, grace period fix, Edit links, smart bot"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-05T20:30:21Z",
-      "sha": "51ba6bc",
-      "message": "Add Akhil to Slack bot whitelist"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-05T20:20:54Z",
-      "sha": "d55530b",
-      "message": "Add Crime Wave Event — 2 minutes of pure lawlessness every 40-60 minutes"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-05T19:28:32Z",
-      "sha": "fe57597",
-      "message": "Add refresh button + Slack refresh command"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-05T18:55:19Z",
-      "sha": "e399e1c",
-      "message": "Add two-digit year date format + garbled date parser + live CC attempt"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-05T18:10:15Z",
-      "sha": "30d2e3e",
-      "message": "Fix garbled due dates + eliminate \"No Due Date\" section"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-05T17:58:11Z",
-      "sha": "3056daa",
-      "message": "Separate statements of account into their own section"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-05T17:51:02Z",
-      "sha": "1b9baaa",
-      "message": "Fix Command Center: empty rows, Revolut match, hyperlinks, append bug"
-    },
-    {
-      "repo": "hinglish-vinglish",
-      "date": "2026-04-05T17:18:45Z",
-      "sha": "62c9d02",
-      "message": "feat: Guru Ji personality overhaul, client-side pronunciation retry, UI fixes"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-05T15:29:41Z",
-      "sha": "51ffc93",
-      "message": "Add The Cursed Coin — legendary item that turns Bird City into a city-wide hunt"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-05T10:47:57Z",
-      "sha": "4de97e2",
-      "message": "Add Bird Skill Tree — Permanent Character Builds via Feather Points"
     }
   ],
   "repo_details": [
     {
-      "name": "budin",
-      "commits": 1161
+      "name": "bird-city-agi",
+      "commits": 84
     },
     {
-      "name": "bird-city-agi",
-      "commits": 81
+      "name": "budin",
+      "commits": 1179
     },
     {
       "name": "keedastudios_landing",
-      "commits": 258
+      "commits": 259
     },
     {
       "name": "hinglish-vinglish",
