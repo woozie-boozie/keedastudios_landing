@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-11T12:29:52Z",
+  "updated": "2026-04-11T18:26:16Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3266,
+  "total_commits": 3278,
   "streak": 42,
   "commits_by_day": [
     {
@@ -1259,11 +1259,11 @@
     },
     {
       "date": "2026-04-10",
-      "count": 17
+      "count": 26
     },
     {
       "date": "2026-04-11",
-      "count": 7
+      "count": 10
     }
   ],
   "commits_by_month": [
@@ -1317,7 +1317,7 @@
     },
     {
       "month": "2026-04",
-      "count": 234
+      "count": 246
     }
   ],
   "commits_by_hour": [
@@ -1363,31 +1363,31 @@
     },
     {
       "hour": 10,
-      "count": 112
+      "count": 113
     },
     {
       "hour": 11,
-      "count": 105
+      "count": 107
     },
     {
       "hour": 12,
-      "count": 159
+      "count": 161
     },
     {
       "hour": 13,
-      "count": 155
+      "count": 156
     },
     {
       "hour": 14,
-      "count": 180
+      "count": 183
     },
     {
       "hour": 15,
-      "count": 203
+      "count": 204
     },
     {
       "hour": 16,
-      "count": 191
+      "count": 192
     },
     {
       "hour": 17,
@@ -1395,7 +1395,7 @@
     },
     {
       "hour": 18,
-      "count": 217
+      "count": 218
     },
     {
       "hour": 19,
@@ -1419,6 +1419,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-11T15:21:55Z",
+      "sha": "038e20b",
+      "message": "Session 76: Cross-System Synergies Vol. 2 + Lunar Lens"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T14:08:01Z",
+      "sha": "452a962",
+      "message": "feat: sophisticated fertilizer schedule and warm glass-card redesign of 3-page p"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-11T10:33:37Z",
@@ -1450,10 +1462,64 @@
       "message": "Session 72: Blizzard Polish + Meteor Shower — Aurora's Rarest Event"
     },
     {
+      "repo": "budin",
+      "date": "2026-04-10T18:52:32Z",
+      "sha": "a85ceb5",
+      "message": "feat: pot visual on canvas, pot-aware care tips, unified 3-page detail for grid "
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T16:49:57Z",
+      "sha": "7e5522d",
+      "message": "fix: plant gallery shows harvest stage images instead of growing stage"
+    },
+    {
       "repo": "bird-city-agi",
       "date": "2026-04-10T15:25:55Z",
       "sha": "fb1e646",
       "message": "Session 68: Night Market — Aurora Bazaar with Cosmic Fish Currency"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T14:53:05Z",
+      "sha": "c354785",
+      "message": "fix: brighter text in bottom nav bar and design tools panel"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T14:32:51Z",
+      "sha": "00f8b43",
+      "message": "fix: care badge only counts water and fertilize, remove harvest button"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T13:47:23Z",
+      "sha": "41e06ac",
+      "message": "fix: live timeline refresh, check-in dialog, real plant data on all pages"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T12:16:11Z",
+      "sha": "3f04440",
+      "message": "fix: care sheet expands to show full content"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T11:53:25Z",
+      "sha": "8b20be6",
+      "message": "fix: real watering dates, singular day grammar, smart next-due calculation"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T11:33:00Z",
+      "sha": "30ebdbd",
+      "message": "fix: close zombie journey loop in greenhouse reconcile, fix misleading logs"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-10T10:42:39Z",
+      "sha": "73d28c2",
+      "message": "fix: solid dark text, larger fonts, white bg across all 3 plant detail pages"
     },
     {
       "repo": "bird-city-agi",
@@ -1652,86 +1718,20 @@
       "date": "2026-04-08T10:30:25Z",
       "sha": "3f0dc9d",
       "message": "Add Tournament Spectator Betting + Championship Leaderboard + VIP Discount"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-08T07:13:05Z",
-      "sha": "0c87002",
-      "message": "fix: dynamic report cards, skip empty celebrations/tasks, fix summary overflow"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-08T05:29:49Z",
-      "sha": "14c77d8",
-      "message": "Add Pigeon Fighting Championship — bracket tournament hosted by Don Featherstone"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-08T00:50:27Z",
-      "sha": "83824ee",
-      "message": "Update CLAUDE.md — Session 59 dev log and ideas queue"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-08T00:49:45Z",
-      "sha": "a73ad35",
-      "message": "Add Duel Betting + Rematch System — Street fights now have a crowd"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-07T20:20:10Z",
-      "sha": "ded79f8",
-      "message": "Add Street Duels — spontaneous 1v1 poop fights anywhere on the map"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-07T15:39:57Z",
-      "sha": "103cd8a",
-      "message": "Add Poop Power-Up Vending Machines — 5 street dispensers with 5 wild effects"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-07T10:32:48Z",
-      "sha": "c5aa00a",
-      "message": "Add Donut Shop NPC — Bribe or Ambush the Snacking Cop"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-07T05:37:10Z",
-      "sha": "fe6d74d",
-      "message": "Add Police Helicopter — Level 5 aerial pursuit with spotlight"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-07T00:46:15Z",
-      "sha": "45cd315",
-      "message": "Add Skill Tree Mastery + Skill Respec — completing the endgame arc"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-06T20:39:43Z",
-      "sha": "ae9c649",
-      "message": "Update CLAUDE.md — Session 53 dev log and ideas queue"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-06T20:38:50Z",
-      "sha": "8ad84d2",
-      "message": "Add Bird Royale: Champion Badge + Spectator Crowd Cheers + Gang Territory Bonus"
     }
   ],
   "repo_details": [
     {
       "name": "bird-city-agi",
-      "commits": 93
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 267
+      "commits": 94
     },
     {
       "name": "budin",
-      "commits": 1179
+      "commits": 1189
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 268
     },
     {
       "name": "hinglish-vinglish",
