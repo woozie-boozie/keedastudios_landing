@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-12T07:01:29Z",
+  "updated": "2026-04-12T12:33:04Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3307,
+  "total_commits": 3315,
   "streak": 43,
   "commits_by_day": [
     {
@@ -1263,7 +1263,7 @@
     },
     {
       "date": "2026-04-12",
-      "count": 8
+      "count": 16
     }
   ],
   "commits_by_month": [
@@ -1317,7 +1317,7 @@
     },
     {
       "month": "2026-04",
-      "count": 275
+      "count": 283
     }
   ],
   "commits_by_hour": [
@@ -1327,7 +1327,7 @@
     },
     {
       "hour": 1,
-      "count": 125
+      "count": 128
     },
     {
       "hour": 2,
@@ -1351,19 +1351,19 @@
     },
     {
       "hour": 7,
-      "count": 30
+      "count": 32
     },
     {
       "hour": 8,
-      "count": 52
+      "count": 53
     },
     {
       "hour": 9,
-      "count": 85
+      "count": 86
     },
     {
       "hour": 10,
-      "count": 113
+      "count": 114
     },
     {
       "hour": 11,
@@ -1421,9 +1421,45 @@
   "recent_commits": [
     {
       "repo": "bird-city-agi",
+      "date": "2026-04-12T10:28:23Z",
+      "sha": "997fc60",
+      "message": "Session 80: Cherry Blossom Spring Festival — Seasonal Beauty Transforms Bird Cit"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T09:42:49Z",
+      "sha": "4621c54",
+      "message": "fix: clear caches properly when switching between emoji and realistic plant imag"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T07:36:26Z",
+      "sha": "da7c23e",
+      "message": "Merge branch 'sud/hackathon-1' into main-mali"
+    },
+    {
+      "repo": "bird-city-agi",
       "date": "2026-04-12T05:37:51Z",
       "sha": "e398c09",
       "message": "Session 79: Royal Court + Prestige Kingpin + People's March"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T01:12:53Z",
+      "sha": "74940ef",
+      "message": "fix: source Sidney chat from Firestore to eliminate dupe response race"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T01:04:10Z",
+      "sha": "141ea7a",
+      "message": "fix: rewrite animated markdown parser to handle multi-word bold and italic"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T01:04:03Z",
+      "sha": "8832754",
+      "message": "feat: Sidney tone picker (brief/casual/quirky) and drop detail_level field"
     },
     {
       "repo": "budin",
@@ -1682,56 +1718,20 @@
       "date": "2026-04-10T10:42:39Z",
       "sha": "73d28c2",
       "message": "fix: solid dark text, larger fonts, white bg across all 3 plant detail pages"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-10T10:28:33Z",
-      "sha": "0204155",
-      "message": "Update CLAUDE.md with Session 71 history and blizzard cross-system ideas"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-10T10:27:34Z",
-      "sha": "e56e8e1",
-      "message": "Session 71: The Blizzard — 8th Weather Type with Snowball Poop + Hot Cocoa"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-10T05:35:28Z",
-      "sha": "dcdb210",
-      "message": "Session 70: Chaos Event Cross-System Synergies Vol. 1"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-10T01:00:25Z",
-      "sha": "1a62745",
-      "message": "Update CLAUDE.md with Session 69 history and new Next Ideas Queue entries"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-10T00:59:27Z",
-      "sha": "4b4c209",
-      "message": "Session 69: 5 New Chaos Events — Poop Party, Coin Shower, Food Festival, Blackou"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-10T00:50:59Z",
-      "sha": "22d1919",
-      "message": "feat: canvas tap opens 3-page plant detail for growing plants"
     }
   ],
   "repo_details": [
     {
+      "name": "budin",
+      "commits": 1218
+    },
+    {
       "name": "bird-city-agi",
-      "commits": 97
+      "commits": 98
     },
     {
       "name": "keedastudios_landing",
-      "commits": 270
-    },
-    {
-      "name": "budin",
-      "commits": 1213
+      "commits": 272
     },
     {
       "name": "hinglish-vinglish",
