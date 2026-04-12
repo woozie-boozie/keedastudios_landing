@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-11T18:26:16Z",
+  "updated": "2026-04-12T01:16:25Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3278,
-  "streak": 42,
+  "total_commits": 3305,
+  "streak": 43,
   "commits_by_day": [
-    {
-      "date": "2025-04-11",
-      "count": 1
-    },
     {
       "date": "2025-04-12",
       "count": 3
@@ -1263,13 +1259,17 @@
     },
     {
       "date": "2026-04-11",
-      "count": 10
+      "count": 31
+    },
+    {
+      "date": "2026-04-12",
+      "count": 6
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 79
+      "count": 78
     },
     {
       "month": "2025-05",
@@ -1317,13 +1317,13 @@
     },
     {
       "month": "2026-04",
-      "count": 246
+      "count": 273
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 166
+      "count": 172
     },
     {
       "hour": 1,
@@ -1379,7 +1379,7 @@
     },
     {
       "hour": 14,
-      "count": 183
+      "count": 187
     },
     {
       "hour": 15,
@@ -1395,35 +1395,191 @@
     },
     {
       "hour": 18,
-      "count": 218
+      "count": 219
     },
     {
       "hour": 19,
-      "count": 136
+      "count": 138
     },
     {
       "hour": 20,
-      "count": 144
-    },
-    {
-      "hour": 21,
-      "count": 127
-    },
-    {
-      "hour": 22,
       "count": 147
     },
     {
+      "hour": 21,
+      "count": 130
+    },
+    {
+      "hour": 22,
+      "count": 150
+    },
+    {
       "hour": 23,
-      "count": 175
+      "count": 179
     }
   ],
   "recent_commits": [
+    {
+      "repo": "budin",
+      "date": "2026-04-12T00:42:09Z",
+      "sha": "046a3f7",
+      "message": "fix: sync bed canvas tap hit test with new painter fit math"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T00:36:35Z",
+      "sha": "64b5720",
+      "message": "feat: redesign growing plant detail page 1 for single-screen fit"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T00:36:31Z",
+      "sha": "70b4b59",
+      "message": "fix: drop redundant top placement banner and clear plots highlight on cancel"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T00:36:26Z",
+      "sha": "4817c82",
+      "message": "fix: bed canvas fills visible area above sidney bubble and centers properly"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-12T00:24:04Z",
+      "sha": "7cd8c68",
+      "message": "Session 78: The People's Revolt — Tax Day Uprising + King's Pardon + Decree Syne"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T00:12:13Z",
+      "sha": "cdb985c",
+      "message": "feat: unify custom bed canvas controls into header overflow menu"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T23:54:42Z",
+      "sha": "ba2af47",
+      "message": "feat: drop redundant care summary pills from custom bed canvas"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T23:31:01Z",
+      "sha": "c37d376",
+      "message": "feat: softer muted walnut dock with warm sunbeam accent"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T23:29:27Z",
+      "sha": "3dbba25",
+      "message": "feat: wooden garden bench dock in home bottom tool bar"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T23:29:23Z",
+      "sha": "35a49f3",
+      "message": "feat: sidney guidance bubble on custom bed canvas with status-driven tips"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T23:07:17Z",
+      "sha": "7f96c9e",
+      "message": "feat: canvas-only bed detail — drop planning and growing tabs"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T22:52:34Z",
+      "sha": "1ea1954",
+      "message": "feat: rotate landscape beds vertical in custom bed canvas view"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T22:21:46Z",
+      "sha": "8056779",
+      "message": "feat: rotate sun zones grid vertical to match design-your-bed canvas"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T22:15:35Z",
+      "sha": "359336d",
+      "message": "feat: rotate landscape beds vertical and maximize design-your-bed canvas"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T21:50:46Z",
+      "sha": "9ce7145",
+      "message": "feat: thumb-friendly action state pill above the dock with clear close"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T21:33:17Z",
+      "sha": "c083c4a",
+      "message": "feat: maximize design-your-bed canvas and refine modern grid tool bar"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T21:20:07Z",
+      "sha": "d7671e5",
+      "message": "feat: Mali+ showcase on Your Plan and readable darker CTA green"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T20:55:42Z",
+      "sha": "e829c71",
+      "message": "feat: brown soil canvas in design-your-bed and drop redundant layout banner"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T20:21:47Z",
+      "sha": "9f67f9b",
+      "message": "feat: carousel-warm Meet Sidney intro with tighter copy and bigger tiles"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-11T20:15:39Z",
+      "sha": "450a991",
+      "message": "Session 77: The Kingpin's Royal Decree — City-Shaping Power"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T19:25:32Z",
+      "sha": "5774224",
+      "message": "feat: carousel-warm background and flat green CTA across bed wizard"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T19:09:46Z",
+      "sha": "2f4b813",
+      "message": "feat: shared palette, animated background, and carousel-warm bed size sheet"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-11T15:21:55Z",
       "sha": "038e20b",
       "message": "Session 76: Cross-System Synergies Vol. 2 + Lunar Lens"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T14:58:51Z",
+      "sha": "26c812c",
+      "message": "fix: proper Hide button and high-contrast white text on shaping step"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T14:54:39Z",
+      "sha": "a52841e",
+      "message": "fix: clearer onboarding hint explaining green area is your garden"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T14:54:30Z",
+      "sha": "8f74d57",
+      "message": "fix: clear subscription provider on logout to avoid stale user data"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-11T14:49:12Z",
+      "sha": "3532fd6",
+      "message": "fix: separate loading states for Google and Apple sign-in buttons"
     },
     {
       "repo": "budin",
@@ -1562,176 +1718,20 @@
       "date": "2026-04-10T00:47:03Z",
       "sha": "84fd736",
       "message": "feat: visual growth stage journey page, bigger images, tidy layout"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-10T00:38:41Z",
-      "sha": "6d7c175",
-      "message": "feat: tappable ring meters with care detail sheets"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-10T00:16:46Z",
-      "sha": "2776d11",
-      "message": "feat: responsive spacing, forecast on page 1, dark theme polish"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-10T00:04:08Z",
-      "sha": "5878870",
-      "message": "feat: tamagotchi plant detail page with ring meters, tip grid, and journal timel"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-09T21:12:41Z",
-      "sha": "c1f480c",
-      "message": "fix: readable text colors for growing phase bottom sheet"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-09T20:29:51Z",
-      "sha": "0d962ba",
-      "message": "Session 68: Aurora Night Market — Sacred Cosmic Shop"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-09T20:15:58Z",
-      "sha": "fb38ee3",
-      "message": "fix: eliminate ghost greenhouse plants via journey cleanup and reconcile guard"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-09T19:37:18Z",
-      "sha": "24d9ca0",
-      "message": "feat: sync planning tab plant detail with canvas, fix plant names and stage pick"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-09T18:43:12Z",
-      "sha": "fefc3eb",
-      "message": "fix: remove guide text from stage picker cards"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-09T18:39:15Z",
-      "sha": "9f24558",
-      "message": "fix: add blue tint to plant detail sheet background"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-09T18:37:07Z",
-      "sha": "5842ae7",
-      "message": "feat: interactive plant journey sheet, fix germination guide lookup"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-09T18:02:02Z",
-      "sha": "47f1c6f",
-      "message": "feat: interactive plant journey sheet with warm palette and readable text"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-09T16:43:16Z",
-      "sha": "493f3c9",
-      "message": "fix: care guide visibility and germination guide info-only mode"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-09T15:33:11Z",
-      "sha": "c408fff",
-      "message": "Add Shooting Star Event + Aurora Cross-System Synergies"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-09T10:45:11Z",
-      "sha": "486ba65",
-      "message": "Add Aurora Borealis — Sacred Night Spectacle with Cosmic Fish"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-09T05:12:44Z",
-      "sha": "c3dac68",
-      "message": "Add Cross-System Synergies Vol. 2 — Fog Escape Alert, NG Lightning, Champion Shi"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-09T00:53:24Z",
-      "sha": "b779ad1",
-      "message": "fix: align canvas sow window with planning frost-aware deadline"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-09T00:51:18Z",
-      "sha": "4d8b1d9",
-      "message": "Add City Lockdown + Most Wanted Board + National Guard — 3+ criminals trigger 90"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-08T23:44:52Z",
-      "sha": "5665790",
-      "message": "fix: stable bed canvas, visible plant labels, transparent oregano asset"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-08T23:17:53Z",
-      "sha": "6f477e0",
-      "message": "feat: declutter design bed canvas and plant cards"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-08T22:52:54Z",
-      "sha": "b8b8869",
-      "message": "feat: plant discovery and bed design polish"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-08T21:32:12Z",
-      "sha": "758003e",
-      "message": "merge issue fix"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-08T21:05:53Z",
-      "sha": "3a2b3ff",
-      "message": "Ak/fast followers (#99)"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-08T20:30:41Z",
-      "sha": "7666682",
-      "message": "Add Cross-System Chaos: Flu Counter-Play, Crime Wave Pigeon Bomb, Idol Hall of F"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-08T15:14:20Z",
-      "sha": "0326f18",
-      "message": "Add Hot Day Weather + Water Puddles — scorching sun spoils food and spawns preci"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-08T10:31:12Z",
-      "sha": "4b98500",
-      "message": "Update CLAUDE.md — Session 61 dev log and ideas queue"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-08T10:30:25Z",
-      "sha": "3f0dc9d",
-      "message": "Add Tournament Spectator Betting + Championship Leaderboard + VIP Discount"
     }
   ],
   "repo_details": [
     {
-      "name": "bird-city-agi",
-      "commits": 94
+      "name": "budin",
+      "commits": 1213
     },
     {
-      "name": "budin",
-      "commits": 1189
+      "name": "bird-city-agi",
+      "commits": 96
     },
     {
       "name": "keedastudios_landing",
-      "commits": 268
+      "commits": 269
     },
     {
       "name": "hinglish-vinglish",
