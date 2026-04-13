@@ -7,6 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --surface2: #F3F4F6;
+    --border: #E5E7EB;
+    --text: #111827;
+    --dim: #6B7280;
+    --green: #059669;
+    --amber: #D97706;
+    --red: #DC2626;
+    --orange: #EA580C;
+    --blue: #2563EB;
+    --purple: #7C3AED;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  [data-theme="dark"] {
     --bg: #0C0C10;
     --surface: #161619;
     --surface2: #1E1E23;
@@ -19,9 +34,19 @@
     --orange: #F97316;
     --blue: #60A5FA;
     --purple: #A78BFA;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; transition: background 0.3s, color 0.3s; }
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--surface); border: 1px solid var(--border);
+    cursor: pointer; font-size: 18px; display: flex;
+    align-items: center; justify-content: center;
+    box-shadow: var(--shadow); transition: all 0.3s;
+  }
+  .theme-toggle:hover { transform: scale(1.1); }
   .container { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
   section { margin-bottom: 56px; }
 
@@ -43,7 +68,7 @@
   .stats-bar {
     display: flex; justify-content: center; gap: 32px;
     padding: 20px; background: var(--surface); border: 1px solid var(--border);
-    border-radius: 12px; margin-bottom: 40px;
+    border-radius: 12px; margin-bottom: 40px; box-shadow: var(--shadow);
   }
   .stat { text-align: center; }
   .stat-val { font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 700; }
@@ -65,9 +90,9 @@
   .cal-meeting {
     padding: 10px 12px; border-radius: 8px; cursor: pointer;
     border: 1px solid var(--border); background: var(--surface);
-    transition: all 0.2s; position: relative;
+    transition: all 0.2s; position: relative; box-shadow: var(--shadow);
   }
-  .cal-meeting:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+  .cal-meeting:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
   .cal-meeting.active { border-color: var(--orange); }
   .cal-meeting.health-green { border-left: 3px solid var(--green); }
   .cal-meeting.health-amber { border-left: 3px solid var(--amber); }
@@ -219,6 +244,7 @@
 </head>
 <body>
 
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
 <div class="container">
 
   <!-- HERO -->
@@ -546,6 +572,19 @@ function showMeeting(di, mi) {
   `;
 
   detail.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+// Theme toggle
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+  document.getElementById('themeBtn').textContent = isDark ? '🌙' : '☀️';
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+}
+// Load saved theme (default: light)
+if (localStorage.getItem('theme') === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.getElementById('themeBtn').textContent = '☀️';
 }
 
 // Auto-select first meeting

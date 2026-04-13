@@ -7,6 +7,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --surface2: #F3F4F6;
+    --border: #E5E7EB;
+    --text: #111827;
+    --dim: #6B7280;
+    --blue: #2563EB;
+    --blue-glow: rgba(37,99,235,0.08);
+    --green: #059669;
+    --amber: #D97706;
+    --purple: #7C3AED;
+    --red: #DC2626;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  [data-theme="dark"] {
     --bg: #0C0C10;
     --surface: #161619;
     --surface2: #1E1E23;
@@ -19,9 +34,19 @@
     --amber: #F59E0B;
     --purple: #A78BFA;
     --red: #EF4444;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; transition: background 0.3s, color 0.3s; }
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--surface); border: 1px solid var(--border);
+    cursor: pointer; font-size: 18px; display: flex;
+    align-items: center; justify-content: center;
+    box-shadow: var(--shadow); transition: all 0.3s;
+  }
+  .theme-toggle:hover { transform: scale(1.1); }
   .container { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
   section { margin-bottom: 56px; }
 
@@ -166,6 +191,7 @@
 </head>
 <body>
 
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
 <div class="container">
 
   <!-- HERO -->
@@ -445,6 +471,31 @@ would be great for the payments rewrite project.</div>
 function showPhase(idx) {
   document.querySelectorAll('.phase-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
   document.querySelectorAll('.phase-detail').forEach((d,i) => d.classList.toggle('visible', i===idx));
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+  document.getElementById('themeBtn').textContent = isDark ? '🌙' : '☀️';
+  updateSvgColors();
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+}
+function updateSvgColors() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.querySelectorAll('.workflow-svg rect[fill="#161619"]').forEach(el => el.setAttribute('fill', isDark ? '#161619' : '#FFFFFF'));
+  document.querySelectorAll('.workflow-svg rect[stroke="#2A2A30"]').forEach(el => el.setAttribute('stroke', isDark ? '#2A2A30' : '#E5E7EB'));
+  document.querySelectorAll('.workflow-svg text[fill="#EEEEF0"]').forEach(el => el.setAttribute('fill', isDark ? '#EEEEF0' : '#111827'));
+  document.querySelectorAll('.workflow-svg text[fill="#A0A0AD"]').forEach(el => el.setAttribute('fill', isDark ? '#A0A0AD' : '#6B7280'));
+  document.querySelectorAll('.workflow-svg line[stroke="#4A9EFF"]').forEach(el => el.setAttribute('stroke', isDark ? '#4A9EFF' : '#2563EB'));
+  document.querySelectorAll('.workflow-svg polygon[fill="#4A9EFF"]').forEach(el => el.setAttribute('fill', isDark ? '#4A9EFF' : '#2563EB'));
+  document.querySelectorAll('.workflow-svg path[stroke="#2A2A30"]').forEach(el => el.setAttribute('stroke', isDark ? '#2A2A30' : '#E5E7EB'));
+}
+if (localStorage.getItem('theme') === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.getElementById('themeBtn').textContent = '☀️';
+} else {
+  // Light mode default - update SVG colors
+  setTimeout(updateSvgColors, 0);
 }
 </script>
 

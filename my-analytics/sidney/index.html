@@ -7,6 +7,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
+    --bg: #FAFAFA;
+    --surface: #FFFFFF;
+    --surface2: #F3F4F6;
+    --border: #E5E7EB;
+    --text: #111827;
+    --dim: #6B7280;
+    --green: #16A34A;
+    --green-glow: rgba(22,163,74,0.08);
+    --amber: #D97706;
+    --red: #DC2626;
+    --cyan: #0891B2;
+    --purple: #7C3AED;
+    --blue: #2563EB;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  [data-theme="dark"] {
     --bg: #080E1A;
     --surface: #111827;
     --surface2: #1a2332;
@@ -20,13 +36,23 @@
     --cyan: #22D3EE;
     --purple: #A78BFA;
     --blue: #60A5FA;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: 'Inter', -apple-system, sans-serif;
     background: var(--bg); color: var(--text);
-    line-height: 1.5; min-height: 100vh;
+    line-height: 1.5; min-height: 100vh; transition: background 0.3s, color 0.3s;
   }
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--surface); border: 1px solid var(--border);
+    cursor: pointer; font-size: 18px; display: flex;
+    align-items: center; justify-content: center;
+    box-shadow: var(--shadow); transition: all 0.3s;
+  }
+  .theme-toggle:hover { transform: scale(1.1); }
   .container { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
   section { margin-bottom: 72px; }
   h2 {
@@ -217,6 +243,7 @@
 </head>
 <body>
 
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</button>
 <div class="container">
 
   <!-- HERO -->
@@ -548,6 +575,30 @@ function selectScenario(id) {
   setTimeout(() => {
     pipeline.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, 100);
+}
+
+// Theme toggle
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+  document.getElementById('themeBtn').textContent = isDark ? '🌙' : '☀️';
+  updateSvgColors();
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+}
+function updateSvgColors() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.querySelectorAll('svg rect[fill="#1a2332"]').forEach(el => el.setAttribute('fill', isDark ? '#1a2332' : '#FFFFFF'));
+  document.querySelectorAll('svg rect[fill="#1a3a1f"]').forEach(el => el.setAttribute('fill', isDark ? '#1a3a1f' : '#f0fdf4'));
+  document.querySelectorAll('svg rect[stroke="#1F2937"]').forEach(el => el.setAttribute('stroke', isDark ? '#1F2937' : '#E5E7EB'));
+  document.querySelectorAll('svg text[fill="#CBD5E1"]').forEach(el => el.setAttribute('fill', isDark ? '#CBD5E1' : '#6B7280'));
+  document.querySelectorAll('svg text[fill="#E2E8F0"]').forEach(el => el.setAttribute('fill', isDark ? '#E2E8F0' : '#111827'));
+  document.querySelectorAll('svg line[stroke="#475569"]').forEach(el => el.setAttribute('stroke', isDark ? '#475569' : '#D1D5DB'));
+}
+if (localStorage.getItem('theme') === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  document.getElementById('themeBtn').textContent = '☀️';
+} else {
+  setTimeout(updateSvgColors, 0);
 }
 
 setTimeout(() => selectScenario('pepper'), 500);
