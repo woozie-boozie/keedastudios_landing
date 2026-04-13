@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet Sidney - Proactive AI Garden Agent</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080E1A;
+    --surface: #111827;
+    --surface2: #1a2332;
+    --border: #1F2937;
+    --text: #E2E8F0;
+    --dim: #CBD5E1;
+    --green: #4CD964;
+    --green-glow: rgba(76,217,100,0.15);
+    --amber: #FBBF24;
+    --red: #F87171;
+    --cyan: #22D3EE;
+    --purple: #A78BFA;
+    --blue: #60A5FA;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg); color: var(--text);
+    line-height: 1.5; min-height: 100vh;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
+  section { margin-bottom: 72px; }
+  h2 {
+    font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
+    text-align: center; margin-bottom: 32px;
+  }
+  h2 span { color: var(--green); }
+
+  /* ── HERO ── */
+  .hero { text-align: center; margin-bottom: 64px; }
+  .hero-badge {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--green); border: 1px solid rgba(76,217,100,0.4);
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+  .hero h1 { font-size: 48px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 16px; }
+  .hero h1 .snail { font-size: 42px; vertical-align: middle; }
+  .hero h1 em { color: var(--green); font-style: normal; }
+  .hero p { color: var(--dim); font-size: 18px; max-width: 600px; margin: 0 auto 16px; line-height: 1.6; }
+  .hero .tagline { color: var(--green); font-size: 14px; font-weight: 600; letter-spacing: 0.3px; }
+
+  /* ── STATS ── */
+  .stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 72px; }
+  .stat {
+    text-align: center; padding: 24px 12px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    position: relative; overflow: hidden;
+  }
+  .stat::before {
+    content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 60px; height: 3px; background: var(--green); border-radius: 0 0 3px 3px;
+  }
+  .stat-val { font-family: 'JetBrains Mono',monospace; font-size: 28px; font-weight: 700; color: var(--green); }
+  .stat-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dim); margin-top: 4px; }
+
+  /* ── ARCHITECTURE DIAGRAM ── */
+  .arch-diagram {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 40px 32px; position: relative;
+  }
+  .arch-diagram svg { width: 100%; height: auto; display: block; }
+  .arch-diagram text { font-family: 'Inter', sans-serif; }
+
+  /* ── LIFECYCLE ── */
+  .lifecycle-track {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; position: relative; padding: 20px 0;
+  }
+  .phase {
+    display: flex; flex-direction: column; align-items: center;
+    position: relative; flex: 1; max-width: 160px;
+  }
+  .phase-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; position: relative; z-index: 2;
+    border: 2px solid var(--border); background: var(--surface);
+    transition: all 0.3s;
+  }
+  .phase-icon.active { border-color: var(--green); background: var(--green-glow); box-shadow: 0 0 20px rgba(76,217,100,0.2); }
+  .phase-label { font-size: 11px; font-weight: 700; color: var(--dim); margin-top: 10px; text-align: center; letter-spacing: 0.5px; }
+  .phase-label.active { color: var(--green); }
+  .phase-line {
+    flex: 1; height: 2px; background: var(--border); max-width: 40px; margin-top: -28px;
+  }
+  .phase-line.active { background: var(--green); }
+
+  /* ── SCENARIO SECTION ── */
+  .scenario-cards {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
+    margin-bottom: 32px;
+  }
+  .scenario-card {
+    background: var(--surface); border: 1px solid var(--border);
+    padding: 16px 14px; border-radius: 12px; cursor: pointer;
+    transition: all 0.2s; text-align: center;
+  }
+  .scenario-card:hover { border-color: var(--border); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
+  .scenario-card.active { border-color: var(--green); background: rgba(76,217,100,0.06); }
+  .sc-icon { font-size: 28px; margin-bottom: 8px; }
+  .sc-title { font-weight: 700; font-size: 12px; margin-bottom: 4px; }
+  .sc-tag {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    padding: 2px 8px; border-radius: 10px; letter-spacing: 0.5px;
+  }
+  .tag-diagnostic { background: rgba(96,165,250,0.15); color: var(--blue); }
+  .tag-proactive { background: rgba(248,113,113,0.15); color: var(--red); }
+  .tag-planning { background: rgba(167,139,250,0.15); color: var(--purple); }
+  .tag-escalation { background: rgba(251,191,36,0.15); color: var(--amber); }
+  .tag-knowledge { background: rgba(34,211,238,0.15); color: var(--cyan); }
+
+  /* ── SCENARIO PIPELINE ── */
+  .pipeline { display: none; }
+  .pipeline.visible { display: block; }
+
+  .flow-visual {
+    display: flex; align-items: stretch; gap: 0;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; margin-bottom: 20px;
+    opacity: 0; transform: translateY(8px); transition: all 0.5s;
+  }
+  .flow-visual.show { opacity: 1; transform: translateY(0); }
+  .flow-col {
+    flex: 1; padding: 20px 16px; text-align: center;
+    border-right: 1px solid var(--border); position: relative;
+  }
+  .flow-col:last-child { border-right: none; }
+  .flow-col::after {
+    content: ''; position: absolute; right: -8px; top: 50%;
+    transform: translateY(-50%);
+    width: 0; height: 0;
+    border-top: 6px solid transparent; border-bottom: 6px solid transparent;
+    border-left: 6px solid var(--green); z-index: 2;
+  }
+  .flow-col:last-child::after { display: none; }
+  .flow-icon { font-size: 24px; margin-bottom: 6px; }
+  .flow-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
+  .flow-detail { font-size: 11px; color: var(--text); line-height: 1.5; }
+  .flow-detail strong { color: var(--text); font-weight: 600; }
+
+  /* Sidney response card */
+  .response-card {
+    background: var(--surface); border: 1px solid rgba(76,217,100,0.25);
+    border-radius: 12px; padding: 24px 28px;
+    border-left: 4px solid var(--green);
+    opacity: 0; transform: translateY(8px); transition: all 0.5s;
+  }
+  .response-card.show { opacity: 1; transform: translateY(0); }
+  .response-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .response-avatar { font-size: 28px; }
+  .response-name { font-weight: 700; font-size: 14px; }
+  .response-badge { font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: var(--green-glow); color: var(--green); letter-spacing: 0.5px; }
+  .response-msg { font-size: 14px; color: #F1F5F9; line-height: 1.75; }
+  .response-msg strong { color: var(--green); }
+  .response-actions { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  .action-chip {
+    font-size: 12px; font-weight: 600; padding: 6px 16px;
+    border-radius: 20px; background: var(--green-glow);
+    color: var(--green); border: 1px solid rgba(76,217,100,0.3);
+  }
+
+  /* ── MAPPING VISUAL ── */
+  .mapping-grid {
+    display: grid; grid-template-columns: 1fr 60px 1fr; gap: 8px 0;
+    align-items: center;
+  }
+  .map-item {
+    padding: 14px 20px; border-radius: 10px; font-size: 13px; font-weight: 600;
+  }
+  .map-garden { background: var(--green-glow); color: var(--green); text-align: right; }
+  .map-arrow { text-align: center; color: var(--dim); font-size: 18px; }
+  .map-aircraft { background: rgba(96,165,250,0.1); color: var(--blue); }
+  .map-header {
+    font-size: 10px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; padding: 8px 20px;
+  }
+  .map-header-garden { color: var(--green); text-align: right; }
+  .map-header-aircraft { color: var(--blue); }
+
+  /* ── FOOTER ── */
+  .footer {
+    text-align: center; padding-top: 32px;
+    border-top: 1px solid var(--border); color: var(--dim); font-size: 13px;
+  }
+  .footer a { color: var(--green); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+    .stats { grid-template-columns: repeat(2,1fr); }
+    .scenario-cards { grid-template-columns: repeat(3,1fr); }
+    .flow-visual { flex-direction: column; }
+    .flow-col { border-right: none; border-bottom: 1px solid var(--border); }
+    .flow-col::after { display: none; }
+    .lifecycle-track { flex-wrap: wrap; gap: 8px; }
+    .phase-line { display: none; }
+    .mapping-grid { grid-template-columns: 1fr; gap: 4px; }
+    .map-garden, .map-aircraft { text-align: left; }
+    .map-arrow { display: none; }
+    .map-header { text-align: left; }
+  }
+  @media (max-width: 500px) {
+    .scenario-cards { grid-template-columns: repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">Live in Production</div>
+    <h1><span class="snail">🐌</span> Meet <em>Sidney</em></h1>
+    <p>A proactive AI agent that knows your garden, predicts problems, and acts before you ask.</p>
+    <div class="tagline">Built for gardens. The same architecture works for aircraft.</div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><div class="stat-val">3,000+</div><div class="stat-label">Plant Species</div></div>
+    <div class="stat"><div class="stat-val">14</div><div class="stat-label">AI Tools</div></div>
+    <div class="stat"><div class="stat-val">6</div><div class="stat-label">Lifecycle Phases</div></div>
+    <div class="stat"><div class="stat-val">72h</div><div class="stat-label">Weather Lookahead</div></div>
+  </div>
+
+  <!-- ARCHITECTURE DIAGRAM -->
+  <section>
+    <h2>Sidney is the <span>orchestration layer</span></h2>
+    <div class="arch-diagram">
+      <svg viewBox="0 0 1000 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Background glow for Sidney -->
+        <circle cx="500" cy="260" r="90" fill="rgba(76,217,100,0.06)" stroke="none"/>
+        <circle cx="500" cy="260" r="130" fill="rgba(76,217,100,0.03)" stroke="none"/>
+
+        <!-- DATA SOURCES (Left) -->
+        <rect x="40" y="40" width="200" height="56" rx="10" fill="#1a2332" stroke="#1F2937"/>
+        <text x="140" y="63" text-anchor="middle" fill="#FBBF24" font-size="11" font-weight="700" letter-spacing="1">🌤️ WEATHER APIs</text>
+        <text x="140" y="80" text-anchor="middle" fill="#CBD5E1" font-size="10">72h forecast, frost dates, wind</text>
+
+        <rect x="40" y="130" width="200" height="56" rx="10" fill="#1a2332" stroke="#1F2937"/>
+        <text x="140" y="153" text-anchor="middle" fill="#22D3EE" font-size="11" font-weight="700" letter-spacing="1">🧬 PLANT DATABASE</text>
+        <text x="140" y="170" text-anchor="middle" fill="#CBD5E1" font-size="10">3,000+ species, care rules</text>
+
+        <rect x="40" y="220" width="200" height="56" rx="10" fill="#1a2332" stroke="#1F2937"/>
+        <text x="140" y="243" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="700" letter-spacing="1">🧠 KNOWLEDGE BASE</text>
+        <text x="140" y="260" text-anchor="middle" fill="#CBD5E1" font-size="10">Vector DB, semantic search</text>
+
+        <rect x="40" y="310" width="200" height="56" rx="10" fill="#1a2332" stroke="#1F2937"/>
+        <text x="140" y="333" text-anchor="middle" fill="#4CD964" font-size="11" font-weight="700" letter-spacing="1">🌱 GARDEN STATE</text>
+        <text x="140" y="350" text-anchor="middle" fill="#CBD5E1" font-size="10">Beds, plants, health, care logs</text>
+
+        <rect x="40" y="400" width="200" height="56" rx="10" fill="#1a2332" stroke="#1F2937"/>
+        <text x="140" y="423" text-anchor="middle" fill="#60A5FA" font-size="11" font-weight="700" letter-spacing="1">👤 USER CONTEXT</text>
+        <text x="140" y="440" text-anchor="middle" fill="#CBD5E1" font-size="10">Zone, experience, screen view</text>
+
+        <!-- Arrows from sources to Sidney -->
+        <line x1="240" y1="68" x2="400" y2="230" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <line x1="240" y1="158" x2="400" y2="245" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <line x1="240" y1="248" x2="400" y2="260" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <line x1="240" y1="338" x2="400" y2="275" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <line x1="240" y1="428" x2="400" y2="290" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+        <!-- SIDNEY (Centre) -->
+        <rect x="400" y="200" width="200" height="120" rx="16" fill="#1a3a1f" stroke="#4CD964" stroke-width="2"/>
+        <text x="500" y="240" text-anchor="middle" fill="#4CD964" font-size="22">🐌</text>
+        <text x="500" y="265" text-anchor="middle" fill="#4CD964" font-size="16" font-weight="800">SIDNEY</text>
+        <text x="500" y="285" text-anchor="middle" fill="#CBD5E1" font-size="10" font-weight="600">LLM + Tool Calling</text>
+        <text x="500" y="300" text-anchor="middle" fill="#CBD5E1" font-size="10" font-weight="600">Orchestration Engine</text>
+
+        <!-- OUTPUTS (Right) -->
+        <rect x="760" y="60" width="200" height="64" rx="10" fill="#1a2332" stroke="#4CD964" stroke-width="1.5"/>
+        <text x="860" y="85" text-anchor="middle" fill="#4CD964" font-size="11" font-weight="700" letter-spacing="1">💬 SMART RESPONSES</text>
+        <text x="860" y="102" text-anchor="middle" fill="#CBD5E1" font-size="10">Contextual, actionable advice</text>
+
+        <rect x="760" y="155" width="200" height="64" rx="10" fill="#1a2332" stroke="#F87171" stroke-width="1.5"/>
+        <text x="860" y="180" text-anchor="middle" fill="#F87171" font-size="11" font-weight="700" letter-spacing="1">🚨 PROACTIVE ALERTS</text>
+        <text x="860" y="197" text-anchor="middle" fill="#CBD5E1" font-size="10">Frost, overdue, health decline</text>
+
+        <rect x="760" y="250" width="200" height="64" rx="10" fill="#1a2332" stroke="#A78BFA" stroke-width="1.5"/>
+        <text x="860" y="275" text-anchor="middle" fill="#A78BFA" font-size="11" font-weight="700" letter-spacing="1">📋 CARE SCHEDULES</text>
+        <text x="860" y="292" text-anchor="middle" fill="#CBD5E1" font-size="10">Weather-adjusted, per-plant</text>
+
+        <rect x="760" y="345" width="200" height="64" rx="10" fill="#1a2332" stroke="#FBBF24" stroke-width="1.5"/>
+        <text x="860" y="370" text-anchor="middle" fill="#FBBF24" font-size="11" font-weight="700" letter-spacing="1">🎙️ VOICE AGENT</text>
+        <text x="860" y="387" text-anchor="middle" fill="#CBD5E1" font-size="10">Hands-free garden chat</text>
+
+        <rect x="760" y="440" width="200" height="56" rx="10" fill="#1a2332" stroke="#22D3EE" stroke-width="1.5"/>
+        <text x="860" y="462" text-anchor="middle" fill="#22D3EE" font-size="11" font-weight="700" letter-spacing="1">📓 JOURNAL + INSIGHTS</text>
+        <text x="860" y="479" text-anchor="middle" fill="#CBD5E1" font-size="10">Auto-generated records</text>
+
+        <!-- Arrows from Sidney to outputs -->
+        <line x1="600" y1="230" x2="760" y2="92" stroke="#4CD964" stroke-width="1.5"/>
+        <line x1="600" y1="245" x2="760" y2="187" stroke="#F87171" stroke-width="1.5"/>
+        <line x1="600" y1="260" x2="760" y2="282" stroke="#A78BFA" stroke-width="1.5"/>
+        <line x1="600" y1="275" x2="760" y2="377" stroke="#FBBF24" stroke-width="1.5"/>
+        <line x1="600" y1="290" x2="760" y2="468" stroke="#22D3EE" stroke-width="1.5"/>
+
+        <!-- Labels -->
+        <text x="140" y="24" text-anchor="middle" fill="#CBD5E1" font-size="11" font-weight="700" letter-spacing="2">DATA SOURCES</text>
+        <text x="860" y="44" text-anchor="middle" fill="#CBD5E1" font-size="11" font-weight="700" letter-spacing="2">OUTPUTS</text>
+
+        <!-- Tech stack bar -->
+        <rect x="300" y="470" width="400" height="36" rx="8" fill="#1a2332" stroke="#1F2937"/>
+        <text x="500" y="493" text-anchor="middle" fill="#CBD5E1" font-size="10" font-weight="600" letter-spacing="1">Python / FastAPI &nbsp;·&nbsp; Vector DB &nbsp;·&nbsp; LLM Tool Calling &nbsp;·&nbsp; Cloud Run &nbsp;·&nbsp; Docker</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- LIFECYCLE -->
+  <section>
+    <h2>Tracks every <span>lifecycle phase</span></h2>
+    <div class="lifecycle-track">
+      <div class="phase">
+        <div class="phase-icon">📝</div>
+        <div class="phase-label">Planning</div>
+      </div>
+      <div class="phase-line"></div>
+      <div class="phase">
+        <div class="phase-icon">🌱</div>
+        <div class="phase-label">Germination</div>
+      </div>
+      <div class="phase-line active"></div>
+      <div class="phase">
+        <div class="phase-icon active">🏡</div>
+        <div class="phase-label active">Hardening Off</div>
+      </div>
+      <div class="phase-line active"></div>
+      <div class="phase">
+        <div class="phase-icon">🌿</div>
+        <div class="phase-label">Transplant</div>
+      </div>
+      <div class="phase-line"></div>
+      <div class="phase">
+        <div class="phase-icon">🌳</div>
+        <div class="phase-label">Active Growing</div>
+      </div>
+      <div class="phase-line"></div>
+      <div class="phase">
+        <div class="phase-icon">🍅</div>
+        <div class="phase-label">Harvest</div>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--dim);font-size:13px;margin-top:16px;max-width:600px;margin-left:auto;margin-right:auto;">
+      Each phase has its own care rules, milestones, and risk factors. Sidney adapts its advice to exactly where your plant is in its journey.
+    </p>
+  </section>
+
+  <!-- SCENARIOS -->
+  <section>
+    <h2>See Sidney <span>in action</span></h2>
+    <div class="scenario-cards" id="scenario-cards"></div>
+    <div class="pipeline" id="pipeline"></div>
+  </section>
+
+  <!-- DOMAIN MAPPING -->
+  <section>
+    <h2>Same architecture, <span>different domain</span></h2>
+    <p style="text-align:center;color:var(--dim);font-size:14px;margin:-20px auto 28px;max-width:500px;">Replace the nouns. The engineering is identical.</p>
+    <div class="mapping-grid">
+      <div class="map-header map-header-garden">SIDNEY (GARDENS)</div>
+      <div></div>
+      <div class="map-header map-header-aircraft">AIRCRAFT MAINTENANCE</div>
+
+      <div class="map-item map-garden">3,000+ plant species</div>
+      <div class="map-arrow">&rarr;</div>
+      <div class="map-item map-aircraft">Component catalog</div>
+
+      <div class="map-item map-garden">Growth stages (seed &rarr; harvest)</div>
+      <div class="map-arrow">&rarr;</div>
+      <div class="map-item map-aircraft">Component lifecycle (install &rarr; overhaul)</div>
+
+      <div class="map-item map-garden">Weather &rarr; care modifier</div>
+      <div class="map-arrow">&rarr;</div>
+      <div class="map-item map-aircraft">Flight data &rarr; maintenance modifier</div>
+
+      <div class="map-item map-garden">Frost alert &rarr; protect seedlings</div>
+      <div class="map-arrow">&rarr;</div>
+      <div class="map-item map-aircraft">Fault detection &rarr; ground aircraft</div>
+
+      <div class="map-item map-garden">Companion planting rules</div>
+      <div class="map-arrow">&rarr;</div>
+      <div class="map-item map-aircraft">Component compatibility matrix</div>
+
+      <div class="map-item map-garden">Vector knowledge base</div>
+      <div class="map-arrow">&rarr;</div>
+      <div class="map-item map-aircraft">Technical manual search</div>
+
+      <div class="map-item map-garden">Daily proactive care checks</div>
+      <div class="map-arrow">&rarr;</div>
+      <div class="map-item map-aircraft">Scheduled inspection pipeline</div>
+
+      <div class="map-item map-garden">Urgency escalation (1d &rarr; 5d)</div>
+      <div class="map-arrow">&rarr;</div>
+      <div class="map-item map-aircraft">Maintenance priority escalation</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Built by <strong>Akhil Madan</strong> &middot;
+    <a href="https://keedastudios.com/my-analytics">Portfolio</a> &middot;
+    <a href="https://trymali.web.app">Mali App</a>
+  </div>
+
+</div>
+
+<script>
+const scenarios = [
+  {
+    id: 'pepper',
+    icon: '🌶️',
+    title: 'Diagnosis',
+    tag: 'Diagnostic', tagClass: 'tag-diagnostic',
+    flow: [
+      { icon: '👁️', label: 'Sees', detail: 'User viewing <strong>Veggie Bed</strong>. Pepper at <strong>55% health</strong>.' },
+      { icon: '🔍', label: 'Checks', detail: 'Plant needs, <strong>weather</strong> (62°F — too cold), companion effects.' },
+      { icon: '🧠', label: 'Reasons', detail: 'Pepper needs 70-85°F. Basil helping with pests. Rain coming.' },
+      { icon: '💬', label: 'Acts', detail: 'Diagnoses cold stress. Recommends row cover. Skips watering.' }
+    ],
+    response: {
+      msg: 'Your pepper is a bit chilly! 🌶️ At <strong>62°F, it\'s below the 70-85°F sweet spot</strong> — peppers slow down under 65°F.\n\nYour basil is <strong>helping as a pest deterrent</strong> — great bed layout.\n\n• Row cover to trap warmth\n• Mulch the base for soil heat\n• Hold fertiliser — cold roots can\'t absorb\n• Rain tomorrow — skip watering',
+      actions: ['Check in pepper', 'Weather forecast']
+    }
+  },
+  {
+    id: 'frost',
+    icon: '🥶',
+    title: 'Frost Alert',
+    tag: 'Proactive', tagClass: 'tag-proactive',
+    flow: [
+      { icon: '⏰', label: 'Monitors', detail: 'Scheduled check every 4 hours. <strong>No user prompt.</strong>' },
+      { icon: '🌡️', label: 'Detects', detail: 'Tonight: <strong>28°F</strong>. 3 frost-tender seedlings outdoors.' },
+      { icon: '⚠️', label: 'Assesses', detail: 'All below safe min (45°F). Hardening-off schedules at risk.' },
+      { icon: '🚨', label: 'Alerts', detail: '<strong>CRITICAL</strong> — bring inside before sunset. Pauses schedules.' }
+    ],
+    response: {
+      msg: '🚨 <strong>FROST ALERT — Bring seedlings inside TONIGHT</strong>\n\nOvernight: <strong>28°F</strong>. Your 3 seedlings are at risk:\n\n• 🌶️ Pepper (day 6/14) — <strong>at risk</strong>\n• 🍅 Tomato (day 8/10) — <strong>at risk</strong>\n• 🍆 Eggplant (day 4/14) — <strong>at risk</strong>\n\nTomorrow warms to 62°F — resume after 10 AM. <strong>No progress lost.</strong>',
+      actions: ['Move to greenhouse', 'Snooze 1 hour']
+    }
+  },
+  {
+    id: 'plan',
+    icon: '🌿',
+    title: 'Planning',
+    tag: 'Planning', tagClass: 'tag-planning',
+    flow: [
+      { icon: '📐', label: 'Sees', detail: '<strong>4 empty cells</strong> in herb bed. Partial shade zone.' },
+      { icon: '🤝', label: 'Checks', detail: 'Companion rules for existing mint. <strong>3,000+ species</strong> filtered.' },
+      { icon: '📅', label: 'Times', detail: 'Frost-free in 9 days. Some cold-tolerant herbs can go in now.' },
+      { icon: '✅', label: 'Recommends', detail: 'Parsley, cilantro, lettuce, chives — with <strong>timing for each</strong>.' }
+    ],
+    response: {
+      msg: 'With <strong>4 cells open</strong> in partial shade:\n\n🌿 <strong>Parsley</strong> — companion to mint, direct sow now\n🌿 <strong>Cilantro</strong> — get in before summer heat\n🥬 <strong>Lettuce</strong> — fast spring harvest\n🌿 <strong>Chives</strong> — perennial, pest deterrent\n\n⚠️ Keep mint contained — it spreads aggressively.',
+      actions: ['Add to bed', 'Companion map', 'Set reminder']
+    }
+  },
+  {
+    id: 'escalation',
+    icon: '🔥',
+    title: 'Escalation',
+    tag: 'Escalation', tagClass: 'tag-escalation',
+    flow: [
+      { icon: '☀️', label: 'Context', detail: '<strong>85°F</strong>, humidity 28%. Watering intervals <strong>halved</strong>.' },
+      { icon: '💧', label: 'Scans', detail: '3 plants overdue: 1 day, 3 days, <strong>5 days</strong>.' },
+      { icon: '📊', label: 'Scores', detail: 'Advisory → High Priority → <strong>CRITICAL</strong>. Multi-factor.' },
+      { icon: '🚨', label: 'Escalates', detail: 'Pepper may not recover fruit production. <strong>Water now.</strong>' }
+    ],
+    response: {
+      msg: '🚨 <strong>3 plants need water — 1 critical</strong>\n\n85°F + low humidity = intervals halved.\n\n• 🍅 Tomato — 1 day. <em>Water today.</em>\n• 🥒 Cucumber — 3 days. <strong>HIGH PRIORITY.</strong>\n• 🌶️ Pepper — 5 days. <strong>CRITICAL.</strong> May not recover.\n\n<strong>Tomorrow is worse (88°F).</strong>',
+      actions: ['Water all 3', 'Morning reminder']
+    }
+  },
+  {
+    id: 'knowledge',
+    icon: '🐱',
+    title: 'Knowledge',
+    tag: 'Search', tagClass: 'tag-knowledge',
+    flow: [
+      { icon: '❓', label: 'Question', detail: '"Is basil safe for my cat?" — <strong>not in structured data</strong>.' },
+      { icon: '🔎', label: 'Searches', detail: 'Vector knowledge base. <strong>Semantic match</strong> on pet safety.' },
+      { icon: '✅', label: 'Finds', detail: 'Basil: non-toxic. Also flags <strong>Allium family = toxic</strong>.' },
+      { icon: '💬', label: 'Advises', detail: 'Safe! Plus proactive warning about chives/garlic if expanding.' }
+    ],
+    response: {
+      msg: '✅ <strong>Basil is completely safe for cats!</strong>\n\nNon-toxic to cats and dogs. Nibbling is fine.\n\n<strong>Safe:</strong> rosemary, thyme, sage\n⚠️ <strong>Toxic:</strong> chives, garlic, onions (Allium family)\n\nYour basil is also repelling aphids from the tomatoes nearby 🐛',
+      actions: ['Pet-safe plants', 'Check others']
+    }
+  }
+];
+
+const cardsEl = document.getElementById('scenario-cards');
+scenarios.forEach(s => {
+  cardsEl.innerHTML += `
+    <div class="scenario-card" data-id="${s.id}" onclick="selectScenario('${s.id}')">
+      <div class="sc-icon">${s.icon}</div>
+      <div class="sc-title">${s.title}</div>
+      <div class="sc-tag ${s.tagClass}">${s.tag}</div>
+    </div>`;
+});
+
+function selectScenario(id) {
+  const s = scenarios.find(x => x.id === id);
+  if (!s) return;
+
+  document.querySelectorAll('.scenario-card').forEach(c => c.classList.remove('active'));
+  document.querySelector(`[data-id="${id}"]`).classList.add('active');
+
+  const pipeline = document.getElementById('pipeline');
+  pipeline.className = 'pipeline visible';
+
+  const flowCols = s.flow.map(f => `
+    <div class="flow-col">
+      <div class="flow-icon">${f.icon}</div>
+      <div class="flow-label">${f.label}</div>
+      <div class="flow-detail">${f.detail}</div>
+    </div>`).join('');
+
+  const actionChips = s.response.actions.map(a =>
+    `<div class="action-chip">${a}</div>`).join('');
+
+  pipeline.innerHTML = `
+    <div class="flow-visual" id="flow">${flowCols}</div>
+    <div class="response-card" id="resp">
+      <div class="response-top">
+        <div class="response-avatar">🐌</div>
+        <div class="response-name">Sidney</div>
+        <div class="response-badge">AI Response</div>
+      </div>
+      <div class="response-msg">${s.response.msg.replace(/\n/g, '<br>')}</div>
+      <div class="response-actions">${actionChips}</div>
+    </div>`;
+
+  setTimeout(() => document.getElementById('flow').classList.add('show'), 50);
+  setTimeout(() => document.getElementById('resp').classList.add('show'), 400);
+
+  setTimeout(() => {
+    pipeline.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+setTimeout(() => selectScenario('pepper'), 500);
+</script>
+
+</body>
+</html>
