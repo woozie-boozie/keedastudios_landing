@@ -1,24 +1,22 @@
 {
-  "date": "2026-04-12",
+  "date": "2026-04-13",
   "yesterday": [
-    "Shipped major Budin redesign with brown soil canvas, vertical landscape beds, and maximized design-your-bed interface",
-    "Built carousel-warm UI system with shared palette and animated backgrounds across bed wizard",
-    "Developed Bird City AGI sessions 74-77 covering chaos events, cross-system synergies, and Kingpin's Royal Decree mechanics",
-    "Fixed critical auth bug with subscription provider cleanup on logout and separate loading states for sign-in buttons"
+    "Shipped major Budin UX improvements - redesigned plant profiles, added fertilizer guides, and improved bed canvas controls across 35 commits",
+    "Advanced Bird City AGI with 3 gaming sessions including Spring Festival and Royal Court mechanics",
+    "Fixed critical Sidney chat race conditions and rebuilt animated markdown parser for better formatting"
   ],
   "today": [
-    "Continuing Budin canvas refinements - fixed bed canvas tap hit test and centering issues, unified controls into header overflow menu",
-    "Redesigning growing plant detail page for single-screen fit and cleaner UX",
-    "Advanced Bird City AGI sessions 78-79 with People's Revolt mechanics, Royal Court system, and Prestige Kingpin features",
-    "Dropped redundant UI elements across Budin - removed top placement banner and plots highlight on cancel"
+    "Continue Bird City AGI development with Noble Challenge system - shipped Baron's Decree and Count's Edict mechanics",
+    "Prep Mali launch materials for next week rollout",
+    "Test Budin fertilizer workflow end-to-end before user rollout"
   ],
   "blockers": [
-    "Mali launch timeline pressure for next week",
-    "BGMF still blocked by Apple review process"
+    "BGMF still blocked by Apple review team",
+    "Need to resolve Budin cache clearing issues between emoji/realistic plant image modes"
   ],
   "metrics": [
-    "43-day commit streak maintained with 7 commits today across budin and bird-city-agi repos",
-    "3307 total commits across 23 active repositories",
-    "Thulaa stable at 150 DAU, Hinglish Vinglish at 300 users"
+    "44-day commit streak maintained with 3345 total commits across 23 repos",
+    "Thulaa holding steady at 150 DAU, Hinglish Vinglish at 300 users",
+    "Budin and Bird City AGI most active repos with 44 and 6 day streaks respectively"
   ]
 }
