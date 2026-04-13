@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-13T18:57:44Z",
+  "updated": "2026-04-13T22:55:02Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3353,
+  "total_commits": 3356,
   "streak": 44,
   "commits_by_day": [
     {
@@ -1263,7 +1263,7 @@
     },
     {
       "date": "2026-04-13",
-      "count": 11
+      "count": 14
     }
   ],
   "commits_by_month": [
@@ -1317,7 +1317,7 @@
     },
     {
       "month": "2026-04",
-      "count": 321
+      "count": 324
     }
   ],
   "commits_by_hour": [
@@ -1395,7 +1395,7 @@
     },
     {
       "hour": 18,
-      "count": 220
+      "count": 221
     },
     {
       "hour": 19,
@@ -1403,7 +1403,7 @@
     },
     {
       "hour": 20,
-      "count": 151
+      "count": 152
     },
     {
       "hour": 21,
@@ -1411,7 +1411,7 @@
     },
     {
       "hour": 22,
-      "count": 151
+      "count": 152
     },
     {
       "hour": 23,
@@ -1419,6 +1419,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-04-13T22:54:12Z",
+      "sha": "324fa64",
+      "message": "add Meeting Rot demo for Granola application"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-13T20:22:25Z",
+      "sha": "b77e10c",
+      "message": "Session 86: The Vandal Crow + Mural Cross-System Synergies"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-13T15:59:53Z",
@@ -1706,28 +1718,16 @@
       "date": "2026-04-11T23:29:23Z",
       "sha": "35a49f3",
       "message": "feat: sidney guidance bubble on custom bed canvas with status-driven tips"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T23:07:17Z",
-      "sha": "7f96c9e",
-      "message": "feat: canvas-only bed detail — drop planning and growing tabs"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T22:52:34Z",
-      "sha": "1ea1954",
-      "message": "feat: rotate landscape beds vertical in custom bed canvas view"
     }
   ],
   "repo_details": [
     {
-      "name": "bird-city-agi",
-      "commits": 103
+      "name": "keedastudios_landing",
+      "commits": 282
     },
     {
-      "name": "keedastudios_landing",
-      "commits": 280
+      "name": "bird-city-agi",
+      "commits": 104
     },
     {
       "name": "budin",
