@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-12T18:29:51Z",
+  "updated": "2026-04-13T01:18:22Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3320,
-  "streak": 43,
+  "total_commits": 3343,
+  "streak": 44,
   "commits_by_day": [
-    {
-      "date": "2025-04-12",
-      "count": 3
-    },
     {
       "date": "2025-04-13",
       "count": 2
@@ -1263,13 +1259,17 @@
     },
     {
       "date": "2026-04-12",
-      "count": 21
+      "count": 43
+    },
+    {
+      "date": "2026-04-13",
+      "count": 1
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 78
+      "count": 75
     },
     {
       "month": "2025-05",
@@ -1317,13 +1317,13 @@
     },
     {
       "month": "2026-04",
-      "count": 288
+      "count": 311
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 172
+      "count": 173
     },
     {
       "hour": 1,
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 16,
-      "count": 194
+      "count": 195
     },
     {
       "hour": 17,
@@ -1395,30 +1395,162 @@
     },
     {
       "hour": 18,
-      "count": 219
+      "count": 220
     },
     {
       "hour": 19,
-      "count": 138
+      "count": 146
     },
     {
       "hour": 20,
-      "count": 147
+      "count": 151
     },
     {
       "hour": 21,
-      "count": 130
+      "count": 136
     },
     {
       "hour": 22,
-      "count": 150
+      "count": 151
     },
     {
       "hour": 23,
-      "count": 179
+      "count": 177
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-13T00:35:02Z",
+      "sha": "3c3d507",
+      "message": "Session 82: Duke's Challenge + Noble Ascension + Spring Royale + Champion Shield"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T22:04:59Z",
+      "sha": "d2007f6",
+      "message": "feat: add fertilizer and check-in status messages, bed detection hint, and ready"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T21:59:28Z",
+      "sha": "e8e38df",
+      "message": "fix: show expected harvest date as a range in harvest bottom sheet"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T21:58:34Z",
+      "sha": "6cf8829",
+      "message": "fix: show harvest day range from seed in 3-pager stat tile and harvest bottom sh"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T21:56:11Z",
+      "sha": "f53f0e5",
+      "message": "fix: show harvest day range instead of single value on plant profile"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T21:55:35Z",
+      "sha": "dda0c63",
+      "message": "fix: clarify seed-to-harvest label on plant profile"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T21:55:07Z",
+      "sha": "3e337e6",
+      "message": "fix: move height stat to separate line in plant profile hero to prevent overflow"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T21:54:04Z",
+      "sha": "091b848",
+      "message": "fix: show total seed-to-harvest days on plant profile instead of transplant-to-h"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T20:41:00Z",
+      "sha": "3a5e625",
+      "message": "fix: revert stage duration display back to cumulative day ranges"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T20:22:24Z",
+      "sha": "c072a00",
+      "message": "fix: display per-stage duration instead of cumulative day ranges in growth stage"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T20:16:59Z",
+      "sha": "ef0b2ec",
+      "message": "fix: show harvest days from plantData.daysToMaturity when journey has no harvest"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T20:06:47Z",
+      "sha": "350067f",
+      "message": "fix: sync days-to-harvest with Firestore source of truth instead of hardcoded va"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T19:54:34Z",
+      "sha": "05f8bae",
+      "message": "fix: rename Transplants to Pre-grown in add plant sheet filter toggle"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T19:48:58Z",
+      "sha": "95760a0",
+      "message": "feat: add emoji toggle, improve plant card layout with separate height/spacing/h"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T19:33:31Z",
+      "sha": "531acdf",
+      "message": "fix: show only active unit in plant card height and handle dual-unit Firestore s"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T19:32:24Z",
+      "sha": "a8818ed",
+      "message": "fix: redesign batch seed start dialog with proper visual hierarchy and button st"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T19:28:08Z",
+      "sha": "729126c",
+      "message": "feat: add fertilizing guide sheet, guide buttons in care dock and state indicato"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T19:26:50Z",
+      "sha": "ba705ab",
+      "message": "fix: show individual plant labels and badges instead of grouped x2 labels on bed"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T19:14:35Z",
+      "sha": "af0dce8",
+      "message": "feat: improve anti-companion plant guidance with conflict tips, confirmation dia"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T19:12:42Z",
+      "sha": "12272a9",
+      "message": "feat: add Water All, Watering Guide, and Fertilize All buttons to care state ind"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T17:10:02Z",
+      "sha": "f14c8bc",
+      "message": "fix: improve plant profile readability, spacing, and remove photo gallery"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-12T16:57:34Z",
+      "sha": "92447e2",
+      "message": "feat: navigate to plant profile screen instead of inline details when selecting "
+    },
     {
       "repo": "budin",
       "date": "2026-04-12T16:21:12Z",
@@ -1586,152 +1718,20 @@
       "date": "2026-04-11T21:20:07Z",
       "sha": "d7671e5",
       "message": "feat: Mali+ showcase on Your Plan and readable darker CTA green"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T20:55:42Z",
-      "sha": "e829c71",
-      "message": "feat: brown soil canvas in design-your-bed and drop redundant layout banner"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T20:21:47Z",
-      "sha": "9f67f9b",
-      "message": "feat: carousel-warm Meet Sidney intro with tighter copy and bigger tiles"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-11T20:15:39Z",
-      "sha": "450a991",
-      "message": "Session 77: The Kingpin's Royal Decree — City-Shaping Power"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T19:25:32Z",
-      "sha": "5774224",
-      "message": "feat: carousel-warm background and flat green CTA across bed wizard"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T19:09:46Z",
-      "sha": "2f4b813",
-      "message": "feat: shared palette, animated background, and carousel-warm bed size sheet"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-11T15:21:55Z",
-      "sha": "038e20b",
-      "message": "Session 76: Cross-System Synergies Vol. 2 + Lunar Lens"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T14:58:51Z",
-      "sha": "26c812c",
-      "message": "fix: proper Hide button and high-contrast white text on shaping step"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T14:54:39Z",
-      "sha": "a52841e",
-      "message": "fix: clearer onboarding hint explaining green area is your garden"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T14:54:30Z",
-      "sha": "8f74d57",
-      "message": "fix: clear subscription provider on logout to avoid stale user data"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T14:49:12Z",
-      "sha": "3532fd6",
-      "message": "fix: separate loading states for Google and Apple sign-in buttons"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T14:08:01Z",
-      "sha": "452a962",
-      "message": "feat: sophisticated fertilizer schedule and warm glass-card redesign of 3-page p"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-11T10:33:37Z",
-      "sha": "071c3a0",
-      "message": "Session 75: Chaos Event Overhaul — 8 Types + 3 Cross-System Synergies"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-11T05:19:45Z",
-      "sha": "81936d1",
-      "message": "Session 74: Five Cross-System Synergies — Blizzard & Tornado Depth"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-11T00:48:41Z",
-      "sha": "86a0ea2",
-      "message": "Update CLAUDE.md with Session 73 history and new ideas queue"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-11T00:45:37Z",
-      "sha": "892edd6",
-      "message": "Session 73: Ice Rink + P5 Legend Comet Trail + Gang Aurora Ritual"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-10T20:25:53Z",
-      "sha": "c2501d9",
-      "message": "Session 72: Blizzard Polish + Meteor Shower — Aurora's Rarest Event"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-10T18:52:32Z",
-      "sha": "a85ceb5",
-      "message": "feat: pot visual on canvas, pot-aware care tips, unified 3-page detail for grid "
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-10T16:49:57Z",
-      "sha": "7e5522d",
-      "message": "fix: plant gallery shows harvest stage images instead of growing stage"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-10T15:25:55Z",
-      "sha": "fb1e646",
-      "message": "Session 68: Night Market — Aurora Bazaar with Cosmic Fish Currency"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-10T14:53:05Z",
-      "sha": "c354785",
-      "message": "fix: brighter text in bottom nav bar and design tools panel"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-10T14:32:51Z",
-      "sha": "00f8b43",
-      "message": "fix: care badge only counts water and fertilize, remove harvest button"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-10T13:47:23Z",
-      "sha": "41e06ac",
-      "message": "fix: live timeline refresh, check-in dialog, real plant data on all pages"
     }
   ],
   "repo_details": [
     {
-      "name": "budin",
-      "commits": 1221
+      "name": "bird-city-agi",
+      "commits": 100
     },
     {
-      "name": "bird-city-agi",
-      "commits": 99
+      "name": "budin",
+      "commits": 1242
     },
     {
       "name": "keedastudios_landing",
-      "commits": 273
+      "commits": 274
     },
     {
       "name": "hinglish-vinglish",
