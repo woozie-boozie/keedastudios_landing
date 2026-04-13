@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Cockpit - Recruiter Agent</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0C0C10;
+    --surface: #161619;
+    --surface2: #1E1E23;
+    --border: #2A2A30;
+    --text: #EEEEF0;
+    --dim: #A0A0AD;
+    --blue: #4A9EFF;
+    --blue-glow: rgba(74,158,255,0.12);
+    --green: #34D399;
+    --amber: #F59E0B;
+    --purple: #A78BFA;
+    --red: #EF4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 48px 24px; }
+  section { margin-bottom: 56px; }
+
+  /* HERO */
+  .hero { text-align: center; margin-bottom: 56px; }
+  .hero-badge {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--blue); border: 1px solid rgba(74,158,255,0.4);
+    padding: 5px 16px; border-radius: 20px; margin-bottom: 20px;
+  }
+  .hero h1 { font-size: 48px; font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 16px; }
+  .hero h1 em { color: var(--blue); font-style: normal; }
+  .hero p { color: var(--dim); font-size: 18px; max-width: 640px; margin: 0 auto 12px; line-height: 1.6; }
+  .hero .sub { font-size: 13px; color: var(--dim); opacity: 0.7; }
+
+  /* STATS */
+  .stats-bar {
+    display: flex; justify-content: center; gap: 32px;
+    padding: 20px; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; margin-bottom: 48px;
+  }
+  .stat { text-align: center; }
+  .stat-val { font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 700; }
+  .stat-label { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--dim); margin-top: 2px; }
+
+  /* WORKFLOW DIAGRAM */
+  .workflow-svg { width: 100%; }
+  .workflow-svg svg { width: 100%; height: auto; display: block; }
+  .workflow-svg text { font-family: 'Inter', sans-serif; }
+
+  /* PHASE SELECTOR */
+  .phase-tabs {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 24px;
+  }
+  .phase-tab {
+    padding: 16px; border-radius: 10px; cursor: pointer; text-align: center;
+    background: var(--surface); border: 1px solid var(--border); transition: all 0.2s;
+  }
+  .phase-tab:hover { border-color: var(--blue); transform: translateY(-2px); }
+  .phase-tab.active { border-color: var(--blue); background: var(--blue-glow); }
+  .phase-icon { font-size: 24px; margin-bottom: 6px; }
+  .phase-label { font-size: 12px; font-weight: 700; }
+  .phase-sub { font-size: 10px; color: var(--dim); margin-top: 2px; }
+
+  /* PHASE DETAIL */
+  .phase-detail {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 32px;
+    display: none; animation: slideIn 0.3s ease;
+  }
+  .phase-detail.visible { display: block; }
+  @keyframes slideIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+  .pd-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+  .pd-title em { color: var(--blue); font-style: normal; }
+
+  /* MOCK UI */
+  .mock-ui {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden;
+  }
+  .mock-topbar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 16px; background: rgba(0,0,0,0.3); border-bottom: 1px solid var(--border);
+  }
+  .mock-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .mock-url { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--dim); margin-left: 12px; }
+  .mock-body { padding: 20px; }
+
+  /* CANDIDATE CARD MOCK */
+  .candidate-mock {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+  }
+  .cm-field { }
+  .cm-label { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--dim); margin-bottom: 4px; }
+  .cm-val { font-size: 13px; font-weight: 600; }
+
+  /* NOTES MOCK */
+  .notes-mock {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--dim); line-height: 1.8; white-space: pre-wrap;
+  }
+  .notes-mock .highlight { color: var(--blue); font-weight: 600; }
+
+  /* STRUCTURED OUTPUT MOCK */
+  .structured-section { margin-bottom: 14px; }
+  .structured-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; margin-bottom: 6px; padding: 3px 10px;
+    border-radius: 4px; display: inline-block;
+  }
+  .structured-items { font-size: 12px; color: var(--text); line-height: 1.7; padding-left: 16px; }
+  .structured-items li { margin-bottom: 4px; }
+
+  /* RECOMMENDATION MOCK */
+  .rec-mock {
+    display: flex; align-items: center; gap: 16px; margin-top: 16px;
+    padding: 16px; background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.2);
+    border-radius: 8px;
+  }
+  .rec-score {
+    font-family: 'JetBrains Mono', monospace; font-size: 24px;
+    font-weight: 700; color: var(--green);
+  }
+  .rec-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+  .rec-tag {
+    font-size: 10px; font-weight: 600; padding: 3px 10px;
+    border-radius: 12px; background: var(--blue-glow); color: var(--blue);
+  }
+
+  /* FLOW ARROW */
+  .flow-indicator {
+    text-align: center; padding: 12px; color: var(--blue);
+    font-size: 12px; font-weight: 600; letter-spacing: 1px;
+  }
+
+  /* TECH CHIPS */
+  .tech-row {
+    display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 24px;
+  }
+  .tech-chip {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.5px;
+    background: rgba(255,255,255,0.05); color: var(--dim);
+    padding: 4px 12px; border-radius: 12px; border: 1px solid var(--border);
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center; padding-top: 32px;
+    border-top: 1px solid var(--border); color: var(--dim); font-size: 12px;
+  }
+  .footer a { color: var(--blue); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+    .stats-bar { flex-wrap: wrap; gap: 16px; }
+    .phase-tabs { grid-template-columns: repeat(2, 1fr); }
+    .candidate-mock { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">Built for a Client</div>
+    <h1><em>Interview</em> Cockpit</h1>
+    <p>A recruiter agent that connects Google Calendar, Ashby, Granola, and Claude into a single zero-friction interview workflow.</p>
+    <div class="sub">Built by Akhil Madan - Keeda Studios</div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-val" style="color:var(--blue)">1,500+</div><div class="stat-label">Candidates</div></div>
+    <div class="stat"><div class="stat-val" style="color:var(--green)">1.5h</div><div class="stat-label">Saved / Day</div></div>
+    <div class="stat"><div class="stat-val" style="color:var(--purple)">4</div><div class="stat-label">Systems Connected</div></div>
+    <div class="stat"><div class="stat-val" style="color:var(--amber)">0</div><div class="stat-label">Manual Steps</div></div>
+  </div>
+
+  <!-- WORKFLOW DIAGRAM -->
+  <section>
+    <div class="workflow-svg">
+      <svg viewBox="0 0 1000 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Nodes -->
+        <rect x="10" y="40" width="120" height="70" rx="10" fill="#161619" stroke="#2A2A30"/>
+        <text x="70" y="70" text-anchor="middle" fill="#F59E0B" font-size="18">📅</text>
+        <text x="70" y="92" text-anchor="middle" fill="#EEEEF0" font-size="10" font-weight="700">Calendar</text>
+
+        <rect x="160" y="40" width="120" height="70" rx="10" fill="#161619" stroke="#2A2A30"/>
+        <text x="220" y="70" text-anchor="middle" fill="#A78BFA" font-size="18">🧩</text>
+        <text x="220" y="92" text-anchor="middle" fill="#EEEEF0" font-size="10" font-weight="700">Extension</text>
+
+        <rect x="310" y="40" width="120" height="70" rx="10" fill="#161619" stroke="#2A2A30"/>
+        <text x="370" y="70" text-anchor="middle" fill="#4A9EFF" font-size="18">👤</text>
+        <text x="370" y="92" text-anchor="middle" fill="#EEEEF0" font-size="10" font-weight="700">Ashby Profile</text>
+
+        <rect x="460" y="40" width="120" height="70" rx="10" fill="#161619" stroke="#4A9EFF" stroke-width="2"/>
+        <text x="520" y="70" text-anchor="middle" fill="#4A9EFF" font-size="18">🎙️</text>
+        <text x="520" y="92" text-anchor="middle" fill="#4A9EFF" font-size="10" font-weight="700">Interview</text>
+
+        <rect x="610" y="40" width="120" height="70" rx="10" fill="#161619" stroke="#2A2A30"/>
+        <text x="670" y="70" text-anchor="middle" fill="#34D399" font-size="18">📝</text>
+        <text x="670" y="92" text-anchor="middle" fill="#EEEEF0" font-size="10" font-weight="700">Granola Notes</text>
+
+        <rect x="760" y="40" width="120" height="70" rx="10" fill="#161619" stroke="#2A2A30"/>
+        <text x="820" y="70" text-anchor="middle" fill="#A78BFA" font-size="18">🧠</text>
+        <text x="820" y="92" text-anchor="middle" fill="#EEEEF0" font-size="10" font-weight="700">Claude</text>
+
+        <rect x="910" y="40" width="80" height="70" rx="10" fill="#161619" stroke="#34D399" stroke-width="2"/>
+        <text x="950" y="70" text-anchor="middle" fill="#34D399" font-size="18">✅</text>
+        <text x="950" y="92" text-anchor="middle" fill="#34D399" font-size="10" font-weight="700">Ashby</text>
+
+        <!-- Arrows -->
+        <line x1="130" y1="75" x2="160" y2="75" stroke="#4A9EFF" stroke-width="2"/>
+        <line x1="280" y1="75" x2="310" y2="75" stroke="#4A9EFF" stroke-width="2"/>
+        <line x1="430" y1="75" x2="460" y2="75" stroke="#4A9EFF" stroke-width="2"/>
+        <line x1="580" y1="75" x2="610" y2="75" stroke="#4A9EFF" stroke-width="2"/>
+        <line x1="730" y1="75" x2="760" y2="75" stroke="#4A9EFF" stroke-width="2"/>
+        <line x1="880" y1="75" x2="910" y2="75" stroke="#34D399" stroke-width="2"/>
+
+        <!-- Arrow tips -->
+        <polygon points="160,75 154,70 154,80" fill="#4A9EFF"/>
+        <polygon points="310,75 304,70 304,80" fill="#4A9EFF"/>
+        <polygon points="460,75 454,70 454,80" fill="#4A9EFF"/>
+        <polygon points="610,75 604,70 604,80" fill="#4A9EFF"/>
+        <polygon points="760,75 754,70 754,80" fill="#4A9EFF"/>
+        <polygon points="910,75 904,70 904,80" fill="#34D399"/>
+
+        <!-- Labels -->
+        <text x="145" y="130" text-anchor="middle" fill="#A0A0AD" font-size="9">detects interview</text>
+        <text x="295" y="130" text-anchor="middle" fill="#A0A0AD" font-size="9">auto-opens</text>
+        <text x="445" y="130" text-anchor="middle" fill="#A0A0AD" font-size="9">candidate loaded</text>
+        <text x="595" y="130" text-anchor="middle" fill="#A0A0AD" font-size="9">meeting ends</text>
+        <text x="745" y="130" text-anchor="middle" fill="#A0A0AD" font-size="9">structures notes</text>
+        <text x="895" y="130" text-anchor="middle" fill="#A0A0AD" font-size="9">writes back</text>
+
+        <!-- Loop arrow back -->
+        <path d="M 950 110 Q 950 160 500 160 Q 50 160 50 110" stroke="#2A2A30" stroke-width="1.5" fill="none" stroke-dasharray="4 4"/>
+        <text x="500" y="155" text-anchor="middle" fill="#A0A0AD" font-size="9">Full loop - zero manual steps</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- PHASE WALKTHROUGH -->
+  <section>
+    <div class="phase-tabs" id="phase-tabs">
+      <div class="phase-tab active" onclick="showPhase(0)">
+        <div class="phase-icon">📅</div>
+        <div class="phase-label">Before</div>
+        <div class="phase-sub">Calendar detects interview</div>
+      </div>
+      <div class="phase-tab" onclick="showPhase(1)">
+        <div class="phase-icon">🎙️</div>
+        <div class="phase-label">During</div>
+        <div class="phase-sub">Profile auto-loaded</div>
+      </div>
+      <div class="phase-tab" onclick="showPhase(2)">
+        <div class="phase-icon">🧠</div>
+        <div class="phase-label">After</div>
+        <div class="phase-sub">Claude structures notes</div>
+      </div>
+      <div class="phase-tab" onclick="showPhase(3)">
+        <div class="phase-icon">✅</div>
+        <div class="phase-label">Result</div>
+        <div class="phase-sub">Feedback in Ashby</div>
+      </div>
+    </div>
+
+    <!-- Phase 0: Before -->
+    <div class="phase-detail visible" id="phase-0">
+      <div class="pd-title">You click <em>"Join"</em> on a Google Calendar meeting</div>
+      <div class="mock-ui">
+        <div class="mock-topbar">
+          <div class="mock-dot" style="background:#EF4444"></div>
+          <div class="mock-dot" style="background:#F59E0B"></div>
+          <div class="mock-dot" style="background:#34D399"></div>
+          <div class="mock-url">calendar.google.com</div>
+        </div>
+        <div class="mock-body" style="text-align:center;padding:32px;">
+          <div style="font-size:16px;font-weight:700;margin-bottom:8px;">Interview - Sarah Chen (Senior Engineer)</div>
+          <div style="font-size:12px;color:var(--dim);margin-bottom:16px;">2:00 PM - 2:45 PM · Google Meet</div>
+          <div style="display:inline-flex;gap:8px;">
+            <div style="padding:8px 20px;background:var(--blue);color:white;border-radius:6px;font-size:12px;font-weight:700;">Join Meeting</div>
+          </div>
+          <div class="flow-indicator" style="margin-top:20px;">↓ Chrome extension detects Google Meet link + attendee email</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 1: During -->
+    <div class="phase-detail" id="phase-1">
+      <div class="pd-title">Interview Cockpit <em>auto-opens</em> with the candidate loaded</div>
+      <div class="mock-ui">
+        <div class="mock-topbar">
+          <div class="mock-dot" style="background:#EF4444"></div>
+          <div class="mock-dot" style="background:#F59E0B"></div>
+          <div class="mock-dot" style="background:#34D399"></div>
+          <div class="mock-url">interview-cockpit.app/candidate/sarah-chen</div>
+        </div>
+        <div class="mock-body">
+          <div style="font-size:14px;font-weight:700;margin-bottom:16px;">Sarah Chen <span style="font-size:11px;color:var(--blue);font-weight:600;margin-left:8px;">Senior Engineer · Pipeline Stage: On-site</span></div>
+          <div class="candidate-mock">
+            <div class="cm-field"><div class="cm-label">Email</div><div class="cm-val">sarah.chen@gmail.com</div></div>
+            <div class="cm-field"><div class="cm-label">Applied For</div><div class="cm-val">Senior Full-stack Engineer</div></div>
+            <div class="cm-field"><div class="cm-label">Source</div><div class="cm-val">LinkedIn · Applied 12 days ago</div></div>
+            <div class="cm-field"><div class="cm-label">Hiring Team</div><div class="cm-val">Tom (HM), Lisa (Recruiter)</div></div>
+            <div class="cm-field"><div class="cm-label">Prior Feedback</div><div class="cm-val" style="color:var(--green)">Phone Screen: Strong Yes (Lisa)</div></div>
+            <div class="cm-field"><div class="cm-label">CV</div><div class="cm-val" style="color:var(--blue)">Embedded viewer · 2 pages</div></div>
+          </div>
+          <div style="margin-top:16px;padding:12px;background:rgba(74,158,255,0.08);border-radius:8px;font-size:11px;color:var(--blue);">
+            Matched automatically by attendee email from Google Calendar invite → Ashby candidate record
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2: After -->
+    <div class="phase-detail" id="phase-2">
+      <div class="pd-title">Meeting ends. Paste Granola notes. <em>Claude structures them.</em></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:8px;">Raw Granola Notes</div>
+          <div class="mock-ui">
+            <div class="mock-body">
+              <div class="notes-mock">sarah has 4 years at stripe, worked on <span class="highlight">payments infrastructure</span>. built their <span class="highlight">real-time fraud detection</span> system - handles 10k tps.
+
+asked about system design - gave a strong answer on <span class="highlight">event-driven architecture</span>. drew out a clean pub/sub design unprompted.
+
+<span class="highlight">concern</span>: hasn't led a team before. said she wants to but no direct experience.
+
+really strong on <span class="highlight">technical depth</span>. asked great questions about our stack. clearly done her homework.
+
+would be great for the payments rewrite project.</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:8px;">Claude-Structured Output</div>
+          <div class="mock-ui">
+            <div class="mock-body">
+              <div class="structured-section">
+                <div class="structured-label" style="background:var(--blue-glow);color:var(--blue);">Key Points</div>
+                <ul class="structured-items">
+                  <li>4 years at Stripe on payments infrastructure</li>
+                  <li>Built real-time fraud detection (10k TPS)</li>
+                  <li>Strong system design - event-driven architecture</li>
+                </ul>
+              </div>
+              <div class="structured-section">
+                <div class="structured-label" style="background:rgba(52,211,153,0.12);color:var(--green);">Strengths</div>
+                <ul class="structured-items">
+                  <li>Deep technical depth in distributed systems</li>
+                  <li>Proactive - drew pub/sub design unprompted</li>
+                  <li>Did thorough research on company stack</li>
+                </ul>
+              </div>
+              <div class="structured-section">
+                <div class="structured-label" style="background:rgba(239,68,68,0.12);color:var(--red);">Concerns</div>
+                <ul class="structured-items">
+                  <li>No direct team leadership experience</li>
+                </ul>
+              </div>
+              <div class="structured-section">
+                <div class="structured-label" style="background:rgba(167,139,250,0.12);color:var(--purple);">Summary</div>
+                <ul class="structured-items">
+                  <li>Strong IC engineer. Ideal for payments rewrite. Leadership gap is manageable with mentorship.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3: Result -->
+    <div class="phase-detail" id="phase-3">
+      <div class="pd-title">Structured feedback <em>written back to Ashby</em></div>
+      <div class="mock-ui">
+        <div class="mock-topbar">
+          <div class="mock-dot" style="background:#EF4444"></div>
+          <div class="mock-dot" style="background:#F59E0B"></div>
+          <div class="mock-dot" style="background:#34D399"></div>
+          <div class="mock-url">app.ashby.com/candidates/sarah-chen/feedback</div>
+        </div>
+        <div class="mock-body">
+          <div class="rec-mock">
+            <div class="rec-score">Strong Yes</div>
+            <div style="flex:1;">
+              <div style="font-size:13px;font-weight:700;">Overall Recommendation</div>
+              <div style="font-size:11px;color:var(--dim);margin-top:4px;">Submitted by Tom · On-site Interview · April 14, 2026</div>
+              <div class="rec-tags">
+                <div class="rec-tag">high-agency</div>
+                <div class="rec-tag">technical-depth</div>
+                <div class="rec-tag">articulate</div>
+                <div class="rec-tag">prepared</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:20px;">
+            <div style="font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--dim);margin-bottom:8px;">Structured Feedback (auto-generated from Granola + Claude)</div>
+            <div style="font-size:12px;color:var(--text);line-height:1.7;padding:16px;background:var(--surface2);border-radius:8px;">
+              <strong>Key Points:</strong> 4 years at Stripe, built real-time fraud detection (10k TPS), strong event-driven architecture knowledge.<br><br>
+              <strong>Strengths:</strong> Deep technical depth, proactive communicator, thoroughly researched our stack.<br><br>
+              <strong>Concerns:</strong> No direct leadership experience - manageable with mentorship.<br><br>
+              <strong>Summary:</strong> Strong IC. Ideal for payments rewrite. Recommend advancing to final round.
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:20px;font-size:12px;color:var(--green);font-weight:600;">
+            Total time from meeting end to submitted feedback: ~2 minutes
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH -->
+  <div class="tech-row">
+    <span class="tech-chip">Next.js</span>
+    <span class="tech-chip">TypeScript</span>
+    <span class="tech-chip">Ashby API</span>
+    <span class="tech-chip">Google Calendar API</span>
+    <span class="tech-chip">Granola</span>
+    <span class="tech-chip">Claude API</span>
+    <span class="tech-chip">Chrome Extension</span>
+    <span class="tech-chip">Vercel</span>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer" style="margin-top:48px;">
+    Built by <strong>Akhil Madan</strong> &middot;
+    <a href="https://keedastudios.com/my-analytics">Live Portfolio</a> &middot;
+    <a href="https://keedastudios.com/my-analytics/granola">Meeting Rot Prototype</a>
+  </div>
+
+</div>
+
+<script>
+function showPhase(idx) {
+  document.querySelectorAll('.phase-tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.querySelectorAll('.phase-detail').forEach((d,i) => d.classList.toggle('visible', i===idx));
+}
+</script>
+
+</body>
+</html>
