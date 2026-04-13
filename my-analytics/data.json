@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-13T07:44:55Z",
+  "updated": "2026-04-13T12:46:49Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3345,
+  "total_commits": 3350,
   "streak": 44,
   "commits_by_day": [
     {
@@ -1263,7 +1263,7 @@
     },
     {
       "date": "2026-04-13",
-      "count": 3
+      "count": 8
     }
   ],
   "commits_by_month": [
@@ -1317,7 +1317,7 @@
     },
     {
       "month": "2026-04",
-      "count": 313
+      "count": 318
     }
   ],
   "commits_by_hour": [
@@ -1351,7 +1351,7 @@
     },
     {
       "hour": 7,
-      "count": 32
+      "count": 33
     },
     {
       "hour": 8,
@@ -1363,15 +1363,15 @@
     },
     {
       "hour": 10,
-      "count": 115
+      "count": 117
     },
     {
       "hour": 11,
-      "count": 107
+      "count": 108
     },
     {
       "hour": 12,
-      "count": 162
+      "count": 163
     },
     {
       "hour": 13,
@@ -1419,6 +1419,24 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-04-13T12:45:16Z",
+      "sha": "2b6af68",
+      "message": "add Sidney AI agent demo page for Fleetcraft application"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-13T11:06:17Z",
+      "sha": "081bca2",
+      "message": "feat: add Ask Sidney mini-chat bottom sheet with contextual greetings"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-13T10:25:23Z",
+      "sha": "12c189a",
+      "message": "Session 84: Noble Perks Tier 2 — Baron's Import + Count's City Intel + Court Leg"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-13T05:47:44Z",
@@ -1700,38 +1718,20 @@
       "date": "2026-04-11T22:21:46Z",
       "sha": "8056779",
       "message": "feat: rotate sun zones grid vertical to match design-your-bed canvas"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T22:15:35Z",
-      "sha": "359336d",
-      "message": "feat: rotate landscape beds vertical and maximize design-your-bed canvas"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T21:50:46Z",
-      "sha": "9ce7145",
-      "message": "feat: thumb-friendly action state pill above the dock with clear close"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T21:33:17Z",
-      "sha": "c083c4a",
-      "message": "feat: maximize design-your-bed canvas and refine modern grid tool bar"
     }
   ],
   "repo_details": [
     {
-      "name": "bird-city-agi",
-      "commits": 101
-    },
-    {
       "name": "keedastudios_landing",
-      "commits": 275
+      "commits": 278
     },
     {
       "name": "budin",
-      "commits": 1242
+      "commits": 1243
+    },
+    {
+      "name": "bird-city-agi",
+      "commits": 102
     },
     {
       "name": "hinglish-vinglish",
