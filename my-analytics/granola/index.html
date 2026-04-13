@@ -255,6 +255,7 @@
   <!-- HEALTH SCORE -->
   <section>
     <div class="section-title">Meeting Health Score</div>
+    <div style="font-size:12px;color:var(--dim);margin-bottom:14px;">Weighted by: decisions made, action items completed vs created, topic repetition across meetings, and async-eligibility of format.</div>
     <div class="health-card">
       <div class="score-ring">
         <svg viewBox="0 0 120 120">
@@ -303,10 +304,10 @@
   <section>
     <div class="section-title">Where the rot is</div>
     <div class="rot-grid">
-      <!-- Migration -->
+      <!-- GTM Launch -->
       <div class="rot-card red-top">
-        <div class="rot-icon">🔄</div>
-        <div class="rot-title">"The Migration"</div>
+        <div class="rot-icon">🚀</div>
+        <div class="rot-title">"GTM Launch Plan"</div>
         <div class="rot-subtitle">Discussed 4 times. Decided once.</div>
         <div class="rot-stat red">2h 50m</div>
         <div class="rot-detail">spent on one topic across 4 meetings</div>
@@ -319,13 +320,14 @@
           <div class="rot-arrow">&rarr;</div>
           <div class="rot-node resolved">Fri 2pm ✓</div>
         </div>
+        <div style="font-size:11px;color:var(--purple);margin:8px 0;">😤 Tone across meetings: <strong>collaborative → uncertain → frustrated → resolved</strong></div>
         <div class="rot-verdict red">A 30-min decision meeting on Monday would have saved 2h 20m.</div>
       </div>
 
-      <!-- Pricing -->
+      <!-- Enterprise Packaging -->
       <div class="rot-card amber-top">
-        <div class="rot-icon">💰</div>
-        <div class="rot-title">"Pricing Model"</div>
+        <div class="rot-icon">📦</div>
+        <div class="rot-title">"Enterprise Packaging"</div>
         <div class="rot-subtitle">Still open. Accumulating decision debt.</div>
         <div class="rot-stat amber">1h 30m</div>
         <div class="rot-detail">across 2 meetings, zero decisions</div>
@@ -336,7 +338,8 @@
           <div class="rot-arrow">&rarr;</div>
           <div class="rot-node" style="color:var(--red)">Next week?</div>
         </div>
-        <div class="rot-verdict amber">Every week this isn't resolved costs another meeting. Action item "decide pricing" created twice, overdue twice.</div>
+        <div style="font-size:11px;color:var(--purple);margin:8px 0;">😬 Tone across meetings: <strong>optimistic → tense → deflated</strong></div>
+        <div class="rot-verdict amber">Every week this isn't resolved costs another meeting. Action item "decide packaging tiers" created twice, overdue twice.</div>
       </div>
 
       <!-- Standups -->
@@ -391,8 +394,8 @@
       <div class="rec">
         <div class="rec-icon">⏱️</div>
         <div class="rec-body">
-          <div class="rec-action">Time-box "The Migration" to a single decision meeting</div>
-          <div class="rec-detail">4 meetings on one topic is a decision failure, not a complexity problem. Assign a DRI, set a deadline.</div>
+          <div class="rec-action">Time-box "GTM Launch" to a single decision meeting</div>
+          <div class="rec-detail">4 meetings on one topic is a decision failure, not a complexity problem. Team tone went from collaborative to frustrated. Assign a DRI, set a deadline.</div>
         </div>
         <div class="rec-save">+2h 20m</div>
       </div>
@@ -436,9 +439,9 @@ const meetings = [
     { time:'09:00', name:'Team Standup', dur:'15m', health:'red', tag:'async', tagLabel:'Async candidate',
       detail:'Status updates from 4 engineers. No blockers raised. No decisions needed. Everyone read from their Jira board.',
       verdict:'This information exists in Jira already. A Slack bot asking "any blockers?" gives the same signal.', verdictType:'red' },
-    { time:'10:00', name:'Product × Eng: Migration', dur:'45m', health:'red', tag:'repeat', tagLabel:'Repeated topic',
-      detail:'Discussed migrating from Postgres to Aurora. <strong>No decision made.</strong> Three action items created: "research Aurora pricing", "benchmark current latency", "check with DevOps." All assigned, none with deadlines.',
-      verdict:'First of 4 meetings on this topic this week. No DRI, no deadline, no decision framework.', verdictType:'red' },
+    { time:'10:00', name:'Product × Eng: GTM Launch', dur:'45m', health:'red', tag:'repeat', tagLabel:'Repeated topic',
+      detail:'Discussed GTM timeline for enterprise launch. <strong>No decision made.</strong> Three action items created: "finalise launch date", "align sales enablement", "confirm feature scope." All assigned, none with deadlines.',
+      verdict:'First of 4 meetings on GTM this week. No DRI, no deadline, no decision framework.', verdictType:'red' },
     { time:'14:00', name:'User Interview: Sarah @ Acme', dur:'30m', health:'green', tag:'productive', tagLabel:'Productive',
       detail:'4 new insights about onboarding friction. Sarah described a workflow where she exports data to Excel because the dashboard doesn\'t filter by date range. <strong>Direct input into next sprint.</strong>',
       verdict:'High-value meeting. Clear user pain, actionable insight, directly shaped the backlog.', verdictType:'green' },
@@ -454,9 +457,9 @@ const meetings = [
     { time:'11:00', name:'Design Review', dur:'30m', health:'green', tag:'decision', tagLabel:'2 decisions',
       detail:'Reviewed 3 mockups for the new dashboard. <strong>2 UX decisions made:</strong> went with tabbed layout over sidebar, added date range filter (from Sarah\'s feedback yesterday).',
       verdict:'Fast, focused, decisions made. Good meeting.', verdictType:'green' },
-    { time:'14:00', name:'1:1 with CTO', dur:'30m', health:'amber', tag:'repeat', tagLabel:'Migration again',
-      detail:'Started with a check-in, then CTO asked "where are we on the migration?" Rehashed Monday\'s discussion. <strong>Still no decision.</strong> CTO said "let\'s get everyone together to decide" - scheduling another meeting.',
-      verdict:'Migration topic is spreading. Now 2 meetings, 1h 15m, zero decisions.', verdictType:'amber' },
+    { time:'14:00', name:'1:1 with CTO', dur:'30m', health:'amber', tag:'repeat', tagLabel:'GTM again',
+      detail:'Started with a check-in, then CTO asked "where are we on the launch plan?" Rehashed Monday\'s discussion. <strong>Still no decision.</strong> CTO said "let\'s get everyone together to decide" - scheduling another meeting.',
+      verdict:'GTM topic is spreading. Now 2 meetings, 1h 15m, zero decisions.', verdictType:'amber' },
     { time:'15:30', name:'All-Hands', dur:'45m', health:'red', tag:'async', tagLabel:'Async candidate',
       detail:'CEO shared company updates. No Q&A. Marketing presented campaign results. Finance shared runway update. <strong>One-directional information.</strong>',
       verdict:'This is a Loom video, not a meeting. 45 minutes × entire company = massive cost.', verdictType:'red' }
@@ -466,15 +469,15 @@ const meetings = [
     { time:'09:00', name:'Team Standup', dur:'15m', health:'red', tag:'async', tagLabel:'Async candidate',
       detail:'Identical format. One engineer mentioned being blocked on an API. No one followed up in the meeting - resolved later in Slack.',
       verdict:'The one useful signal (a blocker) was resolved async anyway.', verdictType:'red' },
-    { time:'10:30', name:'Stakeholder: Pricing', dur:'60m', health:'amber', tag:'deferred', tagLabel:'Deferred',
-      detail:'Sales, Product, and Finance debated pricing tiers. Three options on the table. <strong>No decision - "need more data."</strong> Action item: "model out scenario B by Thursday." Assigned to finance.',
+    { time:'10:30', name:'Stakeholder: Enterprise Packaging', dur:'60m', health:'amber', tag:'deferred', tagLabel:'Deferred',
+      detail:'Sales, Product, and Finance debated enterprise packaging tiers. Three options on the table. <strong>No decision - "need more data."</strong> Action item: "model out scenario B by Thursday." Assigned to finance.',
       verdict:'60 minutes of debate with no resolution. The "need more data" pattern is classic decision avoidance.', verdictType:'amber' },
     { time:'13:00', name:'Retrospective', dur:'45m', health:'green', tag:'productive', tagLabel:'Productive',
       detail:'Team identified 3 process improvements. <strong>All 3 got owners and deadlines.</strong> Good discussion about deploy frequency.',
       verdict:'Retro that actually produced change. Rare and valuable.', verdictType:'green' },
-    { time:'15:00', name:'"Quick chat about the API"', dur:'25m', health:'red', tag:'repeat', tagLabel:'Migration #3',
-      detail:'Started about API rate limiting, then: "oh, this is related to the migration question..." <strong>Turned into migration discussion #3.</strong> Still no decision. More opinions, same deadlock.',
-      verdict:'Meetings that "morph" into repeat topics are the worst kind of rot. 3 meetings, 1h 40m, zero progress.', verdictType:'red' }
+    { time:'15:00', name:'"Quick chat about the API"', dur:'25m', health:'red', tag:'repeat', tagLabel:'GTM #3',
+      detail:'Started about API rate limiting, then: "oh, this ties into the launch timeline..." <strong>Turned into GTM discussion #3.</strong> Still no decision. More opinions, same deadlock.',
+      verdict:'Meetings that "morph" into repeat topics are the worst kind of rot. 3 meetings, 1h 40m, zero progress. Tone: increasingly frustrated.', verdictType:'red' }
   ],
   // Thursday
   [
@@ -482,12 +485,12 @@ const meetings = [
       detail:'Day 4 of the same format. One person was on PTO, nobody noticed until someone asked.',
       verdict:'Nobody reads the async updates because there aren\'t any. The meeting IS the update.', verdictType:'red' },
     { time:'10:00', name:'Board Prep with CEO', dur:'45m', health:'green', tag:'decision', tagLabel:'4 decisions',
-      detail:'Aligned on board narrative. <strong>4 decisions:</strong> lead with retention metrics, include migration timeline (ironic), highlight new enterprise pipeline, defer fundraising discussion.',
+      detail:'Aligned on board narrative. <strong>4 decisions:</strong> lead with retention metrics, include launch timeline (ironic), highlight new enterprise pipeline, defer fundraising discussion.',
       verdict:'Focused, high-stakes, productive. Good use of synchronous time.', verdictType:'green' },
     { time:'14:00', name:'Cross-team Sync', dur:'30m', health:'red', tag:'dead', tagLabel:'Dead time',
       detail:'5 people dialled in. Marketing: "nothing new." Eng: "same as standup." Sales: "pipeline update in the doc." <strong>Ended 15 minutes early.</strong>',
       verdict:'If nobody has updates, the meeting shouldn\'t exist. This has happened 3 of the last 4 weeks.', verdictType:'red' },
-    { time:'16:00', name:'Pricing Follow-up', dur:'30m', health:'amber', tag:'deferred', tagLabel:'Deferred again',
+    { time:'16:00', name:'Enterprise Packaging Follow-up', dur:'30m', health:'amber', tag:'deferred', tagLabel:'Deferred again',
       detail:'Finance presented scenario B. Sales pushed back. Product suggested a 4th option. <strong>Deferred again.</strong> "Let\'s sleep on it and revisit next week."',
       verdict:'2 meetings, 1h 30m, zero decisions, and now the decision is pushed to next week. Textbook decision debt.', verdictType:'amber' }
   ],
@@ -499,7 +502,7 @@ const meetings = [
     { time:'11:00', name:'Demo Day', dur:'30m', health:'green', tag:'productive', tagLabel:'Productive',
       detail:'2 features demo\'d live. Team celebrated shipping. Feedback collected for iteration. <strong>High energy, high signal.</strong>',
       verdict:'Celebration + feedback in one meeting. Worth every minute.', verdictType:'green' },
-    { time:'14:00', name:'"The Migration" Decision', dur:'60m', health:'green', tag:'decision', tagLabel:'Finally decided',
+    { time:'14:00', name:'"GTM Launch" Decision', dur:'60m', health:'green', tag:'decision', tagLabel:'Finally decided',
       detail:'CTO brought everyone together. Laid out 3 options with trade-offs. <strong>Decision made in 20 minutes.</strong> Remaining 40 minutes spent on implementation planning.',
       verdict:'The actual decision took 20 minutes. The previous 3 meetings (2h 50m) were rot. This should have happened on Monday.', verdictType:'green' }
   ]
