@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-13T23:36:12Z",
+  "updated": "2026-04-14T01:17:26Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3362,
-  "streak": 44,
+  "total_commits": 3364,
+  "streak": 45,
   "commits_by_day": [
-    {
-      "date": "2025-04-13",
-      "count": 2
-    },
     {
       "date": "2025-04-14",
       "count": 5
@@ -1263,13 +1259,17 @@
     },
     {
       "date": "2026-04-13",
-      "count": 20
+      "count": 21
+    },
+    {
+      "date": "2026-04-14",
+      "count": 1
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 75
+      "count": 73
     },
     {
       "month": "2025-05",
@@ -1317,17 +1317,17 @@
     },
     {
       "month": "2026-04",
-      "count": 330
+      "count": 332
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 173
+      "count": 174
     },
     {
       "hour": 1,
-      "count": 129
+      "count": 128
     },
     {
       "hour": 2,
@@ -1391,7 +1391,7 @@
     },
     {
       "hour": 17,
-      "count": 194
+      "count": 193
     },
     {
       "hour": 18,
@@ -1415,10 +1415,16 @@
     },
     {
       "hour": 23,
-      "count": 182
+      "count": 183
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-14T00:48:41Z",
+      "sha": "f087db6",
+      "message": "Session 87: The Great Migration — V-Formation Boss Crossing"
+    },
     {
       "repo": "keedastudios_landing",
       "date": "2026-04-13T23:35:16Z",
@@ -1712,22 +1718,16 @@
       "date": "2026-04-12T00:12:13Z",
       "sha": "cdb985c",
       "message": "feat: unify custom bed canvas controls into header overflow menu"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-11T23:54:42Z",
-      "sha": "ba2af47",
-      "message": "feat: drop redundant care summary pills from custom bed canvas"
     }
   ],
   "repo_details": [
     {
-      "name": "keedastudios_landing",
-      "commits": 288
+      "name": "bird-city-agi",
+      "commits": 105
     },
     {
-      "name": "bird-city-agi",
-      "commits": 104
+      "name": "keedastudios_landing",
+      "commits": 289
     },
     {
       "name": "budin",
