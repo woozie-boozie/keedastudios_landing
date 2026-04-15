@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-15T07:15:45Z",
+  "updated": "2026-04-15T08:37:05Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3377,
+  "total_commits": 3379,
   "streak": 46,
   "commits_by_day": [
     {
@@ -1263,7 +1263,7 @@
     },
     {
       "date": "2026-04-15",
-      "count": 3
+      "count": 5
     }
   ],
   "commits_by_month": [
@@ -1317,7 +1317,7 @@
     },
     {
       "month": "2026-04",
-      "count": 345
+      "count": 347
     }
   ],
   "commits_by_hour": [
@@ -1351,11 +1351,11 @@
     },
     {
       "hour": 7,
-      "count": 34
+      "count": 35
     },
     {
       "hour": 8,
-      "count": 53
+      "count": 54
     },
     {
       "hour": 9,
@@ -1419,6 +1419,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "keedastudios_landing",
+      "date": "2026-04-15T08:36:11Z",
+      "sha": "60411c3",
+      "message": "fix Sidney demo: light mode text contrast, add care history context"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-15T05:30:18Z",
@@ -1712,22 +1718,16 @@
       "date": "2026-04-12T01:12:53Z",
       "sha": "74940ef",
       "message": "fix: source Sidney chat from Firestore to eliminate dupe response race"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T01:04:10Z",
-      "sha": "141ea7a",
-      "message": "fix: rewrite animated markdown parser to handle multi-word bold and italic"
     }
   ],
   "repo_details": [
     {
-      "name": "bird-city-agi",
-      "commits": 112
+      "name": "keedastudios_landing",
+      "commits": 297
     },
     {
-      "name": "keedastudios_landing",
-      "commits": 295
+      "name": "bird-city-agi",
+      "commits": 112
     },
     {
       "name": "budin",
