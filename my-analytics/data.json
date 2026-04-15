@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-15T12:54:51Z",
+  "updated": "2026-04-15T18:57:48Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3384,
+  "total_commits": 3432,
   "streak": 46,
   "commits_by_day": [
     {
@@ -1259,11 +1259,11 @@
     },
     {
       "date": "2026-04-14",
-      "count": 11
+      "count": 42
     },
     {
       "date": "2026-04-15",
-      "count": 10
+      "count": 27
     }
   ],
   "commits_by_month": [
@@ -1317,7 +1317,7 @@
     },
     {
       "month": "2026-04",
-      "count": 352
+      "count": 400
     }
   ],
   "commits_by_hour": [
@@ -1355,39 +1355,39 @@
     },
     {
       "hour": 8,
-      "count": 57
+      "count": 59
     },
     {
       "hour": 9,
-      "count": 88
+      "count": 90
     },
     {
       "hour": 10,
-      "count": 119
+      "count": 124
     },
     {
       "hour": 11,
-      "count": 108
+      "count": 112
     },
     {
       "hour": 12,
-      "count": 166
+      "count": 173
     },
     {
       "hour": 13,
-      "count": 156
+      "count": 161
     },
     {
       "hour": 14,
-      "count": 187
+      "count": 189
     },
     {
       "hour": 15,
-      "count": 207
+      "count": 215
     },
     {
       "hour": 16,
-      "count": 195
+      "count": 198
     },
     {
       "hour": 17,
@@ -1407,23 +1407,119 @@
     },
     {
       "hour": 21,
-      "count": 136
+      "count": 137
     },
     {
       "hour": 22,
-      "count": 153
+      "count": 158
     },
     {
       "hour": 23,
-      "count": 183
+      "count": 187
     }
   ],
   "recent_commits": [
     {
       "repo": "bird-city-agi",
+      "date": "2026-04-15T16:11:19Z",
+      "sha": "9939fcc",
+      "message": "Session 96: Golden Rampage — The Chosen Berserker"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T13:13:11Z",
+      "sha": "07d0ec0",
+      "message": "feat: add local conversation memory to mini-Sidney for within-session continuity"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T13:06:46Z",
+      "sha": "489c327",
+      "message": "fix: remove false check-in saved snackbar that fires even on cancel"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T13:02:16Z",
+      "sha": "25194dd",
+      "message": "feat: add Ask Sidney button with avatar to plant growth info action row"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T12:48:02Z",
+      "sha": "8813b58",
+      "message": "fix: rename Expand to Size and prevent label wrapping in design tools panel"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T12:44:39Z",
+      "sha": "dd3cc4c",
+      "message": "fix: make grid lines nearly invisible at 2% opacity"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T12:33:15Z",
+      "sha": "10e926d",
+      "message": "fix: show Now instead of Soon for unwatered plants and widen location tag"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T12:14:54Z",
+      "sha": "3d7b6d8",
+      "message": "fix: remove floating Water and Feed buttons from grid view"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T12:08:50Z",
+      "sha": "7f56a7f",
+      "message": "fix: solid dark background on grid top panel for better contrast"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T12:04:34Z",
+      "sha": "70c02bd",
+      "message": "feat: remove Entry button from action bar, rename Info to Status"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T11:42:00Z",
+      "sha": "f424aef",
+      "message": "fix: remove direct check-in from grid view, redirect to plant detail page instea"
+    },
+    {
+      "repo": "bird-city-agi",
       "date": "2026-04-15T10:27:49Z",
       "sha": "d5e5cb6",
       "message": "Session 95: City Vault Truck + Four Cross-System Synergies"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T10:02:01Z",
+      "sha": "0401d44",
+      "message": "fix: remove separate check-in push notification in favor of garden report"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T09:53:20Z",
+      "sha": "bcbeb6a",
+      "message": "feat: add check-in nudges — push notification, orange canvas glow, and due-for-c"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T09:16:18Z",
+      "sha": "7301cb5",
+      "message": "fix: widen canvas plant label and add ellipsis for long phase names"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T08:50:08Z",
+      "sha": "05ed985",
+      "message": "feat: Sidney-driven stage advancement with inline advance card in check-in chat"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T08:39:54Z",
+      "sha": "30c3036",
+      "message": "feat: move advance button to fixed footer and add next-stage info to check-in co"
     },
     {
       "repo": "keedastudios_landing",
@@ -1450,10 +1546,118 @@
       "message": "Session 93: Blood Moon Cross-System Synergies + The Possessed"
     },
     {
+      "repo": "budin",
+      "date": "2026-04-14T23:18:19Z",
+      "sha": "5fd9019",
+      "message": "feat: replace subtle swipe hint with full-screen tutorial overlay"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T23:15:22Z",
+      "sha": "2603033",
+      "message": "feat: add one-time swipe hint animation on plant growth info first open"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T23:04:49Z",
+      "sha": "cdae1f0",
+      "message": "feat: upload check-in photo to Firebase Storage and save URL to plant journal"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T23:00:41Z",
+      "sha": "4ed2163",
+      "message": "feat: auto-record check-in to plant journal after Sidney photo assessment"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T22:47:22Z",
+      "sha": "b0f43a6",
+      "message": "feat: add photo confirmation dialog with confirm, retake, and cancel options"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T22:43:52Z",
+      "sha": "c147ea9",
+      "message": "fix: handle missing TemplateBedService provider in photo check-in flow"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T22:39:48Z",
+      "sha": "ff6d002",
+      "message": "feat: show photo thumbnail in mini-chat and update local backend IP"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T22:30:46Z",
+      "sha": "6b3dab2",
+      "message": "feat: update all check-in entry points to camera → Sidney flow"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T22:06:06Z",
+      "sha": "1aca0ef",
+      "message": "fix: rewire bed management check-in to camera → Sidney flow"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T21:59:26Z",
+      "sha": "20c1d03",
+      "message": "feat: replace check-in form with camera → Sidney photo assessment flow"
+    },
+    {
       "repo": "bird-city-agi",
       "date": "2026-04-14T20:31:47Z",
       "sha": "871cec0",
       "message": "Session 92: Blood Moon — Crimson Night of Feral Birds + Night Market Curse"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T16:12:17Z",
+      "sha": "9a37fe9",
+      "message": "fix: use casual tone for mini-chat (brief but conversational is not a valid tone"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T16:03:18Z",
+      "sha": "273441b",
+      "message": "fix: use brief but conversational tone for mini-chat instead of strict brief"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T15:59:09Z",
+      "sha": "a6dd4bd",
+      "message": "fix: block decoration placement on occupied cells and resize bench to 4ft"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T15:51:43Z",
+      "sha": "bf93fb9",
+      "message": "feat: cache mini-chat messages in memory so they persist across sheet close/reop"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T15:43:01Z",
+      "sha": "94afc04",
+      "message": "feat: add move-outdoors and harvest date windows to Sidney bed context"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T15:40:19Z",
+      "sha": "f17b090",
+      "message": "fix: rename transplant_date to move_outdoors_date for beginner-friendly Sidney r"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T15:19:43Z",
+      "sha": "f0b9241",
+      "message": "fix: shift transplant and downstream dates when indoor start is clamped to today"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-14T15:15:54Z",
+      "sha": "c176759",
+      "message": "feat: add frost sensitivity and indoor lead weeks to Sidney bed context"
     },
     {
       "repo": "bird-city-agi",
@@ -1462,276 +1666,72 @@
       "message": "Session 91: Great Migration Cross-System Synergies + Feather of the Alpha"
     },
     {
-      "repo": "bird-city-agi",
-      "date": "2026-04-14T10:17:13Z",
-      "sha": "42dd5d5",
-      "message": "Session 90: Thunder Dome Cross-System Synergies + Gladiator Champion Badge"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-14T05:19:58Z",
-      "sha": "7b4b50b",
-      "message": "Session 88: Gang Siege System — Cooperative Nest Assaults"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-14T05:17:46Z",
-      "sha": "495ada5",
-      "message": "Session 88: The Thunder Dome — Electromagnetic Forced-Proximity Arena"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-14T00:48:41Z",
-      "sha": "f087db6",
-      "message": "Session 87: The Great Migration — V-Formation Boss Crossing"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-04-13T23:35:16Z",
-      "sha": "e030ae3",
-      "message": "add light mode (default) to all demo pages"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-04-13T23:31:05Z",
-      "sha": "3892dbb",
-      "message": "add Interview Cockpit demo page for Granola application"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-04-13T23:00:51Z",
-      "sha": "32ccbf6",
-      "message": "refine Meeting Rot demo: Granola-relevant topics, emotional tone, health score m"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-04-13T22:54:12Z",
-      "sha": "324fa64",
-      "message": "add Meeting Rot demo for Granola application"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-13T20:22:25Z",
-      "sha": "b77e10c",
-      "message": "Session 86: The Vandal Crow + Mural Cross-System Synergies"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-13T15:59:53Z",
-      "sha": "c2637ad",
-      "message": "Session 85: Gang Graffiti Murals — Cooperative Territory Art"
-    },
-    {
-      "repo": "keedastudios_landing",
-      "date": "2026-04-13T12:45:16Z",
-      "sha": "2b6af68",
-      "message": "add Sidney AI agent demo page for Fleetcraft application"
+      "repo": "budin",
+      "date": "2026-04-14T15:13:07Z",
+      "sha": "5675640",
+      "message": "feat: dark green-accent plant detail sheet and open 3-pager after planting"
     },
     {
       "repo": "budin",
-      "date": "2026-04-13T11:06:17Z",
-      "sha": "081bca2",
-      "message": "feat: add Ask Sidney mini-chat bottom sheet with contextual greetings"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-13T10:25:23Z",
-      "sha": "12c189a",
-      "message": "Session 84: Noble Perks Tier 2 — Baron's Import + Count's City Intel + Court Leg"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-13T05:47:44Z",
-      "sha": "fbdafeb",
-      "message": "Session 83: Noble Challenge Tiers — Baron's Decree + Count's Edict"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-13T00:35:02Z",
-      "sha": "3c3d507",
-      "message": "Session 82: Duke's Challenge + Noble Ascension + Spring Royale + Champion Shield"
+      "date": "2026-04-14T15:05:32Z",
+      "sha": "838926d",
+      "message": "fix: disable global chat history in mini-chat to prevent stale response poisonin"
     },
     {
       "repo": "budin",
-      "date": "2026-04-12T22:04:59Z",
-      "sha": "d2007f6",
-      "message": "feat: add fertilizer and check-in status messages, bed detection hint, and ready"
+      "date": "2026-04-14T14:32:05Z",
+      "sha": "e1a19b5",
+      "message": "fix: clamp past indoor start dates to today in journey timing computation"
     },
     {
       "repo": "budin",
-      "date": "2026-04-12T21:59:28Z",
-      "sha": "e8e38df",
-      "message": "fix: show expected harvest date as a range in harvest bottom sheet"
+      "date": "2026-04-14T14:05:24Z",
+      "sha": "ca3f26d",
+      "message": "fix: exclude past dates from Sidney context and add today's date"
     },
     {
       "repo": "budin",
-      "date": "2026-04-12T21:58:34Z",
-      "sha": "6cf8829",
-      "message": "fix: show harvest day range from seed in 3-pager stat tile and harvest bottom sh"
+      "date": "2026-04-14T13:53:06Z",
+      "sha": "08d8bf8",
+      "message": "feat: make mini-chat self-contained with persistent bed context and no exchange "
     },
     {
       "repo": "budin",
-      "date": "2026-04-12T21:56:11Z",
-      "sha": "f53f0e5",
-      "message": "fix: show harvest day range instead of single value on plant profile"
+      "date": "2026-04-14T13:11:47Z",
+      "sha": "08cee7d",
+      "message": "feat: enrich Sidney bed context with plant names, dates, and sow method"
     },
     {
       "repo": "budin",
-      "date": "2026-04-12T21:55:35Z",
-      "sha": "dda0c63",
-      "message": "fix: clarify seed-to-harvest label on plant profile"
+      "date": "2026-04-14T11:23:36Z",
+      "sha": "9d3f9ac",
+      "message": "fix: tailor Sidney greeting and suggestions to bed planning state"
     },
     {
       "repo": "budin",
-      "date": "2026-04-12T21:55:07Z",
-      "sha": "3e337e6",
-      "message": "fix: move height stat to separate line in plant profile hero to prevent overflow"
+      "date": "2026-04-14T11:11:59Z",
+      "sha": "c183345",
+      "message": "fix: hide water/fertilizer indicators for plants in planning phase"
     },
     {
       "repo": "budin",
-      "date": "2026-04-12T21:54:04Z",
-      "sha": "091b848",
-      "message": "fix: show total seed-to-harvest days on plant profile instead of transplant-to-h"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T20:41:00Z",
-      "sha": "3a5e625",
-      "message": "fix: revert stage duration display back to cumulative day ranges"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T20:22:24Z",
-      "sha": "c072a00",
-      "message": "fix: display per-stage duration instead of cumulative day ranges in growth stage"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T20:16:59Z",
-      "sha": "ef0b2ec",
-      "message": "fix: show harvest days from plantData.daysToMaturity when journey has no harvest"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T20:06:47Z",
-      "sha": "350067f",
-      "message": "fix: sync days-to-harvest with Firestore source of truth instead of hardcoded va"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T19:54:34Z",
-      "sha": "05f8bae",
-      "message": "fix: rename Transplants to Pre-grown in add plant sheet filter toggle"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T19:48:58Z",
-      "sha": "95760a0",
-      "message": "feat: add emoji toggle, improve plant card layout with separate height/spacing/h"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T19:33:31Z",
-      "sha": "531acdf",
-      "message": "fix: show only active unit in plant card height and handle dual-unit Firestore s"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T19:32:24Z",
-      "sha": "a8818ed",
-      "message": "fix: redesign batch seed start dialog with proper visual hierarchy and button st"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T19:28:08Z",
-      "sha": "729126c",
-      "message": "feat: add fertilizing guide sheet, guide buttons in care dock and state indicato"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T19:26:50Z",
-      "sha": "ba705ab",
-      "message": "fix: show individual plant labels and badges instead of grouped x2 labels on bed"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T19:14:35Z",
-      "sha": "af0dce8",
-      "message": "feat: improve anti-companion plant guidance with conflict tips, confirmation dia"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T19:12:42Z",
-      "sha": "12272a9",
-      "message": "feat: add Water All, Watering Guide, and Fertilize All buttons to care state ind"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T17:10:02Z",
-      "sha": "f14c8bc",
-      "message": "fix: improve plant profile readability, spacing, and remove photo gallery"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T16:57:34Z",
-      "sha": "92447e2",
-      "message": "feat: navigate to plant profile screen instead of inline details when selecting "
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T16:21:12Z",
-      "sha": "923f98d",
-      "message": "feat: add plant info button and germination guide link to growing detail page 1"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T16:14:32Z",
-      "sha": "fa5e35d",
-      "message": "fix: preserve planting state across stage picker navigation and update detail sh"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-12T15:39:09Z",
-      "sha": "d6c0c2d",
-      "message": "Session 81: Hanami Lantern Chase + Sakura Viewing Party + Blossom Crown + Mochi×"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T10:42:24Z",
-      "sha": "4b38f3f",
-      "message": "feat: add check-in button to pot plant detail sheet in modern grid"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-12T10:28:23Z",
-      "sha": "997fc60",
-      "message": "Session 80: Cherry Blossom Spring Festival — Seasonal Beauty Transforms Bird Cit"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T09:42:49Z",
-      "sha": "4621c54",
-      "message": "fix: clear caches properly when switching between emoji and realistic plant imag"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T07:36:26Z",
-      "sha": "da7c23e",
-      "message": "Merge branch 'sud/hackathon-1' into main-mali"
+      "date": "2026-04-14T11:01:07Z",
+      "sha": "f2752ff",
+      "message": "feat: add onboarding-style background blooms to Ask Sidney sheet"
     }
   ],
   "repo_details": [
     {
-      "name": "budin",
-      "commits": 1243
+      "name": "bird-city-agi",
+      "commits": 114
     },
     {
-      "name": "bird-city-agi",
-      "commits": 113
+      "name": "budin",
+      "commits": 1289
     },
     {
       "name": "keedastudios_landing",
-      "commits": 301
+      "commits": 302
     },
     {
       "name": "hinglish-vinglish",
