@@ -573,7 +573,7 @@ function selectScenario(id) {
   setTimeout(() => document.getElementById('resp').classList.add('show'), 400);
 
   setTimeout(() => {
-    pipeline.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!window._firstLoad) { pipeline.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   }, 100);
 }
 
@@ -601,7 +601,8 @@ if (localStorage.getItem('theme') === 'dark') {
   setTimeout(updateSvgColors, 0);
 }
 
-setTimeout(() => selectScenario('pepper'), 500);
+window._firstLoad = true;
+setTimeout(() => { selectScenario('pepper'); setTimeout(() => { window._firstLoad = false; }, 100); }, 500);
 </script>
 
 </body>
