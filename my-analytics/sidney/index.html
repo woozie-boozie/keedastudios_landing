@@ -186,7 +186,7 @@
   .response-avatar { font-size: 28px; }
   .response-name { font-weight: 700; font-size: 14px; }
   .response-badge { font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: 10px; background: var(--green-glow); color: var(--green); letter-spacing: 0.5px; }
-  .response-msg { font-size: 14px; color: #F1F5F9; line-height: 1.75; }
+  .response-msg { font-size: 14px; color: var(--text); line-height: 1.75; }
   .response-msg strong { color: var(--green); }
   .response-actions { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
   .action-chip {
@@ -250,7 +250,7 @@
   <div class="hero">
     <div class="hero-badge">Live in Production</div>
     <h1><span class="snail">🐌</span> Meet <em>Sidney</em></h1>
-    <p>A proactive AI agent that knows your garden, predicts problems, and acts before you ask.</p>
+    <p>A proactive AI agent that knows your garden, tracks your watering, fertilising, check-ins, and journal entries, and acts before you ask.</p>
     <div class="tagline">Built for gardens. The same architecture works for aircraft.</div>
   </div>
 
@@ -452,7 +452,7 @@ const scenarios = [
     tag: 'Diagnostic', tagClass: 'tag-diagnostic',
     flow: [
       { icon: '👁️', label: 'Sees', detail: 'User viewing <strong>Veggie Bed</strong>. Pepper at <strong>55% health</strong>.' },
-      { icon: '🔍', label: 'Checks', detail: 'Plant needs, <strong>weather</strong> (62°F — too cold), companion effects.' },
+      { icon: '🔍', label: 'Checks', detail: 'Plant needs, <strong>weather</strong> (62°F — too cold), watering history, companion effects.' },
       { icon: '🧠', label: 'Reasons', detail: 'Pepper needs 70-85°F. Basil helping with pests. Rain coming.' },
       { icon: '💬', label: 'Acts', detail: 'Diagnoses cold stress. Recommends row cover. Skips watering.' }
     ],
@@ -499,7 +499,7 @@ const scenarios = [
     title: 'Escalation',
     tag: 'Escalation', tagClass: 'tag-escalation',
     flow: [
-      { icon: '☀️', label: 'Context', detail: '<strong>85°F</strong>, humidity 28%. Watering intervals <strong>halved</strong>.' },
+      { icon: '☀️', label: 'Context', detail: '<strong>85°F</strong>, humidity 28%. Checks watering + fertilising history. Intervals <strong>halved</strong>.' },
       { icon: '💧', label: 'Scans', detail: '3 plants overdue: 1 day, 3 days, <strong>5 days</strong>.' },
       { icon: '📊', label: 'Scores', detail: 'Advisory → High Priority → <strong>CRITICAL</strong>. Multi-factor.' },
       { icon: '🚨', label: 'Escalates', detail: 'Pepper may not recover fruit production. <strong>Water now.</strong>' }
