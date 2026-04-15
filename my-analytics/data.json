@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-14T18:55:16Z",
+  "updated": "2026-04-15T01:15:13Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3372,
-  "streak": 45,
+  "total_commits": 3375,
+  "streak": 46,
   "commits_by_day": [
-    {
-      "date": "2025-04-14",
-      "count": 5
-    },
     {
       "date": "2025-04-15",
       "count": 3
@@ -1263,13 +1259,17 @@
     },
     {
       "date": "2026-04-14",
-      "count": 9
+      "count": 11
+    },
+    {
+      "date": "2026-04-15",
+      "count": 1
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 73
+      "count": 68
     },
     {
       "month": "2025-05",
@@ -1317,13 +1317,13 @@
     },
     {
       "month": "2026-04",
-      "count": 340
+      "count": 343
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 174
+      "count": 175
     },
     {
       "hour": 1,
@@ -1391,7 +1391,7 @@
     },
     {
       "hour": 17,
-      "count": 193
+      "count": 191
     },
     {
       "hour": 18,
@@ -1399,11 +1399,11 @@
     },
     {
       "hour": 19,
-      "count": 146
+      "count": 144
     },
     {
       "hour": 20,
-      "count": 152
+      "count": 153
     },
     {
       "hour": 21,
@@ -1419,6 +1419,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-15T00:32:28Z",
+      "sha": "0814479",
+      "message": "Session 93: Blood Moon Cross-System Synergies + The Possessed"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-14T20:31:47Z",
+      "sha": "871cec0",
+      "message": "Session 92: Blood Moon — Crimson Night of Feral Birds + Night Market Curse"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-14T15:15:41Z",
@@ -1706,32 +1718,20 @@
       "date": "2026-04-12T01:04:03Z",
       "sha": "8832754",
       "message": "feat: Sidney tone picker (brief/casual/quirky) and drop detail_level field"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T00:42:09Z",
-      "sha": "046a3f7",
-      "message": "fix: sync bed canvas tap hit test with new painter fit math"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-12T00:36:35Z",
-      "sha": "64b5720",
-      "message": "feat: redesign growing plant detail page 1 for single-screen fit"
     }
   ],
   "repo_details": [
+    {
+      "name": "bird-city-agi",
+      "commits": 111
+    },
     {
       "name": "budin",
       "commits": 1243
     },
     {
-      "name": "bird-city-agi",
-      "commits": 109
-    },
-    {
       "name": "keedastudios_landing",
-      "commits": 293
+      "commits": 294
     },
     {
       "name": "hinglish-vinglish",
