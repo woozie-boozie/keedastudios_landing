@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-16T07:16:37Z",
+  "updated": "2026-04-16T12:59:22Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3441,
+  "total_commits": 3445,
   "streak": 47,
   "commits_by_day": [
     {
@@ -1263,7 +1263,7 @@
     },
     {
       "date": "2026-04-16",
-      "count": 6
+      "count": 10
     }
   ],
   "commits_by_month": [
@@ -1317,7 +1317,7 @@
     },
     {
       "month": "2026-04",
-      "count": 409
+      "count": 413
     }
   ],
   "commits_by_hour": [
@@ -1351,7 +1351,7 @@
     },
     {
       "hour": 7,
-      "count": 35
+      "count": 36
     },
     {
       "hour": 8,
@@ -1359,11 +1359,11 @@
     },
     {
       "hour": 9,
-      "count": 90
+      "count": 92
     },
     {
       "hour": 10,
-      "count": 124
+      "count": 125
     },
     {
       "hour": 11,
@@ -1419,6 +1419,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-16T10:16:00Z",
+      "sha": "90cc68c",
+      "message": "Session 100: The Golden Throne — Seize the Seat of Power"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-16T09:30:35Z",
+      "sha": "1306a1a",
+      "message": "feat: add concise tone option for Sidney responses"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-16T05:21:00Z",
@@ -1706,32 +1718,20 @@
       "date": "2026-04-14T15:15:41Z",
       "sha": "d795249",
       "message": "Session 91: Great Migration Cross-System Synergies + Feather of the Alpha"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T15:13:07Z",
-      "sha": "5675640",
-      "message": "feat: dark green-accent plant detail sheet and open 3-pager after planting"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T15:05:32Z",
-      "sha": "838926d",
-      "message": "fix: disable global chat history in mini-chat to prevent stale response poisonin"
     }
   ],
   "repo_details": [
     {
       "name": "bird-city-agi",
-      "commits": 117
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 304
+      "commits": 118
     },
     {
       "name": "budin",
-      "commits": 1293
+      "commits": 1294
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 306
     },
     {
       "name": "hinglish-vinglish",
