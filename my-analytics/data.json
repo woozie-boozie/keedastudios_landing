@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-15T18:57:48Z",
+  "updated": "2026-04-16T01:19:30Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3432,
-  "streak": 46,
+  "total_commits": 3439,
+  "streak": 47,
   "commits_by_day": [
-    {
-      "date": "2025-04-15",
-      "count": 3
-    },
     {
       "date": "2025-04-16",
       "count": 10
@@ -1263,13 +1259,17 @@
     },
     {
       "date": "2026-04-15",
-      "count": 27
+      "count": 30
+    },
+    {
+      "date": "2026-04-16",
+      "count": 4
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 68
+      "count": 65
     },
     {
       "month": "2025-05",
@@ -1317,17 +1317,17 @@
     },
     {
       "month": "2026-04",
-      "count": 400
+      "count": 407
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 175
+      "count": 178
     },
     {
       "hour": 1,
-      "count": 130
+      "count": 129
     },
     {
       "hour": 2,
@@ -1383,7 +1383,7 @@
     },
     {
       "hour": 15,
-      "count": 215
+      "count": 214
     },
     {
       "hour": 16,
@@ -1395,7 +1395,7 @@
     },
     {
       "hour": 18,
-      "count": 221
+      "count": 222
     },
     {
       "hour": 19,
@@ -1403,7 +1403,7 @@
     },
     {
       "hour": 20,
-      "count": 153
+      "count": 154
     },
     {
       "hour": 21,
@@ -1415,10 +1415,46 @@
     },
     {
       "hour": 23,
-      "count": 187
+      "count": 188
     }
   ],
   "recent_commits": [
+    {
+      "repo": "budin",
+      "date": "2026-04-16T00:40:37Z",
+      "sha": "0e49397",
+      "message": "feat: add Ask Sidney mini-chat with card-specific context to all report slides"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-16T00:38:10Z",
+      "sha": "1b1c36b",
+      "message": "Session 98: Pigeon Stampede — 40-Bird Mass Chaos Event"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-16T00:24:23Z",
+      "sha": "8a60fbf",
+      "message": "feat: add stage transition check-in CTAs and human-readable reasons to upcoming "
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-16T00:14:04Z",
+      "sha": "d17f34a",
+      "message": "feat: split tasks card into separate watering, feeding, and harvest slides with "
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-15T23:43:24Z",
+      "sha": "71b5ee6",
+      "message": "feat: redesign tasks card with urgency tiers and method grouping for watering/fe"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-15T20:27:03Z",
+      "sha": "bf59230",
+      "message": "Session 97: Constellation Badges — 12 Zodiac Signs Earned Through Epic Moments"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-15T16:11:19Z",
@@ -1682,56 +1718,20 @@
       "date": "2026-04-14T14:32:05Z",
       "sha": "e1a19b5",
       "message": "fix: clamp past indoor start dates to today in journey timing computation"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T14:05:24Z",
-      "sha": "ca3f26d",
-      "message": "fix: exclude past dates from Sidney context and add today's date"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T13:53:06Z",
-      "sha": "08d8bf8",
-      "message": "feat: make mini-chat self-contained with persistent bed context and no exchange "
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T13:11:47Z",
-      "sha": "08cee7d",
-      "message": "feat: enrich Sidney bed context with plant names, dates, and sow method"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T11:23:36Z",
-      "sha": "9d3f9ac",
-      "message": "fix: tailor Sidney greeting and suggestions to bed planning state"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T11:11:59Z",
-      "sha": "c183345",
-      "message": "fix: hide water/fertilizer indicators for plants in planning phase"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T11:01:07Z",
-      "sha": "f2752ff",
-      "message": "feat: add onboarding-style background blooms to Ask Sidney sheet"
     }
   ],
   "repo_details": [
     {
-      "name": "bird-city-agi",
-      "commits": 114
+      "name": "budin",
+      "commits": 1293
     },
     {
-      "name": "budin",
-      "commits": 1289
+      "name": "bird-city-agi",
+      "commits": 116
     },
     {
       "name": "keedastudios_landing",
-      "commits": 302
+      "commits": 303
     },
     {
       "name": "hinglish-vinglish",
