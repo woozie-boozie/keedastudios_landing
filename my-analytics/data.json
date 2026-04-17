@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-17T01:17:13Z",
+  "updated": "2026-04-17T07:16:14Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3451,
+  "total_commits": 3454,
   "streak": 48,
   "commits_by_day": [
     {
@@ -1263,7 +1263,7 @@
     },
     {
       "date": "2026-04-17",
-      "count": 2
+      "count": 5
     }
   ],
   "commits_by_month": [
@@ -1317,7 +1317,7 @@
     },
     {
       "month": "2026-04",
-      "count": 419
+      "count": 422
     }
   ],
   "commits_by_hour": [
@@ -1327,7 +1327,7 @@
     },
     {
       "hour": 1,
-      "count": 130
+      "count": 131
     },
     {
       "hour": 2,
@@ -1343,7 +1343,7 @@
     },
     {
       "hour": 5,
-      "count": 41
+      "count": 43
     },
     {
       "hour": 6,
@@ -1419,6 +1419,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-17T05:25:48Z",
+      "sha": "d178254",
+      "message": "Update CLAUDE.md with Session 104 history"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-17T05:24:58Z",
+      "sha": "071993d",
+      "message": "Session 104: The Wanted Hotline — Anonymous Tip Line with Informant Shield"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-17T00:23:52Z",
@@ -1706,28 +1718,16 @@
       "date": "2026-04-14T15:59:09Z",
       "sha": "a6dd4bd",
       "message": "fix: block decoration placement on occupied cells and resize bench to 4ft"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T15:51:43Z",
-      "sha": "bf93fb9",
-      "message": "feat: cache mini-chat messages in memory so they persist across sheet close/reop"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T15:43:01Z",
-      "sha": "94afc04",
-      "message": "feat: add move-outdoors and harvest date windows to Sidney bed context"
     }
   ],
   "repo_details": [
     {
       "name": "bird-city-agi",
-      "commits": 122
+      "commits": 124
     },
     {
       "name": "keedastudios_landing",
-      "commits": 308
+      "commits": 309
     },
     {
       "name": "budin",
