@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-17T07:16:14Z",
+  "updated": "2026-04-17T12:50:30Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3454,
+  "total_commits": 3457,
   "streak": 48,
   "commits_by_day": [
     {
@@ -1263,7 +1263,7 @@
     },
     {
       "date": "2026-04-17",
-      "count": 5
+      "count": 8
     }
   ],
   "commits_by_month": [
@@ -1317,7 +1317,7 @@
     },
     {
       "month": "2026-04",
-      "count": 422
+      "count": 425
     }
   ],
   "commits_by_hour": [
@@ -1351,7 +1351,7 @@
     },
     {
       "hour": 7,
-      "count": 36
+      "count": 37
     },
     {
       "hour": 8,
@@ -1359,11 +1359,11 @@
     },
     {
       "hour": 9,
-      "count": 92
+      "count": 93
     },
     {
       "hour": 10,
-      "count": 125
+      "count": 126
     },
     {
       "hour": 11,
@@ -1419,6 +1419,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-17T10:34:46Z",
+      "sha": "5669f21",
+      "message": "Session 105: The Grudge System — personal vendettas across Bird City"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-17T05:25:48Z",
@@ -1712,22 +1718,16 @@
       "date": "2026-04-14T16:03:18Z",
       "sha": "273441b",
       "message": "fix: use brief but conversational tone for mini-chat instead of strict brief"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T15:59:09Z",
-      "sha": "a6dd4bd",
-      "message": "fix: block decoration placement on occupied cells and resize bench to 4ft"
     }
   ],
   "repo_details": [
     {
       "name": "bird-city-agi",
-      "commits": 124
+      "commits": 125
     },
     {
       "name": "keedastudios_landing",
-      "commits": 309
+      "commits": 311
     },
     {
       "name": "budin",
