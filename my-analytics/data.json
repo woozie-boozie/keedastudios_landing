@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-16T18:55:34Z",
+  "updated": "2026-04-17T01:17:13Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3447,
-  "streak": 47,
+  "total_commits": 3451,
+  "streak": 48,
   "commits_by_day": [
-    {
-      "date": "2025-04-16",
-      "count": 10
-    },
     {
       "date": "2025-04-17",
       "count": 3
@@ -1263,13 +1259,17 @@
     },
     {
       "date": "2026-04-16",
-      "count": 12
+      "count": 14
+    },
+    {
+      "date": "2026-04-17",
+      "count": 2
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 65
+      "count": 55
     },
     {
       "month": "2025-05",
@@ -1317,7 +1317,7 @@
     },
     {
       "month": "2026-04",
-      "count": 415
+      "count": 419
     }
   ],
   "commits_by_hour": [
@@ -1383,11 +1383,11 @@
     },
     {
       "hour": 15,
-      "count": 215
+      "count": 214
     },
     {
       "hour": 16,
-      "count": 198
+      "count": 197
     },
     {
       "hour": 17,
@@ -1395,7 +1395,7 @@
     },
     {
       "hour": 18,
-      "count": 222
+      "count": 223
     },
     {
       "hour": 19,
@@ -1403,22 +1403,40 @@
     },
     {
       "hour": 20,
-      "count": 154
+      "count": 155
     },
     {
       "hour": 21,
-      "count": 137
+      "count": 134
     },
     {
       "hour": 22,
-      "count": 158
+      "count": 157
     },
     {
       "hour": 23,
-      "count": 188
+      "count": 186
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-17T00:23:52Z",
+      "sha": "fe7b5dc",
+      "message": "Update CLAUDE.md: Session 103 Bird City Elections entry"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-17T00:23:01Z",
+      "sha": "9ce7576",
+      "message": "Session 103: The Bird City Elections — Democracy Descends on the City"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-16T20:16:02Z",
+      "sha": "270da8e",
+      "message": "Session 102: The Birdnapper Van — City's Most Sinister Threat"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-16T15:42:25Z",
@@ -1700,34 +1718,16 @@
       "date": "2026-04-14T15:43:01Z",
       "sha": "94afc04",
       "message": "feat: add move-outdoors and harvest date windows to Sidney bed context"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T15:40:19Z",
-      "sha": "f17b090",
-      "message": "fix: rename transplant_date to move_outdoors_date for beginner-friendly Sidney r"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T15:19:43Z",
-      "sha": "f0b9241",
-      "message": "fix: shift transplant and downstream dates when indoor start is clamped to today"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T15:15:54Z",
-      "sha": "c176759",
-      "message": "feat: add frost sensitivity and indoor lead weeks to Sidney bed context"
     }
   ],
   "repo_details": [
     {
       "name": "bird-city-agi",
-      "commits": 119
+      "commits": 122
     },
     {
       "name": "keedastudios_landing",
-      "commits": 307
+      "commits": 308
     },
     {
       "name": "budin",
