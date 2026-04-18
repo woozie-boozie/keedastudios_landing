@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-18T06:54:36Z",
+  "updated": "2026-04-18T12:33:03Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3464,
+  "total_commits": 3467,
   "streak": 49,
   "commits_by_day": [
     {
@@ -1263,7 +1263,7 @@
     },
     {
       "date": "2026-04-18",
-      "count": 2
+      "count": 5
     }
   ],
   "commits_by_month": [
@@ -1317,7 +1317,7 @@
     },
     {
       "month": "2026-04",
-      "count": 432
+      "count": 435
     }
   ],
   "commits_by_hour": [
@@ -1347,7 +1347,7 @@
     },
     {
       "hour": 6,
-      "count": 30
+      "count": 31
     },
     {
       "hour": 7,
@@ -1355,7 +1355,7 @@
     },
     {
       "hour": 8,
-      "count": 59
+      "count": 60
     },
     {
       "hour": 9,
@@ -1363,7 +1363,7 @@
     },
     {
       "hour": 10,
-      "count": 126
+      "count": 127
     },
     {
       "hour": 11,
@@ -1419,6 +1419,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-18T10:31:24Z",
+      "sha": "d635fb7",
+      "message": "Session 109: The Bowling Bird — Giant Rolling Menace"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-18T00:56:44Z",
@@ -1712,22 +1718,16 @@
       "date": "2026-04-14T22:30:46Z",
       "sha": "6b3dab2",
       "message": "feat: update all check-in entry points to camera → Sidney flow"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T22:06:06Z",
-      "sha": "1aca0ef",
-      "message": "fix: rewire bed management check-in to camera → Sidney flow"
     }
   ],
   "repo_details": [
     {
-      "name": "keedastudios_landing",
-      "commits": 314
+      "name": "bird-city-agi",
+      "commits": 129
     },
     {
-      "name": "bird-city-agi",
-      "commits": 128
+      "name": "keedastudios_landing",
+      "commits": 316
     },
     {
       "name": "budin",
