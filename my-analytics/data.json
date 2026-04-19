@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-19T07:04:39Z",
+  "updated": "2026-04-19T12:32:38Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3476,
+  "total_commits": 3482,
   "streak": 50,
   "commits_by_day": [
     {
@@ -1263,11 +1263,11 @@
     },
     {
       "date": "2026-04-18",
-      "count": 10
+      "count": 12
     },
     {
       "date": "2026-04-19",
-      "count": 4
+      "count": 8
     }
   ],
   "commits_by_month": [
@@ -1321,7 +1321,7 @@
     },
     {
       "month": "2026-04",
-      "count": 444
+      "count": 450
     }
   ],
   "commits_by_hour": [
@@ -1355,7 +1355,7 @@
     },
     {
       "hour": 7,
-      "count": 37
+      "count": 38
     },
     {
       "hour": 8,
@@ -1363,11 +1363,11 @@
     },
     {
       "hour": 9,
-      "count": 93
+      "count": 96
     },
     {
       "hour": 10,
-      "count": 127
+      "count": 128
     },
     {
       "hour": 11,
@@ -1411,7 +1411,7 @@
     },
     {
       "hour": 21,
-      "count": 134
+      "count": 135
     },
     {
       "hour": 22,
@@ -1423,6 +1423,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-19T10:26:36Z",
+      "sha": "d495524",
+      "message": "feat: Buried Treasure System (Session 114) — first pure DISCOVERY mechanic"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-19T09:47:31Z",
+      "sha": "f4f3068",
+      "message": "feat: route username writes through backend API"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-19T05:32:52Z",
@@ -1448,6 +1460,12 @@
       "message": "Fix null-socket crash blocking join on page load (#1)"
     },
     {
+      "repo": "budin",
+      "date": "2026-04-18T21:18:37Z",
+      "sha": "4fb4b7a",
+      "message": "fix: wire water/fertilize CTAs in growing plant detail sheet"
+    },
+    {
       "repo": "bird-city-agi",
       "date": "2026-04-18T20:27:47Z",
       "sha": "0bb9d60",
@@ -1464,6 +1482,12 @@
       "date": "2026-04-18T10:31:24Z",
       "sha": "d635fb7",
       "message": "Session 109: The Bowling Bird — Giant Rolling Menace"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-18T09:11:17Z",
+      "sha": "2c26976",
+      "message": "fix: register fcm token after auth and drop dead android service"
     },
     {
       "repo": "bird-city-agi",
@@ -1698,44 +1722,20 @@
       "date": "2026-04-15T08:36:11Z",
       "sha": "60411c3",
       "message": "fix Sidney demo: light mode text contrast, add care history context"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-15T05:30:18Z",
-      "sha": "010d3ca",
-      "message": "Session 94: Rat King (sewer boss) + Arena Legend Badge + Dome Formation Synergy"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-15T00:32:28Z",
-      "sha": "0814479",
-      "message": "Session 93: Blood Moon Cross-System Synergies + The Possessed"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T23:18:19Z",
-      "sha": "5fd9019",
-      "message": "feat: replace subtle swipe hint with full-screen tutorial overlay"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-14T23:15:22Z",
-      "sha": "2603033",
-      "message": "feat: add one-time swipe hint animation on plant growth info first open"
     }
   ],
   "repo_details": [
     {
+      "name": "budin",
+      "commits": 1298
+    },
+    {
       "name": "bird-city-agi",
-      "commits": 135
+      "commits": 136
     },
     {
       "name": "keedastudios_landing",
-      "commits": 319
-    },
-    {
-      "name": "budin",
-      "commits": 1295
+      "commits": 321
     },
     {
       "name": "hinglish-vinglish",
