@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-19T18:31:15Z",
+  "updated": "2026-04-20T01:19:31Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3485,
-  "streak": 50,
+  "total_commits": 3495,
+  "streak": 51,
   "commits_by_day": [
-    {
-      "date": "2025-04-19",
-      "count": 1
-    },
     {
       "date": "2025-04-20",
       "count": 1
@@ -1267,13 +1263,17 @@
     },
     {
       "date": "2026-04-19",
-      "count": 11
+      "count": 19
+    },
+    {
+      "date": "2026-04-20",
+      "count": 2
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 52
+      "count": 51
     },
     {
       "month": "2025-05",
@@ -1321,13 +1321,13 @@
     },
     {
       "month": "2026-04",
-      "count": 453
+      "count": 463
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 181
+      "count": 183
     },
     {
       "hour": 1,
@@ -1339,7 +1339,7 @@
     },
     {
       "hour": 3,
-      "count": 14
+      "count": 13
     },
     {
       "hour": 4,
@@ -1399,7 +1399,7 @@
     },
     {
       "hour": 18,
-      "count": 225
+      "count": 226
     },
     {
       "hour": 19,
@@ -1407,11 +1407,11 @@
     },
     {
       "hour": 20,
-      "count": 157
+      "count": 159
     },
     {
       "hour": 21,
-      "count": 135
+      "count": 136
     },
     {
       "hour": 22,
@@ -1419,10 +1419,64 @@
     },
     {
       "hour": 23,
-      "count": 186
+      "count": 190
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-20T00:28:51Z",
+      "sha": "e16f43a",
+      "message": "Update CLAUDE.md: Session 109 Vigilante Marshal logged"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-20T00:28:04Z",
+      "sha": "61e871d",
+      "message": "Session 109: The Vigilante Marshal — City Calls on a Hero"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-19T23:53:27Z",
+      "sha": "64f7682",
+      "message": "fix: map seedling stage to settling in, not moving to the bed"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-19T23:45:42Z",
+      "sha": "be4abcd",
+      "message": "feat: render all plant phases at harvest size on bed canvas"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-19T23:36:33Z",
+      "sha": "0c340d7",
+      "message": "feat: simplify bed canvas to a single attention halo and health pip"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-19T23:01:27Z",
+      "sha": "6ebf602",
+      "message": "fix: sync journey phase with growth stage in picker and check-in"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-19T21:39:00Z",
+      "sha": "bcd3810",
+      "message": "feat: canvas legend pill and phase-scaled plant icons"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-19T20:45:56Z",
+      "sha": "850e3d8",
+      "message": "Session 117: The Mole — Double Agent Infiltration Event"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-19T20:32:41Z",
+      "sha": "215f4e9",
+      "message": "Session 116: The Rival Bird — \"Ace\" from Feather City"
+    },
     {
       "repo": "budin",
       "date": "2026-04-19T15:54:05Z",
@@ -1668,74 +1722,20 @@
       "date": "2026-04-15T12:14:54Z",
       "sha": "3d7b6d8",
       "message": "fix: remove floating Water and Feed buttons from grid view"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-15T12:08:50Z",
-      "sha": "7f56a7f",
-      "message": "fix: solid dark background on grid top panel for better contrast"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-15T12:04:34Z",
-      "sha": "70c02bd",
-      "message": "feat: remove Entry button from action bar, rename Info to Status"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-15T11:42:00Z",
-      "sha": "f424aef",
-      "message": "fix: remove direct check-in from grid view, redirect to plant detail page instea"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-15T10:27:49Z",
-      "sha": "d5e5cb6",
-      "message": "Session 95: City Vault Truck + Four Cross-System Synergies"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-15T10:02:01Z",
-      "sha": "0401d44",
-      "message": "fix: remove separate check-in push notification in favor of garden report"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-15T09:53:20Z",
-      "sha": "bcbeb6a",
-      "message": "feat: add check-in nudges — push notification, orange canvas glow, and due-for-c"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-15T09:16:18Z",
-      "sha": "7301cb5",
-      "message": "fix: widen canvas plant label and add ellipsis for long phase names"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-15T08:50:08Z",
-      "sha": "05ed985",
-      "message": "feat: Sidney-driven stage advancement with inline advance card in check-in chat"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-15T08:39:54Z",
-      "sha": "30c3036",
-      "message": "feat: move advance button to fixed footer and add next-stage info to check-in co"
     }
   ],
   "repo_details": [
     {
-      "name": "budin",
-      "commits": 1299
+      "name": "bird-city-agi",
+      "commits": 141
     },
     {
-      "name": "bird-city-agi",
-      "commits": 137
+      "name": "budin",
+      "commits": 1304
     },
     {
       "name": "keedastudios_landing",
-      "commits": 322
+      "commits": 323
     },
     {
       "name": "hinglish-vinglish",
