@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-20T18:47:32Z",
+  "updated": "2026-04-21T01:16:53Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3503,
-  "streak": 51,
+  "total_commits": 3509,
+  "streak": 52,
   "commits_by_day": [
-    {
-      "date": "2025-04-20",
-      "count": 1
-    },
     {
       "date": "2025-04-21",
       "count": 2
@@ -1267,13 +1263,17 @@
     },
     {
       "date": "2026-04-20",
-      "count": 10
+      "count": 15
+    },
+    {
+      "date": "2026-04-21",
+      "count": 1
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 51
+      "count": 50
     },
     {
       "month": "2025-05",
@@ -1321,13 +1321,13 @@
     },
     {
       "month": "2026-04",
-      "count": 471
+      "count": 477
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 183
+      "count": 184
     },
     {
       "hour": 1,
@@ -1387,7 +1387,7 @@
     },
     {
       "hour": 15,
-      "count": 218
+      "count": 217
     },
     {
       "hour": 16,
@@ -1399,7 +1399,7 @@
     },
     {
       "hour": 18,
-      "count": 226
+      "count": 227
     },
     {
       "hour": 19,
@@ -1407,7 +1407,7 @@
     },
     {
       "hour": 20,
-      "count": 159
+      "count": 160
     },
     {
       "hour": 21,
@@ -1415,7 +1415,7 @@
     },
     {
       "hour": 22,
-      "count": 158
+      "count": 161
     },
     {
       "hour": 23,
@@ -1423,6 +1423,36 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-21T00:39:51Z",
+      "sha": "979b682",
+      "message": "Session 123: Spring Painted Egg Hunt — Seasonal Scavenger Hunt (April 14–28)"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-20T22:39:30Z",
+      "sha": "c632bf7",
+      "message": "Hannah OAuth onboarding: bundled token-generation helper"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-20T22:38:51Z",
+      "sha": "657e3ca",
+      "message": "Live finance bot end-to-end: Hannah's inbox + auto-rebuild CC + Analytics"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-20T22:38:08Z",
+      "sha": "b36b4ee",
+      "message": "Refresh dashboard with Apr 2026 data + multi-currency support"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-20T20:26:34Z",
+      "sha": "93da924",
+      "message": "Session 122: The Feather Factory — Dye Your Feathers, Wear Your Identity"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-20T15:41:19Z",
@@ -1692,58 +1722,28 @@
       "date": "2026-04-15T23:43:24Z",
       "sha": "71b5ee6",
       "message": "feat: redesign tasks card with urgency tiers and method grouping for watering/fe"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-15T20:27:03Z",
-      "sha": "bf59230",
-      "message": "Session 97: Constellation Badges — 12 Zodiac Signs Earned Through Epic Moments"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-15T16:11:19Z",
-      "sha": "9939fcc",
-      "message": "Session 96: Golden Rampage — The Chosen Berserker"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-15T13:13:11Z",
-      "sha": "07d0ec0",
-      "message": "feat: add local conversation memory to mini-Sidney for within-session continuity"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-15T13:06:46Z",
-      "sha": "489c327",
-      "message": "fix: remove false check-in saved snackbar that fires even on cancel"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-15T13:02:16Z",
-      "sha": "25194dd",
-      "message": "feat: add Ask Sidney button with avatar to plant growth info action row"
     }
   ],
   "repo_details": [
+    {
+      "name": "bird-city-agi",
+      "commits": 147
+    },
     {
       "name": "budin",
       "commits": 1304
     },
     {
-      "name": "bird-city-agi",
-      "commits": 145
+      "name": "prima-mente-finance",
+      "commits": 29
     },
     {
       "name": "keedastudios_landing",
-      "commits": 327
+      "commits": 328
     },
     {
       "name": "hinglish-vinglish",
       "commits": 228
-    },
-    {
-      "name": "prima-mente-finance",
-      "commits": 26
     },
     {
       "name": "fun-language-world",
