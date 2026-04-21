@@ -1,22 +1,26 @@
 {
-  "date": "2026-04-20",
+  "date": "2026-04-21",
   "yesterday": [
-    "Shipped major UX improvements to budin - simplified bed canvas with single attention halo, tap-to-water-all functionality, and phase-scaled plant icons",
-    "Continued Bird City AGI development with Sessions 113-117 covering Wing Surge system, Golden Perch mechanics, buried treasure discovery system, and double agent infiltration",
-    "Fixed critical budin bugs around seedling stage mapping and journey phase sync"
+    "Completed Hannah OAuth onboarding with bundled token-generation helper for prima-mente-finance",
+    "Shipped live finance bot end-to-end with Hannah's inbox, auto-rebuild CC, and analytics",
+    "Refreshed dashboard with Apr 2026 data and multi-currency support",
+    "Released 6 Bird City AGI sessions including Feather Factory dye system, Chaos Oracle prophecies, and Hot Poop chaos item",
+    "Updated CLAUDE.md documentation for Sessions 119 and 109"
   ],
   "today": [
-    "Implementing Trash Day mechanics in Bird City AGI (Session 119) - adding dynamic city cleanup events",
-    "Backfilling documentation for Vigilante Marshal system (Session 109) in Bird City",
-    "Planning Mali launch for next week while monitoring Vibe Lingo pre-launch metrics"
+    "Deployed Session 124 Delivery Rush package carrier sprint event for bird-city-agi",
+    "Launched Session 123 Spring Painted Egg Hunt seasonal scavenger event running April 14-28",
+    "Planning Mali project launch for next week",
+    "Continuing development on Vibe Lingo launch preparations"
   ],
   "blockers": [
-    "BGMF still blocked by Apple - awaiting review response",
-    "Need to prioritize between Bird City feature development and Mali launch prep"
+    "BGMF project blocked by Apple approval process"
   ],
   "metrics": [
-    "51-day commit streak maintained with 3498 total commits across 23 repos",
-    "Thulaa holding steady at 150 DAU, Hinglish Vinglish at 300 users",
-    "Bird City AGI at 30 commits, budin at 20 commits this cycle"
+    "3511 total commits across 23 repos",
+    "52-day commit streak maintained",
+    "Thulaa card game: 150 DAU",
+    "Hinglish Vinglish: 300 users",
+    "Most active repos: bird-city-agi (33), budin (14), prima-mente-finance (3)"
   ]
 }
