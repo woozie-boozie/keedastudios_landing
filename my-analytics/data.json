@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-21T18:54:12Z",
+  "updated": "2026-04-22T01:15:32Z",
   "repos": {
     "total": 23,
     "original": 22,
     "forks": 1
   },
-  "total_commits": 3516,
-  "streak": 52,
+  "total_commits": 3520,
+  "streak": 53,
   "commits_by_day": [
-    {
-      "date": "2025-04-21",
-      "count": 2
-    },
     {
       "date": "2025-04-22",
       "count": 8
@@ -1267,13 +1263,17 @@
     },
     {
       "date": "2026-04-21",
-      "count": 8
+      "count": 11
+    },
+    {
+      "date": "2026-04-22",
+      "count": 1
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 50
+      "count": 48
     },
     {
       "month": "2025-05",
@@ -1321,13 +1321,13 @@
     },
     {
       "month": "2026-04",
-      "count": 484
+      "count": 488
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 184
+      "count": 185
     },
     {
       "hour": 1,
@@ -1399,7 +1399,7 @@
     },
     {
       "hour": 18,
-      "count": 227
+      "count": 226
     },
     {
       "hour": 19,
@@ -1407,7 +1407,7 @@
     },
     {
       "hour": 20,
-      "count": 160
+      "count": 162
     },
     {
       "hour": 21,
@@ -1423,6 +1423,24 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-22T00:25:48Z",
+      "sha": "267e385",
+      "message": "feat: Session 128 — Kite Festival seasonal sky event (April only)"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-21T20:37:42Z",
+      "sha": "933b351",
+      "message": "docs: update session history with Session 127 Ring Toss Event"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-21T20:34:22Z",
+      "sha": "4122e26",
+      "message": "feat: Ring Toss Event — poop the floating rings for glory and jackpot chaos"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-21T15:41:02Z",
@@ -1704,34 +1722,16 @@
       "date": "2026-04-16T09:30:35Z",
       "sha": "1306a1a",
       "message": "feat: add concise tone option for Sidney responses"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-16T05:21:00Z",
-      "sha": "d08cb14",
-      "message": "Session 99: Suspicious Package — cooperative bomb defusal event"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-16T00:40:37Z",
-      "sha": "0e49397",
-      "message": "feat: add Ask Sidney mini-chat with card-specific context to all report slides"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-16T00:38:10Z",
-      "sha": "1b1c36b",
-      "message": "Session 98: Pigeon Stampede — 40-Bird Mass Chaos Event"
     }
   ],
   "repo_details": [
     {
       "name": "bird-city-agi",
-      "commits": 150
+      "commits": 153
     },
     {
       "name": "keedastudios_landing",
-      "commits": 332
+      "commits": 333
     },
     {
       "name": "budin",
