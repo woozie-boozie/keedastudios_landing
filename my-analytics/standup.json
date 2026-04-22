@@ -1,26 +1,22 @@
 {
-  "date": "2026-04-21",
+  "date": "2026-04-22",
   "yesterday": [
-    "Completed Hannah OAuth onboarding with bundled token-generation helper for prima-mente-finance",
-    "Shipped live finance bot end-to-end with Hannah's inbox, auto-rebuild CC, and analytics",
-    "Refreshed dashboard with Apr 2026 data and multi-currency support",
-    "Released 6 Bird City AGI sessions including Feather Factory dye system, Chaos Oracle prophecies, and Hot Poop chaos item",
-    "Updated CLAUDE.md documentation for Sessions 119 and 109"
+    "Shipped Ring Toss Event in bird-city-agi with poop mechanics and jackpot system",
+    "Completed El Piñata Gigante cooperative event and Delivery Rush package carrier sprint",
+    "Documented Spring Lantern Festival and Painted Egg Hunt seasonal events through Session 127"
   ],
   "today": [
-    "Deployed Session 124 Delivery Rush package carrier sprint event for bird-city-agi",
-    "Launched Session 123 Spring Painted Egg Hunt seasonal scavenger event running April 14-28",
-    "Planning Mali project launch for next week",
-    "Continuing development on Vibe Lingo launch preparations"
+    "Implementing Bird Tag multiplayer chase mechanics in bird-city-agi Session 129",
+    "Launching Kite Festival seasonal sky event for April in Session 128",
+    "Focusing development on bird-city-agi with 37 active commits this period"
   ],
   "blockers": [
-    "BGMF project blocked by Apple approval process"
+    "BGMF still blocked by Apple store review",
+    "Mali launch delayed to next week"
   ],
   "metrics": [
-    "3511 total commits across 23 repos",
-    "52-day commit streak maintained",
-    "Thulaa card game: 150 DAU",
-    "Hinglish Vinglish: 300 users",
-    "Most active repos: bird-city-agi (33), budin (14), prima-mente-finance (3)"
+    "Day 53 of coding streak maintained",
+    "3522 total commits across 23 repositories",
+    "Thulaa at 150 DAU, Hinglish Vinglish at 300 users"
   ]
 }
