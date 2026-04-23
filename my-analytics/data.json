@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-23T12:55:09Z",
+  "updated": "2026-04-23T18:51:49Z",
   "repos": {
-    "total": 23,
-    "original": 22,
+    "total": 24,
+    "original": 23,
     "forks": 1
   },
-  "total_commits": 3539,
+  "total_commits": 3549,
   "streak": 54,
   "commits_by_day": [
     {
@@ -1267,7 +1267,7 @@
     },
     {
       "date": "2026-04-23",
-      "count": 6
+      "count": 16
     }
   ],
   "commits_by_month": [
@@ -1321,7 +1321,7 @@
     },
     {
       "month": "2026-04",
-      "count": 507
+      "count": 517
     }
   ],
   "commits_by_hour": [
@@ -1375,7 +1375,7 @@
     },
     {
       "hour": 12,
-      "count": 179
+      "count": 180
     },
     {
       "hour": 13,
@@ -1387,19 +1387,19 @@
     },
     {
       "hour": 15,
-      "count": 220
+      "count": 221
     },
     {
       "hour": 16,
-      "count": 198
+      "count": 199
     },
     {
       "hour": 17,
-      "count": 191
+      "count": 197
     },
     {
       "hour": 18,
-      "count": 227
+      "count": 228
     },
     {
       "hour": 19,
@@ -1423,6 +1423,60 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "cheer-vt",
+      "date": "2026-04-23T18:00:18Z",
+      "sha": "f020b55",
+      "message": "tweak: tall drawer → 90% + move map attribution away from chevron"
+    },
+    {
+      "repo": "cheer-vt",
+      "date": "2026-04-23T17:52:33Z",
+      "sha": "3bcf083",
+      "message": "fix: chevron now actually expands the table — drop map min-height + bin footer"
+    },
+    {
+      "repo": "cheer-vt",
+      "date": "2026-04-23T17:37:48Z",
+      "sha": "b229b08",
+      "message": "fix: splits drawer now toggles peek ↔ tall (was 3-state cycle)"
+    },
+    {
+      "repo": "cheer-vt",
+      "date": "2026-04-23T17:29:47Z",
+      "sha": "f3a8522",
+      "message": "fix: splits drawer tap wasn't cycling — separate tap and drag handlers"
+    },
+    {
+      "repo": "cheer-vt",
+      "date": "2026-04-23T17:24:55Z",
+      "sha": "9f889f4",
+      "message": "feat: splits drawer is now draggable with 3 snap points"
+    },
+    {
+      "repo": "cheer-vt",
+      "date": "2026-04-23T17:17:34Z",
+      "sha": "dfcc85c",
+      "message": "docs: update README to current production URL"
+    },
+    {
+      "repo": "cheer-vt",
+      "date": "2026-04-23T17:06:45Z",
+      "sha": "677fcdb",
+      "message": "feat: mobile UI polish — collapsible splits drawer, clearer cheer CTA"
+    },
+    {
+      "repo": "cheer-vt",
+      "date": "2026-04-23T16:29:37Z",
+      "sha": "88f2374",
+      "message": "Initial commit — Victoria London Marathon 2026 cheer page"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-23T15:37:08Z",
+      "sha": "beb2fbb",
+      "message": "Session 137: Cross-System Synergies — NPCs React to Crime Wave & Aurora"
+    },
     {
       "repo": "bird-city-agi",
       "date": "2026-04-23T10:43:47Z",
@@ -1668,78 +1722,28 @@
       "date": "2026-04-19T00:28:19Z",
       "sha": "8e294be",
       "message": "docs: update CLAUDE.md with Session 112 — The Golden Perch"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-19T00:27:29Z",
-      "sha": "94ec781",
-      "message": "feat: Session 112 — The Golden Perch (king-of-the-hill roost)"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-18T22:48:22Z",
-      "sha": "5b9ad05",
-      "message": "Fix null-socket crash blocking join on page load (#1)"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-18T21:18:37Z",
-      "sha": "4fb4b7a",
-      "message": "fix: wire water/fertilize CTAs in growing plant detail sheet"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-18T20:27:47Z",
-      "sha": "0bb9d60",
-      "message": "Session 111: The Mayor's Motorcade — GTA-Style City Convoy"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-18T15:25:02Z",
-      "sha": "fc750fd",
-      "message": "Session 110: Sky Pirate Airship — Flying Fortress Crosses the City"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-18T10:31:24Z",
-      "sha": "d635fb7",
-      "message": "Session 109: The Bowling Bird — Giant Rolling Menace"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-18T09:11:17Z",
-      "sha": "2c26976",
-      "message": "fix: register fcm token after auth and drop dead android service"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-18T00:56:44Z",
-      "sha": "c356dff",
-      "message": "🏛️ Session 108: Bird City Auction House — Live Bidding Wars"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-17T20:42:08Z",
-      "sha": "3e81458",
-      "message": "Session 107: Courier Pigeon + Three Cross-System Synergies"
     }
   ],
   "repo_details": [
     {
+      "name": "budin",
+      "commits": 1304
+    },
+    {
+      "name": "cheer-vt",
+      "commits": 8
+    },
+    {
       "name": "bird-city-agi",
-      "commits": 164
+      "commits": 165
     },
     {
       "name": "keedastudios_landing",
-      "commits": 341
+      "commits": 342
     },
     {
       "name": "bird-city",
       "commits": 46
-    },
-    {
-      "name": "budin",
-      "commits": 1304
     },
     {
       "name": "prima-mente-finance",
@@ -1834,6 +1838,10 @@
     {
       "lang": "TypeScript",
       "count": 2
+    },
+    {
+      "lang": "HTML",
+      "count": 1
     }
   ]
 }
