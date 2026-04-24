@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-23T18:51:49Z",
+  "updated": "2026-04-24T01:19:51Z",
   "repos": {
     "total": 24,
     "original": 23,
     "forks": 1
   },
-  "total_commits": 3549,
-  "streak": 54,
+  "total_commits": 3572,
+  "streak": 55,
   "commits_by_day": [
-    {
-      "date": "2025-04-23",
-      "count": 6
-    },
     {
       "date": "2025-04-24",
       "count": 9
@@ -1255,25 +1251,29 @@
     },
     {
       "date": "2026-04-20",
-      "count": 15
+      "count": 22
     },
     {
       "date": "2026-04-21",
-      "count": 11
+      "count": 12
     },
     {
       "date": "2026-04-22",
-      "count": 14
+      "count": 17
     },
     {
       "date": "2026-04-23",
-      "count": 16
+      "count": 27
+    },
+    {
+      "date": "2026-04-24",
+      "count": 1
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 40
+      "count": 34
     },
     {
       "month": "2025-05",
@@ -1321,7 +1321,7 @@
     },
     {
       "month": "2026-04",
-      "count": 517
+      "count": 540
     }
   ],
   "commits_by_hour": [
@@ -1347,7 +1347,7 @@
     },
     {
       "hour": 5,
-      "count": 47
+      "count": 46
     },
     {
       "hour": 6,
@@ -1355,7 +1355,7 @@
     },
     {
       "hour": 7,
-      "count": 42
+      "count": 41
     },
     {
       "hour": 8,
@@ -1367,7 +1367,7 @@
     },
     {
       "hour": 10,
-      "count": 133
+      "count": 134
     },
     {
       "hour": 11,
@@ -1379,7 +1379,7 @@
     },
     {
       "hour": 13,
-      "count": 162
+      "count": 163
     },
     {
       "hour": 14,
@@ -1387,23 +1387,23 @@
     },
     {
       "hour": 15,
-      "count": 221
+      "count": 222
     },
     {
       "hour": 16,
-      "count": 199
+      "count": 200
     },
     {
       "hour": 17,
-      "count": 197
+      "count": 200
     },
     {
       "hour": 18,
-      "count": 228
+      "count": 232
     },
     {
       "hour": 19,
-      "count": 144
+      "count": 147
     },
     {
       "hour": 20,
@@ -1411,18 +1411,72 @@
     },
     {
       "hour": 21,
-      "count": 136
+      "count": 137
     },
     {
       "hour": 22,
-      "count": 161
+      "count": 162
     },
     {
       "hour": 23,
-      "count": 188
+      "count": 191
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city",
+      "date": "2026-04-24T01:11:32Z",
+      "sha": "5e68c89",
+      "message": "Add Bird City: Chaos promo landing page at /chaos"
+    },
+    {
+      "repo": "bird-city",
+      "date": "2026-04-23T23:50:32Z",
+      "sha": "6f210ed",
+      "message": "Serve /privacy and /terms as extensionless URLs"
+    },
+    {
+      "repo": "bird-city",
+      "date": "2026-04-23T23:45:05Z",
+      "sha": "c9a4011",
+      "message": "Merge ak/native: Capacitor iOS/Android + pre-submission polish"
+    },
+    {
+      "repo": "bird-city",
+      "date": "2026-04-23T23:22:20Z",
+      "sha": "b082199",
+      "message": "App Store pre-submission polish: settings, privacy, terms, delete, offline"
+    },
+    {
+      "repo": "bird-city",
+      "date": "2026-04-23T22:32:12Z",
+      "sha": "2381eda",
+      "message": "Switch bundle ID to com.keedastudios.birdcitygame + install app icons"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-23T21:23:26Z",
+      "sha": "c9ac0e2",
+      "message": "feat: photo or quick check-in chooser plus stage-advance chip in Sidney"
+    },
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-23T20:39:27Z",
+      "sha": "06be310",
+      "message": "Session 138: The Weathervane — spinning rooster reveals next weather on proximit"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-23T18:24:59Z",
+      "sha": "625224b",
+      "message": "chore: include port 8000 in local iOS API host"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-23T18:24:53Z",
+      "sha": "8c5081f",
+      "message": "feat: pulse check-in halo on outdoor pots and grid plants"
+    },
     {
       "repo": "cheer-vt",
       "date": "2026-04-23T18:00:18Z",
@@ -1464,6 +1518,18 @@
       "date": "2026-04-23T17:06:45Z",
       "sha": "677fcdb",
       "message": "feat: mobile UI polish — collapsible splits drawer, clearer cheer CTA"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-23T17:01:39Z",
+      "sha": "beb1724",
+      "message": "chore: bump version to 1.1.24+27 and update local iOS API host"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-23T17:01:28Z",
+      "sha": "a36f28e",
+      "message": "feat: pulse check-in signal across grid, bed canvas, and 3-pager"
     },
     {
       "repo": "cheer-vt",
@@ -1526,10 +1592,28 @@
       "message": "Session 131: Parade Crasher — Marshal Boss, Milestone Chaos, Contributor Rewards"
     },
     {
+      "repo": "bird-city",
+      "date": "2026-04-22T15:28:07Z",
+      "sha": "ae107ab",
+      "message": "Add iOS + Android native apps via Capacitor with RevenueCat IAP"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-22T13:09:57Z",
+      "sha": "c793714",
+      "message": "feat: check-in glow for bed-relative plants matches main garden"
+    },
+    {
       "repo": "bird-city-agi",
       "date": "2026-04-22T10:40:25Z",
       "sha": "b0d0d39",
       "message": "Update CLAUDE.md: Session 130 history + new ideas queue entries"
+    },
+    {
+      "repo": "budin",
+      "date": "2026-04-22T10:39:37Z",
+      "sha": "728ab50",
+      "message": "fix: daily summary garden lookup and APNs token capture"
     },
     {
       "repo": "bird-city-agi",
@@ -1586,6 +1670,12 @@
       "message": "Session 123: Spring Painted Egg Hunt — Seasonal Scavenger Hunt (April 14–28)"
     },
     {
+      "repo": "budin",
+      "date": "2026-04-21T00:07:28Z",
+      "sha": "61bcca2",
+      "message": "feat: hide greenhouse and surface garden report from toolbar"
+    },
+    {
       "repo": "prima-mente-finance",
       "date": "2026-04-20T22:39:30Z",
       "sha": "c632bf7",
@@ -1610,140 +1700,50 @@
       "message": "Session 122: The Feather Factory — Dye Your Feathers, Wear Your Identity"
     },
     {
-      "repo": "bird-city-agi",
-      "date": "2026-04-20T15:41:19Z",
-      "sha": "c84dffc",
-      "message": "feat(Session 121): The Chaos Oracle — Prophecies of Fortune and Ruin"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-20T11:16:13Z",
-      "sha": "1986035",
-      "message": "Session 120: THE HOT POOP — Hot Potato Chaos Item"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-20T05:48:23Z",
-      "sha": "88f2b74",
-      "message": "Update CLAUDE.md: Session 119 Trash Day logged"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-20T05:47:32Z",
-      "sha": "d9cba36",
-      "message": "Session 119: Trash Day — Garbage Truck rolls through the city"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-20T00:28:51Z",
-      "sha": "e16f43a",
-      "message": "Update CLAUDE.md: Session 109 Vigilante Marshal logged"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-20T00:28:04Z",
-      "sha": "61e871d",
-      "message": "Session 109: The Vigilante Marshal — City Calls on a Hero"
+      "repo": "budin",
+      "date": "2026-04-20T19:54:44Z",
+      "sha": "4469415",
+      "message": "feat: always show water/fertilize all with \"anyway\" confirmations"
     },
     {
       "repo": "budin",
-      "date": "2026-04-19T23:53:27Z",
-      "sha": "64f7682",
-      "message": "fix: map seedling stage to settling in, not moving to the bed"
+      "date": "2026-04-20T19:43:28Z",
+      "sha": "11962bf",
+      "message": "feat: passive drift refresh when cached report is over 2h old"
     },
     {
       "repo": "budin",
-      "date": "2026-04-19T23:45:42Z",
-      "sha": "be4abcd",
-      "message": "feat: render all plant phases at harvest size on bed canvas"
+      "date": "2026-04-20T19:43:17Z",
+      "sha": "44da55d",
+      "message": "fix: hide watering and fertilizing guide buttons when counts are zero"
     },
     {
       "repo": "budin",
-      "date": "2026-04-19T23:36:33Z",
-      "sha": "0c340d7",
-      "message": "feat: simplify bed canvas to a single attention halo and health pip"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-19T23:01:27Z",
-      "sha": "6ebf602",
-      "message": "fix: sync journey phase with growth stage in picker and check-in"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-19T21:39:00Z",
-      "sha": "bcd3810",
-      "message": "feat: canvas legend pill and phase-scaled plant icons"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-19T20:45:56Z",
-      "sha": "850e3d8",
-      "message": "Session 117: The Mole — Double Agent Infiltration Event"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-19T20:32:41Z",
-      "sha": "215f4e9",
-      "message": "Session 116: The Rival Bird — \"Ace\" from Feather City"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-19T15:54:05Z",
-      "sha": "ccb9b74",
-      "message": "feat: tap bed in water mode waters all plants in it"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-19T15:39:00Z",
-      "sha": "bfc96f4",
-      "message": "Session 115: Frank's Hot Dog Cart — Street Food Economy"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-19T10:26:36Z",
-      "sha": "d495524",
-      "message": "feat: Buried Treasure System (Session 114) — first pure DISCOVERY mechanic"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-19T09:47:31Z",
-      "sha": "f4f3068",
-      "message": "feat: route username writes through backend API"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-19T05:32:52Z",
-      "sha": "941f503",
-      "message": "Session 113: Wing Surge System — charge-based speed/XP super-move"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-19T00:28:19Z",
-      "sha": "8e294be",
-      "message": "docs: update CLAUDE.md with Session 112 — The Golden Perch"
+      "date": "2026-04-20T18:04:12Z",
+      "sha": "51142cc",
+      "message": "fix: clear pot ghost on mark as planted and show real plant name"
     }
   ],
   "repo_details": [
     {
+      "name": "bird-city",
+      "commits": 52
+    },
+    {
       "name": "budin",
-      "commits": 1304
+      "commits": 1319
+    },
+    {
+      "name": "bird-city-agi",
+      "commits": 166
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 343
     },
     {
       "name": "cheer-vt",
       "commits": 8
-    },
-    {
-      "name": "bird-city-agi",
-      "commits": 165
-    },
-    {
-      "name": "keedastudios_landing",
-      "commits": 342
-    },
-    {
-      "name": "bird-city",
-      "commits": 46
     },
     {
       "name": "prima-mente-finance",
