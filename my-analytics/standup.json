@@ -1,22 +1,22 @@
 {
-  "date": "2026-04-24",
+  "date": "2026-04-25",
   "yesterday": [
-    "Shipped Bird City iOS/Android apps with pre-submission polish - privacy/terms pages, settings, app icons, bundle ID switch to com.keedastudios.birdcitygame",
-    "Added pulse check-in visual signals across Budin's grid, bed canvas, and 3-pager views - includes outdoor pot halos and photo/quick check-in chooser",
-    "Built cheer-vt Victoria London Marathon 2026 page with draggable splits drawer, mobile UI polish, and collapsible features",
-    "Expanded Bird City AGI with Session 138 Weathervane spinning rooster, Street Performer patience mechanics, Charity Gala tuxedo NPCs, and 5-ramp skateboard chains"
+    "Fixed check-in pulse clearing bug in Budin and gated it by per-plant stage duration",
+    "Launched Bird City: Chaos promo landing page at /chaos route",
+    "Maintained 56-day commit streak with focused work on budin and bird-city repos"
   ],
   "today": [
-    "Launch Bird City: Chaos promo landing page at /chaos to drive pre-launch buzz",
-    "Continue Bird City AGI world-building sessions focusing on cross-system NPC reactions",
-    "Polish Budin v1.1.24 check-in flows and test iOS build with new API endpoints"
+    "Unifying check-in halo and tile UI components in Budin, removing level-up halo",
+    "Continue heavy development on bird-city-agi with 21 active commits",
+    "Prepare Vibe Lingo for launch and Mali for next week release"
   ],
   "blockers": [
-    "BGMF still blocked by Apple - awaiting resolution for revenue stream"
+    "BGMF still blocked by Apple review process",
+    "Need to increase Thulaa DAU from 150 to hit growth targets"
   ],
   "metrics": [
-    "55-day commit streak maintained with 22 commits yesterday across 4 active repos",
-    "Thulaa at 150 DAU, Hinglish Vinglish at 300 users, Vibe Lingo launching soon",
-    "Mali release scheduled for next week, WordKO in development pipeline"
+    "Total commits: 3580 across 24 repos",
+    "56-day commit streak maintained",
+    "Thulaa: 150 DAU, Hinglish Vinglish: 300 users"
   ]
 }
