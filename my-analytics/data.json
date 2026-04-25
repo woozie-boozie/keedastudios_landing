@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-25T07:00:03Z",
+  "updated": "2026-04-25T12:34:26Z",
   "repos": {
     "total": 24,
     "original": 23,
     "forks": 1
   },
-  "total_commits": 3580,
+  "total_commits": 3583,
   "streak": 56,
   "commits_by_day": [
     {
@@ -1267,7 +1267,7 @@
     },
     {
       "date": "2026-04-25",
-      "count": 2
+      "count": 5
     }
   ],
   "commits_by_month": [
@@ -1321,7 +1321,7 @@
     },
     {
       "month": "2026-04",
-      "count": 548
+      "count": 551
     }
   ],
   "commits_by_hour": [
@@ -1355,7 +1355,7 @@
     },
     {
       "hour": 7,
-      "count": 42
+      "count": 43
     },
     {
       "hour": 8,
@@ -1363,11 +1363,11 @@
     },
     {
       "hour": 9,
-      "count": 100
+      "count": 101
     },
     {
       "hour": 10,
-      "count": 134
+      "count": 135
     },
     {
       "hour": 11,
@@ -1423,6 +1423,12 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "bird-city-agi",
+      "date": "2026-04-25T10:32:39Z",
+      "sha": "8e001a5",
+      "message": "Session 139: Detective Bird stalks the streets 🔍"
+    },
     {
       "repo": "budin",
       "date": "2026-04-25T00:50:26Z",
@@ -1716,22 +1722,20 @@
       "date": "2026-04-20T19:54:44Z",
       "sha": "4469415",
       "message": "feat: always show water/fertilize all with \"anyway\" confirmations"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-20T19:43:28Z",
-      "sha": "11962bf",
-      "message": "feat: passive drift refresh when cached report is over 2h old"
     }
   ],
   "repo_details": [
     {
-      "name": "keedastudios_landing",
-      "commits": 349
-    },
-    {
       "name": "budin",
       "commits": 1321
+    },
+    {
+      "name": "bird-city-agi",
+      "commits": 167
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 351
     },
     {
       "name": "hinglish-vinglish",
@@ -1740,10 +1744,6 @@
     {
       "name": "bird-city",
       "commits": 52
-    },
-    {
-      "name": "bird-city-agi",
-      "commits": 166
     },
     {
       "name": "cheer-vt",
