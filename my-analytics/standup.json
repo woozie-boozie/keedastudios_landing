@@ -1,24 +1,24 @@
 {
-  "date": "2026-04-28",
+  "date": "2026-04-29",
   "yesterday": [
-    "No commits pushed despite active development on bird-city-agi",
-    "Monitored Thulaa DAU metrics holding steady at 150",
-    "Reviewed Hinglish Vinglish user feedback from 300 user base"
+    "Shipped budin 1.2.1+31 with renamed check-in pill and indoor plant lifecycle features",
+    "Implemented chat with admin web inbox and email notifications for user support",
+    "Fixed plant deletion cascade on bed removal and per-plant check-in caching issues",
+    "Added planning-phase UI with start fab for potted plants and simplified premium subscription layout"
   ],
   "today": [
-    "Push pending bird-city-agi changes from 22 recent commits",
-    "Finalize Vibe Lingo launch preparations",
-    "Complete Mali pre-launch testing for next week release",
-    "Review budin repo updates and merge 10 pending commits"
+    "Deploy budin hotfixes from yesterday's 16 commits to production",
+    "Continue Mali app development for next week's launch timeline",
+    "Review and respond to user feedback on Thulaa card game (150 DAU)",
+    "Test Vibe Lingo pre-launch features and onboarding flow"
   ],
   "blockers": [
-    "BGMF still blocked by Apple review process",
-    "Need to address cheer-vt stability issues before next deployment"
+    "BGMF still blocked by Apple - need to address review feedback",
+    "No commits pushed yet today - behind usual development pace"
   ],
   "metrics": [
-    "59-day commit streak maintained",
-    "3598 total commits across 24 repositories",
-    "Thulaa: 150 DAU stable",
-    "Hinglish Vinglish: 300 total users"
+    "60-day commit streak maintained across 24 repos",
+    "3630 total commits with budin leading at 28 recent commits",
+    "Hinglish Vinglish steady at 300 users, Thulaa at 150 DAU"
   ]
 }
