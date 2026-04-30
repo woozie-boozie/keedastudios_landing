@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-29T19:04:58Z",
+  "updated": "2026-04-30T01:30:53Z",
   "repos": {
     "total": 24,
     "original": 23,
     "forks": 1
   },
-  "total_commits": 3633,
-  "streak": 60,
+  "total_commits": 3642,
+  "streak": 61,
   "commits_by_day": [
-    {
-      "date": "2025-04-29",
-      "count": 1
-    },
     {
       "date": "2025-04-30",
       "count": 13
@@ -1247,7 +1243,7 @@
     },
     {
       "date": "2026-04-23",
-      "count": 27
+      "count": 29
     },
     {
       "date": "2026-04-24",
@@ -1271,13 +1267,17 @@
     },
     {
       "date": "2026-04-29",
-      "count": 4
+      "count": 6
+    },
+    {
+      "date": "2026-04-30",
+      "count": 5
     }
   ],
   "commits_by_month": [
     {
       "month": "2025-04",
-      "count": 14
+      "count": 13
     },
     {
       "month": "2025-05",
@@ -1325,13 +1325,13 @@
     },
     {
       "month": "2026-04",
-      "count": 601
+      "count": 610
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 188
+      "count": 192
     },
     {
       "hour": 1,
@@ -1399,7 +1399,7 @@
     },
     {
       "hour": 17,
-      "count": 198
+      "count": 199
     },
     {
       "hour": 18,
@@ -1407,11 +1407,11 @@
     },
     {
       "hour": 19,
-      "count": 154
+      "count": 156
     },
     {
       "hour": 20,
-      "count": 165
+      "count": 166
     },
     {
       "hour": 21,
@@ -1427,6 +1427,42 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-30T00:50:23Z",
+      "sha": "a16d8d9",
+      "message": "CSV import auto-triggers rebuild-cc + rebuild-analytics"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-30T00:37:07Z",
+      "sha": "8ff0a4d",
+      "message": "Add Import Revolut CSV + Admin to sidebar nav"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-30T00:30:22Z",
+      "sha": "e5f6100",
+      "message": "Lazy-init SPREADSHEET_ID in sheets/write.ts"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-30T00:25:33Z",
+      "sha": "9812c35",
+      "message": "Lazy-init Neon client so Cloud Run build phase doesn't fail"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-30T00:12:11Z",
+      "sha": "a62a787",
+      "message": "Revolut CSV import: parse, match, dual-write to Sheet + Postgres"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-29T20:45:00Z",
+      "sha": "f2a2040",
+      "message": "Postgres golden-source foundation: schema, sync, admin page + bot fixes"
+    },
     {
       "repo": "budin",
       "date": "2026-04-28T21:49:19Z",
@@ -1626,6 +1662,12 @@
       "message": "Session 138: The Weathervane — spinning rooster reveals next weather on proximit"
     },
     {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-23T19:04:15Z",
+      "sha": "3560a64",
+      "message": "Scale scan-invoices: concurrent Claude + pre-filter + defensive result shape"
+    },
+    {
       "repo": "budin",
       "date": "2026-04-23T18:24:59Z",
       "sha": "625224b",
@@ -1656,6 +1698,12 @@
       "message": "fix: splits drawer now toggles peek ↔ tall (was 3-state cycle)"
     },
     {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-23T17:33:49Z",
+      "sha": "5c69f51",
+      "message": "Fix invoice pipeline: dedup by inv# first, Skipped tab, backfill tooling"
+    },
+    {
       "repo": "cheer-vt",
       "date": "2026-04-23T17:29:47Z",
       "sha": "f3a8522",
@@ -1678,54 +1726,6 @@
       "date": "2026-04-23T17:06:45Z",
       "sha": "677fcdb",
       "message": "feat: mobile UI polish — collapsible splits drawer, clearer cheer CTA"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-23T17:01:39Z",
-      "sha": "beb1724",
-      "message": "chore: bump version to 1.1.24+27 and update local iOS API host"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-23T17:01:28Z",
-      "sha": "a36f28e",
-      "message": "feat: pulse check-in signal across grid, bed canvas, and 3-pager"
-    },
-    {
-      "repo": "cheer-vt",
-      "date": "2026-04-23T16:29:37Z",
-      "sha": "88f2374",
-      "message": "Initial commit — Victoria London Marathon 2026 cheer page"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-23T15:37:08Z",
-      "sha": "beb2fbb",
-      "message": "Session 137: Cross-System Synergies — NPCs React to Crime Wave & Aurora"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-23T10:43:47Z",
-      "sha": "bcd42f6",
-      "message": "feat: Street Performer NPC — patience vs instinct mechanic [Session 136]"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-23T05:24:45Z",
-      "sha": "2b5c212",
-      "message": "feat: Charity Gala event — tuxedo NPCs, Gala Guard ejection, HIGH ROLLER badge ["
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-23T00:27:00Z",
-      "sha": "18b75f9",
-      "message": "🛹 Session 134 — Stunt Ramps: Chain 5 ramps for LEGENDARY status + Wing Surge"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-22T20:58:38Z",
-      "sha": "088555e",
-      "message": "feat(session-133): Grand Parade supporting cast — Marching Band, Confetti Birds,"
     }
   ],
   "repo_details": [
@@ -1734,8 +1734,12 @@
       "commits": 644
     },
     {
+      "name": "prima-mente-finance",
+      "commits": 37
+    },
+    {
       "name": "keedastudios_landing",
-      "commits": 372
+      "commits": 373
     },
     {
       "name": "hinglish-vinglish",
@@ -1756,10 +1760,6 @@
     {
       "name": "bird-city",
       "commits": 52
-    },
-    {
-      "name": "prima-mente-finance",
-      "commits": 29
     },
     {
       "name": "fun-language-world",
