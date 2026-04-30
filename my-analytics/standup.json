@@ -1,24 +1,23 @@
 {
-  "date": "2026-04-29",
+  "date": "2026-04-30",
   "yesterday": [
-    "Shipped budin 1.2.1+31 with renamed check-in pill and indoor plant lifecycle features",
-    "Implemented chat with admin web inbox and email notifications for user support",
-    "Fixed plant deletion cascade on bed removal and per-plant check-in caching issues",
-    "Added planning-phase UI with start fab for potted plants and simplified premium subscription layout"
+    "Set up Postgres golden-source foundation with schema and sync capabilities for prima-mente-finance",
+    "Fixed bot issues and completed admin page implementation",
+    "Maintained 61-day commit streak across 24 repositories"
   ],
   "today": [
-    "Deploy budin hotfixes from yesterday's 16 commits to production",
-    "Continue Mali app development for next week's launch timeline",
-    "Review and respond to user feedback on Thulaa card game (150 DAU)",
-    "Test Vibe Lingo pre-launch features and onboarding flow"
+    "Implemented CSV import auto-triggers for rebuild-cc and rebuild-analytics in prima-mente-finance",
+    "Added Revolut CSV import functionality with parsing, matching, and dual-write to both Sheets and Postgres",
+    "Fixed Cloud Run build issues by lazy-initializing Neon client and SPREADSHEET_ID",
+    "Added Import Revolut CSV and Admin navigation to sidebar"
   ],
   "blockers": [
-    "BGMF still blocked by Apple - need to address review feedback",
-    "No commits pushed yet today - behind usual development pace"
+    "BGMF project blocked by Apple review process",
+    "Need to finalize Mali launch preparations for next week"
   ],
   "metrics": [
-    "60-day commit streak maintained across 24 repos",
-    "3630 total commits with budin leading at 28 recent commits",
-    "Hinglish Vinglish steady at 300 users, Thulaa at 150 DAU"
+    "Total commits: 3643 across 24 repos",
+    "Active development: budin (26), cheer-vt (8), prima-mente-finance (8), bird-city (5), bird-city-agi (3)",
+    "User base: Thulaa 150 DAU, Hinglish Vinglish 300 users, Vibe Lingo launching soon"
   ]
 }
