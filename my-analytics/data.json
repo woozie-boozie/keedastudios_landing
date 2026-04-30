@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-30T07:58:36Z",
+  "updated": "2026-04-30T13:16:12Z",
   "repos": {
     "total": 24,
     "original": 23,
     "forks": 1
   },
-  "total_commits": 3643,
+  "total_commits": 3673,
   "streak": 61,
   "commits_by_day": [
     {
@@ -1267,11 +1267,11 @@
     },
     {
       "date": "2026-04-29",
-      "count": 6
+      "count": 10
     },
     {
       "date": "2026-04-30",
-      "count": 6
+      "count": 32
     }
   ],
   "commits_by_month": [
@@ -1325,17 +1325,17 @@
     },
     {
       "month": "2026-04",
-      "count": 611
+      "count": 641
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 192
+      "count": 198
     },
     {
       "hour": 1,
-      "count": 143
+      "count": 147
     },
     {
       "hour": 2,
@@ -1359,27 +1359,27 @@
     },
     {
       "hour": 7,
-      "count": 44
+      "count": 45
     },
     {
       "hour": 8,
-      "count": 62
+      "count": 64
     },
     {
       "hour": 9,
-      "count": 102
+      "count": 107
     },
     {
       "hour": 10,
-      "count": 140
+      "count": 145
     },
     {
       "hour": 11,
-      "count": 113
+      "count": 115
     },
     {
       "hour": 12,
-      "count": 186
+      "count": 187
     },
     {
       "hour": 13,
@@ -1403,7 +1403,7 @@
     },
     {
       "hour": 18,
-      "count": 235
+      "count": 236
     },
     {
       "hour": 19,
@@ -1419,19 +1419,139 @@
     },
     {
       "hour": 22,
-      "count": 163
+      "count": 164
     },
     {
       "hour": 23,
-      "count": 188
+      "count": 190
     }
   ],
   "recent_commits": [
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T12:11:43Z",
+      "sha": "39cb16b",
+      "message": "home: drop showcase grids, grow wordmark, add live stat strip"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T11:39:03Z",
+      "sha": "69cb517",
+      "message": "games index: per-game gradient cards with PLAY pill CTA"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T11:36:56Z",
+      "sha": "22d996b",
+      "message": "challenges: live-invite receiver actually joins host's room (cc + wc)"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T10:49:14Z",
+      "sha": "69808b1",
+      "message": "ios: pbxproj line reorder from Xcode"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T10:48:00Z",
+      "sha": "d75140d",
+      "message": "games index: outline-only cards (drop fill + glow + icon tile bg)"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T10:43:04Z",
+      "sha": "213a0b8",
+      "message": "nav: drop /game-select; brand the Games tab as the new home"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T10:26:52Z",
+      "sha": "994555e",
+      "message": "challenges: realtime top banner when an invite arrives in-app"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-30T09:37:08Z",
+      "sha": "f89a212",
+      "message": "v2 sheet: rich formatting matching v1's visual style"
+    },
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-04-30T09:28:27Z",
+      "sha": "716da1a",
+      "message": "db-to-sheet-v2: Postgres → v2 Sheet renderer (parallel to old Sheet)"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T09:15:10Z",
+      "sha": "0499fd7",
+      "message": "ios: migrate to UIScene lifecycle — required for upcoming iOS"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T09:07:06Z",
+      "sha": "6a0ecff",
+      "message": "home: even-space Solo/Bot between Battle Anytime and username pill"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T09:04:05Z",
+      "sha": "9afca92",
+      "message": "home: align Solo/Bot styling with the battle buttons"
+    },
+    {
+      "repo": "bird-city",
+      "date": "2026-04-30T08:54:20Z",
+      "sha": "fa6484b",
+      "message": "Add /support page + drop unused push entitlement + real RC SDK keys"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T08:54:14Z",
+      "sha": "b93a492",
+      "message": "home: minimalist reset — replace chunky cards with thin-bordered buttons"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T01:14:51Z",
+      "sha": "35d631b",
+      "message": "home: stretch battle cards to fill viewport — no wasted space"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T01:07:41Z",
+      "sha": "5ab6c0b",
+      "message": "home: dual-battle hero (BATTLE LIVE + BATTLE ANYTIME)"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T01:02:08Z",
+      "sha": "2bdd18a",
+      "message": "home: drop Friends section — Friends tab is the single source"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T01:01:07Z",
+      "sha": "d3305b2",
+      "message": "Revert \"home: full redesign — card-based scrollable layout\""
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T00:55:28Z",
+      "sha": "158e381",
+      "message": "home: full redesign — card-based scrollable layout"
+    },
     {
       "repo": "prima-mente-finance",
       "date": "2026-04-30T00:50:23Z",
       "sha": "a16d8d9",
       "message": "CSV import auto-triggers rebuild-cc + rebuild-analytics"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T00:44:44Z",
+      "sha": "875fadb",
+      "message": "home: restructure into 3 strict zones with section headers"
     },
     {
       "repo": "prima-mente-finance",
@@ -1446,10 +1566,28 @@
       "message": "Lazy-init SPREADSHEET_ID in sheets/write.ts"
     },
     {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T00:28:46Z",
+      "sha": "5eb061a",
+      "message": "home: tighten layout (slim header, centred friends row, balanced spacing)"
+    },
+    {
       "repo": "prima-mente-finance",
       "date": "2026-04-30T00:25:33Z",
       "sha": "9812c35",
       "message": "Lazy-init Neon client so Cloud Run build phase doesn't fail"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T00:21:11Z",
+      "sha": "c885d48",
+      "message": "home: float help (?) bottom-right, move username pill below footer"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T00:13:23Z",
+      "sha": "e72a86f",
+      "message": "shell: 3-tab nav (Games · Friends · You) with games index + carousel"
     },
     {
       "repo": "prima-mente-finance",
@@ -1458,10 +1596,40 @@
       "message": "Revolut CSV import: parse, match, dual-write to Sheet + Postgres"
     },
     {
+      "repo": "crossword-chaos",
+      "date": "2026-04-30T00:01:24Z",
+      "sha": "130e64b",
+      "message": "phase 3b: friend requests + username search + top-friends board"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-29T23:27:27Z",
+      "sha": "9e12bdb",
+      "message": "functions: add JSDoc @param tags to _pushToUser"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-29T23:18:51Z",
+      "sha": "4a7e3d1",
+      "message": "ios: drop MinimumOSVersion from Flutter framework plist"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-29T22:06:46Z",
+      "sha": "744d286",
+      "message": "social platform: 4-tab nav, friends graph, live + async challenges"
+    },
+    {
       "repo": "prima-mente-finance",
       "date": "2026-04-29T20:45:00Z",
       "sha": "f2a2040",
       "message": "Postgres golden-source foundation: schema, sync, admin page + bot fixes"
+    },
+    {
+      "repo": "crossword-chaos",
+      "date": "2026-04-29T18:04:03Z",
+      "sha": "6fc35ab",
+      "message": "home revamp: hide quick match, add challenge a bot for cc + wc"
     },
     {
       "repo": "budin",
@@ -1558,188 +1726,24 @@
       "date": "2026-04-28T12:57:28Z",
       "sha": "b0dfc14",
       "message": "fix: cascade plant deletion on bed remove and drop orphan sweeper"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-28T12:47:19Z",
-      "sha": "d7b6020",
-      "message": "fix: center ask sidney button in report slides"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-28T12:47:07Z",
-      "sha": "944e002",
-      "message": "feat: planning-phase top panel and start fab for potted plants"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-27T20:15:40Z",
-      "sha": "c4416f5",
-      "message": "feat: wire manual check-in entry point and bump to 1.1.25+28"
-    },
-    {
-      "repo": "cheer-vt",
-      "date": "2026-04-26T08:31:57Z",
-      "sha": "eab9002",
-      "message": "feat: live overall rank pill in banner from Mika detail page"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-26T05:59:08Z",
-      "sha": "2940e21",
-      "message": "Session 140: Bird Photographer NPC + 5 Cross-System Synergies"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-25T10:44:42Z",
-      "sha": "4901064",
-      "message": "feat: patchwork grass tiles, wooden raised beds, terracotta pots"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-25T10:33:40Z",
-      "sha": "5f07f99",
-      "message": "feat: plant status carousel as final onboarding step"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-25T10:32:39Z",
-      "sha": "8e001a5",
-      "message": "Session 139: Detective Bird stalks the streets 🔍"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-25T00:50:26Z",
-      "sha": "e4842ca",
-      "message": "fix: unify check-in halo and tile, drop level-up halo"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-24T22:37:47Z",
-      "sha": "fe12d29",
-      "message": "fix: clear check-in pulse on check-in and gate by per-plant stage duration"
-    },
-    {
-      "repo": "bird-city",
-      "date": "2026-04-24T01:11:32Z",
-      "sha": "5e68c89",
-      "message": "Add Bird City: Chaos promo landing page at /chaos"
-    },
-    {
-      "repo": "bird-city",
-      "date": "2026-04-23T23:50:32Z",
-      "sha": "6f210ed",
-      "message": "Serve /privacy and /terms as extensionless URLs"
-    },
-    {
-      "repo": "bird-city",
-      "date": "2026-04-23T23:45:05Z",
-      "sha": "c9a4011",
-      "message": "Merge ak/native: Capacitor iOS/Android + pre-submission polish"
-    },
-    {
-      "repo": "bird-city",
-      "date": "2026-04-23T23:22:20Z",
-      "sha": "b082199",
-      "message": "App Store pre-submission polish: settings, privacy, terms, delete, offline"
-    },
-    {
-      "repo": "bird-city",
-      "date": "2026-04-23T22:32:12Z",
-      "sha": "2381eda",
-      "message": "Switch bundle ID to com.keedastudios.birdcitygame + install app icons"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-23T21:23:26Z",
-      "sha": "c9ac0e2",
-      "message": "feat: photo or quick check-in chooser plus stage-advance chip in Sidney"
-    },
-    {
-      "repo": "bird-city-agi",
-      "date": "2026-04-23T20:39:27Z",
-      "sha": "06be310",
-      "message": "Session 138: The Weathervane — spinning rooster reveals next weather on proximit"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-23T19:04:15Z",
-      "sha": "3560a64",
-      "message": "Scale scan-invoices: concurrent Claude + pre-filter + defensive result shape"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-23T18:24:59Z",
-      "sha": "625224b",
-      "message": "chore: include port 8000 in local iOS API host"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-23T18:24:53Z",
-      "sha": "8c5081f",
-      "message": "feat: pulse check-in halo on outdoor pots and grid plants"
-    },
-    {
-      "repo": "cheer-vt",
-      "date": "2026-04-23T18:00:18Z",
-      "sha": "f020b55",
-      "message": "tweak: tall drawer → 90% + move map attribution away from chevron"
-    },
-    {
-      "repo": "cheer-vt",
-      "date": "2026-04-23T17:52:33Z",
-      "sha": "3bcf083",
-      "message": "fix: chevron now actually expands the table — drop map min-height + bin footer"
-    },
-    {
-      "repo": "cheer-vt",
-      "date": "2026-04-23T17:37:48Z",
-      "sha": "b229b08",
-      "message": "fix: splits drawer now toggles peek ↔ tall (was 3-state cycle)"
-    },
-    {
-      "repo": "prima-mente-finance",
-      "date": "2026-04-23T17:33:49Z",
-      "sha": "5c69f51",
-      "message": "Fix invoice pipeline: dedup by inv# first, Skipped tab, backfill tooling"
-    },
-    {
-      "repo": "cheer-vt",
-      "date": "2026-04-23T17:29:47Z",
-      "sha": "f3a8522",
-      "message": "fix: splits drawer tap wasn't cycling — separate tap and drag handlers"
-    },
-    {
-      "repo": "cheer-vt",
-      "date": "2026-04-23T17:24:55Z",
-      "sha": "9f889f4",
-      "message": "feat: splits drawer is now draggable with 3 snap points"
-    },
-    {
-      "repo": "cheer-vt",
-      "date": "2026-04-23T17:17:34Z",
-      "sha": "dfcc85c",
-      "message": "docs: update README to current production URL"
-    },
-    {
-      "repo": "cheer-vt",
-      "date": "2026-04-23T17:06:45Z",
-      "sha": "677fcdb",
-      "message": "feat: mobile UI polish — collapsible splits drawer, clearer cheer CTA"
     }
   ],
   "repo_details": [
     {
-      "name": "keedastudios_landing",
-      "commits": 374
+      "name": "crossword-chaos",
+      "commits": 669
     },
     {
-      "name": "crossword-chaos",
-      "commits": 644
+      "name": "keedastudios_landing",
+      "commits": 376
     },
     {
       "name": "prima-mente-finance",
-      "commits": 37
+      "commits": 39
+    },
+    {
+      "name": "bird-city",
+      "commits": 53
     },
     {
       "name": "hinglish-vinglish",
@@ -1756,10 +1760,6 @@
     {
       "name": "bird-city-agi",
       "commits": 168
-    },
-    {
-      "name": "bird-city",
-      "commits": 52
     },
     {
       "name": "fun-language-world",
