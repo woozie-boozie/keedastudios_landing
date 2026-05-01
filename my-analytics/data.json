@@ -1,18 +1,14 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-04-30T19:03:31Z",
+  "updated": "2026-05-01T01:47:18Z",
   "repos": {
     "total": 24,
     "original": 23,
     "forks": 1
   },
-  "total_commits": 3674,
-  "streak": 61,
+  "total_commits": 3676,
+  "streak": 62,
   "commits_by_day": [
-    {
-      "date": "2025-04-30",
-      "count": 13
-    },
     {
       "date": "2025-05-01",
       "count": 4
@@ -1271,14 +1267,14 @@
     },
     {
       "date": "2026-04-30",
-      "count": 33
+      "count": 34
+    },
+    {
+      "date": "2026-05-01",
+      "count": 1
     }
   ],
   "commits_by_month": [
-    {
-      "month": "2025-04",
-      "count": 13
-    },
     {
       "month": "2025-05",
       "count": 127
@@ -1325,17 +1321,21 @@
     },
     {
       "month": "2026-04",
-      "count": 642
+      "count": 643
+    },
+    {
+      "month": "2026-05",
+      "count": 1
     }
   ],
   "commits_by_hour": [
     {
       "hour": 0,
-      "count": 198
+      "count": 199
     },
     {
       "hour": 1,
-      "count": 147
+      "count": 143
     },
     {
       "hour": 2,
@@ -1347,11 +1347,11 @@
     },
     {
       "hour": 4,
-      "count": 12
+      "count": 11
     },
     {
       "hour": 5,
-      "count": 46
+      "count": 44
     },
     {
       "hour": 6,
@@ -1391,11 +1391,11 @@
     },
     {
       "hour": 15,
-      "count": 224
+      "count": 223
     },
     {
       "hour": 16,
-      "count": 201
+      "count": 199
     },
     {
       "hour": 17,
@@ -1403,11 +1403,11 @@
     },
     {
       "hour": 18,
-      "count": 236
+      "count": 235
     },
     {
       "hour": 19,
-      "count": 156
+      "count": 157
     },
     {
       "hour": 20,
@@ -1419,14 +1419,20 @@
     },
     {
       "hour": 22,
-      "count": 164
+      "count": 163
     },
     {
       "hour": 23,
-      "count": 190
+      "count": 189
     }
   ],
   "recent_commits": [
+    {
+      "repo": "prima-mente-finance",
+      "date": "2026-05-01T00:51:07Z",
+      "sha": "13ab306",
+      "message": "Stage 3 cutover: Postgres as single source of truth"
+    },
     {
       "repo": "crossword-chaos",
       "date": "2026-04-30T12:11:43Z",
@@ -1720,12 +1726,6 @@
       "date": "2026-04-28T14:31:21Z",
       "sha": "1d4a6a1",
       "message": "chore: update local iOS backend dev URL"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-28T12:57:28Z",
-      "sha": "b0dfc14",
-      "message": "fix: cascade plant deletion on bed remove and drop orphan sweeper"
     }
   ],
   "repo_details": [
@@ -1734,12 +1734,12 @@
       "commits": 669
     },
     {
-      "name": "keedastudios_landing",
-      "commits": 377
+      "name": "prima-mente-finance",
+      "commits": 40
     },
     {
-      "name": "prima-mente-finance",
-      "commits": 39
+      "name": "keedastudios_landing",
+      "commits": 378
     },
     {
       "name": "bird-city",
