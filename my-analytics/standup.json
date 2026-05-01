@@ -1,23 +1,25 @@
 {
-  "date": "2026-04-30",
+  "date": "2026-05-01",
   "yesterday": [
-    "Set up Postgres golden-source foundation with schema and sync capabilities for prima-mente-finance",
-    "Fixed bot issues and completed admin page implementation",
-    "Maintained 61-day commit streak across 24 repositories"
+    "Crossword Chaos: Major home redesign with dual-battle hero layout, minimalist reset to thin-bordered buttons, 3-tab nav structure",
+    "Crossword Chaos: Fixed live-invite receiver joining host's room for challenges, added realtime top banner for in-app invites",
+    "Prima Mente Finance: Built Postgres → v2 Sheet renderer pipeline, implemented Revolut CSV import with dual-write to Sheet + Postgres",
+    "Crossword Chaos: iOS migration to UIScene lifecycle for upcoming iOS requirements, cleaned up pbxproj from Xcode",
+    "Bird City: Added /support page, integrated real RevenueCat SDK keys, dropped unused push entitlements"
   ],
   "today": [
-    "Implemented CSV import auto-triggers for rebuild-cc and rebuild-analytics in prima-mente-finance",
-    "Added Revolut CSV import functionality with parsing, matching, and dual-write to both Sheets and Postgres",
-    "Fixed Cloud Run build issues by lazy-initializing Neon client and SPREADSHEET_ID",
-    "Added Import Revolut CSV and Admin navigation to sidebar"
+    "Prima Mente Finance: Stage 3 cutover - making Postgres the single source of truth, deprecating old Sheet system",
+    "Crossword Chaos: Continue home redesign refinements based on yesterday's layout changes",
+    "Test live-invite functionality end-to-end after yesterday's receiver fixes"
   ],
   "blockers": [
-    "BGMF project blocked by Apple review process",
-    "Need to finalize Mali launch preparations for next week"
+    "BGMF still blocked by Apple - need to address their concerns",
+    "Mali launch next week requires final testing and deployment prep"
   ],
   "metrics": [
-    "Total commits: 3643 across 24 repos",
-    "Active development: budin (26), cheer-vt (8), prima-mente-finance (8), bird-city (5), bird-city-agi (3)",
-    "User base: Thulaa 150 DAU, Hinglish Vinglish 300 users, Vibe Lingo launching soon"
+    "62-day commit streak maintained with 26 commits yesterday",
+    "Crossword Chaos leading activity with 25 recent commits",
+    "Thulaa at 150 DAU, Hinglish Vinglish at 300 users",
+    "Total 3677 commits across 24 repos"
   ]
 }
