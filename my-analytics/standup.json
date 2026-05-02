@@ -1,25 +1,23 @@
 {
-  "date": "2026-05-01",
+  "date": "2026-05-02",
   "yesterday": [
-    "Crossword Chaos: Major home redesign with dual-battle hero layout, minimalist reset to thin-bordered buttons, 3-tab nav structure",
-    "Crossword Chaos: Fixed live-invite receiver joining host's room for challenges, added realtime top banner for in-app invites",
-    "Prima Mente Finance: Built Postgres → v2 Sheet renderer pipeline, implemented Revolut CSV import with dual-write to Sheet + Postgres",
-    "Crossword Chaos: iOS migration to UIScene lifecycle for upcoming iOS requirements, cleaned up pbxproj from Xcode",
-    "Bird City: Added /support page, integrated real RevenueCat SDK keys, dropped unused push entitlements"
+    "Completed Stage 3 cutover for prima-mente-finance, migrating to Postgres as single source of truth",
+    "Maintained 63-day commit streak with solid progress across active repositories"
   ],
   "today": [
-    "Prima Mente Finance: Stage 3 cutover - making Postgres the single source of truth, deprecating old Sheet system",
-    "Crossword Chaos: Continue home redesign refinements based on yesterday's layout changes",
-    "Test live-invite functionality end-to-end after yesterday's receiver fixes"
+    "Push crossword-chaos updates - 25 commits queued for the most active repo",
+    "Continue budin development with 15 pending commits",
+    "Finalize Vibe Lingo launch preparations",
+    "Prep Mali project for next week's release"
   ],
   "blockers": [
-    "BGMF still blocked by Apple - need to address their concerns",
-    "Mali launch next week requires final testing and deployment prep"
+    "BGMF project blocked by Apple - need to address app store compliance issues",
+    "No commits logged yet today - need to maintain the 63-day streak"
   ],
   "metrics": [
-    "62-day commit streak maintained with 26 commits yesterday",
-    "Crossword Chaos leading activity with 25 recent commits",
-    "Thulaa at 150 DAU, Hinglish Vinglish at 300 users",
-    "Total 3677 commits across 24 repos"
+    "Total: 3682 commits across 24 repositories",
+    "Thulaa card game: 150 DAU",
+    "Hinglish Vinglish: 300 active users",
+    "4 active repos in development"
   ]
 }
