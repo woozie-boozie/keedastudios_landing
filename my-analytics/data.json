@@ -1,12 +1,12 @@
 {
   "username": "woozie-boozie",
-  "updated": "2026-05-03T12:39:39Z",
+  "updated": "2026-05-03T18:40:00Z",
   "repos": {
-    "total": 24,
-    "original": 23,
+    "total": 25,
+    "original": 24,
     "forks": 1
   },
-  "total_commits": 3689,
+  "total_commits": 3693,
   "streak": 64,
   "commits_by_day": [
     {
@@ -1227,7 +1227,7 @@
     },
     {
       "date": "2026-04-21",
-      "count": 12
+      "count": 13
     },
     {
       "date": "2026-04-22",
@@ -1275,7 +1275,7 @@
     },
     {
       "date": "2026-05-03",
-      "count": 3
+      "count": 6
     }
   ],
   "commits_by_month": [
@@ -1325,11 +1325,11 @@
     },
     {
       "month": "2026-04",
-      "count": 643
+      "count": 644
     },
     {
       "month": "2026-05",
-      "count": 14
+      "count": 17
     }
   ],
   "commits_by_hour": [
@@ -1379,11 +1379,11 @@
     },
     {
       "hour": 11,
-      "count": 115
+      "count": 116
     },
     {
       "hour": 12,
-      "count": 189
+      "count": 190
     },
     {
       "hour": 13,
@@ -1395,11 +1395,11 @@
     },
     {
       "hour": 15,
-      "count": 223
+      "count": 224
     },
     {
       "hour": 16,
-      "count": 199
+      "count": 200
     },
     {
       "hour": 17,
@@ -1431,6 +1431,18 @@
     }
   ],
   "recent_commits": [
+    {
+      "repo": "candice",
+      "date": "2026-05-03T16:46:26Z",
+      "sha": "212f328",
+      "message": "Add eve:sync script to push prompt + tools to ElevenLabs"
+    },
+    {
+      "repo": "candice",
+      "date": "2026-05-03T15:27:53Z",
+      "sha": "1b945c4",
+      "message": "Build v0 surface: organisers, app reviews, Eve voice concierge"
+    },
     {
       "repo": "prima-mente-finance",
       "date": "2026-05-01T00:51:07Z",
@@ -1718,28 +1730,20 @@
       "date": "2026-04-28T14:53:28Z",
       "sha": "89dcc42",
       "message": "fix: use plant display name in check-in batch prompt"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-28T14:50:57Z",
-      "sha": "ed6adec",
-      "message": "fix: per-plant check-in cache key plus batch sibling prompt"
-    },
-    {
-      "repo": "budin",
-      "date": "2026-04-28T14:31:21Z",
-      "sha": "1d4a6a1",
-      "message": "chore: update local iOS backend dev URL"
     }
   ],
   "repo_details": [
     {
-      "name": "keedastudios_landing",
-      "commits": 391
+      "name": "candice",
+      "commits": 3
     },
     {
       "name": "crossword-chaos",
       "commits": 669
+    },
+    {
+      "name": "keedastudios_landing",
+      "commits": 392
     },
     {
       "name": "prima-mente-finance",
@@ -1840,11 +1844,11 @@
       "count": 6
     },
     {
-      "lang": "Python",
-      "count": 2
+      "lang": "TypeScript",
+      "count": 3
     },
     {
-      "lang": "TypeScript",
+      "lang": "Python",
       "count": 2
     },
     {
